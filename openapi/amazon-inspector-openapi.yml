@@ -1,0 +1,174 @@
+openapi: 3.1.0
+info:
+  title: Amazon Inspector API
+  description: >-
+    The Amazon Inspector API enables programmatic management of the automated
+    vulnerability management service. You can enable and disable scanning,
+    list and describe findings, manage filters, configure coverage, and
+    retrieve vulnerability intelligence for EC2 instances, container images,
+    and Lambda functions.
+  version: '2020-06-08'
+  contact:
+    name: AWS Support
+    url: https://aws.amazon.com/premiumsupport/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+  x-logo:
+    url: https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png
+servers:
+  - url: https://inspector2.{region}.amazonaws.com
+    description: Amazon Inspector regional endpoint
+    variables:
+      region:
+        default: us-east-1
+        description: AWS region
+        enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-south-1
+          - sa-east-1
+          - ca-central-1
+security:
+  - sigv4: []
+tags:
+  - name: Scanning
+    description: Operations for enabling and managing vulnerability scanning
+  - name: Findings
+    description: Operations for listing and managing vulnerability findings
+  - name: Filters
+    description: Operations for creating and managing finding filters
+  - name: Coverage
+    description: Operations for managing resource scanning coverage
+  - name: Accounts
+    description: Operations for managing Inspector across accounts
+paths:
+  /enable:
+    post:
+      operationId: Enable
+      summary: Enable Amazon Inspector scanning
+      description: Enables Amazon Inspector scanning for one or more resource types in one or more accounts.
+      tags:
+        - Scanning
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - resourceTypes
+              properties:
+                accountIds:
+                  type: array
+                  items:
+                    type: string
+                resourceTypes:
+                  type: array
+                  items:
+                    type: string
+                    enum:
+                      - EC2
+                      - ECR
+                      - LAMBDA
+                      - LAMBDA_CODE
+      responses:
+        '200':
+          description: Scanning enabled successfully
+        '400':
+          description: Bad request
+        '403':
+          description: Access denied
+  /disable:
+    post:
+      operationId: Disable
+      summary: Disable Amazon Inspector scanning
+      description: Disables Amazon Inspector scanning for one or more resource types in one or more accounts.
+      tags:
+        - Scanning
+      responses:
+        '200':
+          description: Scanning disabled successfully
+  /findings/list:
+    post:
+      operationId: ListFindings
+      summary: List vulnerability findings
+      description: Lists findings for your environment based on specified filter criteria.
+      tags:
+        - Findings
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filterCriteria:
+                  type: object
+                maxResults:
+                  type: integer
+                nextToken:
+                  type: string
+                sortCriteria:
+                  type: object
+      responses:
+        '200':
+          description: List of findings
+        '400':
+          description: Bad request
+  /findings/get:
+    post:
+      operationId: GetFindingsReportStatus
+      summary: Get findings report status
+      description: Gets the status of a findings report.
+      tags:
+        - Findings
+      responses:
+        '200':
+          description: Report status
+  /coverage/list:
+    post:
+      operationId: ListCoverage
+      summary: List resource coverage
+      description: Lists coverage details for your environment.
+      tags:
+        - Coverage
+      responses:
+        '200':
+          description: Coverage details
+  /filters/create:
+    post:
+      operationId: CreateFilter
+      summary: Create a finding filter
+      description: Creates a filter resource to suppress findings matching specified criteria.
+      tags:
+        - Filters
+      responses:
+        '200':
+          description: Filter created
+  /filters/list:
+    post:
+      operationId: ListFilters
+      summary: List filters
+      description: Lists the filters associated with your account.
+      tags:
+        - Filters
+      responses:
+        '200':
+          description: List of filters
+components:
+  securitySchemes:
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
