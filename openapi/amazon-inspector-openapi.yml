@@ -42,16 +42,14 @@ servers:
 security:
   - sigv4: []
 tags:
-  - name: Scanning
-    description: Operations for enabling and managing vulnerability scanning
-  - name: Findings
-    description: Operations for listing and managing vulnerability findings
-  - name: Filters
-    description: Operations for creating and managing finding filters
   - name: Coverage
     description: Operations for managing resource scanning coverage
-  - name: Accounts
-    description: Operations for managing Inspector across accounts
+  - name: Filters
+    description: Operations for creating and managing finding filters
+  - name: Findings
+    description: Operations for listing and managing vulnerability findings
+  - name: Scanning
+    description: Operations for enabling and managing vulnerability scanning
 paths:
   /enable:
     post:
