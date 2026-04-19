@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-scan-type-schema.json",
+  "title": "ScanType",
+  "description": "ScanType schema",
+  "type": "string",
+  "enum": [
+    "NETWORK",
+    "PACKAGE",
+    "CODE"
+  ]
+}

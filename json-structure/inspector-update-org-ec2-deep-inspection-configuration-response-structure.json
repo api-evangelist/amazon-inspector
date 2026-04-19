@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-update-org-ec2-deep-inspection-configuration-response-structure.json",
+  "name": "UpdateOrgEc2DeepInspectionConfigurationResponse",
+  "description": "UpdateOrgEc2DeepInspectionConfigurationResponse schema",
+  "type": "object",
+  "properties": {}
+}

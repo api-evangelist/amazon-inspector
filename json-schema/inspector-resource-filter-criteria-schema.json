@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-resource-filter-criteria-schema.json",
+  "title": "ResourceFilterCriteria",
+  "description": "The resource filter criteria for a Software bill of materials (SBOM) report.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceStringFilterList"
+        },
+        {
+          "description": "The account IDs used as resource filter criteria."
+        }
+      ]
+    },
+    "ec2InstanceTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceMapFilterList"
+        },
+        {
+          "description": "The EC2 instance tags used as resource filter criteria."
+        }
+      ]
+    },
+    "ecrImageTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceStringFilterList"
+        },
+        {
+          "description": "The ECR image tags used as resource filter criteria."
+        }
+      ]
+    },
+    "ecrRepositoryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceStringFilterList"
+        },
+        {
+          "description": "The ECR repository names used as resource filter criteria."
+        }
+      ]
+    },
+    "lambdaFunctionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceStringFilterList"
+        },
+        {
+          "description": "The AWS Lambda function name used as resource filter criteria."
+        }
+      ]
+    },
+    "lambdaFunctionTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceMapFilterList"
+        },
+        {
+          "description": "The AWS Lambda function tags used as resource filter criteria."
+        }
+      ]
+    },
+    "resourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceStringFilterList"
+        },
+        {
+          "description": "The resource IDs used as resource filter criteria."
+        }
+      ]
+    },
+    "resourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceStringFilterList"
+        },
+        {
+          "description": "The resource types used as resource filter criteria."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-counts-structure.json",
+  "name": "Counts",
+  "description": "a structure that contains information on the count of resources within a group.",
+  "type": "object",
+  "properties": {
+    "count": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggCounts"
+        },
+        {
+          "description": "The number of resources."
+        }
+      ]
+    },
+    "groupKey": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/GroupKey"
+        },
+        {
+          "description": "The key associated with this group"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-delete-filter-response-structure.json",
+  "name": "DeleteFilterResponse",
+  "description": "DeleteFilterResponse schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterArn"
+        },
+        {
+          "description": "The Amazon Resource Number (ARN) of the filter that has been deleted."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

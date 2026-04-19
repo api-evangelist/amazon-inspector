@@ -1,0 +1,14 @@
+{
+  "ec2": "example-value",
+  "ecr": "example-value",
+  "lambda": {
+    "errorCode": "example-value",
+    "errorMessage": "example-value",
+    "status": "ACTIVE"
+  },
+  "lambdaCode": {
+    "errorCode": "example-value",
+    "errorMessage": "example-value",
+    "status": "ACTIVE"
+  }
+}

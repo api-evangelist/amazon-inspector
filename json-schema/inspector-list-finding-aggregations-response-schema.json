@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-list-finding-aggregations-response-schema.json",
+  "title": "ListFindingAggregationsResponse",
+  "description": "ListFindingAggregationsResponse schema",
+  "type": "object",
+  "properties": {
+    "aggregationType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationType"
+        },
+        {
+          "description": "The type of aggregation to perform."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page."
+        }
+      ]
+    },
+    "responses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationResponseList"
+        },
+        {
+          "description": "Objects that contain the results of an aggregation operation."
+        }
+      ]
+    }
+  },
+  "required": [
+    "aggregationType"
+  ]
+}

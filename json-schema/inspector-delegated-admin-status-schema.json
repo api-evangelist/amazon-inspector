@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-delegated-admin-status-schema.json",
+  "title": "DelegatedAdminStatus",
+  "description": "DelegatedAdminStatus schema",
+  "type": "string",
+  "enum": [
+    "ENABLED",
+    "DISABLE_IN_PROGRESS"
+  ]
+}

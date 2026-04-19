@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-get-member-response-structure.json",
+  "name": "GetMemberResponse",
+  "description": "GetMemberResponse schema",
+  "type": "object",
+  "properties": {
+    "member": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Member"
+        },
+        {
+          "description": "Details of the retrieved member account."
+        }
+      ]
+    }
+  }
+}

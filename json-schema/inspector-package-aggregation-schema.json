@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-package-aggregation-schema.json",
+  "title": "PackageAggregation",
+  "description": "The details that define an aggregation based on operating system package type.",
+  "type": "object",
+  "properties": {
+    "packageNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The names of packages to aggregate findings on."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PackageSortBy"
+        },
+        {
+          "description": "The value to sort results by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to sort results by."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-resource-scan-type-structure.json",
+  "name": "ResourceScanType",
+  "description": "ResourceScanType schema",
+  "type": "string",
+  "enum": [
+    "EC2",
+    "ECR",
+    "LAMBDA",
+    "LAMBDA_CODE"
+  ]
+}

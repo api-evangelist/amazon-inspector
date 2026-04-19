@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-create-sbom-export-request-schema.json",
+  "title": "CreateSbomExportRequest",
+  "description": "CreateSbomExportRequest schema",
+  "type": "object",
+  "properties": {
+    "reportFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SbomReportFormat"
+        },
+        {
+          "description": "The output format for the software bill of materials (SBOM) report."
+        }
+      ]
+    },
+    "resourceFilterCriteria": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceFilterCriteria"
+        },
+        {
+          "description": "The resource filter criteria for the software bill of materials (SBOM) report."
+        }
+      ]
+    },
+    "s3Destination": {
+      "type": "object",
+      "required": [
+        "bucketName",
+        "kmsKeyArn"
+      ],
+      "properties": {
+        "bucketName": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/String"
+            },
+            {
+              "description": "The name of the Amazon S3 bucket to export findings to."
+            }
+          ]
+        },
+        "keyPrefix": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/String"
+            },
+            {
+              "description": "The prefix that the findings will be written under."
+            }
+          ]
+        },
+        "kmsKeyArn": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/String"
+            },
+            {
+              "description": "The ARN of the KMS key used to encrypt data when exporting findings."
+            }
+          ]
+        }
+      },
+      "description": "Contains details of the Amazon S3 bucket and KMS key used to export findings."
+    }
+  },
+  "required": [
+    "reportFormat",
+    "s3Destination"
+  ]
+}

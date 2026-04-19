@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-ami-aggregation-response-structure.json",
+  "name": "AmiAggregationResponse",
+  "description": "A response that contains the results of a finding aggregation by AMI.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services account ID for the AMI."
+        }
+      ]
+    },
+    "affectedInstances": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The IDs of Amazon EC2 instances using this AMI."
+        }
+      ]
+    },
+    "ami": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmiId"
+        },
+        {
+          "description": "The ID of the AMI that findings were aggregated for."
+        }
+      ]
+    },
+    "severityCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SeverityCounts"
+        },
+        {
+          "description": "An object that contains the count of matched findings per severity."
+        }
+      ]
+    }
+  },
+  "required": [
+    "ami"
+  ]
+}

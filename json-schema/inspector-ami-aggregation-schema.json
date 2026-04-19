@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-ami-aggregation-schema.json",
+  "title": "AmiAggregation",
+  "description": "The details that define an aggregation based on Amazon machine images (AMIs).",
+  "type": "object",
+  "properties": {
+    "amis": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The IDs of AMIs to aggregate findings for."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmiSortBy"
+        },
+        {
+          "description": "The value to sort results by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to sort results by."
+        }
+      ]
+    }
+  }
+}

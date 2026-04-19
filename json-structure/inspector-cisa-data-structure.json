@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-cisa-data-structure.json",
+  "name": "CisaData",
+  "description": "The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.",
+  "type": "object",
+  "properties": {
+    "action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CisaAction"
+        },
+        {
+          "description": "The remediation action recommended by CISA for this vulnerability."
+        }
+      ]
+    },
+    "dateAdded": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CisaDateAdded"
+        },
+        {
+          "description": "The date and time CISA added this vulnerability to their catalogue."
+        }
+      ]
+    },
+    "dateDue": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CisaDateDue"
+        },
+        {
+          "description": "The date and time CISA expects a fix to have been provided vulnerability."
+        }
+      ]
+    }
+  }
+}

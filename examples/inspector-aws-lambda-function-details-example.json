@@ -1,0 +1,12 @@
+{
+  "architectures": "example-value",
+  "codeSha256": "example-value",
+  "executionRoleArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "functionName": "example-resource",
+  "lastModifiedAt": "example-value",
+  "layers": "example-value",
+  "packageType": "example-value",
+  "runtime": "2025-03-15T14:30:00Z",
+  "version": "example-value",
+  "vpcConfig": "example-value"
+}

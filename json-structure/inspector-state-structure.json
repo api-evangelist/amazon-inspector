@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-state-structure.json",
+  "name": "State",
+  "description": "An object that described the state of Amazon Inspector scans for an account.",
+  "type": "object",
+  "properties": {
+    "errorCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ErrorCode"
+        },
+        {
+          "description": "The error code explaining why the account failed to enable Amazon Inspector."
+        }
+      ]
+    },
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The error message received when the account failed to enable Amazon Inspector."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Status"
+        },
+        {
+          "description": "The status of Amazon Inspector for the account."
+        }
+      ]
+    }
+  },
+  "required": [
+    "errorCode",
+    "errorMessage",
+    "status"
+  ]
+}

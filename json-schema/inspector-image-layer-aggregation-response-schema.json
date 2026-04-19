@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-image-layer-aggregation-response-schema.json",
+  "title": "ImageLayerAggregationResponse",
+  "description": "A response that contains the results of a finding aggregation by image layer.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account that owns the container image hosting the layer image."
+        }
+      ]
+    },
+    "layerHash": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The layer hash."
+        }
+      ]
+    },
+    "repository": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The repository the layer resides in."
+        }
+      ]
+    },
+    "resourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The resource ID of the container image layer."
+        }
+      ]
+    },
+    "severityCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SeverityCounts"
+        },
+        {
+          "description": "An object that represents the count of matched findings per severity."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accountId",
+    "layerHash",
+    "repository",
+    "resourceId"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-finding-type-aggregation-structure.json",
+  "name": "FindingTypeAggregation",
+  "description": "The details that define an aggregation based on finding type.",
+  "type": "object",
+  "properties": {
+    "findingType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationFindingType"
+        },
+        {
+          "description": "The finding type to aggregate."
+        }
+      ]
+    },
+    "resourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationResourceType"
+        },
+        {
+          "description": "The resource type to aggregate."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingTypeSortBy"
+        },
+        {
+          "description": "The value to sort results by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to sort results by."
+        }
+      ]
+    }
+  }
+}

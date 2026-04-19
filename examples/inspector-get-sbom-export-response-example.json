@@ -1,0 +1,13 @@
+{
+  "errorCode": "example-value",
+  "errorMessage": "example-value",
+  "filterCriteria": "example-value",
+  "format": "example-value",
+  "reportId": "id-abc123",
+  "s3Destination": {
+    "bucketName": "example-resource",
+    "keyPrefix": "example-value",
+    "kmsKeyArn": "arn:aws:iot:us-east-1:123456789012:thing/example"
+  },
+  "status": "ACTIVE"
+}

@@ -1,0 +1,9 @@
+{
+  "reportFormat": "example-value",
+  "resourceFilterCriteria": "example-value",
+  "s3Destination": {
+    "bucketName": "example-resource",
+    "keyPrefix": "example-value",
+    "kmsKeyArn": "arn:aws:iot:us-east-1:123456789012:thing/example"
+  }
+}

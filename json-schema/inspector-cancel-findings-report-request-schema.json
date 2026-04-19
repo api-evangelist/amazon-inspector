@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-cancel-findings-report-request-schema.json",
+  "title": "CancelFindingsReportRequest",
+  "description": "CancelFindingsReportRequest schema",
+  "type": "object",
+  "properties": {
+    "reportId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReportId"
+        },
+        {
+          "description": "The ID of the report to be canceled."
+        }
+      ]
+    }
+  },
+  "required": [
+    "reportId"
+  ]
+}

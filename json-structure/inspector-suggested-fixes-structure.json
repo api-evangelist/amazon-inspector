@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-suggested-fixes-structure.json",
+  "name": "SuggestedFixes",
+  "description": "SuggestedFixes schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SuggestedFixCodeString"
+          },
+          {
+            "description": "The fix's code."
+          }
+        ]
+      },
+      "description": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SuggestedFixDescriptionString"
+          },
+          {
+            "description": "The fix's description."
+          }
+        ]
+      }
+    },
+    "description": "A suggested fix for a vulnerability in your Lambda function code."
+  }
+}

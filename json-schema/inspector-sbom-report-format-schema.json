@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-sbom-report-format-schema.json",
+  "title": "SbomReportFormat",
+  "description": "SbomReportFormat schema",
+  "type": "string",
+  "enum": [
+    "CYCLONEDX_1_4",
+    "SPDX_2_3"
+  ]
+}

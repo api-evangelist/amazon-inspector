@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-create-filter-request-structure.json",
+  "name": "CreateFilterRequest",
+  "description": "CreateFilterRequest schema",
+  "type": "object",
+  "properties": {
+    "action": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterAction"
+        },
+        {
+          "description": "Defines the action that is to be applied to the findings that match the filter."
+        }
+      ]
+    },
+    "description": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterDescription"
+        },
+        {
+          "description": "A description of the filter."
+        }
+      ]
+    },
+    "filterCriteria": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterCriteria"
+        },
+        {
+          "description": "Defines the criteria to be used in the filter for querying findings."
+        }
+      ]
+    },
+    "name": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterName"
+        },
+        {
+          "description": "The name of the filter. Minimum length of 3. Maximum length of 64. Valid characters include alphanumeric characters, dot (.), underscore (_), and dash (-). Spaces are not allowed."
+        }
+      ]
+    },
+    "reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterReason"
+        },
+        {
+          "description": "The reason for creating the filter."
+        }
+      ]
+    },
+    "tags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "A list of tags for the filter."
+        }
+      ]
+    }
+  },
+  "required": [
+    "action",
+    "filterCriteria",
+    "name"
+  ]
+}

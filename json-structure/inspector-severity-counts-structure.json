@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-severity-counts-structure.json",
+  "name": "SeverityCounts",
+  "description": "An object that contains the counts of aggregated finding per severity.",
+  "type": "object",
+  "properties": {
+    "all": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The total count of findings from all severities."
+        }
+      ]
+    },
+    "critical": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The total count of critical severity findings."
+        }
+      ]
+    },
+    "high": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The total count of high severity findings."
+        }
+      ]
+    },
+    "medium": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The total count of medium severity findings."
+        }
+      ]
+    }
+  }
+}

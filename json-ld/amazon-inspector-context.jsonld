@@ -1,138 +1,1016 @@
 {
   "@context": {
-    "@vocab": "https://schema.org/",
-    "inspector": "https://docs.aws.amazon.com/inspector/v2/APIReference/",
-    "aws": "https://aws.amazon.com/",
+    "@version": 1.1,
+    "amzn": "https://amazonaws.com/schema/",
     "schema": "https://schema.org/",
-    "xsd": "http://www.w3.org/2001/XMLSchema#",
     "dcterms": "http://purl.org/dc/terms/",
-
-    "Finding": {
-      "@id": "inspector:API_Finding",
-      "@context": {
-        "findingArn": {
-          "@id": "schema:identifier",
-          "@type": "xsd:string"
-        },
-        "severity": {
-          "@id": "inspector:severity",
-          "@type": "xsd:string"
-        },
-        "status": {
-          "@id": "inspector:findingStatus",
-          "@type": "xsd:string"
-        },
-        "type": {
-          "@id": "inspector:findingType",
-          "@type": "xsd:string"
-        },
-        "title": {
-          "@id": "schema:name",
-          "@type": "xsd:string"
-        },
-        "description": {
-          "@id": "schema:description",
-          "@type": "xsd:string"
-        },
-        "awsAccountId": {
-          "@id": "inspector:awsAccountId",
-          "@type": "xsd:string"
-        },
-        "firstObservedAt": {
-          "@id": "schema:dateCreated",
-          "@type": "xsd:dateTime"
-        },
-        "lastObservedAt": {
-          "@id": "schema:dateModified",
-          "@type": "xsd:dateTime"
-        },
-        "inspectorScore": {
-          "@id": "inspector:inspectorScore",
-          "@type": "xsd:decimal"
-        },
-        "resources": {
-          "@id": "inspector:affectedResources",
-          "@container": "@list"
-        },
-        "remediation": {
-          "@id": "inspector:remediation",
-          "@type": "inspector:Remediation"
-        }
-      }
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Account": "amzn:Account",
+    "AccountAggregation": "amzn:AccountAggregation",
+    "AccountAggregationResponse": "amzn:AccountAggregationResponse",
+    "AccountState": "amzn:AccountState",
+    "AggregationRequest": "amzn:AggregationRequest",
+    "AggregationResponse": "amzn:AggregationResponse",
+    "Amazon Inspector Finding Definition": "amzn:Amazon Inspector Finding Definition",
+    "AmiAggregation": "amzn:AmiAggregation",
+    "AmiAggregationResponse": "amzn:AmiAggregationResponse",
+    "AssociateMemberRequest": "amzn:AssociateMemberRequest",
+    "AssociateMemberResponse": "amzn:AssociateMemberResponse",
+    "AtigData": "amzn:AtigData",
+    "AutoEnable": "amzn:AutoEnable",
+    "AwsEc2InstanceDetails": "amzn:AwsEc2InstanceDetails",
+    "AwsEcrContainerAggregation": "amzn:AwsEcrContainerAggregation",
+    "AwsEcrContainerAggregationResponse": "amzn:AwsEcrContainerAggregationResponse",
+    "AwsEcrContainerImageDetails": "amzn:AwsEcrContainerImageDetails",
+    "AwsLambdaFunctionDetails": "amzn:AwsLambdaFunctionDetails",
+    "BatchGetAccountStatusRequest": "amzn:BatchGetAccountStatusRequest",
+    "BatchGetAccountStatusResponse": "amzn:BatchGetAccountStatusResponse",
+    "BatchGetCodeSnippetRequest": "amzn:BatchGetCodeSnippetRequest",
+    "BatchGetCodeSnippetResponse": "amzn:BatchGetCodeSnippetResponse",
+    "BatchGetFindingDetailsRequest": "amzn:BatchGetFindingDetailsRequest",
+    "BatchGetFindingDetailsResponse": "amzn:BatchGetFindingDetailsResponse",
+    "BatchGetFreeTrialInfoRequest": "amzn:BatchGetFreeTrialInfoRequest",
+    "BatchGetFreeTrialInfoResponse": "amzn:BatchGetFreeTrialInfoResponse",
+    "BatchGetMemberEc2DeepInspectionStatusRequest": "amzn:BatchGetMemberEc2DeepInspectionStatusRequest",
+    "BatchGetMemberEc2DeepInspectionStatusResponse": "amzn:BatchGetMemberEc2DeepInspectionStatusResponse",
+    "BatchUpdateMemberEc2DeepInspectionStatusRequest": "amzn:BatchUpdateMemberEc2DeepInspectionStatusRequest",
+    "BatchUpdateMemberEc2DeepInspectionStatusResponse": "amzn:BatchUpdateMemberEc2DeepInspectionStatusResponse",
+    "CancelFindingsReportRequest": "amzn:CancelFindingsReportRequest",
+    "CancelFindingsReportResponse": "amzn:CancelFindingsReportResponse",
+    "CancelSbomExportRequest": "amzn:CancelSbomExportRequest",
+    "CancelSbomExportResponse": "amzn:CancelSbomExportResponse",
+    "CisaData": "amzn:CisaData",
+    "CodeFilePath": "amzn:CodeFilePath",
+    "CodeLine": "amzn:CodeLine",
+    "CodeSnippetError": "amzn:CodeSnippetError",
+    "CodeSnippetResult": "amzn:CodeSnippetResult",
+    "CodeVulnerabilityDetails": "amzn:CodeVulnerabilityDetails",
+    "Counts": "amzn:Counts",
+    "CoverageDateFilter": "amzn:CoverageDateFilter",
+    "CoverageFilterCriteria": "amzn:CoverageFilterCriteria",
+    "CoverageMapFilter": "amzn:CoverageMapFilter",
+    "CoverageStringFilter": "amzn:CoverageStringFilter",
+    "CoveredResource": "amzn:CoveredResource",
+    "CreateFilterRequest": "amzn:CreateFilterRequest",
+    "CreateFilterResponse": "amzn:CreateFilterResponse",
+    "CreateFindingsReportRequest": "amzn:CreateFindingsReportRequest",
+    "CreateFindingsReportResponse": "amzn:CreateFindingsReportResponse",
+    "CreateSbomExportRequest": "amzn:CreateSbomExportRequest",
+    "CreateSbomExportResponse": "amzn:CreateSbomExportResponse",
+    "Cvss2": "amzn:Cvss2",
+    "Cvss3": "amzn:Cvss3",
+    "CvssScore": "amzn:CvssScore",
+    "CvssScoreAdjustment": "amzn:CvssScoreAdjustment",
+    "CvssScoreDetails": "amzn:CvssScoreDetails",
+    "DateFilter": "amzn:DateFilter",
+    "DelegatedAdmin": "amzn:DelegatedAdmin",
+    "DelegatedAdminAccount": "amzn:DelegatedAdminAccount",
+    "DeleteFilterRequest": "amzn:DeleteFilterRequest",
+    "DeleteFilterResponse": "amzn:DeleteFilterResponse",
+    "DescribeOrganizationConfigurationRequest": "amzn:DescribeOrganizationConfigurationRequest",
+    "DescribeOrganizationConfigurationResponse": "amzn:DescribeOrganizationConfigurationResponse",
+    "Destination": "amzn:Destination",
+    "DisableDelegatedAdminAccountRequest": "amzn:DisableDelegatedAdminAccountRequest",
+    "DisableDelegatedAdminAccountResponse": "amzn:DisableDelegatedAdminAccountResponse",
+    "DisableResponse": "amzn:DisableResponse",
+    "DisassociateMemberResponse": "amzn:DisassociateMemberResponse",
+    "Ec2InstanceAggregation": "amzn:Ec2InstanceAggregation",
+    "Ec2InstanceAggregationResponse": "amzn:Ec2InstanceAggregationResponse",
+    "EnableDelegatedAdminAccountResponse": "amzn:EnableDelegatedAdminAccountResponse",
+    "EnableResponse": "amzn:EnableResponse",
+    "FilterCriteria": "amzn:FilterCriteria",
+    "FindingTypeAggregation": "amzn:FindingTypeAggregation",
+    "FindingTypeAggregationResponse": "amzn:FindingTypeAggregationResponse",
+    "GetConfigurationResponse": "amzn:GetConfigurationResponse",
+    "GetDelegatedAdminAccountResponse": "amzn:GetDelegatedAdminAccountResponse",
+    "GetEc2DeepInspectionConfigurationResponse": "amzn:GetEc2DeepInspectionConfigurationResponse",
+    "GetEncryptionKeyResponse": "amzn:GetEncryptionKeyResponse",
+    "GetFindingsReportStatusResponse": "amzn:GetFindingsReportStatusResponse",
+    "GetMemberResponse": "amzn:GetMemberResponse",
+    "GetSbomExportResponse": "amzn:GetSbomExportResponse",
+    "ImageLayerAggregation": "amzn:ImageLayerAggregation",
+    "ImageLayerAggregationResponse": "amzn:ImageLayerAggregationResponse",
+    "LambdaFunctionAggregation": "amzn:LambdaFunctionAggregation",
+    "LambdaFunctionAggregationResponse": "amzn:LambdaFunctionAggregationResponse",
+    "LambdaLayerAggregation": "amzn:LambdaLayerAggregation",
+    "LambdaLayerAggregationResponse": "amzn:LambdaLayerAggregationResponse",
+    "LambdaVpcConfig": "amzn:LambdaVpcConfig",
+    "ListAccountPermissionsResponse": "amzn:ListAccountPermissionsResponse",
+    "ListCoverageResponse": "amzn:ListCoverageResponse",
+    "ListCoverageStatisticsResponse": "amzn:ListCoverageStatisticsResponse",
+    "ListDelegatedAdminAccountsResponse": "amzn:ListDelegatedAdminAccountsResponse",
+    "ListFiltersResponse": "amzn:ListFiltersResponse",
+    "ListFindingAggregationsResponse": "amzn:ListFindingAggregationsResponse",
+    "ListFindingsResponse": "amzn:ListFindingsResponse",
+    "ListMembersResponse": "amzn:ListMembersResponse",
+    "ListTagsForResourceResponse": "amzn:ListTagsForResourceResponse",
+    "ListUsageTotalsResponse": "amzn:ListUsageTotalsResponse",
+    "accountAggregation": {
+      "@id": "amzn:accountAggregation",
+      "@type": "xsd:string"
     },
-
-    "Resource": {
-      "@id": "inspector:AffectedResource",
-      "@context": {
-        "id": {
-          "@id": "schema:identifier",
-          "@type": "xsd:string"
-        },
-        "type": {
-          "@id": "inspector:resourceType",
-          "@type": "xsd:string"
-        },
-        "region": {
-          "@id": "inspector:awsRegion",
-          "@type": "xsd:string"
-        },
-        "tags": {
-          "@id": "schema:keywords",
-          "@container": "@index"
-        }
-      }
+    "accountId": {
+      "@id": "amzn:accountId",
+      "@type": "xsd:string"
     },
-
-    "Vulnerability": {
-      "@id": "inspector:PackageVulnerability",
-      "@context": {
-        "vulnerabilityId": {
-          "@id": "schema:identifier",
-          "@type": "xsd:string"
-        },
-        "source": {
-          "@id": "inspector:vulnerabilitySource",
-          "@type": "xsd:string"
-        },
-        "sourceUrl": {
-          "@id": "schema:url",
-          "@type": "@id"
-        },
-        "cvss": {
-          "@id": "inspector:cvssScores",
-          "@container": "@list"
-        },
-        "vulnerablePackages": {
-          "@id": "inspector:vulnerablePackages",
-          "@container": "@list"
-        }
-      }
+    "accountIds": {
+      "@id": "amzn:accountIds",
+      "@type": "xsd:string"
     },
-
-    "Filter": {
-      "@id": "inspector:API_Filter",
-      "@context": {
-        "arn": {
-          "@id": "schema:identifier",
-          "@type": "xsd:string"
-        },
-        "name": {
-          "@id": "schema:name",
-          "@type": "xsd:string"
-        },
-        "description": {
-          "@id": "schema:description",
-          "@type": "xsd:string"
-        },
-        "action": {
-          "@id": "inspector:filterAction",
-          "@type": "xsd:string"
-        },
-        "criteria": {
-          "@id": "inspector:filterCriteria",
-          "@type": "inspector:FilterCriteria"
-        }
-      }
+    "accounts": {
+      "@id": "amzn:accounts",
+      "@type": "xsd:string"
+    },
+    "action": {
+      "@id": "amzn:action",
+      "@type": "xsd:string"
+    },
+    "activateDeepInspection": {
+      "@id": "amzn:activateDeepInspection",
+      "@type": "xsd:string"
+    },
+    "adjustments": {
+      "@id": "amzn:adjustments",
+      "@type": "xsd:string"
+    },
+    "affectedImages": {
+      "@id": "amzn:affectedImages",
+      "@type": "xsd:string"
+    },
+    "affectedInstances": {
+      "@id": "amzn:affectedInstances",
+      "@type": "xsd:string"
+    },
+    "aggregationType": {
+      "@id": "amzn:aggregationType",
+      "@type": "xsd:string"
+    },
+    "all": {
+      "@id": "amzn:all",
+      "@type": "xsd:string"
+    },
+    "ami": {
+      "@id": "amzn:ami",
+      "@type": "xsd:string"
+    },
+    "amiAggregation": {
+      "@id": "amzn:amiAggregation",
+      "@type": "xsd:string"
+    },
+    "amis": {
+      "@id": "amzn:amis",
+      "@type": "xsd:string"
+    },
+    "architecture": {
+      "@id": "amzn:architecture",
+      "@type": "xsd:string"
+    },
+    "architectures": {
+      "@id": "amzn:architectures",
+      "@type": "xsd:string"
+    },
+    "arn": {
+      "@id": "amzn:arn",
+      "@type": "xsd:string"
+    },
+    "author": {
+      "@id": "amzn:author",
+      "@type": "xsd:string"
+    },
+    "autoEnable": {
+      "@id": "amzn:autoEnable",
+      "@type": "xsd:string"
+    },
+    "awsAccountId": {
+      "@id": "amzn:awsAccountId",
+      "@type": "xsd:string"
+    },
+    "awsEcrContainerAggregation": {
+      "@id": "amzn:awsEcrContainerAggregation",
+      "@type": "xsd:string"
+    },
+    "baseScore": {
+      "@id": "amzn:baseScore",
+      "@type": "xsd:string"
+    },
+    "bucketName": {
+      "@id": "amzn:bucketName",
+      "@type": "xsd:string"
+    },
+    "codeSha256": {
+      "@id": "amzn:codeSha256",
+      "@type": "xsd:string"
+    },
+    "codeSnippet": {
+      "@id": "amzn:codeSnippet",
+      "@type": "xsd:string"
+    },
+    "codeSnippetResults": {
+      "@id": "amzn:codeSnippetResults",
+      "@type": "xsd:string"
+    },
+    "codeVulnerabilityDetectorName": {
+      "@id": "amzn:codeVulnerabilityDetectorName",
+      "@type": "xsd:string"
+    },
+    "codeVulnerabilityDetectorTags": {
+      "@id": "amzn:codeVulnerabilityDetectorTags",
+      "@type": "xsd:string"
+    },
+    "codeVulnerabilityFilePath": {
+      "@id": "amzn:codeVulnerabilityFilePath",
+      "@type": "xsd:string"
+    },
+    "comparison": {
+      "@id": "amzn:comparison",
+      "@type": "xsd:string"
+    },
+    "componentId": {
+      "@id": "amzn:componentId",
+      "@type": "xsd:string"
+    },
+    "componentType": {
+      "@id": "amzn:componentType",
+      "@type": "xsd:string"
+    },
+    "content": {
+      "@id": "amzn:content",
+      "@type": "xsd:string"
+    },
+    "count": {
+      "@id": "amzn:count",
+      "@type": "xsd:string"
+    },
+    "countsByGroup": {
+      "@id": "amzn:countsByGroup",
+      "@type": "xsd:string"
+    },
+    "coveredResources": {
+      "@id": "amzn:coveredResources",
+      "@type": "xsd:string"
+    },
+    "critical": {
+      "@id": "amzn:critical",
+      "@type": "xsd:string"
+    },
+    "cvssSource": {
+      "@id": "amzn:cvssSource",
+      "@type": "xsd:string"
+    },
+    "cwes": {
+      "@id": "amzn:cwes",
+      "@type": "xsd:string"
+    },
+    "dateAdded": {
+      "@id": "amzn:dateAdded",
+      "@type": "xsd:string"
+    },
+    "dateDue": {
+      "@id": "amzn:dateDue",
+      "@type": "xsd:string"
+    },
+    "delegatedAdmin": {
+      "@id": "amzn:delegatedAdmin",
+      "@type": "xsd:string"
+    },
+    "delegatedAdminAccountId": {
+      "@id": "amzn:delegatedAdminAccountId",
+      "@type": "xsd:string"
+    },
+    "delegatedAdminAccounts": {
+      "@id": "amzn:delegatedAdminAccounts",
+      "@type": "xsd:string"
+    },
+    "description": "schema:description",
+    "destination": {
+      "@id": "amzn:destination",
+      "@type": "xsd:string"
+    },
+    "detectorId": {
+      "@id": "amzn:detectorId",
+      "@type": "xsd:string"
+    },
+    "detectorName": {
+      "@id": "amzn:detectorName",
+      "@type": "xsd:string"
+    },
+    "detectorTags": {
+      "@id": "amzn:detectorTags",
+      "@type": "xsd:string"
+    },
+    "ec2": {
+      "@id": "amzn:ec2",
+      "@type": "xsd:string"
+    },
+    "ec2InstanceAggregation": {
+      "@id": "amzn:ec2InstanceAggregation",
+      "@type": "xsd:string"
+    },
+    "ec2InstanceImageId": {
+      "@id": "amzn:ec2InstanceImageId",
+      "@type": "xsd:string"
+    },
+    "ec2InstanceSubnetId": {
+      "@id": "amzn:ec2InstanceSubnetId",
+      "@type": "xsd:string"
+    },
+    "ec2InstanceTags": {
+      "@id": "amzn:ec2InstanceTags",
+      "@type": "xsd:string"
+    },
+    "ec2InstanceVpcId": {
+      "@id": "amzn:ec2InstanceVpcId",
+      "@type": "xsd:string"
+    },
+    "ecr": {
+      "@id": "amzn:ecr",
+      "@type": "xsd:string"
+    },
+    "ecrConfiguration": {
+      "@id": "amzn:ecrConfiguration",
+      "@type": "xsd:string"
+    },
+    "ecrImage": {
+      "@id": "amzn:ecrImage",
+      "@type": "xsd:string"
+    },
+    "ecrImageArchitecture": {
+      "@id": "amzn:ecrImageArchitecture",
+      "@type": "xsd:string"
+    },
+    "ecrImageHash": {
+      "@id": "amzn:ecrImageHash",
+      "@type": "xsd:string"
+    },
+    "ecrImagePushedAt": {
+      "@id": "amzn:ecrImagePushedAt",
+      "@type": "xsd:string"
+    },
+    "ecrImageRegistry": {
+      "@id": "amzn:ecrImageRegistry",
+      "@type": "xsd:string"
+    },
+    "ecrImageRepositoryName": {
+      "@id": "amzn:ecrImageRepositoryName",
+      "@type": "xsd:string"
+    },
+    "ecrImageTags": {
+      "@id": "amzn:ecrImageTags",
+      "@type": "xsd:string"
+    },
+    "ecrRepository": {
+      "@id": "amzn:ecrRepository",
+      "@type": "xsd:string"
+    },
+    "ecrRepositoryName": {
+      "@id": "amzn:ecrRepositoryName",
+      "@type": "xsd:string"
+    },
+    "endInclusive": {
+      "@id": "amzn:endInclusive",
+      "@type": "xsd:string"
+    },
+    "endLine": {
+      "@id": "amzn:endLine",
+      "@type": "xsd:string"
+    },
+    "epssScore": {
+      "@id": "amzn:epssScore",
+      "@type": "xsd:string"
+    },
+    "errorCode": {
+      "@id": "amzn:errorCode",
+      "@type": "xsd:string"
+    },
+    "errorMessage": {
+      "@id": "amzn:errorMessage",
+      "@type": "xsd:string"
+    },
+    "errors": {
+      "@id": "amzn:errors",
+      "@type": "xsd:string"
+    },
+    "executionRoleArn": {
+      "@id": "amzn:executionRoleArn",
+      "@type": "xsd:string"
+    },
+    "exploitAvailable": {
+      "@id": "amzn:exploitAvailable",
+      "@type": "xsd:string"
+    },
+    "failedAccountIds": {
+      "@id": "amzn:failedAccountIds",
+      "@type": "xsd:string"
+    },
+    "failedAccounts": {
+      "@id": "amzn:failedAccounts",
+      "@type": "xsd:string"
+    },
+    "fileName": {
+      "@id": "amzn:fileName",
+      "@type": "xsd:string"
+    },
+    "filePath": {
+      "@id": "amzn:filePath",
+      "@type": "xsd:string"
+    },
+    "filterCriteria": {
+      "@id": "amzn:filterCriteria",
+      "@type": "xsd:string"
+    },
+    "filters": {
+      "@id": "amzn:filters",
+      "@type": "xsd:string"
+    },
+    "findingArn": {
+      "@id": "amzn:findingArn",
+      "@type": "xsd:string"
+    },
+    "findingArns": {
+      "@id": "amzn:findingArns",
+      "@type": "xsd:string"
+    },
+    "findingDetails": {
+      "@id": "amzn:findingDetails",
+      "@type": "xsd:string"
+    },
+    "findingStatus": {
+      "@id": "amzn:findingStatus",
+      "@type": "xsd:string"
+    },
+    "findingType": {
+      "@id": "amzn:findingType",
+      "@type": "xsd:string"
+    },
+    "findingTypeAggregation": {
+      "@id": "amzn:findingTypeAggregation",
+      "@type": "xsd:string"
+    },
+    "findings": {
+      "@id": "amzn:findings",
+      "@type": "xsd:string"
+    },
+    "firstObservedAt": {
+      "@id": "amzn:firstObservedAt",
+      "@type": "xsd:dateTime"
+    },
+    "firstSeen": {
+      "@id": "amzn:firstSeen",
+      "@type": "xsd:string"
+    },
+    "fixAvailable": {
+      "@id": "amzn:fixAvailable",
+      "@type": "xsd:string"
+    },
+    "format": {
+      "@id": "amzn:format",
+      "@type": "xsd:string"
+    },
+    "functionName": {
+      "@id": "amzn:functionName",
+      "@type": "xsd:string"
+    },
+    "functionNames": {
+      "@id": "amzn:functionNames",
+      "@type": "xsd:string"
+    },
+    "functionTags": {
+      "@id": "amzn:functionTags",
+      "@type": "xsd:string"
+    },
+    "groupKey": {
+      "@id": "amzn:groupKey",
+      "@type": "xsd:string"
+    },
+    "high": {
+      "@id": "amzn:high",
+      "@type": "xsd:string"
+    },
+    "iamInstanceProfileArn": {
+      "@id": "amzn:iamInstanceProfileArn",
+      "@type": "xsd:string"
+    },
+    "imageHash": {
+      "@id": "amzn:imageHash",
+      "@type": "xsd:string"
+    },
+    "imageId": {
+      "@id": "amzn:imageId",
+      "@type": "xsd:string"
+    },
+    "imageLayerAggregation": {
+      "@id": "amzn:imageLayerAggregation",
+      "@type": "xsd:string"
+    },
+    "imageSha": {
+      "@id": "amzn:imageSha",
+      "@type": "xsd:string"
+    },
+    "imageShas": {
+      "@id": "amzn:imageShas",
+      "@type": "xsd:string"
+    },
+    "imageTags": {
+      "@id": "amzn:imageTags",
+      "@type": "xsd:string"
+    },
+    "inspectorScore": {
+      "@id": "amzn:inspectorScore",
+      "@type": "xsd:string"
+    },
+    "instanceId": {
+      "@id": "amzn:instanceId",
+      "@type": "xsd:string"
+    },
+    "instanceIds": {
+      "@id": "amzn:instanceIds",
+      "@type": "xsd:string"
+    },
+    "instanceTags": {
+      "@id": "amzn:instanceTags",
+      "@type": "xsd:string"
+    },
+    "ipV4Addresses": {
+      "@id": "amzn:ipV4Addresses",
+      "@type": "xsd:string"
+    },
+    "ipV6Addresses": {
+      "@id": "amzn:ipV6Addresses",
+      "@type": "xsd:string"
+    },
+    "key": {
+      "@id": "amzn:key",
+      "@type": "xsd:string"
+    },
+    "keyName": {
+      "@id": "amzn:keyName",
+      "@type": "xsd:string"
+    },
+    "keyPrefix": {
+      "@id": "amzn:keyPrefix",
+      "@type": "xsd:string"
+    },
+    "kmsKeyArn": {
+      "@id": "amzn:kmsKeyArn",
+      "@type": "xsd:string"
+    },
+    "kmsKeyId": {
+      "@id": "amzn:kmsKeyId",
+      "@type": "xsd:string"
+    },
+    "lambda": {
+      "@id": "amzn:lambda",
+      "@type": "xsd:string"
+    },
+    "lambdaCode": {
+      "@id": "amzn:lambdaCode",
+      "@type": "xsd:string"
+    },
+    "lambdaFunction": {
+      "@id": "amzn:lambdaFunction",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionAggregation": {
+      "@id": "amzn:lambdaFunctionAggregation",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionExecutionRoleArn": {
+      "@id": "amzn:lambdaFunctionExecutionRoleArn",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionLastModifiedAt": {
+      "@id": "amzn:lambdaFunctionLastModifiedAt",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionLayers": {
+      "@id": "amzn:lambdaFunctionLayers",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionName": {
+      "@id": "amzn:lambdaFunctionName",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionRuntime": {
+      "@id": "amzn:lambdaFunctionRuntime",
+      "@type": "xsd:string"
+    },
+    "lambdaFunctionTags": {
+      "@id": "amzn:lambdaFunctionTags",
+      "@type": "xsd:string"
+    },
+    "lambdaLayerAggregation": {
+      "@id": "amzn:lambdaLayerAggregation",
+      "@type": "xsd:string"
+    },
+    "lambdaTags": {
+      "@id": "amzn:lambdaTags",
+      "@type": "xsd:string"
+    },
+    "lastModifiedAt": {
+      "@id": "amzn:lastModifiedAt",
+      "@type": "xsd:string"
+    },
+    "lastObservedAt": {
+      "@id": "amzn:lastObservedAt",
+      "@type": "xsd:dateTime"
+    },
+    "lastScannedAt": {
+      "@id": "amzn:lastScannedAt",
+      "@type": "xsd:string"
+    },
+    "lastSeen": {
+      "@id": "amzn:lastSeen",
+      "@type": "xsd:string"
+    },
+    "launchedAt": {
+      "@id": "amzn:launchedAt",
+      "@type": "xsd:string"
+    },
+    "layerArn": {
+      "@id": "amzn:layerArn",
+      "@type": "xsd:string"
+    },
+    "layerArns": {
+      "@id": "amzn:layerArns",
+      "@type": "xsd:string"
+    },
+    "layerHash": {
+      "@id": "amzn:layerHash",
+      "@type": "xsd:string"
+    },
+    "layerHashes": {
+      "@id": "amzn:layerHashes",
+      "@type": "xsd:string"
+    },
+    "layers": {
+      "@id": "amzn:layers",
+      "@type": "xsd:string"
+    },
+    "lineNumber": {
+      "@id": "amzn:lineNumber",
+      "@type": "xsd:string"
+    },
+    "maxAccountLimitReached": {
+      "@id": "amzn:maxAccountLimitReached",
+      "@type": "xsd:string"
+    },
+    "medium": {
+      "@id": "amzn:medium",
+      "@type": "xsd:string"
+    },
+    "member": {
+      "@id": "amzn:member",
+      "@type": "xsd:string"
+    },
+    "members": {
+      "@id": "amzn:members",
+      "@type": "xsd:string"
+    },
+    "metric": {
+      "@id": "amzn:metric",
+      "@type": "xsd:string"
+    },
+    "name": "schema:name",
+    "networkFindings": {
+      "@id": "amzn:networkFindings",
+      "@type": "xsd:string"
+    },
+    "networkProtocol": {
+      "@id": "amzn:networkProtocol",
+      "@type": "xsd:string"
+    },
+    "networkReachabilityDetails": {
+      "@id": "amzn:networkReachabilityDetails",
+      "@type": "xsd:string"
+    },
+    "nextToken": {
+      "@id": "amzn:nextToken",
+      "@type": "xsd:string"
+    },
+    "operatingSystem": {
+      "@id": "amzn:operatingSystem",
+      "@type": "xsd:string"
+    },
+    "operatingSystems": {
+      "@id": "amzn:operatingSystems",
+      "@type": "xsd:string"
+    },
+    "orgPackagePaths": {
+      "@id": "amzn:orgPackagePaths",
+      "@type": "xsd:string"
+    },
+    "packageAggregation": {
+      "@id": "amzn:packageAggregation",
+      "@type": "xsd:string"
+    },
+    "packageName": {
+      "@id": "amzn:packageName",
+      "@type": "xsd:string"
+    },
+    "packageNames": {
+      "@id": "amzn:packageNames",
+      "@type": "xsd:string"
+    },
+    "packagePaths": {
+      "@id": "amzn:packagePaths",
+      "@type": "xsd:string"
+    },
+    "packageType": {
+      "@id": "amzn:packageType",
+      "@type": "xsd:string"
+    },
+    "packageVulnerabilityDetails": {
+      "@id": "amzn:packageVulnerabilityDetails",
+      "@type": "xsd:string"
+    },
+    "permissions": {
+      "@id": "amzn:permissions",
+      "@type": "xsd:string"
+    },
+    "platform": {
+      "@id": "amzn:platform",
+      "@type": "xsd:string"
+    },
+    "portRange": {
+      "@id": "amzn:portRange",
+      "@type": "xsd:string"
+    },
+    "pushedAt": {
+      "@id": "amzn:pushedAt",
+      "@type": "xsd:string"
+    },
+    "reason": {
+      "@id": "amzn:reason",
+      "@type": "xsd:string"
+    },
+    "referenceUrls": {
+      "@id": "amzn:referenceUrls",
+      "@type": "xsd:string"
+    },
+    "registry": {
+      "@id": "amzn:registry",
+      "@type": "xsd:string"
+    },
+    "relatedVulnerabilities": {
+      "@id": "amzn:relatedVulnerabilities",
+      "@type": "xsd:string"
+    },
+    "relationshipStatus": {
+      "@id": "amzn:relationshipStatus",
+      "@type": "xsd:string"
+    },
+    "remediation": {
+      "@id": "amzn:remediation",
+      "@type": "xsd:string"
+    },
+    "reportFormat": {
+      "@id": "amzn:reportFormat",
+      "@type": "xsd:string"
+    },
+    "reportId": {
+      "@id": "amzn:reportId",
+      "@type": "xsd:string"
+    },
+    "repositories": {
+      "@id": "amzn:repositories",
+      "@type": "xsd:string"
+    },
+    "repository": {
+      "@id": "amzn:repository",
+      "@type": "xsd:string"
+    },
+    "repositoryAggregation": {
+      "@id": "amzn:repositoryAggregation",
+      "@type": "xsd:string"
+    },
+    "repositoryName": {
+      "@id": "amzn:repositoryName",
+      "@type": "xsd:string"
+    },
+    "resourceFilterCriteria": {
+      "@id": "amzn:resourceFilterCriteria",
+      "@type": "xsd:string"
+    },
+    "resourceId": {
+      "@id": "amzn:resourceId",
+      "@type": "xsd:string"
+    },
+    "resourceIds": {
+      "@id": "amzn:resourceIds",
+      "@type": "xsd:string"
+    },
+    "resourceMetadata": {
+      "@id": "amzn:resourceMetadata",
+      "@type": "xsd:string"
+    },
+    "resourceState": {
+      "@id": "amzn:resourceState",
+      "@type": "xsd:string"
+    },
+    "resourceStatus": {
+      "@id": "amzn:resourceStatus",
+      "@type": "xsd:string"
+    },
+    "resourceTags": {
+      "@id": "amzn:resourceTags",
+      "@type": "xsd:string"
+    },
+    "resourceType": {
+      "@id": "amzn:resourceType",
+      "@type": "xsd:string"
+    },
+    "resources": {
+      "@id": "amzn:resources",
+      "@container": "@set",
+      "@type": "xsd:string"
+    },
+    "responses": {
+      "@id": "amzn:responses",
+      "@type": "xsd:string"
+    },
+    "ruleId": {
+      "@id": "amzn:ruleId",
+      "@type": "xsd:string"
+    },
+    "runtime": {
+      "@id": "amzn:runtime",
+      "@type": "xsd:string"
+    },
+    "runtimes": {
+      "@id": "amzn:runtimes",
+      "@type": "xsd:string"
+    },
+    "s3Destination": {
+      "@id": "amzn:s3Destination",
+      "@type": "xsd:string"
+    },
+    "scanStatus": {
+      "@id": "amzn:scanStatus",
+      "@type": "xsd:string"
+    },
+    "scanStatusCode": {
+      "@id": "amzn:scanStatusCode",
+      "@type": "xsd:string"
+    },
+    "scanStatusReason": {
+      "@id": "amzn:scanStatusReason",
+      "@type": "xsd:string"
+    },
+    "scanType": {
+      "@id": "amzn:scanType",
+      "@type": "xsd:string"
+    },
+    "score": {
+      "@id": "amzn:score",
+      "@type": "xsd:string"
+    },
+    "scoreSource": {
+      "@id": "amzn:scoreSource",
+      "@type": "xsd:string"
+    },
+    "scoringVector": {
+      "@id": "amzn:scoringVector",
+      "@type": "xsd:string"
+    },
+    "securityGroupIds": {
+      "@id": "amzn:securityGroupIds",
+      "@type": "xsd:string"
+    },
+    "severity": {
+      "@id": "amzn:severity",
+      "@type": "xsd:string"
+    },
+    "severityCounts": {
+      "@id": "amzn:severityCounts",
+      "@type": "xsd:string"
+    },
+    "sortBy": {
+      "@id": "amzn:sortBy",
+      "@type": "xsd:string"
+    },
+    "sortOrder": {
+      "@id": "amzn:sortOrder",
+      "@type": "xsd:string"
+    },
+    "source": {
+      "@id": "amzn:source",
+      "@type": "xsd:string"
+    },
+    "sourceLambdaLayerArn": {
+      "@id": "amzn:sourceLambdaLayerArn",
+      "@type": "xsd:string"
+    },
+    "startInclusive": {
+      "@id": "amzn:startInclusive",
+      "@type": "xsd:string"
+    },
+    "startLine": {
+      "@id": "amzn:startLine",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "amzn:state",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "amzn:status",
+      "@type": "xsd:string"
+    },
+    "statusCode": {
+      "@id": "amzn:statusCode",
+      "@type": "xsd:string"
+    },
+    "subnetId": {
+      "@id": "amzn:subnetId",
+      "@type": "xsd:string"
+    },
+    "subnetIds": {
+      "@id": "amzn:subnetIds",
+      "@type": "xsd:string"
+    },
+    "suggestedFixes": {
+      "@id": "amzn:suggestedFixes",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "amzn:tags",
+      "@type": "xsd:string"
+    },
+    "targets": {
+      "@id": "amzn:targets",
+      "@type": "xsd:string"
+    },
+    "title": {
+      "@id": "amzn:title",
+      "@type": "xsd:string"
+    },
+    "titleAggregation": {
+      "@id": "amzn:titleAggregation",
+      "@type": "xsd:string"
+    },
+    "titles": {
+      "@id": "amzn:titles",
+      "@type": "xsd:string"
+    },
+    "totalCounts": {
+      "@id": "amzn:totalCounts",
+      "@type": "xsd:string"
+    },
+    "totals": {
+      "@id": "amzn:totals",
+      "@type": "xsd:string"
+    },
+    "ttps": {
+      "@id": "amzn:ttps",
+      "@type": "xsd:string"
+    },
+    "type": {
+      "@id": "amzn:type",
+      "@type": "xsd:string"
+    },
+    "updatedAt": {
+      "@id": "amzn:updatedAt",
+      "@type": "xsd:dateTime"
+    },
+    "value": {
+      "@id": "amzn:value",
+      "@type": "xsd:string"
+    },
+    "vendorSeverity": {
+      "@id": "amzn:vendorSeverity",
+      "@type": "xsd:string"
+    },
+    "version": {
+      "@id": "amzn:version",
+      "@type": "xsd:string"
+    },
+    "vpcConfig": {
+      "@id": "amzn:vpcConfig",
+      "@type": "xsd:string"
+    },
+    "vpcId": {
+      "@id": "amzn:vpcId",
+      "@type": "xsd:string"
+    },
+    "vulnerabilities": {
+      "@id": "amzn:vulnerabilities",
+      "@type": "xsd:string"
+    },
+    "vulnerabilityId": {
+      "@id": "amzn:vulnerabilityId",
+      "@type": "xsd:string"
+    },
+    "vulnerabilityIds": {
+      "@id": "amzn:vulnerabilityIds",
+      "@type": "xsd:string"
+    },
+    "vulnerabilitySource": {
+      "@id": "amzn:vulnerabilitySource",
+      "@type": "xsd:string"
+    },
+    "vulnerablePackages": {
+      "@id": "amzn:vulnerablePackages",
+      "@type": "xsd:string"
     }
   }
 }

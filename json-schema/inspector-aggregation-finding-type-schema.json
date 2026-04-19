@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-aggregation-finding-type-schema.json",
+  "title": "AggregationFindingType",
+  "description": "AggregationFindingType schema",
+  "type": "string",
+  "enum": [
+    "NETWORK_REACHABILITY",
+    "PACKAGE_VULNERABILITY",
+    "CODE_VULNERABILITY"
+  ]
+}

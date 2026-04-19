@@ -1,0 +1,12 @@
+{
+  "accountId": "id-abc123",
+  "functionName": "example-resource",
+  "layerArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "resourceId": "id-abc123",
+  "severityCounts": {
+    "all": "example-value",
+    "critical": "example-value",
+    "high": "example-value",
+    "medium": "example-value"
+  }
+}

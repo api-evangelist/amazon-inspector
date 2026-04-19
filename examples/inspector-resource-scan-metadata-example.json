@@ -1,0 +1,6 @@
+{
+  "ec2": "example-value",
+  "ecrImage": "example-value",
+  "ecrRepository": "example-value",
+  "lambdaFunction": "example-value"
+}

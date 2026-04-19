@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-repository-aggregation-structure.json",
+  "name": "RepositoryAggregation",
+  "description": "The details that define an aggregation based on repository.",
+  "type": "object",
+  "properties": {
+    "repositories": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The names of repositories to aggregate findings on."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RepositorySortBy"
+        },
+        {
+          "description": "The value to sort results by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to sort results by."
+        }
+      ]
+    }
+  }
+}

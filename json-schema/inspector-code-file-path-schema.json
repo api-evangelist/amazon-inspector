@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-code-file-path-schema.json",
+  "title": "CodeFilePath",
+  "description": "Contains information on where a code vulnerability is located in your Lambda function.",
+  "type": "object",
+  "properties": {
+    "endLine": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The line number of the last line of code that a vulnerability was found in."
+        }
+      ]
+    },
+    "fileName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The name of the file the code vulnerability was found in."
+        }
+      ]
+    },
+    "filePath": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The file path to the code that a vulnerability was found in."
+        }
+      ]
+    },
+    "startLine": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The line number of the first line of code that a vulnerability was found in."
+        }
+      ]
+    }
+  },
+  "required": [
+    "endLine",
+    "fileName",
+    "filePath",
+    "startLine"
+  ]
+}

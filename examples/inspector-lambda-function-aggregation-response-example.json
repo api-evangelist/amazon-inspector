@@ -1,0 +1,14 @@
+{
+  "accountId": "id-abc123",
+  "functionName": "example-resource",
+  "lambdaTags": "example-value",
+  "lastModifiedAt": "example-value",
+  "resourceId": "id-abc123",
+  "runtime": "2025-03-15T14:30:00Z",
+  "severityCounts": {
+    "all": "example-value",
+    "critical": "example-value",
+    "high": "example-value",
+    "medium": "example-value"
+  }
+}

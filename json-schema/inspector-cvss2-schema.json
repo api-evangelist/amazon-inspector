@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-cvss2-schema.json",
+  "title": "Cvss2",
+  "description": "The Common Vulnerability Scoring System (CVSS) version 2 details for the vulnerability.",
+  "type": "object",
+  "properties": {
+    "baseScore": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Cvss2BaseScore"
+        },
+        {
+          "description": "The CVSS v2 base score for the vulnerability."
+        }
+      ]
+    },
+    "scoringVector": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Cvss2ScoringVector"
+        },
+        {
+          "description": "The scoring vector associated with the CVSS v2 score."
+        }
+      ]
+    }
+  }
+}

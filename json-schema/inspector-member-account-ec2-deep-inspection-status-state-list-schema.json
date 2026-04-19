@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-member-account-ec2-deep-inspection-status-state-list-schema.json",
+  "title": "MemberAccountEc2DeepInspectionStatusStateList",
+  "description": "MemberAccountEc2DeepInspectionStatusStateList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "accountId"
+    ],
+    "properties": {
+      "accountId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AccountId"
+          },
+          {
+            "description": "The unique identifier for the Amazon Web Services account of the organization member"
+          }
+        ]
+      },
+      "errorMessage": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The error message explaining why the account failed to activate Amazon Inspector deep inspection."
+          }
+        ]
+      },
+      "status": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Ec2DeepInspectionStatus"
+          },
+          {
+            "description": "The state of Amazon Inspector deep inspection in the member account."
+          }
+        ]
+      }
+    },
+    "description": "An object that contains details about the state of Amazon Inspector deep inspection for a member account."
+  }
+}

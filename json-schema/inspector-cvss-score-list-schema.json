@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-cvss-score-list-schema.json",
+  "title": "CvssScoreList",
+  "description": "CvssScoreList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "baseScore",
+      "scoringVector",
+      "source",
+      "version"
+    ],
+    "properties": {
+      "baseScore": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Double"
+          },
+          {
+            "description": "The base CVSS score used for the finding."
+          }
+        ]
+      },
+      "scoringVector": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The vector string of the CVSS score."
+          }
+        ]
+      },
+      "source": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The source of the CVSS score."
+          }
+        ]
+      },
+      "version": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The version of CVSS used for the score."
+          }
+        ]
+      }
+    },
+    "description": "The CVSS score for a finding."
+  }
+}

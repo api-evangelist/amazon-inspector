@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-aggregation-finding-type-structure.json",
+  "name": "AggregationFindingType",
+  "description": "AggregationFindingType schema",
+  "type": "string",
+  "enum": [
+    "NETWORK_REACHABILITY",
+    "PACKAGE_VULNERABILITY",
+    "CODE_VULNERABILITY"
+  ]
+}

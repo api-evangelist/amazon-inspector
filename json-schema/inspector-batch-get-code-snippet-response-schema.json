@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-batch-get-code-snippet-response-schema.json",
+  "title": "BatchGetCodeSnippetResponse",
+  "description": "BatchGetCodeSnippetResponse schema",
+  "type": "object",
+  "properties": {
+    "codeSnippetResults": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CodeSnippetResultList"
+        },
+        {
+          "description": "The retrieved code snippets associated with the provided finding ARNs."
+        }
+      ]
+    },
+    "errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CodeSnippetErrorList"
+        },
+        {
+          "description": "Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets."
+        }
+      ]
+    }
+  }
+}

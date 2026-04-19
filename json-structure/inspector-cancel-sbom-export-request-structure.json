@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-cancel-sbom-export-request-structure.json",
+  "name": "CancelSbomExportRequest",
+  "description": "CancelSbomExportRequest schema",
+  "type": "object",
+  "properties": {
+    "reportId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReportId"
+        },
+        {
+          "description": "The report ID of the SBOM export to cancel."
+        }
+      ]
+    }
+  },
+  "required": [
+    "reportId"
+  ]
+}

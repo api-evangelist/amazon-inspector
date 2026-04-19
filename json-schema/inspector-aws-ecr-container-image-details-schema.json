@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-aws-ecr-container-image-details-schema.json",
+  "title": "AwsEcrContainerImageDetails",
+  "description": "The image details of the Amazon ECR container image.",
+  "type": "object",
+  "properties": {
+    "architecture": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The architecture of the Amazon ECR container image."
+        }
+      ]
+    },
+    "author": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The image author of the Amazon ECR container image."
+        }
+      ]
+    },
+    "imageHash": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImageHash"
+        },
+        {
+          "description": "The image hash of the Amazon ECR container image."
+        }
+      ]
+    },
+    "imageTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImageTagList"
+        },
+        {
+          "description": "The image tags attached to the Amazon ECR container image."
+        }
+      ]
+    },
+    "platform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Platform"
+        },
+        {
+          "description": "The platform of the Amazon ECR container image."
+        }
+      ]
+    },
+    "pushedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeTimestamp"
+        },
+        {
+          "description": "The date and time the Amazon ECR container image was pushed."
+        }
+      ]
+    },
+    "registry": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The registry for the Amazon ECR container image."
+        }
+      ]
+    },
+    "repositoryName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The name of the repository the Amazon ECR container image resides in."
+        }
+      ]
+    }
+  },
+  "required": [
+    "imageHash",
+    "registry",
+    "repositoryName"
+  ]
+}

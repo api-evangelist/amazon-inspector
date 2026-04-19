@@ -1,0 +1,5 @@
+{
+  "errorCode": "example-value",
+  "errorMessage": "example-value",
+  "findingArn": "arn:aws:iot:us-east-1:123456789012:thing/example"
+}

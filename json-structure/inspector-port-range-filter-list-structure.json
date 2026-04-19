@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-port-range-filter-list-structure.json",
+  "name": "PortRangeFilterList",
+  "description": "PortRangeFilterList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "beginInclusive": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Port"
+          },
+          {
+            "description": "The port number the port range begins at."
+          }
+        ]
+      },
+      "endInclusive": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Port"
+          },
+          {
+            "description": "The port number the port range ends at."
+          }
+        ]
+      }
+    },
+    "description": "An object that describes the details of a port range filter."
+  }
+}

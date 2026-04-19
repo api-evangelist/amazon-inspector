@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-lambda-layer-aggregation-response-structure.json",
+  "name": "LambdaLayerAggregationResponse",
+  "description": "A response that contains the results of an AWS Lambda function layer finding aggregation.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The account ID of the AWS Lambda function layer."
+        }
+      ]
+    },
+    "functionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The names of the AWS Lambda functions associated with the layers."
+        }
+      ]
+    },
+    "layerArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the AWS Lambda function layer."
+        }
+      ]
+    },
+    "resourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The Resource ID of the AWS Lambda function layer."
+        }
+      ]
+    },
+    "severityCounts": {
+      "type": "object",
+      "properties": {
+        "all": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Long"
+            },
+            {
+              "description": "The total count of findings from all severities."
+            }
+          ]
+        },
+        "critical": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Long"
+            },
+            {
+              "description": "The total count of critical severity findings."
+            }
+          ]
+        },
+        "high": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Long"
+            },
+            {
+              "description": "The total count of high severity findings."
+            }
+          ]
+        },
+        "medium": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Long"
+            },
+            {
+              "description": "The total count of medium severity findings."
+            }
+          ]
+        }
+      },
+      "description": "An object that contains the counts of aggregated finding per severity."
+    }
+  },
+  "required": [
+    "accountId",
+    "functionName",
+    "layerArn",
+    "resourceId"
+  ]
+}

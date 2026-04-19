@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-ec2-instance-aggregation-response-structure.json",
+  "name": "Ec2InstanceAggregationResponse",
+  "description": "A response that contains the results of a finding aggregation by Amazon EC2 instance.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The Amazon Web Services account for the Amazon EC2 instance."
+        }
+      ]
+    },
+    "ami": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmiId"
+        },
+        {
+          "description": "The Amazon Machine Image (AMI) of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "instanceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The Amazon EC2 instance ID."
+        }
+      ]
+    },
+    "instanceTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TagMap"
+        },
+        {
+          "description": "The tags attached to the instance."
+        }
+      ]
+    },
+    "networkFindings": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of network findings for the Amazon EC2 instance."
+        }
+      ]
+    },
+    "operatingSystem": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The operating system of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "severityCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SeverityCounts"
+        },
+        {
+          "description": "An object that contains the count of matched findings per severity."
+        }
+      ]
+    }
+  },
+  "required": [
+    "instanceId"
+  ]
+}

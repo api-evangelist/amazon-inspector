@@ -1,0 +1,67 @@
+vocabulary: "1.0.0"
+info:
+  provider: Amazon Inspector
+  description: Vocabulary for Amazon Inspector covering all API resources and operations.
+  created: "2026-04-19"
+  modified: "2026-04-19"
+operational:
+  apis:
+    - namespace: inspector
+      version: "2024-01-01"
+      baseUrl: https://inspector2.amazonaws.com
+      status: active
+  resources:
+    - name: resources
+      api: inspector
+      actions: [list, create, delete, get, update]
+  actions:
+    - name: list
+      methods: [GET]
+      pattern: read
+    - name: create
+      methods: [POST]
+      pattern: write
+    - name: get
+      methods: [GET]
+      pattern: read
+    - name: update
+      methods: [PUT, PATCH]
+      pattern: write
+    - name: delete
+      methods: [DELETE]
+      pattern: destructive
+  authentication:
+    schemes:
+      - type: AWS Signature Version 4
+        placement: header
+capability:
+  workflows:
+    - name: Security Vulnerability Management
+      file: capabilities/security-vulnerability-management.yaml
+      apis: [inspector]
+      toolCount: 8
+      personas: [Security Engineer, Cloud Security Engineer]
+  personas:
+    - id: primary-persona
+      name: Security Engineer
+      description: Manages Amazon Inspector resources and operations
+  domains:
+    - name: Security
+      description: Vulnerability scanning for EC2, container images, and Lambda functions.
+  namespaces:
+    - name: inspector
+      type: consumed
+    - name: security-vulnerability-management-api
+      type: rest
+      port: 8080
+    - name: security-vulnerability-management-mcp
+      type: mcp
+      port: 9090
+  binds:
+    - AWS_ACCESS_KEY_ID
+    - AWS_SECRET_ACCESS_KEY
+crossReference:
+  - resource: resources
+    operations: [listfindings, getfinding, createfilter, listmembers]
+    workflows: [Security Vulnerability Management]
+    personas: [Security Engineer, Cloud Security Engineer]

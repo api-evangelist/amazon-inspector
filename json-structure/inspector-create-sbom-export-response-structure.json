@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-create-sbom-export-response-structure.json",
+  "name": "CreateSbomExportResponse",
+  "description": "CreateSbomExportResponse schema",
+  "type": "object",
+  "properties": {
+    "reportId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReportId"
+        },
+        {
+          "description": "The report ID for the software bill of materials (SBOM) report."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-update-org-ec2-deep-inspection-configuration-response-schema.json",
+  "title": "UpdateOrgEc2DeepInspectionConfigurationResponse",
+  "description": "UpdateOrgEc2DeepInspectionConfigurationResponse schema",
+  "type": "object",
+  "properties": {}
+}

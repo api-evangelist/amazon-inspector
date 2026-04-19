@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-finding-details-error-list-schema.json",
+  "title": "FindingDetailsErrorList",
+  "description": "FindingDetailsErrorList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "errorCode",
+      "errorMessage",
+      "findingArn"
+    ],
+    "properties": {
+      "errorCode": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FindingDetailsErrorCode"
+          },
+          {
+            "description": "The error code."
+          }
+        ]
+      },
+      "errorMessage": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The error message."
+          }
+        ]
+      },
+      "findingArn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FindingArn"
+          },
+          {
+            "description": "The finding ARN that returned an error."
+          }
+        ]
+      }
+    },
+    "description": "Details about an error encountered when trying to return vulnerability data for a finding."
+  }
+}

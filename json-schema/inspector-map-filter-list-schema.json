@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-map-filter-list-schema.json",
+  "title": "MapFilterList",
+  "description": "MapFilterList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "comparison",
+      "key"
+    ],
+    "properties": {
+      "comparison": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MapComparison"
+          },
+          {
+            "description": "The operator to use when comparing values in the filter."
+          }
+        ]
+      },
+      "key": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MapKey"
+          },
+          {
+            "description": "The tag key used in the filter."
+          }
+        ]
+      },
+      "value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MapValue"
+          },
+          {
+            "description": "The tag value used in the filter."
+          }
+        ]
+      }
+    },
+    "description": "An object that describes details of a map filter."
+  }
+}

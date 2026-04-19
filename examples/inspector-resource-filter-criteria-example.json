@@ -1,0 +1,10 @@
+{
+  "accountId": "id-abc123",
+  "ec2InstanceTags": "example-value",
+  "ecrImageTags": "example-value",
+  "ecrRepositoryName": "example-resource",
+  "lambdaFunctionName": "example-resource",
+  "lambdaFunctionTags": "example-value",
+  "resourceId": "id-abc123",
+  "resourceType": "example-value"
+}

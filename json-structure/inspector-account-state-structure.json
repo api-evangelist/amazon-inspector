@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-account-state-structure.json",
+  "name": "AccountState",
+  "description": "An object with details the status of an Amazon Web Services account within your Amazon Inspector environment.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services account ID."
+        }
+      ]
+    },
+    "resourceState": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceState"
+        },
+        {
+          "description": "An object detailing which resources Amazon Inspector is enabled to scan for the account."
+        }
+      ]
+    },
+    "state": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/State"
+        },
+        {
+          "description": "An object detailing the status of Amazon Inspector for the account."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accountId",
+    "resourceState",
+    "state"
+  ]
+}

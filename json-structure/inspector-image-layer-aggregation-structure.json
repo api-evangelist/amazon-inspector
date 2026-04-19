@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-image-layer-aggregation-structure.json",
+  "name": "ImageLayerAggregation",
+  "description": "The details that define an aggregation based on container image layers.",
+  "type": "object",
+  "properties": {
+    "layerHashes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The hashes associated with the layers."
+        }
+      ]
+    },
+    "repositories": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The repository associated with the container image hosting the layers."
+        }
+      ]
+    },
+    "resourceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The ID of the container image layer."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImageLayerSortBy"
+        },
+        {
+          "description": "The value to sort results by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to sort results by."
+        }
+      ]
+    }
+  }
+}

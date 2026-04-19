@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-failed-account-list-schema.json",
+  "title": "FailedAccountList",
+  "description": "FailedAccountList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "accountId",
+      "errorCode",
+      "errorMessage"
+    ],
+    "properties": {
+      "accountId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AccountId"
+          },
+          {
+            "description": "The Amazon Web Services account ID."
+          }
+        ]
+      },
+      "errorCode": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ErrorCode"
+          },
+          {
+            "description": "The error code explaining why the account failed to enable Amazon Inspector."
+          }
+        ]
+      },
+      "errorMessage": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The error message received when the account failed to enable Amazon Inspector."
+          }
+        ]
+      },
+      "resourceStatus": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ResourceStatus"
+          },
+          {
+            "description": "An object detailing which resources Amazon Inspector is enabled to scan for the account."
+          }
+        ]
+      },
+      "status": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Status"
+          },
+          {
+            "description": "The status of Amazon Inspector for the account."
+          }
+        ]
+      }
+    },
+    "description": "An object with details on why an account failed to enable Amazon Inspector."
+  }
+}

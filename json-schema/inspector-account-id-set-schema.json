@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-account-id-set-schema.json",
+  "title": "AccountIdSet",
+  "description": "AccountIdSet schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "^\\d{12}$",
+    "minLength": 12,
+    "maxLength": 12
+  }
+}

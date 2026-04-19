@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-number-filter-list-structure.json",
+  "name": "NumberFilterList",
+  "description": "NumberFilterList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "lowerInclusive": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Double"
+          },
+          {
+            "description": "The lowest number to be included in the filter."
+          }
+        ]
+      },
+      "upperInclusive": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Double"
+          },
+          {
+            "description": "The highest number to be included in the filter."
+          }
+        ]
+      }
+    },
+    "description": "An object that describes the details of a number filter."
+  }
+}

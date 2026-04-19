@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-architecture-list-schema.json",
+  "title": "ArchitectureList",
+  "description": "ArchitectureList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "enum": [
+      "X86_64",
+      "ARM64"
+    ]
+  }
+}

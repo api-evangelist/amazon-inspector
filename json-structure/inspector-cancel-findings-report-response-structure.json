@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-cancel-findings-report-response-structure.json",
+  "name": "CancelFindingsReportResponse",
+  "description": "CancelFindingsReportResponse schema",
+  "type": "object",
+  "properties": {
+    "reportId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReportId"
+        },
+        {
+          "description": "The ID of the canceled report."
+        }
+      ]
+    }
+  },
+  "required": [
+    "reportId"
+  ]
+}

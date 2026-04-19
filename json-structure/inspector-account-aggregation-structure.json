@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-account-aggregation-structure.json",
+  "name": "AccountAggregation",
+  "description": "An object that contains details about an aggregation response based on Amazon Web Services accounts.",
+  "type": "object",
+  "properties": {
+    "findingType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationFindingType"
+        },
+        {
+          "description": "The type of finding."
+        }
+      ]
+    },
+    "resourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationResourceType"
+        },
+        {
+          "description": "The type of resource."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountSortBy"
+        },
+        {
+          "description": "The value to sort by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The sort order (ascending or descending)."
+        }
+      ]
+    }
+  }
+}

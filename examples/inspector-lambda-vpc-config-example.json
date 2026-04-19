@@ -1,0 +1,5 @@
+{
+  "securityGroupIds": "id-abc123",
+  "subnetIds": "id-abc123",
+  "vpcId": "id-abc123"
+}

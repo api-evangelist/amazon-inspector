@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-vuln-id-list-structure.json",
+  "name": "VulnIdList",
+  "description": "VulnIdList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "^CVE-[12][0-9]{3}-[0-9]{1,10}$"
+  }
+}

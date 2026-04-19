@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-update-filter-response-structure.json",
+  "name": "UpdateFilterResponse",
+  "description": "UpdateFilterResponse schema",
+  "type": "object",
+  "properties": {
+    "arn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterArn"
+        },
+        {
+          "description": "The Amazon Resource Number (ARN) of the successfully updated filter."
+        }
+      ]
+    }
+  },
+  "required": [
+    "arn"
+  ]
+}

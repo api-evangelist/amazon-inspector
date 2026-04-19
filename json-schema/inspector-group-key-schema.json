@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-group-key-schema.json",
+  "title": "GroupKey",
+  "description": "GroupKey schema",
+  "type": "string",
+  "enum": [
+    "SCAN_STATUS_CODE",
+    "SCAN_STATUS_REASON",
+    "ACCOUNT_ID",
+    "RESOURCE_TYPE",
+    "ECR_REPOSITORY_NAME"
+  ]
+}

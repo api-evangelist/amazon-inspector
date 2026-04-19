@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-package-filter-list-structure.json",
+  "name": "PackageFilterList",
+  "description": "PackageFilterList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "architecture": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringFilter"
+          },
+          {
+            "description": "An object that contains details on the package architecture type to filter on."
+          }
+        ]
+      },
+      "epoch": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NumberFilter"
+          },
+          {
+            "description": "An object that contains details on the package epoch to filter on."
+          }
+        ]
+      },
+      "name": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringFilter"
+          },
+          {
+            "description": "An object that contains details on the name of the package to filter on."
+          }
+        ]
+      },
+      "release": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringFilter"
+          },
+          {
+            "description": "An object that contains details on the package release to filter on."
+          }
+        ]
+      },
+      "sourceLambdaLayerArn": {
+        "$ref": "#/components/schemas/StringFilter"
+      },
+      "sourceLayerHash": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringFilter"
+          },
+          {
+            "description": "An object that contains details on the source layer hash to filter on."
+          }
+        ]
+      },
+      "version": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/StringFilter"
+          },
+          {
+            "description": "The package version to filter on."
+          }
+        ]
+      }
+    },
+    "description": "Contains information on the details of a package filter."
+  }
+}

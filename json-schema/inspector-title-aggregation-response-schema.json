@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-title-aggregation-response-schema.json",
+  "title": "TitleAggregationResponse",
+  "description": "A response that contains details on the results of a finding aggregation by title.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account associated with the findings."
+        }
+      ]
+    },
+    "severityCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SeverityCounts"
+        },
+        {
+          "description": "An object that represent the count of matched findings per severity."
+        }
+      ]
+    },
+    "title": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The title that the findings were aggregated on."
+        }
+      ]
+    },
+    "vulnerabilityId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The vulnerability ID of the finding."
+        }
+      ]
+    }
+  },
+  "required": [
+    "title"
+  ]
+}

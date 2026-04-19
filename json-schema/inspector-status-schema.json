@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-status-schema.json",
+  "title": "Status",
+  "description": "Status schema",
+  "type": "string",
+  "enum": [
+    "ENABLING",
+    "ENABLED",
+    "DISABLING",
+    "DISABLED",
+    "SUSPENDING",
+    "SUSPENDED"
+  ]
+}

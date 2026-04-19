@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-atig-data-schema.json",
+  "title": "AtigData",
+  "description": "The Amazon Web Services Threat Intel Group (ATIG) details for a specific vulnerability.",
+  "type": "object",
+  "properties": {
+    "firstSeen": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FirstSeen"
+        },
+        {
+          "description": "The date and time this vulnerability was first observed."
+        }
+      ]
+    },
+    "lastSeen": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LastSeen"
+        },
+        {
+          "description": "The date and time this vulnerability was last observed."
+        }
+      ]
+    },
+    "targets": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Targets"
+        },
+        {
+          "description": "The commercial sectors this vulnerability targets."
+        }
+      ]
+    },
+    "ttps": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Ttps"
+        },
+        {
+          "description": "The <a href=\"https://attack.mitre.org/\">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability."
+        }
+      ]
+    }
+  }
+}

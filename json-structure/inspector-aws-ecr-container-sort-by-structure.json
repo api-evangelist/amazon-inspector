@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-aws-ecr-container-sort-by-structure.json",
+  "name": "AwsEcrContainerSortBy",
+  "description": "AwsEcrContainerSortBy schema",
+  "type": "string",
+  "enum": [
+    "CRITICAL",
+    "HIGH",
+    "ALL"
+  ]
+}

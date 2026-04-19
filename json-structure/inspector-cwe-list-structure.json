@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-cwe-list-structure.json",
+  "name": "CweList",
+  "description": "CweList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "minLength": 1
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-code-snippet-error-list-structure.json",
+  "name": "CodeSnippetErrorList",
+  "description": "CodeSnippetErrorList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "errorCode",
+      "errorMessage",
+      "findingArn"
+    ],
+    "properties": {
+      "errorCode": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CodeSnippetErrorCode"
+          },
+          {
+            "description": "The error code for the error that prevented a code snippet from being retrieved."
+          }
+        ]
+      },
+      "errorMessage": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The error message received when Amazon Inspector failed to retrieve a code snippet."
+          }
+        ]
+      },
+      "findingArn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FindingArn"
+          },
+          {
+            "description": "The ARN of the finding that a code snippet couldn't be retrieved for."
+          }
+        ]
+      }
+    },
+    "description": "Contains information about any errors encountered while trying to retrieve a code snippet."
+  }
+}

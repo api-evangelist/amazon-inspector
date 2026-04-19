@@ -1,0 +1,9 @@
+{
+  "accountId": "id-abc123",
+  "lastScannedAt": "example-value",
+  "resourceId": "id-abc123",
+  "resourceMetadata": "example-value",
+  "resourceType": "example-value",
+  "scanStatus": "ACTIVE",
+  "scanType": "example-value"
+}

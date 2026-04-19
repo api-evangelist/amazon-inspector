@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-account-id-set-structure.json",
+  "name": "AccountIdSet",
+  "description": "AccountIdSet schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "^\\d{12}$",
+    "minLength": 12,
+    "maxLength": 12
+  }
+}

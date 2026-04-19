@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/amazon-inspector-structure.json",
+  "name": "Amazon Inspector Finding Definition",
+  "description": "Schema defining the structure of an Amazon Inspector vulnerability finding, including severity, resource details, vulnerability information, and remediation guidance.",
+  "type": "object",
+  "required": [
+    "findingArn",
+    "severity",
+    "status",
+    "type"
+  ],
+  "properties": {
+    "findingArn": {
+      "type": "string",
+      "description": "The Amazon Resource Name (ARN) of the finding."
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "INFORMATIONAL",
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "CRITICAL",
+        "UNTRIAGED"
+      ],
+      "description": "The severity of the finding."
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ACTIVE",
+        "SUPPRESSED",
+        "CLOSED"
+      ],
+      "description": "The status of the finding."
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "NETWORK_REACHABILITY",
+        "PACKAGE_VULNERABILITY",
+        "CODE_VULNERABILITY"
+      ],
+      "description": "The type of the finding."
+    },
+    "title": {
+      "type": "string",
+      "description": "The title of the finding."
+    },
+    "description": {
+      "type": "string",
+      "description": "The description of the finding."
+    },
+    "awsAccountId": {
+      "type": "string",
+      "description": "The AWS account ID associated with the finding."
+    },
+    "firstObservedAt": {
+      "type": "datetime",
+      "description": "The date and time the finding was first observed."
+    },
+    "lastObservedAt": {
+      "type": "datetime",
+      "description": "The date and time the finding was last observed."
+    },
+    "updatedAt": {
+      "type": "datetime",
+      "description": "The date and time the finding was last updated."
+    },
+    "inspectorScore": {
+      "type": "double",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "The Amazon Inspector score for the finding."
+    },
+    "resources": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/Resource"
+      },
+      "description": "The resources affected by the finding."
+    },
+    "remediation": {
+      "$ref": "#/$defs/Remediation"
+    },
+    "packageVulnerabilityDetails": {
+      "$ref": "#/$defs/PackageVulnerabilityDetails"
+    },
+    "networkReachabilityDetails": {
+      "$ref": "#/$defs/NetworkReachabilityDetails"
+    }
+  },
+  "$defs": {
+    "Resource": {
+      "type": "object",
+      "description": "A resource affected by a finding.",
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The ID of the resource."
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "AWS_EC2_INSTANCE",
+            "AWS_ECR_CONTAINER_IMAGE",
+            "AWS_ECR_REPOSITORY",
+            "AWS_LAMBDA_FUNCTION"
+          ],
+          "description": "The type of the resource."
+        },
+        "partition": {
+          "type": "string",
+          "description": "The partition of the resource."
+        },
+        "region": {
+          "type": "string",
+          "description": "The AWS region of the resource."
+        },
+        "tags": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Tags associated with the resource."
+        }
+      }
+    },
+    "Remediation": {
+      "type": "object",
+      "description": "Remediation guidance for a finding.",
+      "properties": {
+        "recommendation": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "description": "The recommended remediation action."
+            },
+            "Url": {
+              "type": "string",
+              "format": "uri",
+              "description": "A URL for more information about the remediation."
+            }
+          }
+        }
+      }
+    },
+    "PackageVulnerabilityDetails": {
+      "type": "object",
+      "description": "Details about a package vulnerability finding.",
+      "properties": {
+        "vulnerabilityId": {
+          "type": "string",
+          "description": "The ID of the vulnerability (e.g., CVE ID)."
+        },
+        "source": {
+          "type": "string",
+          "description": "The source of the vulnerability information."
+        },
+        "sourceUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "A URL to the source of the vulnerability information."
+        },
+        "cvss": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "type": "string"
+              },
+              "baseScore": {
+                "type": "number"
+              },
+              "scoringVector": {
+                "type": "string"
+              },
+              "source": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "CVSS scores for the vulnerability."
+        },
+        "vulnerablePackages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string"
+              },
+              "fixedInVersion": {
+                "type": "string"
+              },
+              "packageManager": {
+                "type": "string"
+              }
+            }
+          },
+          "description": "The packages affected by the vulnerability."
+        }
+      }
+    },
+    "NetworkReachabilityDetails": {
+      "type": "object",
+      "description": "Details about a network reachability finding.",
+      "properties": {
+        "protocol": {
+          "type": "string",
+          "enum": [
+            "TCP",
+            "UDP"
+          ],
+          "description": "The protocol associated with the finding."
+        },
+        "openPortRange": {
+          "type": "object",
+          "properties": {
+            "begin": {
+              "type": "integer"
+            },
+            "end": {
+              "type": "integer"
+            }
+          },
+          "description": "The open port range."
+        },
+        "networkPath": {
+          "type": "object",
+          "description": "The network path details."
+        }
+      }
+    }
+  }
+}

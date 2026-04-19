@@ -1,0 +1,8 @@
+{
+  "destination": "example-value",
+  "errorCode": "example-value",
+  "errorMessage": "example-value",
+  "filterCriteria": "example-value",
+  "reportId": "id-abc123",
+  "status": "ACTIVE"
+}

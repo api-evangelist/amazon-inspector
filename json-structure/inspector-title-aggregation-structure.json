@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-title-aggregation-structure.json",
+  "name": "TitleAggregation",
+  "description": "The details that define an aggregation based on finding title.",
+  "type": "object",
+  "properties": {
+    "findingType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationFindingType"
+        },
+        {
+          "description": "The type of finding to aggregate on."
+        }
+      ]
+    },
+    "resourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AggregationResourceType"
+        },
+        {
+          "description": "The resource type to aggregate on."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TitleSortBy"
+        },
+        {
+          "description": "The value to sort results by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to sort results by."
+        }
+      ]
+    },
+    "titles": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The finding titles to aggregate on."
+        }
+      ]
+    },
+    "vulnerabilityIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The vulnerability IDs of the findings."
+        }
+      ]
+    }
+  }
+}

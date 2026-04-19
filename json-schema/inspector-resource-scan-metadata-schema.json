@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-resource-scan-metadata-schema.json",
+  "title": "ResourceScanMetadata",
+  "description": "An object that contains details about the metadata for an Amazon ECR resource.",
+  "type": "object",
+  "properties": {
+    "ec2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Ec2Metadata"
+        },
+        {
+          "description": "An object that contains metadata details for an Amazon EC2 instance."
+        }
+      ]
+    },
+    "ecrImage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EcrContainerImageMetadata"
+        },
+        {
+          "description": "An object that contains details about the container metadata for an Amazon ECR image."
+        }
+      ]
+    },
+    "ecrRepository": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EcrRepositoryMetadata"
+        },
+        {
+          "description": "An object that contains details about the repository an Amazon ECR image resides in."
+        }
+      ]
+    },
+    "lambdaFunction": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionMetadata"
+        },
+        {
+          "description": "An object that contains metadata details for an AWS Lambda function."
+        }
+      ]
+    }
+  }
+}

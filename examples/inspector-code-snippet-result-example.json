@@ -1,0 +1,7 @@
+{
+  "codeSnippet": "example-value",
+  "endLine": "example-value",
+  "findingArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "startLine": "example-value",
+  "suggestedFixes": "example-value"
+}

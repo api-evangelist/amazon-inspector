@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-get-encryption-key-response-structure.json",
+  "name": "GetEncryptionKeyResponse",
+  "description": "GetEncryptionKeyResponse schema",
+  "type": "object",
+  "properties": {
+    "kmsKeyId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/KmsKeyArn"
+        },
+        {
+          "description": "A kms key ID."
+        }
+      ]
+    }
+  },
+  "required": [
+    "kmsKeyId"
+  ]
+}

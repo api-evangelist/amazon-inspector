@@ -1,0 +1,7 @@
+{
+  "functionNames": "example-resource",
+  "layerArns": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "resourceIds": "id-abc123",
+  "sortBy": "example-value",
+  "sortOrder": "example-value"
+}

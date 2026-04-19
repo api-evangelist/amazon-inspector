@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-scan-status-schema.json",
+  "title": "ScanStatus",
+  "description": "The status of the scan.",
+  "type": "object",
+  "properties": {
+    "reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanStatusReason"
+        },
+        {
+          "description": "The reason for the scan."
+        }
+      ]
+    },
+    "statusCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanStatusCode"
+        },
+        {
+          "description": "The status code of the scan."
+        }
+      ]
+    }
+  },
+  "required": [
+    "reason",
+    "statusCode"
+  ]
+}

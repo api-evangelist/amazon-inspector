@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-describe-organization-configuration-request-structure.json",
+  "name": "DescribeOrganizationConfigurationRequest",
+  "description": "DescribeOrganizationConfigurationRequest schema",
+  "type": "object",
+  "properties": {}
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-code-snippet-error-code-structure.json",
+  "name": "CodeSnippetErrorCode",
+  "description": "CodeSnippetErrorCode schema",
+  "type": "string",
+  "enum": [
+    "INTERNAL_ERROR",
+    "ACCESS_DENIED",
+    "CODE_SNIPPET_NOT_FOUND",
+    "INVALID_INPUT"
+  ]
+}

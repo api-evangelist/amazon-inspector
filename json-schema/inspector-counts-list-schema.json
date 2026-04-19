@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-counts-list-schema.json",
+  "title": "CountsList",
+  "description": "CountsList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "count": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AggCounts"
+          },
+          {
+            "description": "The number of resources."
+          }
+        ]
+      },
+      "groupKey": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/GroupKey"
+          },
+          {
+            "description": "The key associated with this group"
+          }
+        ]
+      }
+    },
+    "description": "a structure that contains information on the count of resources within a group."
+  }
+}

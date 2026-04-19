@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-covered-resource-schema.json",
+  "title": "CoveredResource",
+  "description": "An object that contains details about a resource covered by Amazon Inspector.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services account ID of the covered resource."
+        }
+      ]
+    },
+    "lastScannedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeTimestamp"
+        },
+        {
+          "description": "The date and time the resource was last checked for vulnerabilities."
+        }
+      ]
+    },
+    "resourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceId"
+        },
+        {
+          "description": "The ID of the covered resource."
+        }
+      ]
+    },
+    "resourceMetadata": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceScanMetadata"
+        },
+        {
+          "description": "An object that contains details about the metadata."
+        }
+      ]
+    },
+    "resourceType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CoverageResourceType"
+        },
+        {
+          "description": "The type of the covered resource."
+        }
+      ]
+    },
+    "scanStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanStatus"
+        },
+        {
+          "description": "The status of the scan covering the resource."
+        }
+      ]
+    },
+    "scanType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ScanType"
+        },
+        {
+          "description": "The Amazon Inspector scan type covering the resource."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accountId",
+    "resourceId",
+    "resourceType",
+    "scanType"
+  ]
+}

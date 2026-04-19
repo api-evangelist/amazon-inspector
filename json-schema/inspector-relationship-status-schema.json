@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-relationship-status-schema.json",
+  "title": "RelationshipStatus",
+  "description": "RelationshipStatus schema",
+  "type": "string",
+  "enum": [
+    "CREATED",
+    "INVITED",
+    "DISABLED",
+    "ENABLED",
+    "REMOVED",
+    "RESIGNED",
+    "DELETED",
+    "EMAIL_VERIFICATION_IN_PROGRESS",
+    "EMAIL_VERIFICATION_FAILED",
+    "REGION_DISABLED",
+    "ACCOUNT_SUSPENDED",
+    "CANNOT_CREATE_DETECTOR_IN_ORG_MASTER"
+  ]
+}

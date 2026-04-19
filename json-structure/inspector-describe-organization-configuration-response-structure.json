@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-describe-organization-configuration-response-structure.json",
+  "name": "DescribeOrganizationConfigurationResponse",
+  "description": "DescribeOrganizationConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "autoEnable": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoEnable"
+        },
+        {
+          "description": "The scan types are automatically enabled for new members of your organization."
+        }
+      ]
+    },
+    "maxAccountLimitReached": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector."
+        }
+      ]
+    }
+  }
+}

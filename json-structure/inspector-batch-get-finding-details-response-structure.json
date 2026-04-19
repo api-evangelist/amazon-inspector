@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-batch-get-finding-details-response-structure.json",
+  "name": "BatchGetFindingDetailsResponse",
+  "description": "BatchGetFindingDetailsResponse schema",
+  "type": "object",
+  "properties": {
+    "errors": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingDetailsErrorList"
+        },
+        {
+          "description": "Error information for findings that details could not be returned for."
+        }
+      ]
+    },
+    "findingDetails": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingDetails"
+        },
+        {
+          "description": "A finding's vulnerability details."
+        }
+      ]
+    }
+  }
+}

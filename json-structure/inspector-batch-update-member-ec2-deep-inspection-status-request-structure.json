@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-batch-update-member-ec2-deep-inspection-status-request-structure.json",
+  "name": "BatchUpdateMemberEc2DeepInspectionStatusRequest",
+  "description": "BatchUpdateMemberEc2DeepInspectionStatusRequest schema",
+  "type": "object",
+  "properties": {
+    "accountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MemberAccountEc2DeepInspectionStatusList"
+        },
+        {
+          "description": "The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accountIds"
+  ]
+}

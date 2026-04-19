@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-batch-get-account-status-request-structure.json",
+  "name": "BatchGetAccountStatusRequest",
+  "description": "BatchGetAccountStatusRequest schema",
+  "type": "object",
+  "properties": {
+    "accountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountIdSet"
+        },
+        {
+          "description": "The 12-digit Amazon Web Services account IDs of the accounts to retrieve Amazon Inspector status for."
+        }
+      ]
+    }
+  }
+}

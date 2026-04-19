@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-batch-get-member-ec2-deep-inspection-status-request-schema.json",
+  "title": "BatchGetMemberEc2DeepInspectionStatusRequest",
+  "description": "BatchGetMemberEc2DeepInspectionStatusRequest schema",
+  "type": "object",
+  "properties": {
+    "accountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountIdSet"
+        },
+        {
+          "description": "The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt; </code></pre>"
+        }
+      ]
+    }
+  }
+}

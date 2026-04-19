@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-free-trial-account-info-list-schema.json",
+  "title": "FreeTrialAccountInfoList",
+  "description": "FreeTrialAccountInfoList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "accountId",
+      "freeTrialInfo"
+    ],
+    "properties": {
+      "accountId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MeteringAccountId"
+          },
+          {
+            "description": "The account associated with the Amazon Inspector free trial information."
+          }
+        ]
+      },
+      "freeTrialInfo": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FreeTrialInfoList"
+          },
+          {
+            "description": "Contains information about the Amazon Inspector free trial for an account."
+          }
+        ]
+      }
+    },
+    "description": "Information about the Amazon Inspector free trial for an account."
+  }
+}

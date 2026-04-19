@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-member-account-ec2-deep-inspection-status-structure.json",
+  "name": "MemberAccountEc2DeepInspectionStatus",
+  "description": "An object that contains details about the status of Amazon Inspector deep inspection for a member account in your organization.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The unique identifier for the Amazon Web Services account of the organization member."
+        }
+      ]
+    },
+    "activateDeepInspection": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accountId",
+    "activateDeepInspection"
+  ]
+}

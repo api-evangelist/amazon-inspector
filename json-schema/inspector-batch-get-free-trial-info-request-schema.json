@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-batch-get-free-trial-info-request-schema.json",
+  "title": "BatchGetFreeTrialInfoRequest",
+  "description": "BatchGetFreeTrialInfoRequest schema",
+  "type": "object",
+  "properties": {
+    "accountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetFreeTrialInfoRequestAccountIdsList"
+        },
+        {
+          "description": "The account IDs to get free trial status for."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accountIds"
+  ]
+}

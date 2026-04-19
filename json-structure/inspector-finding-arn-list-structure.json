@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-finding-arn-list-structure.json",
+  "name": "FindingArnList",
+  "description": "FindingArnList schema",
+  "type": "array",
+  "items": {
+    "type": "string",
+    "pattern": "^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\\d{1}:\\d{12}:finding/[a-f0-9]{32}$",
+    "minLength": 1,
+    "maxLength": 100
+  }
+}

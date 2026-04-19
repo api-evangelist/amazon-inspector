@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-package-aggregation-response-structure.json",
+  "name": "PackageAggregationResponse",
+  "description": "A response that contains the results of a finding aggregation by image layer.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account associated with the findings."
+        }
+      ]
+    },
+    "packageName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The name of the operating system package."
+        }
+      ]
+    },
+    "severityCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SeverityCounts"
+        },
+        {
+          "description": "An object that contains the count of matched findings per severity."
+        }
+      ]
+    }
+  },
+  "required": [
+    "packageName"
+  ]
+}

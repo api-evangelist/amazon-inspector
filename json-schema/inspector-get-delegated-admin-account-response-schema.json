@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-get-delegated-admin-account-response-schema.json",
+  "title": "GetDelegatedAdminAccountResponse",
+  "description": "GetDelegatedAdminAccountResponse schema",
+  "type": "object",
+  "properties": {
+    "delegatedAdmin": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DelegatedAdmin"
+        },
+        {
+          "description": "The Amazon Web Services account ID of the Amazon Inspector delegated administrator."
+        }
+      ]
+    }
+  }
+}

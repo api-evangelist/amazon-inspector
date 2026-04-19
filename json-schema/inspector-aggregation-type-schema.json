@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-aggregation-type-schema.json",
+  "title": "AggregationType",
+  "description": "AggregationType schema",
+  "type": "string",
+  "enum": [
+    "FINDING_TYPE",
+    "PACKAGE",
+    "TITLE",
+    "REPOSITORY",
+    "AMI",
+    "AWS_EC2_INSTANCE",
+    "AWS_ECR_CONTAINER",
+    "IMAGE_LAYER",
+    "ACCOUNT",
+    "AWS_LAMBDA_FUNCTION",
+    "LAMBDA_LAYER"
+  ]
+}

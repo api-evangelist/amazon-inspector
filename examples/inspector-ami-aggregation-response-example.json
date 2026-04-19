@@ -1,0 +1,6 @@
+{
+  "accountId": "id-abc123",
+  "affectedInstances": "example-value",
+  "ami": "example-value",
+  "severityCounts": "example-value"
+}

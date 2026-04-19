@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-get-configuration-response-schema.json",
+  "title": "GetConfigurationResponse",
+  "description": "GetConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "ecrConfiguration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/EcrConfigurationState"
+        },
+        {
+          "description": "Specifies how the ECR automated re-scan duration is currently configured for your environment."
+        }
+      ]
+    }
+  }
+}

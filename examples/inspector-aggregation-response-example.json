@@ -1,0 +1,13 @@
+{
+  "accountAggregation": "example-value",
+  "amiAggregation": "example-value",
+  "awsEcrContainerAggregation": "example-value",
+  "ec2InstanceAggregation": "example-value",
+  "findingTypeAggregation": "example-value",
+  "imageLayerAggregation": "example-value",
+  "lambdaFunctionAggregation": "example-value",
+  "lambdaLayerAggregation": "example-value",
+  "packageAggregation": "example-value",
+  "repositoryAggregation": "example-value",
+  "titleAggregation": "example-value"
+}

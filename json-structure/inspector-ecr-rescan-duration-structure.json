@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-ecr-rescan-duration-structure.json",
+  "name": "EcrRescanDuration",
+  "description": "EcrRescanDuration schema",
+  "type": "string",
+  "enum": [
+    "LIFETIME",
+    "DAYS_30",
+    "DAYS_180"
+  ]
+}

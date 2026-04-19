@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-repository-aggregation-response-structure.json",
+  "name": "RepositoryAggregationResponse",
+  "description": "A response that contains details on the results of a finding aggregation by repository.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The ID of the Amazon Web Services account associated with the findings."
+        }
+      ]
+    },
+    "affectedImages": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Long"
+        },
+        {
+          "description": "The number of container images impacted by the findings."
+        }
+      ]
+    },
+    "repository": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The name of the repository associated with the findings."
+        }
+      ]
+    },
+    "severityCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SeverityCounts"
+        },
+        {
+          "description": "An object that represent the count of matched findings per severity."
+        }
+      ]
+    }
+  },
+  "required": [
+    "repository"
+  ]
+}

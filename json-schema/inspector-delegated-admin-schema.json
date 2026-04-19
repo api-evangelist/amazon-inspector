@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-delegated-admin-schema.json",
+  "title": "DelegatedAdmin",
+  "description": "Details of the Amazon Inspector delegated administrator for your organization.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization."
+        }
+      ]
+    },
+    "relationshipStatus": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RelationshipStatus"
+        },
+        {
+          "description": "The status of the Amazon Inspector delegated administrator."
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-sbom-report-format-structure.json",
+  "name": "SbomReportFormat",
+  "description": "SbomReportFormat schema",
+  "type": "string",
+  "enum": [
+    "CYCLONEDX_1_4",
+    "SPDX_2_3"
+  ]
+}

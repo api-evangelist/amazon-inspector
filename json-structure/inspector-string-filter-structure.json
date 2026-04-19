@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-string-filter-structure.json",
+  "name": "StringFilter",
+  "description": "An object that describes the details of a string filter.",
+  "type": "object",
+  "properties": {
+    "comparison": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringComparison"
+        },
+        {
+          "description": "The operator to use when comparing values in the filter."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringInput"
+        },
+        {
+          "description": "The value to filter on."
+        }
+      ]
+    }
+  },
+  "required": [
+    "comparison",
+    "value"
+  ]
+}

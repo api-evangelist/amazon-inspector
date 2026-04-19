@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-currency-structure.json",
+  "name": "Currency",
+  "description": "Currency schema",
+  "type": "string",
+  "enum": [
+    "USD"
+  ]
+}

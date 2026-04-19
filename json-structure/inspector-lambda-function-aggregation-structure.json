@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-lambda-function-aggregation-structure.json",
+  "name": "LambdaFunctionAggregation",
+  "description": "The details that define a findings aggregation based on AWS Lambda functions.",
+  "type": "object",
+  "properties": {
+    "functionNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The AWS Lambda function names to include in the aggregation results."
+        }
+      ]
+    },
+    "functionTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MapFilterList"
+        },
+        {
+          "description": "The tags to include in the aggregation results."
+        }
+      ]
+    },
+    "resourceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The resource IDs to include in the aggregation results."
+        }
+      ]
+    },
+    "runtimes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "Returns findings aggregated by AWS Lambda function runtime environments."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionSortBy"
+        },
+        {
+          "description": "The finding severity to use for sorting the results."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to use for sorting the results."
+        }
+      ]
+    }
+  }
+}

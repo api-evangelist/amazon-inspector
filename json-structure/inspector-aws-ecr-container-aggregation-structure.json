@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-aws-ecr-container-aggregation-structure.json",
+  "name": "AwsEcrContainerAggregation",
+  "description": "An aggregation of information about Amazon ECR containers.",
+  "type": "object",
+  "properties": {
+    "architectures": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The architecture of the containers."
+        }
+      ]
+    },
+    "imageShas": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The image SHA values."
+        }
+      ]
+    },
+    "imageTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The image tags."
+        }
+      ]
+    },
+    "repositories": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The container repositories."
+        }
+      ]
+    },
+    "resourceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The container resource IDs."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AwsEcrContainerSortBy"
+        },
+        {
+          "description": "The value to sort by."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The sort order (ascending or descending)."
+        }
+      ]
+    }
+  }
+}

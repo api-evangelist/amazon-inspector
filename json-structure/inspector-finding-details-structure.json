@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-finding-details-structure.json",
+  "name": "FindingDetails",
+  "description": "FindingDetails schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "cisaData": {
+        "$ref": "#/components/schemas/CisaData"
+      },
+      "cwes": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Cwes"
+          },
+          {
+            "description": "The Common Weakness Enumerations (CWEs) associated with the vulnerability."
+          }
+        ]
+      },
+      "epssScore": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Double"
+          },
+          {
+            "description": "The Exploit Prediction Scoring System (EPSS) score of the vulnerability."
+          }
+        ]
+      },
+      "evidences": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/EvidenceList"
+          },
+          {
+            "description": "Information on the evidence of the vulnerability."
+          }
+        ]
+      },
+      "exploitObserved": {
+        "$ref": "#/components/schemas/ExploitObserved"
+      },
+      "findingArn": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FindingArn"
+          },
+          {
+            "description": "The finding ARN that the vulnerability details are associated with."
+          }
+        ]
+      },
+      "referenceUrls": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/VulnerabilityReferenceUrls"
+          },
+          {
+            "description": "The reference URLs for the vulnerability data."
+          }
+        ]
+      },
+      "riskScore": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/RiskScore"
+          },
+          {
+            "description": "The risk score of the vulnerability."
+          }
+        ]
+      },
+      "tools": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Tools"
+          },
+          {
+            "description": "The known malware tools or kits that can exploit the vulnerability."
+          }
+        ]
+      },
+      "ttps": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Ttps"
+          },
+          {
+            "description": "The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability."
+          }
+        ]
+      }
+    },
+    "description": "Details of the vulnerability identified in a finding."
+  }
+}

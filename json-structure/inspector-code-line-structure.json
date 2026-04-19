@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-code-line-structure.json",
+  "name": "CodeLine",
+  "description": "Contains information on the lines of code associated with a code snippet.",
+  "type": "object",
+  "properties": {
+    "content": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CodeLineContentString"
+        },
+        {
+          "description": "The content of a line of code"
+        }
+      ]
+    },
+    "lineNumber": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The line number that a section of code is located at."
+        }
+      ]
+    }
+  },
+  "required": [
+    "content",
+    "lineNumber"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-sort-field-structure.json",
+  "name": "SortField",
+  "description": "SortField schema",
+  "type": "string",
+  "enum": [
+    "AWS_ACCOUNT_ID",
+    "FINDING_TYPE",
+    "SEVERITY",
+    "FIRST_OBSERVED_AT",
+    "LAST_OBSERVED_AT",
+    "FINDING_STATUS",
+    "RESOURCE_TYPE",
+    "ECR_IMAGE_PUSHED_AT",
+    "ECR_IMAGE_REPOSITORY_NAME",
+    "ECR_IMAGE_REGISTRY",
+    "NETWORK_PROTOCOL",
+    "COMPONENT_TYPE",
+    "VULNERABILITY_ID",
+    "VULNERABILITY_SOURCE",
+    "INSPECTOR_SCORE",
+    "VENDOR_SEVERITY",
+    "EPSS_SCORE"
+  ]
+}

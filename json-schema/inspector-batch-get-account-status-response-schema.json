@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-batch-get-account-status-response-schema.json",
+  "title": "BatchGetAccountStatusResponse",
+  "description": "BatchGetAccountStatusResponse schema",
+  "type": "object",
+  "properties": {
+    "accounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountStateList"
+        },
+        {
+          "description": "An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts."
+        }
+      ]
+    },
+    "failedAccounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailedAccountList"
+        },
+        {
+          "description": "An array of objects detailing any accounts that failed to enable Amazon Inspector and why."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accounts"
+  ]
+}

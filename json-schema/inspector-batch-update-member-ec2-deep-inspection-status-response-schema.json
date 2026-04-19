@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-batch-update-member-ec2-deep-inspection-status-response-schema.json",
+  "title": "BatchUpdateMemberEc2DeepInspectionStatusResponse",
+  "description": "BatchUpdateMemberEc2DeepInspectionStatusResponse schema",
+  "type": "object",
+  "properties": {
+    "accountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MemberAccountEc2DeepInspectionStatusStateList"
+        },
+        {
+          "description": "An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. "
+        }
+      ]
+    },
+    "failedAccountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusStateList"
+        },
+        {
+          "description": "An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. "
+        }
+      ]
+    }
+  }
+}

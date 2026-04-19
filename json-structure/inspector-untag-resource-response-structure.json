@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-untag-resource-response-structure.json",
+  "name": "UntagResourceResponse",
+  "description": "UntagResourceResponse schema",
+  "type": "object",
+  "properties": {}
+}

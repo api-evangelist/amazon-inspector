@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-free-trial-info-error-list-structure.json",
+  "name": "FreeTrialInfoErrorList",
+  "description": "FreeTrialInfoErrorList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "accountId",
+      "code",
+      "message"
+    ],
+    "properties": {
+      "accountId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/MeteringAccountId"
+          },
+          {
+            "description": "The account associated with the Amazon Inspector free trial information."
+          }
+        ]
+      },
+      "code": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/FreeTrialInfoErrorCode"
+          },
+          {
+            "description": "The error code."
+          }
+        ]
+      },
+      "message": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/String"
+          },
+          {
+            "description": "The error message returned."
+          }
+        ]
+      }
+    },
+    "description": "Information about an error received while accessing free trail data for an account."
+  }
+}

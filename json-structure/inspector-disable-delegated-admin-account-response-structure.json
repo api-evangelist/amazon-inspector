@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-disable-delegated-admin-account-response-structure.json",
+  "name": "DisableDelegatedAdminAccountResponse",
+  "description": "DisableDelegatedAdminAccountResponse schema",
+  "type": "object",
+  "properties": {
+    "delegatedAdminAccountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services account ID of the successfully disabled delegated administrator."
+        }
+      ]
+    }
+  },
+  "required": [
+    "delegatedAdminAccountId"
+  ]
+}

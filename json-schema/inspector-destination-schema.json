@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-destination-schema.json",
+  "title": "Destination",
+  "description": "Contains details of the Amazon S3 bucket and KMS key used to export findings.",
+  "type": "object",
+  "properties": {
+    "bucketName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The name of the Amazon S3 bucket to export findings to."
+        }
+      ]
+    },
+    "keyPrefix": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The prefix that the findings will be written under."
+        }
+      ]
+    },
+    "kmsKeyArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The ARN of the KMS key used to encrypt data when exporting findings."
+        }
+      ]
+    }
+  },
+  "required": [
+    "bucketName",
+    "kmsKeyArn"
+  ]
+}

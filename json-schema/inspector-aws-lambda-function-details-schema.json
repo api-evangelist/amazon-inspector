@@ -1,0 +1,116 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-aws-lambda-function-details-schema.json",
+  "title": "AwsLambdaFunctionDetails",
+  "description": " A summary of information about the AWS Lambda function.",
+  "type": "object",
+  "properties": {
+    "architectures": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ArchitectureList"
+        },
+        {
+          "description": "The instruction set architecture that the AWS Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>."
+        }
+      ]
+    },
+    "codeSha256": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The SHA256 hash of the AWS Lambda function's deployment package."
+        }
+      ]
+    },
+    "executionRoleArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExecutionRoleArn"
+        },
+        {
+          "description": "The AWS Lambda function's execution role."
+        }
+      ]
+    },
+    "functionName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FunctionName"
+        },
+        {
+          "description": "The name of the AWS Lambda function."
+        }
+      ]
+    },
+    "lastModifiedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "The date and time that a user last updated the configuration, in <a href=\"https://www.iso.org/iso-8601-date-and-time-format.html\">ISO 8601 format</a> "
+        }
+      ]
+    },
+    "layers": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LayerList"
+        },
+        {
+          "description": "The AWS Lambda function's <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html\"> layers</a>. A Lambda function can have up to five layers."
+        }
+      ]
+    },
+    "packageType": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PackageType"
+        },
+        {
+          "description": "The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive."
+        }
+      ]
+    },
+    "runtime": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Runtime"
+        },
+        {
+          "description": "The runtime environment for the AWS Lambda function."
+        }
+      ]
+    },
+    "version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Version"
+        },
+        {
+          "description": "The version of the AWS Lambda function."
+        }
+      ]
+    },
+    "vpcConfig": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaVpcConfig"
+        },
+        {
+          "description": "The AWS Lambda function's networking configuration."
+        }
+      ]
+    }
+  },
+  "required": [
+    "codeSha256",
+    "executionRoleArn",
+    "functionName",
+    "runtime",
+    "version"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-coverage-map-filter-list-structure.json",
+  "name": "CoverageMapFilterList",
+  "description": "CoverageMapFilterList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "comparison",
+      "key"
+    ],
+    "properties": {
+      "comparison": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CoverageMapComparison"
+          },
+          {
+            "description": "The operator to compare coverage on."
+          }
+        ]
+      },
+      "key": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The tag key associated with the coverage map filter."
+          }
+        ]
+      },
+      "value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The tag value associated with the coverage map filter."
+          }
+        ]
+      }
+    },
+    "description": "Contains details of a coverage map filter."
+  }
+}

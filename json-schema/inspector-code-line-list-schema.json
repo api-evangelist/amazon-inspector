@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-code-line-list-schema.json",
+  "title": "CodeLineList",
+  "description": "CodeLineList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "content",
+      "lineNumber"
+    ],
+    "properties": {
+      "content": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CodeLineContentString"
+          },
+          {
+            "description": "The content of a line of code"
+          }
+        ]
+      },
+      "lineNumber": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Integer"
+          },
+          {
+            "description": "The line number that a section of code is located at."
+          }
+        ]
+      }
+    },
+    "description": "Contains information on the lines of code associated with a code snippet."
+  }
+}

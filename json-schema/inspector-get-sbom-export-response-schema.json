@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-get-sbom-export-response-schema.json",
+  "title": "GetSbomExportResponse",
+  "description": "GetSbomExportResponse schema",
+  "type": "object",
+  "properties": {
+    "errorCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReportingErrorCode"
+        },
+        {
+          "description": "An error code."
+        }
+      ]
+    },
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "An error message."
+        }
+      ]
+    },
+    "filterCriteria": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ResourceFilterCriteria"
+        },
+        {
+          "description": "Contains details about the resource filter criteria used for the software bill of materials (SBOM) report."
+        }
+      ]
+    },
+    "format": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SbomReportFormat"
+        },
+        {
+          "description": "The format of the software bill of materials (SBOM) report."
+        }
+      ]
+    },
+    "reportId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReportId"
+        },
+        {
+          "description": "The report ID of the software bill of materials (SBOM) report."
+        }
+      ]
+    },
+    "s3Destination": {
+      "type": "object",
+      "required": [
+        "bucketName",
+        "kmsKeyArn"
+      ],
+      "properties": {
+        "bucketName": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/String"
+            },
+            {
+              "description": "The name of the Amazon S3 bucket to export findings to."
+            }
+          ]
+        },
+        "keyPrefix": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/String"
+            },
+            {
+              "description": "The prefix that the findings will be written under."
+            }
+          ]
+        },
+        "kmsKeyArn": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/String"
+            },
+            {
+              "description": "The ARN of the KMS key used to encrypt data when exporting findings."
+            }
+          ]
+        }
+      },
+      "description": "Contains details of the Amazon S3 bucket and KMS key used to export findings."
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ExternalReportStatus"
+        },
+        {
+          "description": "The status of the software bill of materials (SBOM) report."
+        }
+      ]
+    }
+  }
+}

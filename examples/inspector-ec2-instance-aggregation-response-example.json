@@ -1,0 +1,9 @@
+{
+  "accountId": "id-abc123",
+  "ami": "example-value",
+  "instanceId": "id-abc123",
+  "instanceTags": "example-value",
+  "networkFindings": "example-value",
+  "operatingSystem": "example-value",
+  "severityCounts": "example-value"
+}

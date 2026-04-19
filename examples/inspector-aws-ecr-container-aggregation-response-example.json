@@ -1,0 +1,9 @@
+{
+  "accountId": "id-abc123",
+  "architecture": "example-value",
+  "imageSha": "example-value",
+  "imageTags": "example-value",
+  "repository": "example-value",
+  "resourceId": "id-abc123",
+  "severityCounts": "example-value"
+}

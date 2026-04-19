@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-aggregation-response-structure.json",
+  "name": "AggregationResponse",
+  "description": "A structure that contains details about the results of an aggregation type.",
+  "type": "object",
+  "properties": {
+    "accountAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on Amazon Web Services account IDs."
+        }
+      ]
+    },
+    "amiAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AmiAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on Amazon Machine Images (AMIs)."
+        }
+      ]
+    },
+    "awsEcrContainerAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AwsEcrContainerAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on Amazon ECR container images."
+        }
+      ]
+    },
+    "ec2InstanceAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Ec2InstanceAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on Amazon EC2 instances."
+        }
+      ]
+    },
+    "findingTypeAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingTypeAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on finding types."
+        }
+      ]
+    },
+    "imageLayerAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ImageLayerAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on container image layers."
+        }
+      ]
+    },
+    "lambdaFunctionAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaFunctionAggregationResponse"
+        },
+        {
+          "description": "An aggregation of findings by AWS Lambda function."
+        }
+      ]
+    },
+    "lambdaLayerAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaLayerAggregationResponse"
+        },
+        {
+          "description": "An aggregation of findings by AWS Lambda layer."
+        }
+      ]
+    },
+    "packageAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PackageAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on operating system package type."
+        }
+      ]
+    },
+    "repositoryAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/RepositoryAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on Amazon ECR repositories."
+        }
+      ]
+    },
+    "titleAggregation": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/TitleAggregationResponse"
+        },
+        {
+          "description": "An object that contains details about an aggregation response based on finding title."
+        }
+      ]
+    }
+  }
+}

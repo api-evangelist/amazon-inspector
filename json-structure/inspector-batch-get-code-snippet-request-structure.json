@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-batch-get-code-snippet-request-structure.json",
+  "name": "BatchGetCodeSnippetRequest",
+  "description": "BatchGetCodeSnippetRequest schema",
+  "type": "object",
+  "properties": {
+    "findingArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/BatchGetCodeSnippetRequestFindingArnsList"
+        },
+        {
+          "description": "An array of finding ARNs for the findings you want to retrieve code snippets from."
+        }
+      ]
+    }
+  },
+  "required": [
+    "findingArns"
+  ]
+}

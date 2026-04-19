@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-aws-ecr-container-aggregation-response-structure.json",
+  "name": "AwsEcrContainerAggregationResponse",
+  "description": "An aggregation of information about Amazon ECR containers.",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services account ID of the account that owns the container."
+        }
+      ]
+    },
+    "architecture": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The architecture of the container."
+        }
+      ]
+    },
+    "imageSha": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The SHA value of the container image."
+        }
+      ]
+    },
+    "imageTags": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringList"
+        },
+        {
+          "description": "The container image stags."
+        }
+      ]
+    },
+    "repository": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/String"
+        },
+        {
+          "description": "The container repository."
+        }
+      ]
+    },
+    "resourceId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The resource ID of the container."
+        }
+      ]
+    },
+    "severityCounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SeverityCounts"
+        },
+        {
+          "description": "The number of finding by severity."
+        }
+      ]
+    }
+  },
+  "required": [
+    "resourceId"
+  ]
+}

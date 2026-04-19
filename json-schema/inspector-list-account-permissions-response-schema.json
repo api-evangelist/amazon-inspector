@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-list-account-permissions-response-schema.json",
+  "title": "ListAccountPermissionsResponse",
+  "description": "ListAccountPermissionsResponse schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page."
+        }
+      ]
+    },
+    "permissions": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Permissions"
+        },
+        {
+          "description": "Contains details on the permissions an account has to configure Amazon Inspector."
+        }
+      ]
+    }
+  },
+  "required": [
+    "permissions"
+  ]
+}

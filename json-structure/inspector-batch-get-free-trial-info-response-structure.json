@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-batch-get-free-trial-info-response-structure.json",
+  "name": "BatchGetFreeTrialInfoResponse",
+  "description": "BatchGetFreeTrialInfoResponse schema",
+  "type": "object",
+  "properties": {
+    "accounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FreeTrialAccountInfoList"
+        },
+        {
+          "description": "An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. "
+        }
+      ]
+    },
+    "failedAccounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FreeTrialInfoErrorList"
+        },
+        {
+          "description": "An array of objects detailing any accounts that free trial data could not be returned for."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accounts",
+    "failedAccounts"
+  ]
+}

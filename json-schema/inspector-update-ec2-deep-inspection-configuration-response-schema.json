@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-update-ec2-deep-inspection-configuration-response-schema.json",
+  "title": "UpdateEc2DeepInspectionConfigurationResponse",
+  "description": "UpdateEc2DeepInspectionConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "errorMessage": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "An error message explaining why new Amazon Inspector deep inspection custom paths could not be added."
+        }
+      ]
+    },
+    "orgPackagePaths": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PathList"
+        },
+        {
+          "description": "The current Amazon Inspector deep inspection custom paths for the organization."
+        }
+      ]
+    },
+    "packagePaths": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/PathList"
+        },
+        {
+          "description": "The current Amazon Inspector deep inspection custom paths for your account."
+        }
+      ]
+    },
+    "status": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Ec2DeepInspectionStatus"
+        },
+        {
+          "description": "The status of Amazon Inspector deep inspection in your account."
+        }
+      ]
+    }
+  }
+}

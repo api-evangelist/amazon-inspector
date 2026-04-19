@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-lambda-layer-aggregation-structure.json",
+  "name": "LambdaLayerAggregation",
+  "description": "The details that define a findings aggregation based on an AWS Lambda function's layers.",
+  "type": "object",
+  "properties": {
+    "functionNames": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The names of the AWS Lambda functions associated with the layers."
+        }
+      ]
+    },
+    "layerArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The Amazon Resource Name (ARN) of the AWS Lambda function layer. "
+        }
+      ]
+    },
+    "resourceIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/StringFilterList"
+        },
+        {
+          "description": "The resource IDs for the AWS Lambda function layers."
+        }
+      ]
+    },
+    "sortBy": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/LambdaLayerSortBy"
+        },
+        {
+          "description": "The finding severity to use for sorting the results."
+        }
+      ]
+    },
+    "sortOrder": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SortOrder"
+        },
+        {
+          "description": "The order to use for sorting the results."
+        }
+      ]
+    }
+  }
+}

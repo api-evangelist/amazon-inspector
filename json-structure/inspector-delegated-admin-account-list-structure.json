@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-delegated-admin-account-list-structure.json",
+  "name": "DelegatedAdminAccountList",
+  "description": "DelegatedAdminAccountList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "accountId": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/AccountId"
+          },
+          {
+            "description": "The Amazon Web Services account ID of the Amazon Inspector delegated administrator for your organization."
+          }
+        ]
+      },
+      "status": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/DelegatedAdminStatus"
+          },
+          {
+            "description": "The status of the Amazon Inspector delegated administrator."
+          }
+        ]
+      }
+    },
+    "description": "Details of the Amazon Inspector delegated administrator for your organization."
+  }
+}

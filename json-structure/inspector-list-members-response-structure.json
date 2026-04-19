@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-list-members-response-structure.json",
+  "name": "ListMembersResponse",
+  "description": "ListMembersResponse schema",
+  "type": "object",
+  "properties": {
+    "members": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MemberList"
+        },
+        {
+          "description": "An object that contains details for each member account."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination parameter to be used on the next list operation to retrieve more items."
+        }
+      ]
+    }
+  }
+}

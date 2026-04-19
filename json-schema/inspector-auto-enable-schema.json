@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-auto-enable-schema.json",
+  "title": "AutoEnable",
+  "description": "Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.",
+  "type": "object",
+  "properties": {
+    "ec2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Represents whether Amazon EC2 scans are automatically enabled for new members of your Amazon Inspector organization."
+        }
+      ]
+    },
+    "ecr": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Represents whether Amazon ECR scans are automatically enabled for new members of your Amazon Inspector organization."
+        }
+      ]
+    },
+    "lambda": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Represents whether AWS Lambda standard scans are automatically enabled for new members of your Amazon Inspector organization. "
+        }
+      ]
+    },
+    "lambdaCode": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Boolean"
+        },
+        {
+          "description": "Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. <pre><code> &lt;/p&gt; </code></pre>"
+        }
+      ]
+    }
+  },
+  "required": [
+    "ec2",
+    "ecr"
+  ]
+}

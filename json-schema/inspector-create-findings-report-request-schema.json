@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-create-findings-report-request-schema.json",
+  "title": "CreateFindingsReportRequest",
+  "description": "CreateFindingsReportRequest schema",
+  "type": "object",
+  "properties": {
+    "filterCriteria": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FilterCriteria"
+        },
+        {
+          "description": "The filter criteria to apply to the results of the finding report."
+        }
+      ]
+    },
+    "reportFormat": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ReportFormat"
+        },
+        {
+          "description": "The format to generate the report in."
+        }
+      ]
+    },
+    "s3Destination": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Destination"
+        },
+        {
+          "description": "The Amazon S3 export destination for the report."
+        }
+      ]
+    }
+  },
+  "required": [
+    "reportFormat",
+    "s3Destination"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-batch-get-member-ec2-deep-inspection-status-response-schema.json",
+  "title": "BatchGetMemberEc2DeepInspectionStatusResponse",
+  "description": "BatchGetMemberEc2DeepInspectionStatusResponse schema",
+  "type": "object",
+  "properties": {
+    "accountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/MemberAccountEc2DeepInspectionStatusStateList"
+        },
+        {
+          "description": "An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts. <pre><code> &lt;/p&gt; </code></pre>"
+        }
+      ]
+    },
+    "failedAccountIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusStateList"
+        },
+        {
+          "description": "An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why. <pre><code> &lt;/p&gt; </code></pre>"
+        }
+      ]
+    }
+  }
+}

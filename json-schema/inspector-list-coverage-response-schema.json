@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-list-coverage-response-schema.json",
+  "title": "ListCoverageResponse",
+  "description": "ListCoverageResponse schema",
+  "type": "object",
+  "properties": {
+    "coveredResources": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CoveredResources"
+        },
+        {
+          "description": "An object that contains details on the covered resources in your environment."
+        }
+      ]
+    },
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page."
+        }
+      ]
+    }
+  }
+}

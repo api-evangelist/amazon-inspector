@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-coverage-string-filter-schema.json",
+  "title": "CoverageStringFilter",
+  "description": "Contains details of a coverage string filter.",
+  "type": "object",
+  "properties": {
+    "comparison": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CoverageStringComparison"
+        },
+        {
+          "description": "The operator to compare strings on."
+        }
+      ]
+    },
+    "value": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CoverageStringInput"
+        },
+        {
+          "description": "The value to compare strings on."
+        }
+      ]
+    }
+  },
+  "required": [
+    "comparison",
+    "value"
+  ]
+}

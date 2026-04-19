@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-cvss3-structure.json",
+  "name": "Cvss3",
+  "description": "The Common Vulnerability Scoring System (CVSS) version 3 details for the vulnerability.",
+  "type": "object",
+  "properties": {
+    "baseScore": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Cvss3BaseScore"
+        },
+        {
+          "description": "The CVSS v3 base score for the vulnerability."
+        }
+      ]
+    },
+    "scoringVector": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Cvss3ScoringVector"
+        },
+        {
+          "description": "The scoring vector associated with the CVSS v3 score."
+        }
+      ]
+    }
+  }
+}

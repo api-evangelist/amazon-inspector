@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-coverage-string-comparison-schema.json",
+  "title": "CoverageStringComparison",
+  "description": "CoverageStringComparison schema",
+  "type": "string",
+  "enum": [
+    "EQUALS",
+    "NOT_EQUALS"
+  ]
+}

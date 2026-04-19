@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-resource-state-schema.json",
+  "title": "ResourceState",
+  "description": "Details the state of Amazon Inspector for each resource type Amazon Inspector scans.",
+  "type": "object",
+  "properties": {
+    "ec2": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/State"
+        },
+        {
+          "description": "An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources."
+        }
+      ]
+    },
+    "ecr": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/State"
+        },
+        {
+          "description": "An object detailing the state of Amazon Inspector scanning for Amazon ECR resources."
+        }
+      ]
+    },
+    "lambda": {
+      "type": "object",
+      "required": [
+        "errorCode",
+        "errorMessage",
+        "status"
+      ],
+      "properties": {
+        "errorCode": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/ErrorCode"
+            },
+            {
+              "description": "The error code explaining why the account failed to enable Amazon Inspector."
+            }
+          ]
+        },
+        "errorMessage": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/NonEmptyString"
+            },
+            {
+              "description": "The error message received when the account failed to enable Amazon Inspector."
+            }
+          ]
+        },
+        "status": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Status"
+            },
+            {
+              "description": "The status of Amazon Inspector for the account."
+            }
+          ]
+        }
+      },
+      "description": "An object that described the state of Amazon Inspector scans for an account."
+    },
+    "lambdaCode": {
+      "type": "object",
+      "required": [
+        "errorCode",
+        "errorMessage",
+        "status"
+      ],
+      "properties": {
+        "errorCode": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/ErrorCode"
+            },
+            {
+              "description": "The error code explaining why the account failed to enable Amazon Inspector."
+            }
+          ]
+        },
+        "errorMessage": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/NonEmptyString"
+            },
+            {
+              "description": "The error message received when the account failed to enable Amazon Inspector."
+            }
+          ]
+        },
+        "status": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Status"
+            },
+            {
+              "description": "The status of Amazon Inspector for the account."
+            }
+          ]
+        }
+      },
+      "description": "An object that described the state of Amazon Inspector scans for an account."
+    }
+  },
+  "required": [
+    "ec2",
+    "ecr"
+  ]
+}

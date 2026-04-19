@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-list-usage-totals-response-structure.json",
+  "name": "ListUsageTotalsResponse",
+  "description": "ListUsageTotalsResponse schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/ListUsageTotalsNextToken"
+        },
+        {
+          "description": "The pagination parameter to be used on the next list operation to retrieve more items."
+        }
+      ]
+    },
+    "totals": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/UsageTotalList"
+        },
+        {
+          "description": "An object with details on the total usage for the requested account."
+        }
+      ]
+    }
+  }
+}

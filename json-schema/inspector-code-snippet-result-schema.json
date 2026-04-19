@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-code-snippet-result-schema.json",
+  "title": "CodeSnippetResult",
+  "description": "Contains information on a code snippet retrieved by Amazon Inspector from a code vulnerability finding.",
+  "type": "object",
+  "properties": {
+    "codeSnippet": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CodeLineList"
+        },
+        {
+          "description": "Contains information on the retrieved code snippet."
+        }
+      ]
+    },
+    "endLine": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The line number of the last line of a code snippet."
+        }
+      ]
+    },
+    "findingArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingArn"
+        },
+        {
+          "description": "The ARN of a finding that the code snippet is associated with."
+        }
+      ]
+    },
+    "startLine": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Integer"
+        },
+        {
+          "description": "The line number of the first line of a code snippet."
+        }
+      ]
+    },
+    "suggestedFixes": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SuggestedFixes"
+        },
+        {
+          "description": "Details of a suggested code fix."
+        }
+      ]
+    }
+  }
+}

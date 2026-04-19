@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-batch-get-finding-details-request-schema.json",
+  "title": "BatchGetFindingDetailsRequest",
+  "description": "BatchGetFindingDetailsRequest schema",
+  "type": "object",
+  "properties": {
+    "findingArns": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FindingArnList"
+        },
+        {
+          "description": "A list of finding ARNs."
+        }
+      ]
+    }
+  },
+  "required": [
+    "findingArns"
+  ]
+}

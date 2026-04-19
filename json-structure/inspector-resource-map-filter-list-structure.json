@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-resource-map-filter-list-structure.json",
+  "name": "ResourceMapFilterList",
+  "description": "ResourceMapFilterList schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "comparison",
+      "key"
+    ],
+    "properties": {
+      "comparison": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/ResourceMapComparison"
+          },
+          {
+            "description": "The filter's comparison."
+          }
+        ]
+      },
+      "key": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The filter's key."
+          }
+        ]
+      },
+      "value": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/NonEmptyString"
+          },
+          {
+            "description": "The filter's value."
+          }
+        ]
+      }
+    },
+    "description": "A resource map filter for a software bill of material report."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-date-filter-structure.json",
+  "name": "DateFilter",
+  "description": "Contains details on the time range used to filter findings.",
+  "type": "object",
+  "properties": {
+    "endInclusive": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A timestamp representing the end of the time period filtered on."
+        }
+      ]
+    },
+    "startInclusive": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Timestamp"
+        },
+        {
+          "description": "A timestamp representing the start of the time period filtered on."
+        }
+      ]
+    }
+  }
+}

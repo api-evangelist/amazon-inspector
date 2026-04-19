@@ -1,0 +1,20 @@
+{
+  "findingArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "severity": "UNTRIAGED",
+  "status": "CLOSED",
+  "type": "PACKAGE_VULNERABILITY",
+  "title": "example-value",
+  "description": "example-value",
+  "awsAccountId": "id-abc123",
+  "firstObservedAt": "example-value",
+  "lastObservedAt": "example-value",
+  "updatedAt": "example-value",
+  "inspectorScore": "example-value",
+  "resources": [
+    "example-value",
+    "example-value"
+  ],
+  "remediation": "example-value",
+  "packageVulnerabilityDetails": "example-value",
+  "networkReachabilityDetails": "example-value"
+}

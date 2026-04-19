@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-search-vulnerabilities-response-schema.json",
+  "title": "SearchVulnerabilitiesResponse",
+  "description": "SearchVulnerabilitiesResponse schema",
+  "type": "object",
+  "properties": {
+    "nextToken": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NextToken"
+        },
+        {
+          "description": "The pagination parameter to be used on the next list operation to retrieve more items."
+        }
+      ]
+    },
+    "vulnerabilities": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Vulnerabilities"
+        },
+        {
+          "description": "Details about the listed vulnerability."
+        }
+      ]
+    }
+  },
+  "required": [
+    "vulnerabilities"
+  ]
+}

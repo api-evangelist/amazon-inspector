@@ -1,0 +1,109 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-aws-ec2-instance-details-structure.json",
+  "name": "AwsEc2InstanceDetails",
+  "description": "Details of the Amazon EC2 instance involved in a finding.",
+  "type": "object",
+  "properties": {
+    "iamInstanceProfileArn": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The IAM instance profile ARN of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "imageId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The image ID of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "ipV4Addresses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpV4AddressList"
+        },
+        {
+          "description": "The IPv4 addresses of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "ipV6Addresses": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/IpV6AddressList"
+        },
+        {
+          "description": "The IPv6 addresses of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "keyName": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The name of the key pair used to launch the Amazon EC2 instance."
+        }
+      ]
+    },
+    "launchedAt": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DateTimeTimestamp"
+        },
+        {
+          "description": "The date and time the Amazon EC2 instance was launched at."
+        }
+      ]
+    },
+    "platform": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Platform"
+        },
+        {
+          "description": "The platform of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "subnetId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The subnet ID of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The type of the Amazon EC2 instance."
+        }
+      ]
+    },
+    "vpcId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The VPC ID of the Amazon EC2 instance."
+        }
+      ]
+    }
+  }
+}

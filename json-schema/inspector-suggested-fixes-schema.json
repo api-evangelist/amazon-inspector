@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-suggested-fixes-schema.json",
+  "title": "SuggestedFixes",
+  "description": "SuggestedFixes schema",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "code": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SuggestedFixCodeString"
+          },
+          {
+            "description": "The fix's code."
+          }
+        ]
+      },
+      "description": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/SuggestedFixDescriptionString"
+          },
+          {
+            "description": "The fix's description."
+          }
+        ]
+      }
+    },
+    "description": "A suggested fix for a vulnerability in your Lambda function code."
+  }
+}

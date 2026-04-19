@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-cvss-score-details-schema.json",
+  "title": "CvssScoreDetails",
+  "description": "Information about the CVSS score.",
+  "type": "object",
+  "properties": {
+    "adjustments": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/CvssScoreAdjustmentList"
+        },
+        {
+          "description": "An object that contains details about adjustment Amazon Inspector made to the CVSS score."
+        }
+      ]
+    },
+    "cvssSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The source of the CVSS data."
+        }
+      ]
+    },
+    "score": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/Double"
+        },
+        {
+          "description": "The CVSS score."
+        }
+      ]
+    },
+    "scoreSource": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The source for the CVSS score."
+        }
+      ]
+    },
+    "scoringVector": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The vector for the CVSS score."
+        }
+      ]
+    },
+    "version": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The CVSS version used in scoring."
+        }
+      ]
+    }
+  },
+  "required": [
+    "score",
+    "scoreSource",
+    "scoringVector",
+    "version"
+  ]
+}

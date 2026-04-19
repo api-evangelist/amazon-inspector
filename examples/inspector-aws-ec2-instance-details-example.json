@@ -1,0 +1,12 @@
+{
+  "iamInstanceProfileArn": "arn:aws:iot:us-east-1:123456789012:thing/example",
+  "imageId": "id-abc123",
+  "ipV4Addresses": "example-value",
+  "ipV6Addresses": "example-value",
+  "keyName": "example-resource",
+  "launchedAt": "example-value",
+  "platform": "example-value",
+  "subnetId": "id-abc123",
+  "type": "example-value",
+  "vpcId": "id-abc123"
+}

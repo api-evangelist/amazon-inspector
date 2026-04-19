@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-associate-member-request-schema.json",
+  "title": "AssociateMemberRequest",
+  "description": "AssociateMemberRequest schema",
+  "type": "object",
+  "properties": {
+    "accountId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountId"
+        },
+        {
+          "description": "The Amazon Web Services account ID of the member account to be associated."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accountId"
+  ]
+}

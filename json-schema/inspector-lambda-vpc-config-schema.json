@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-lambda-vpc-config-schema.json",
+  "title": "LambdaVpcConfig",
+  "description": "The VPC security groups and subnets that are attached to an AWS Lambda function. For more information, see <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html\">VPC Settings</a>.",
+  "type": "object",
+  "properties": {
+    "securityGroupIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SecurityGroupIdList"
+        },
+        {
+          "description": "The VPC security groups and subnets that are attached to an AWS Lambda function. For more information, see <a href=\"https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html\">VPC Settings</a>."
+        }
+      ]
+    },
+    "subnetIds": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/SubnetIdList"
+        },
+        {
+          "description": "A list of VPC subnet IDs."
+        }
+      ]
+    },
+    "vpcId": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/VpcId"
+        },
+        {
+          "description": "The ID of the VPC."
+        }
+      ]
+    }
+  }
+}

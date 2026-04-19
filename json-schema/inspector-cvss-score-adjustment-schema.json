@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-cvss-score-adjustment-schema.json",
+  "title": "CvssScoreAdjustment",
+  "description": "Details on adjustments Amazon Inspector made to the CVSS score for a finding.",
+  "type": "object",
+  "properties": {
+    "metric": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The metric used to adjust the CVSS score."
+        }
+      ]
+    },
+    "reason": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/NonEmptyString"
+        },
+        {
+          "description": "The reason the CVSS score has been adjustment."
+        }
+      ]
+    }
+  },
+  "required": [
+    "metric",
+    "reason"
+  ]
+}

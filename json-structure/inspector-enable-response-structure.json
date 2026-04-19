@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-structure/inspector-enable-response-structure.json",
+  "name": "EnableResponse",
+  "description": "EnableResponse schema",
+  "type": "object",
+  "properties": {
+    "accounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AccountList"
+        },
+        {
+          "description": "Information on the accounts that have had Amazon Inspector scans successfully enabled. Details are provided for each account."
+        }
+      ]
+    },
+    "failedAccounts": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/FailedAccountList"
+        },
+        {
+          "description": "Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account."
+        }
+      ]
+    }
+  },
+  "required": [
+    "accounts"
+  ]
+}

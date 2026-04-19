@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/json-schema/inspector-update-organization-configuration-response-schema.json",
+  "title": "UpdateOrganizationConfigurationResponse",
+  "description": "UpdateOrganizationConfigurationResponse schema",
+  "type": "object",
+  "properties": {
+    "autoEnable": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/AutoEnable"
+        },
+        {
+          "description": "The updated status of scan types automatically enabled for new members of your Amazon Inspector organization."
+        }
+      ]
+    }
+  },
+  "required": [
+    "autoEnable"
+  ]
+}
