@@ -1,0 +1,13 @@
+{
+  "repo": "amazon-inspector",
+  "feeds": [
+    {
+      "source": "https://aws.amazon.com/blogs/security/category/security-identity-compliance/amazon-inspector/",
+      "feed_url": "https://aws.amazon.com/blogs/security/category/security-identity-compliance/amazon-inspector/feed/",
+      "saved": 10,
+      "title": "Amazon Inspector \u2013 AWS Security Blog"
+    }
+  ],
+  "post_count": 10,
+  "fetched": "2026-05-03T23:21:28Z"
+}
