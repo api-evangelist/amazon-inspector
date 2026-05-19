@@ -1,0 +1,72 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Inspector API — Coverage
+  description: 'Amazon Inspector API — Coverage. 1 operations. Lead operation: Amazon Inspector List resource coverage. Self-contained
+    Naftiko capability covering one Amazon Inspector business surface.'
+  tags:
+  - Amazon Inspector
+  - Coverage
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_INSPECTOR_API_KEY: AMAZON_INSPECTOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-inspector-coverage
+    baseUri: https://inspector2.{region}.amazonaws.com
+    description: Amazon Inspector API — Coverage business capability. Self-contained, no shared references.
+    resources:
+    - name: coverage-list
+      path: /coverage/list
+      operations:
+      - name: listcoverage
+        method: POST
+        description: Amazon Inspector List resource coverage
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_INSPECTOR_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-inspector-coverage-rest
+    port: 8080
+    description: REST adapter for Amazon Inspector API — Coverage. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/coverage/list
+      name: coverage-list
+      description: REST surface for coverage-list.
+      operations:
+      - method: POST
+        name: listcoverage
+        description: Amazon Inspector List resource coverage
+        call: amazon-inspector-coverage.listcoverage
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-inspector-coverage-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Inspector API — Coverage. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-inspector-list-resource-coverage
+      description: Amazon Inspector List resource coverage
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-inspector-coverage.listcoverage
+      outputParameters:
+      - type: object
+        mapping: $.

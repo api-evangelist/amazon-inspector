@@ -1,0 +1,104 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Inspector API — Filters
+  description: 'Amazon Inspector API — Filters. 2 operations. Lead operation: Amazon Inspector Create a finding filter. Self-contained
+    Naftiko capability covering one Amazon Inspector business surface.'
+  tags:
+  - Amazon Inspector
+  - Filters
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_INSPECTOR_API_KEY: AMAZON_INSPECTOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-inspector-filters
+    baseUri: https://inspector2.{region}.amazonaws.com
+    description: Amazon Inspector API — Filters business capability. Self-contained, no shared references.
+    resources:
+    - name: filters-create
+      path: /filters/create
+      operations:
+      - name: createfilter
+        method: POST
+        description: Amazon Inspector Create a finding filter
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: filters-list
+      path: /filters/list
+      operations:
+      - name: listfilters
+        method: POST
+        description: Amazon Inspector List filters
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_INSPECTOR_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-inspector-filters-rest
+    port: 8080
+    description: REST adapter for Amazon Inspector API — Filters. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/filters/create
+      name: filters-create
+      description: REST surface for filters-create.
+      operations:
+      - method: POST
+        name: createfilter
+        description: Amazon Inspector Create a finding filter
+        call: amazon-inspector-filters.createfilter
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/filters/list
+      name: filters-list
+      description: REST surface for filters-list.
+      operations:
+      - method: POST
+        name: listfilters
+        description: Amazon Inspector List filters
+        call: amazon-inspector-filters.listfilters
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-inspector-filters-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Inspector API — Filters. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-inspector-create-finding-filter
+      description: Amazon Inspector Create a finding filter
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: amazon-inspector-filters.createfilter
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-inspector-list-filters
+      description: Amazon Inspector List filters
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-inspector-filters.listfilters
+      outputParameters:
+      - type: object
+        mapping: $.

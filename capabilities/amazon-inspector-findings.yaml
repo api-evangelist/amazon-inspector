@@ -1,0 +1,114 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Amazon Inspector API — Findings
+  description: 'Amazon Inspector API — Findings. 2 operations. Lead operation: Amazon Inspector Get findings report status.
+    Self-contained Naftiko capability covering one Amazon Inspector business surface.'
+  tags:
+  - Amazon Inspector
+  - Findings
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    AMAZON_INSPECTOR_API_KEY: AMAZON_INSPECTOR_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: amazon-inspector-findings
+    baseUri: https://inspector2.{region}.amazonaws.com
+    description: Amazon Inspector API — Findings business capability. Self-contained, no shared references.
+    resources:
+    - name: findings-get
+      path: /findings/get
+      operations:
+      - name: getfindingsreportstatus
+        method: POST
+        description: Amazon Inspector Get findings report status
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: findings-list
+      path: /findings/list
+      operations:
+      - name: listfindings
+        method: POST
+        description: Amazon Inspector List vulnerability findings
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: false
+    authentication:
+      type: apikey
+      key: Authorization
+      value: '{{env.AMAZON_INSPECTOR_API_KEY}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: amazon-inspector-findings-rest
+    port: 8080
+    description: REST adapter for Amazon Inspector API — Findings. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/findings/get
+      name: findings-get
+      description: REST surface for findings-get.
+      operations:
+      - method: POST
+        name: getfindingsreportstatus
+        description: Amazon Inspector Get findings report status
+        call: amazon-inspector-findings.getfindingsreportstatus
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/findings/list
+      name: findings-list
+      description: REST surface for findings-list.
+      operations:
+      - method: POST
+        name: listfindings
+        description: Amazon Inspector List vulnerability findings
+        call: amazon-inspector-findings.listfindings
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: amazon-inspector-findings-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Amazon Inspector API — Findings. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: amazon-inspector-get-findings-report
+      description: Amazon Inspector Get findings report status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-inspector-findings.getfindingsreportstatus
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: amazon-inspector-list-vulnerability-findings
+      description: Amazon Inspector List vulnerability findings
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: amazon-inspector-findings.listfindings
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
