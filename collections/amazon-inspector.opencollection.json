@@ -1,0 +1,135 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Amazon Inspector API",
+    "version": "2020-06-08"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Scanning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enable Amazon Inspector scanning",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://inspector2.{region}.amazonaws.com/enable",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enables Amazon Inspector scanning for one or more resource types in one or more accounts."
+        },
+        {
+          "info": {
+            "name": "Disable Amazon Inspector scanning",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://inspector2.{region}.amazonaws.com/disable"
+          },
+          "docs": "Disables Amazon Inspector scanning for one or more resource types in one or more accounts."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Findings",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Inspector List vulnerability findings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://inspector2.{region}.amazonaws.com/findings/list",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Lists findings for your environment based on specified filter criteria."
+        },
+        {
+          "info": {
+            "name": "Amazon Inspector Get findings report status",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://inspector2.{region}.amazonaws.com/findings/get"
+          },
+          "docs": "Gets the status of a findings report."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Coverage",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Inspector List resource coverage",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://inspector2.{region}.amazonaws.com/coverage/list"
+          },
+          "docs": "Lists coverage details for your environment."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Filters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Inspector Create a finding filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://inspector2.{region}.amazonaws.com/filters/create"
+          },
+          "docs": "Creates a filter resource to suppress findings matching specified criteria."
+        },
+        {
+          "info": {
+            "name": "Amazon Inspector List filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://inspector2.{region}.amazonaws.com/filters/list"
+          },
+          "docs": "Lists the filters associated with your account."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
