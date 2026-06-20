@@ -4,7 +4,7 @@ description: >-
   Amazon Inspector is an automated vulnerability management service that continually scans AWS workloads for software
   vulnerabilities and unintended network exposure, providing detailed findings and prioritized remediation guidance.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - AWS
   - Compliance
