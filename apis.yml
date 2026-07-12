@@ -41,6 +41,14 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/inspector/faqs/
 common:
+  - type: TrustCenter
+    url: security/amazon-inspector-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-inspector-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-inspector-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-inspector-authentication.yml
   - type: Portal
     url: https://aws.amazon.com/inspector/
   - type: Website
