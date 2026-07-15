@@ -41,6 +41,8 @@ apis:
       - type: FAQ
         url: https://aws.amazon.com/inspector/faqs/
 common:
+  - type: AgenticAccess
+    url: agentic-access/amazon-inspector-agentic-access.yml
   - type: TrustCenter
     url: security/amazon-inspector-trust-center.yml
   - type: VulnerabilityDisclosure
