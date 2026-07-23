@@ -1,0 +1,999 @@
+openapi: 3.0.0
+info:
+  version: '2020-06-08'
+  x-release: v4
+  title: Inspector2 Accountpermissions Reporting API
+  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: inspector2
+  x-aws-signingName: inspector2
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: https://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: http://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+- url: https://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Reporting
+paths:
+  /reporting/cancel:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CancelFindingsReport
+      description: Cancels the given findings report.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelFindingsReportResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - reportId
+              properties:
+                reportId:
+                  description: The ID of the report to be canceled.
+                  type: string
+                  pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+      summary: Amazon Inspector Cancel Findings Report
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Reporting
+  /reporting/create:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateFindingsReport
+      description: 'Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. '
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateFindingsReportResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - reportFormat
+              - s3Destination
+              properties:
+                filterCriteria:
+                  description: Details on the criteria used to define the filter.
+                  type: object
+                  properties:
+                    awsAccountId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon Web Services account IDs used to filter findings.
+                    codeVulnerabilityDetectorName:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+                    codeVulnerabilityDetectorTags:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: 'The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. '
+                    codeVulnerabilityFilePath:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+                    componentId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the component IDs used to filter findings.
+                    componentType:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the component types used to filter findings.
+                    ec2InstanceImageId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon EC2 instance image IDs used to filter findings.
+                    ec2InstanceSubnetId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon EC2 instance subnet IDs used to filter findings.
+                    ec2InstanceVpcId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon EC2 instance VPC IDs used to filter findings.
+                    ecrImageArchitecture:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon ECR image architecture types used to filter findings.
+                    ecrImageHash:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon ECR image hashes used to filter findings.
+                    ecrImagePushedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the Amazon ECR image push date and time used to filter findings.
+                    ecrImageRegistry:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the Amazon ECR registry used to filter findings.
+                    ecrImageRepositoryName:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the name of the Amazon ECR repository used to filter findings.
+                    ecrImageTags:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: The tags attached to the Amazon ECR container image.
+                    epssScore:
+                      allOf:
+                      - $ref: '#/components/schemas/NumberFilterList'
+                      - description: The EPSS score used to filter findings.
+                    exploitAvailable:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda findings by the availability of exploits.
+                    findingArn:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding ARNs used to filter findings.
+                    findingStatus:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding status types used to filter findings.
+                    findingType:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding types used to filter findings.
+                    firstObservedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the date and time a finding was first seen used to filter findings.
+                    fixAvailable:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.
+                    inspectorScore:
+                      allOf:
+                      - $ref: '#/components/schemas/NumberFilterList'
+                      - description: The Amazon Inspector score to filter on.
+                    lambdaFunctionExecutionRoleArn:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by execution role.
+                    lambdaFunctionLastModifiedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: 'Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> '
+                    lambdaFunctionLayers:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.
+                    lambdaFunctionName:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by the name of the function.
+                    lambdaFunctionRuntime:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.
+                    lastObservedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the date and time a finding was last seen used to filter findings.
+                    networkProtocol:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on network protocol used to filter findings.
+                    portRange:
+                      allOf:
+                      - $ref: '#/components/schemas/PortRangeFilterList'
+                      - description: Details on the port ranges used to filter findings.
+                    relatedVulnerabilities:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the related vulnerabilities used to filter findings.
+                    resourceId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the resource IDs used to filter findings.
+                    resourceTags:
+                      allOf:
+                      - $ref: '#/components/schemas/MapFilterList'
+                      - description: Details on the resource tags used to filter findings.
+                    resourceType:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the resource types used to filter findings.
+                    severity:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the severity used to filter findings.
+                    title:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding title used to filter findings.
+                    updatedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the date and time a finding was last updated at used to filter findings.
+                    vendorSeverity:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the vendor severity used to filter findings.
+                    vulnerabilityId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the vulnerability ID used to filter findings.
+                    vulnerabilitySource:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the vulnerability type used to filter findings.
+                    vulnerablePackages:
+                      allOf:
+                      - $ref: '#/components/schemas/PackageFilterList'
+                      - description: Details on the vulnerable packages used to filter findings.
+                reportFormat:
+                  description: The format to generate the report in.
+                  type: string
+                  enum:
+                  - CSV
+                  - JSON
+                s3Destination:
+                  description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+                  type: object
+                  properties:
+                    bucketName:
+                      allOf:
+                      - $ref: '#/components/schemas/String'
+                      - description: The name of the Amazon S3 bucket to export findings to.
+                    keyPrefix:
+                      allOf:
+                      - $ref: '#/components/schemas/String'
+                      - description: The prefix that the findings will be written under.
+                    kmsKeyArn:
+                      allOf:
+                      - $ref: '#/components/schemas/String'
+                      - description: The ARN of the KMS key used to encrypt data when exporting findings.
+      summary: Amazon Inspector Create Findings Report
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Reporting
+  /reporting/status/get:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetFindingsReportStatus
+      description: Gets the status of a findings report.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetFindingsReportStatusResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                reportId:
+                  description: The ID of the report to retrieve the status of.
+                  type: string
+                  pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+      summary: Amazon Inspector Get Findings Report Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Reporting
+components:
+  schemas:
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    NumberFilter:
+      type: object
+      properties:
+        lowerInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The lowest number to be included in the filter.
+        upperInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The highest number to be included in the filter.
+      description: An object that describes the details of a number filter.
+    NumberFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NumberFilter'
+      minItems: 1
+      maxItems: 10
+    Timestamp:
+      type: string
+      format: date-time
+    ExternalReportStatus:
+      type: string
+      enum:
+      - SUCCEEDED
+      - IN_PROGRESS
+      - CANCELLED
+      - FAILED
+    MapFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MapFilter'
+      minItems: 1
+      maxItems: 10
+    DateFilter:
+      type: object
+      properties:
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the end of the time period filtered on.
+        startInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the start of the time period filtered on.
+      description: Contains details on the time range used to filter findings.
+    MapFilter:
+      type: object
+      required:
+      - comparison
+      - key
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/MapComparison'
+          - description: The operator to use when comparing values in the filter.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/MapKey'
+          - description: The tag key used in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MapValue'
+          - description: The tag value used in the filter.
+      description: An object that describes details of a map filter.
+    StringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringFilter'
+      minItems: 1
+      maxItems: 10
+    GetFindingsReportStatusResponse:
+      type: object
+      properties:
+        destination:
+          allOf:
+          - $ref: '#/components/schemas/Destination'
+          - description: The destination of the report.
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ReportingErrorCode'
+          - description: The error code of the report.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The error message of the report.
+        filterCriteria:
+          allOf:
+          - $ref: '#/components/schemas/FilterCriteria'
+          - description: The filter criteria associated with the report.
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the report.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ExternalReportStatus'
+          - description: The status of the report.
+    PackageFilter:
+      type: object
+      properties:
+        architecture:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package architecture type to filter on.
+        epoch:
+          allOf:
+          - $ref: '#/components/schemas/NumberFilter'
+          - description: An object that contains details on the package epoch to filter on.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the name of the package to filter on.
+        release:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package release to filter on.
+        sourceLambdaLayerArn:
+          $ref: '#/components/schemas/StringFilter'
+        sourceLayerHash:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the source layer hash to filter on.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: The package version to filter on.
+      description: Contains information on the details of a package filter.
+    MapValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    AccessDeniedException: {}
+    Double:
+      type: number
+      format: double
+    ReportingErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - INVALID_PERMISSIONS
+      - NO_FINDINGS_FOUND
+      - BUCKET_NOT_FOUND
+      - INCOMPATIBLE_BUCKET_REGION
+      - MALFORMED_KMS_KEY
+    PortRangeFilter:
+      type: object
+      properties:
+        beginInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range begins at.
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range ends at.
+      description: An object that describes the details of a port range filter.
+    InternalServerException: {}
+    ErrorMessage:
+      type: string
+    PackageFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PackageFilter'
+      minItems: 1
+      maxItems: 10
+    FilterCriteria:
+      type: object
+      properties:
+        awsAccountId:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the Amazon Web Services account IDs used to filter findings.
+        codeVulnerabilityDetectorName:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+        codeVulnerabilityDetectorTags:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: 'The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. '
+        codeVulnerabilityFilePath:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+        componentId:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the component IDs used to filter findings.
+        componentType:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the component types used to filter findings.
+        ec2InstanceImageId:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the Amazon EC2 instance image IDs used to filter findings.
+        ec2InstanceSubnetId:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the Amazon EC2 instance subnet IDs used to filter findings.
+        ec2InstanceVpcId:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the Amazon EC2 instance VPC IDs used to filter findings.
+        ecrImageArchitecture:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the Amazon ECR image architecture types used to filter findings.
+        ecrImageHash:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details of the Amazon ECR image hashes used to filter findings.
+        ecrImagePushedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateFilterList'
+          - description: Details on the Amazon ECR image push date and time used to filter findings.
+        ecrImageRegistry:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the Amazon ECR registry used to filter findings.
+        ecrImageRepositoryName:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the name of the Amazon ECR repository used to filter findings.
+        ecrImageTags:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The tags attached to the Amazon ECR container image.
+        epssScore:
+          allOf:
+          - $ref: '#/components/schemas/NumberFilterList'
+          - description: The EPSS score used to filter findings.
+        exploitAvailable:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Filters the list of AWS Lambda findings by the availability of exploits.
+        findingArn:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the finding ARNs used to filter findings.
+        findingStatus:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the finding status types used to filter findings.
+        findingType:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the finding types used to filter findings.
+        firstObservedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateFilterList'
+          - description: Details on the date and time a finding was first seen used to filter findings.
+        fixAvailable:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.
+        inspectorScore:
+          allOf:
+          - $ref: '#/components/schemas/NumberFilterList'
+          - description: The Amazon Inspector score to filter on.
+        lambdaFunctionExecutionRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Filters the list of AWS Lambda functions by execution role.
+        lambdaFunctionLastModifiedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateFilterList'
+          - description: 'Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> '
+        lambdaFunctionLayers:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.
+        lambdaFunctionName:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Filters the list of AWS Lambda functions by the name of the function.
+        lambdaFunctionRuntime:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.
+        lastObservedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateFilterList'
+          - description: Details on the date and time a finding was last seen used to filter findings.
+        networkProtocol:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on network protocol used to filter findings.
+        portRange:
+          allOf:
+          - $ref: '#/components/schemas/PortRangeFilterList'
+          - description: Details on the port ranges used to filter findings.
+        relatedVulnerabilities:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the related vulnerabilities used to filter findings.
+        resourceId:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the resource IDs used to filter findings.
+        resourceTags:
+          allOf:
+          - $ref: '#/components/schemas/MapFilterList'
+          - description: Details on the resource tags used to filter findings.
+        resourceType:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the resource types used to filter findings.
+        severity:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the severity used to filter findings.
+        title:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the finding title used to filter findings.
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateFilterList'
+          - description: Details on the date and time a finding was last updated at used to filter findings.
+        vendorSeverity:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the vendor severity used to filter findings.
+        vulnerabilityId:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the vulnerability ID used to filter findings.
+        vulnerabilitySource:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Details on the vulnerability type used to filter findings.
+        vulnerablePackages:
+          allOf:
+          - $ref: '#/components/schemas/PackageFilterList'
+          - description: Details on the vulnerable packages used to filter findings.
+      description: Details on the criteria used to define the filter.
+    ReportId:
+      type: string
+      pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+    PortRangeFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PortRangeFilter'
+      minItems: 1
+      maxItems: 10
+    String:
+      type: string
+    CreateFindingsReportResponse:
+      type: object
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the report.
+    DateFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DateFilter'
+      minItems: 1
+      maxItems: 10
+    CancelFindingsReportResponse:
+      type: object
+      required:
+      - reportId
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the canceled report.
+    StringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/StringComparison'
+          - description: The operator to use when comparing values in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/StringInput'
+          - description: The value to filter on.
+      description: An object that describes the details of a string filter.
+    MapKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    StringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    MapComparison:
+      type: string
+      enum:
+      - EQUALS
+    Destination:
+      type: object
+      required:
+      - bucketName
+      - kmsKeyArn
+      properties:
+        bucketName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Amazon S3 bucket to export findings to.
+        keyPrefix:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The prefix that the findings will be written under.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ARN of the KMS key used to encrypt data when exporting findings.
+      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+    StringComparison:
+      type: string
+      enum:
+      - EQUALS
+      - PREFIX
+      - NOT_EQUALS
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/inspector2/
+x-hasEquivalentPaths: true

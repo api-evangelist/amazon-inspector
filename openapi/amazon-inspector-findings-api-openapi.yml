@@ -1,0 +1,2700 @@
+openapi: 3.0.0
+info:
+  version: '2020-06-08'
+  x-release: v4
+  title: Inspector2 Accountpermissions Findings API
+  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: inspector2
+  x-aws-signingName: inspector2
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: https://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: http://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+- url: https://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Findings
+paths:
+  /findings/details/batch/get:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchGetFindingDetails
+      description: Gets vulnerability details for findings.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchGetFindingDetailsResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - findingArns
+              properties:
+                findingArns:
+                  description: A list of finding ARNs.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/FindingArn'
+                  minItems: 1
+                  maxItems: 10
+      summary: Amazon Inspector Batch Get Finding Details
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Findings
+  /findings/aggregation/list:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListFindingAggregations
+      description: Lists aggregated finding data for your environment based on specific criteria.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListFindingAggregationsResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: maxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: nextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - aggregationType
+              properties:
+                accountIds:
+                  description: The Amazon Web Services account IDs to retrieve finding aggregation data for.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/StringFilter'
+                  minItems: 1
+                  maxItems: 10
+                aggregationRequest:
+                  description: Contains details about an aggregation request.
+                  type: object
+                  properties:
+                    accountAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/AccountAggregation'
+                      - description: An object that contains details about an aggregation request based on Amazon Web Services account IDs.
+                    amiAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/AmiAggregation'
+                      - description: An object that contains details about an aggregation request based on Amazon Machine Images (AMIs).
+                    awsEcrContainerAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/AwsEcrContainerAggregation'
+                      - description: An object that contains details about an aggregation request based on Amazon ECR container images.
+                    ec2InstanceAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/Ec2InstanceAggregation'
+                      - description: An object that contains details about an aggregation request based on Amazon EC2 instances.
+                    findingTypeAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/FindingTypeAggregation'
+                      - description: An object that contains details about an aggregation request based on finding types.
+                    imageLayerAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/ImageLayerAggregation'
+                      - description: An object that contains details about an aggregation request based on container image layers.
+                    lambdaFunctionAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/LambdaFunctionAggregation'
+                      - description: Returns an object with findings aggregated by AWS Lambda function.
+                    lambdaLayerAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/LambdaLayerAggregation'
+                      - description: Returns an object with findings aggregated by AWS Lambda layer.
+                    packageAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/PackageAggregation'
+                      - description: An object that contains details about an aggregation request based on operating system package type.
+                    repositoryAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/RepositoryAggregation'
+                      - description: An object that contains details about an aggregation request based on Amazon ECR repositories.
+                    titleAggregation:
+                      allOf:
+                      - $ref: '#/components/schemas/TitleAggregation'
+                      - description: An object that contains details about an aggregation request based on finding title.
+                aggregationType:
+                  description: The type of the aggregation request.
+                  type: string
+                  enum:
+                  - FINDING_TYPE
+                  - PACKAGE
+                  - TITLE
+                  - REPOSITORY
+                  - AMI
+                  - AWS_EC2_INSTANCE
+                  - AWS_ECR_CONTAINER
+                  - IMAGE_LAYER
+                  - ACCOUNT
+                  - AWS_LAMBDA_FUNCTION
+                  - LAMBDA_LAYER
+                maxResults:
+                  description: The maximum number of results to return in the response.
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                nextToken:
+                  description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+                  type: string
+                  minLength: 0
+                  maxLength: 1000000
+      summary: Amazon Inspector List Finding Aggregations
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Findings
+  /findings/list:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListFindings
+      description: Lists findings for your environment.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListFindingsResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '482':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: maxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: nextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                filterCriteria:
+                  description: Details on the criteria used to define the filter.
+                  type: object
+                  properties:
+                    awsAccountId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon Web Services account IDs used to filter findings.
+                    codeVulnerabilityDetectorName:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: The name of the detector used to identify a code vulnerability in a Lambda function used to filter findings.
+                    codeVulnerabilityDetectorTags:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: 'The detector type tag associated with the vulnerability used to filter findings. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. '
+                    codeVulnerabilityFilePath:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: The file path to the file in a Lambda function that contains a code vulnerability used to filter findings.
+                    componentId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the component IDs used to filter findings.
+                    componentType:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the component types used to filter findings.
+                    ec2InstanceImageId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon EC2 instance image IDs used to filter findings.
+                    ec2InstanceSubnetId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon EC2 instance subnet IDs used to filter findings.
+                    ec2InstanceVpcId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon EC2 instance VPC IDs used to filter findings.
+                    ecrImageArchitecture:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon ECR image architecture types used to filter findings.
+                    ecrImageHash:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details of the Amazon ECR image hashes used to filter findings.
+                    ecrImagePushedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the Amazon ECR image push date and time used to filter findings.
+                    ecrImageRegistry:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the Amazon ECR registry used to filter findings.
+                    ecrImageRepositoryName:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the name of the Amazon ECR repository used to filter findings.
+                    ecrImageTags:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: The tags attached to the Amazon ECR container image.
+                    epssScore:
+                      allOf:
+                      - $ref: '#/components/schemas/NumberFilterList'
+                      - description: The EPSS score used to filter findings.
+                    exploitAvailable:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda findings by the availability of exploits.
+                    findingArn:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding ARNs used to filter findings.
+                    findingStatus:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding status types used to filter findings.
+                    findingType:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding types used to filter findings.
+                    firstObservedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the date and time a finding was first seen used to filter findings.
+                    fixAvailable:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.
+                    inspectorScore:
+                      allOf:
+                      - $ref: '#/components/schemas/NumberFilterList'
+                      - description: The Amazon Inspector score to filter on.
+                    lambdaFunctionExecutionRoleArn:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by execution role.
+                    lambdaFunctionLastModifiedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: 'Filters the list of AWS Lambda functions by the date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> '
+                    lambdaFunctionLayers:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.
+                    lambdaFunctionName:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by the name of the function.
+                    lambdaFunctionRuntime:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Filters the list of AWS Lambda functions by the runtime environment for the Lambda function.
+                    lastObservedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the date and time a finding was last seen used to filter findings.
+                    networkProtocol:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on network protocol used to filter findings.
+                    portRange:
+                      allOf:
+                      - $ref: '#/components/schemas/PortRangeFilterList'
+                      - description: Details on the port ranges used to filter findings.
+                    relatedVulnerabilities:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the related vulnerabilities used to filter findings.
+                    resourceId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the resource IDs used to filter findings.
+                    resourceTags:
+                      allOf:
+                      - $ref: '#/components/schemas/MapFilterList'
+                      - description: Details on the resource tags used to filter findings.
+                    resourceType:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the resource types used to filter findings.
+                    severity:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the severity used to filter findings.
+                    title:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the finding title used to filter findings.
+                    updatedAt:
+                      allOf:
+                      - $ref: '#/components/schemas/DateFilterList'
+                      - description: Details on the date and time a finding was last updated at used to filter findings.
+                    vendorSeverity:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the vendor severity used to filter findings.
+                    vulnerabilityId:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the vulnerability ID used to filter findings.
+                    vulnerabilitySource:
+                      allOf:
+                      - $ref: '#/components/schemas/StringFilterList'
+                      - description: Details on the vulnerability type used to filter findings.
+                    vulnerablePackages:
+                      allOf:
+                      - $ref: '#/components/schemas/PackageFilterList'
+                      - description: Details on the vulnerable packages used to filter findings.
+                maxResults:
+                  description: The maximum number of results to return in the response.
+                  type: integer
+                  minimum: 1
+                  maximum: 100
+                nextToken:
+                  description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+                  type: string
+                  minLength: 0
+                  maxLength: 1000000
+                sortCriteria:
+                  description: Details about the criteria used to sort finding results.
+                  type: object
+                  properties:
+                    field:
+                      allOf:
+                      - $ref: '#/components/schemas/SortField'
+                      - description: The finding detail field by which results are sorted.
+                    sortOrder:
+                      allOf:
+                      - $ref: '#/components/schemas/SortOrder'
+                      - description: The order by which findings are sorted.
+      summary: Amazon Inspector List Findings
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Findings
+  /findings/get:
+    post:
+      operationId: GetFindingsReportStatus
+      summary: Amazon Inspector Get findings report status
+      description: Gets the status of a findings report.
+      tags:
+      - Findings
+      responses:
+        '200':
+          description: Report status
+components:
+  schemas:
+    IpV6AddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IpV6Address'
+    FixAvailable:
+      type: string
+      enum:
+      - 'YES'
+      - 'NO'
+      - PARTIAL
+    LayerList:
+      type: array
+      items:
+        $ref: '#/components/schemas/LambdaLayerArn'
+      minItems: 1
+      maxItems: 5
+    IpV4Address:
+      type: string
+      pattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$
+      minLength: 7
+      maxLength: 15
+    FindingDescription:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    CweList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonEmptyString'
+      minItems: 1
+      maxItems: 10
+    FindingDetail:
+      type: object
+      properties:
+        cisaData:
+          $ref: '#/components/schemas/CisaData'
+        cwes:
+          allOf:
+          - $ref: '#/components/schemas/Cwes'
+          - description: The Common Weakness Enumerations (CWEs) associated with the vulnerability.
+        epssScore:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The Exploit Prediction Scoring System (EPSS) score of the vulnerability.
+        evidences:
+          allOf:
+          - $ref: '#/components/schemas/EvidenceList'
+          - description: Information on the evidence of the vulnerability.
+        exploitObserved:
+          $ref: '#/components/schemas/ExploitObserved'
+        findingArn:
+          allOf:
+          - $ref: '#/components/schemas/FindingArn'
+          - description: The finding ARN that the vulnerability details are associated with.
+        referenceUrls:
+          allOf:
+          - $ref: '#/components/schemas/VulnerabilityReferenceUrls'
+          - description: The reference URLs for the vulnerability data.
+        riskScore:
+          allOf:
+          - $ref: '#/components/schemas/RiskScore'
+          - description: The risk score of the vulnerability.
+        tools:
+          allOf:
+          - $ref: '#/components/schemas/Tools'
+          - description: The known malware tools or kits that can exploit the vulnerability.
+        ttps:
+          allOf:
+          - $ref: '#/components/schemas/Ttps'
+          - description: The MITRE adversary tactics, techniques, or procedures (TTPs) associated with the vulnerability.
+      description: Details of the vulnerability identified in a finding.
+    NumberFilter:
+      type: object
+      properties:
+        lowerInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The lowest number to be included in the filter.
+        upperInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The highest number to be included in the filter.
+      description: An object that describes the details of a number filter.
+    AwsEc2InstanceDetails:
+      type: object
+      properties:
+        iamInstanceProfileArn:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The IAM instance profile ARN of the Amazon EC2 instance.
+        imageId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The image ID of the Amazon EC2 instance.
+        ipV4Addresses:
+          allOf:
+          - $ref: '#/components/schemas/IpV4AddressList'
+          - description: The IPv4 addresses of the Amazon EC2 instance.
+        ipV6Addresses:
+          allOf:
+          - $ref: '#/components/schemas/IpV6AddressList'
+          - description: The IPv6 addresses of the Amazon EC2 instance.
+        keyName:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The name of the key pair used to launch the Amazon EC2 instance.
+        launchedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time the Amazon EC2 instance was launched at.
+        platform:
+          allOf:
+          - $ref: '#/components/schemas/Platform'
+          - description: The platform of the Amazon EC2 instance.
+        subnetId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The subnet ID of the Amazon EC2 instance.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The type of the Amazon EC2 instance.
+        vpcId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The VPC ID of the Amazon EC2 instance.
+      description: Details of the Amazon EC2 instance involved in a finding.
+    NonEmptyString:
+      type: string
+      minLength: 1
+    VulnerablePackageRemediation:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    AggregationFindingType:
+      type: string
+      enum:
+      - NETWORK_REACHABILITY
+      - PACKAGE_VULNERABILITY
+      - CODE_VULNERABILITY
+    CvssScoreAdjustmentList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CvssScoreAdjustment'
+    SubnetId:
+      type: string
+      pattern: ^subnet-([a-z0-9]{8}|[a-z0-9]{17}|\*)$
+    LambdaVpcConfig:
+      type: object
+      properties:
+        securityGroupIds:
+          allOf:
+          - $ref: '#/components/schemas/SecurityGroupIdList'
+          - description: The VPC security groups and subnets that are attached to an AWS Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+        subnetIds:
+          allOf:
+          - $ref: '#/components/schemas/SubnetIdList'
+          - description: A list of VPC subnet IDs.
+        vpcId:
+          allOf:
+          - $ref: '#/components/schemas/VpcId'
+          - description: The ID of the VPC.
+      description: The VPC security groups and subnets that are attached to an AWS Lambda function. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.
+    CvssScoreDetails:
+      type: object
+      required:
+      - score
+      - scoreSource
+      - scoringVector
+      - version
+      properties:
+        adjustments:
+          allOf:
+          - $ref: '#/components/schemas/CvssScoreAdjustmentList'
+          - description: An object that contains details about adjustment Amazon Inspector made to the CVSS score.
+        cvssSource:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The source of the CVSS data.
+        score:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The CVSS score.
+        scoreSource:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The source for the CVSS score.
+        scoringVector:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The vector for the CVSS score.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The CVSS version used in scoring.
+      description: Information about the CVSS score.
+    ListFindingAggregationsResponse:
+      type: object
+      required:
+      - aggregationType
+      properties:
+        aggregationType:
+          allOf:
+          - $ref: '#/components/schemas/AggregationType'
+          - description: The type of aggregation to perform.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+        responses:
+          allOf:
+          - $ref: '#/components/schemas/AggregationResponseList'
+          - description: Objects that contain the results of an aggregation operation.
+    Resource:
+      type: object
+      required:
+      - id
+      - type
+      properties:
+        details:
+          allOf:
+          - $ref: '#/components/schemas/ResourceDetails'
+          - description: An object that contains details about the resource involved in a finding.
+        id:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The ID of the resource.
+        partition:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The partition of the resource.
+        region:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The Amazon Web Services Region the impacted resource is located in.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags attached to the resource.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/ResourceType'
+          - description: The type of resource.
+      description: Details about the resource involved in a finding.
+    PackageFilter:
+      type: object
+      properties:
+        architecture:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package architecture type to filter on.
+        epoch:
+          allOf:
+          - $ref: '#/components/schemas/NumberFilter'
+          - description: An object that contains details on the package epoch to filter on.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the name of the package to filter on.
+        release:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package release to filter on.
+        sourceLambdaLayerArn:
+          $ref: '#/components/schemas/StringFilter'
+        sourceLayerHash:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the source layer hash to filter on.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: The package version to filter on.
+      description: Contains information on the details of a package filter.
+    LambdaFunctionSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    IpV6Address:
+      type: string
+      minLength: 1
+      maxLength: 47
+    ExploitObserved:
+      type: object
+      properties:
+        firstSeen:
+          allOf:
+          - $ref: '#/components/schemas/FirstSeen'
+          - description: The date an time when the exploit was first seen.
+        lastSeen:
+          allOf:
+          - $ref: '#/components/schemas/LastSeen'
+          - description: The date an time when the exploit was last seen.
+      description: Contains information on when this exploit was observed.
+    Cwes:
+      type: array
+      items:
+        $ref: '#/components/schemas/Cwe'
+      minItems: 0
+    NetworkPath:
+      type: object
+      properties:
+        steps:
+          allOf:
+          - $ref: '#/components/schemas/StepList'
+          - description: The details on the steps in the network path.
+      description: Information on the network path associated with a finding.
+    SubnetIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SubnetId'
+      minItems: 0
+      maxItems: 16
+    AccessDeniedException: {}
+    Architecture:
+      type: string
+      enum:
+      - X86_64
+      - ARM64
+    AwsLambdaFunctionDetails:
+      type: object
+      required:
+      - codeSha256
+      - executionRoleArn
+      - functionName
+      - runtime
+      - version
+      properties:
+        architectures:
+          allOf:
+          - $ref: '#/components/schemas/ArchitectureList'
+          - description: The instruction set architecture that the AWS Lambda function supports. Architecture is a string array with one of the valid values. The default architecture value is <code>x86_64</code>.
+        codeSha256:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The SHA256 hash of the AWS Lambda function's deployment package.
+        executionRoleArn:
+          allOf:
+          - $ref: '#/components/schemas/ExecutionRoleArn'
+          - description: The AWS Lambda function's execution role.
+        functionName:
+          allOf:
+          - $ref: '#/components/schemas/FunctionName'
+          - description: The name of the AWS Lambda function.
+        lastModifiedAt:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: 'The date and time that a user last updated the configuration, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601 format</a> '
+        layers:
+          allOf:
+          - $ref: '#/components/schemas/LayerList'
+          - description: The AWS Lambda function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html"> layers</a>. A Lambda function can have up to five layers.
+        packageType:
+          allOf:
+          - $ref: '#/components/schemas/PackageType'
+          - description: The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.
+        runtime:
+          allOf:
+          - $ref: '#/components/schemas/Runtime'
+          - description: The runtime environment for the AWS Lambda function.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/Version'
+          - description: The version of the AWS Lambda function.
+        vpcConfig:
+          allOf:
+          - $ref: '#/components/schemas/LambdaVpcConfig'
+          - description: The AWS Lambda function's networking configuration.
+      description: ' A summary of information about the AWS Lambda function.'
+    ResourceDetails:
+      type: object
+      properties:
+        awsEc2Instance:
+          allOf:
+          - $ref: '#/components/schemas/AwsEc2InstanceDetails'
+          - description: An object that contains details about the Amazon EC2 instance involved in the finding.
+        awsEcrContainerImage:
+          allOf:
+          - $ref: '#/components/schemas/AwsEcrContainerImageDetails'
+          - description: An object that contains details about the Amazon ECR container image involved in the finding.
+        awsLambdaFunction:
+          allOf:
+          - $ref: '#/components/schemas/AwsLambdaFunctionDetails'
+          - description: A summary of the information about an AWS Lambda function affected by a finding.
+      description: Contains details about the resource involved in the finding.
+    FindingType:
+      type: string
+      enum:
+      - NETWORK_REACHABILITY
+      - PACKAGE_VULNERABILITY
+      - CODE_VULNERABILITY
+    CvssScoreList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CvssScore'
+    FirstSeen:
+      type: string
+      format: date-time
+    CisaData:
+      type: object
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/CisaAction'
+          - description: The remediation action recommended by CISA for this vulnerability.
+        dateAdded:
+          allOf:
+          - $ref: '#/components/schemas/CisaDateAdded'
+          - description: The date and time CISA added this vulnerability to their catalogue.
+        dateDue:
+          allOf:
+          - $ref: '#/components/schemas/CisaDateDue'
+          - description: The date and time CISA expects a fix to have been provided vulnerability.
+      description: The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.
+    FindingTitle:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    Ttps:
+      type: array
+      items:
+        $ref: '#/components/schemas/Ttp'
+      minItems: 0
+    LambdaLayerArn:
+      type: string
+      pattern: ^arn:[a-zA-Z0-9-]+:lambda:[a-zA-Z0-9-]+:\d{12}:layer:[a-zA-Z0-9-_]+:[0-9]+$
+    ResourceType:
+      type: string
+      enum:
+      - AWS_EC2_INSTANCE
+      - AWS_ECR_CONTAINER_IMAGE
+      - AWS_ECR_REPOSITORY
+      - AWS_LAMBDA_FUNCTION
+    Step:
+      type: object
+      required:
+      - componentId
+      - componentType
+      properties:
+        componentId:
+          allOf:
+          - $ref: '#/components/schemas/Component'
+          - description: The component ID.
+        componentType:
+          allOf:
+          - $ref: '#/components/schemas/ComponentType'
+          - description: The component type.
+      description: Details about the step associated with a finding.
+    FindingDetailsErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FindingDetailsError'
+    PortRangeFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PortRangeFilter'
+      minItems: 1
+      maxItems: 10
+    String:
+      type: string
+    NetworkProtocol:
+      type: string
+      enum:
+      - TCP
+      - UDP
+    VulnerabilityReferenceUrl:
+      type: string
+      minLength: 0
+    StepList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Step'
+      minItems: 1
+      maxItems: 30
+    EpssDetails:
+      type: object
+      properties:
+        score:
+          allOf:
+          - $ref: '#/components/schemas/EpssScoreValue'
+          - description: The EPSS score.
+      description: Details about the Exploit Prediction Scoring System (EPSS) score for a finding.
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+    EpssScoreValue:
+      type: number
+      format: double
+      minimum: 0
+      maximum: 1
+    FindingStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - SUPPRESSED
+      - CLOSED
+    ValidationException: {}
+    ImageLayerSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    VulnerabilityId:
+      type: string
+      minLength: 1
+      maxLength: 128
+    VulnerabilityIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/VulnerabilityId'
+    VulnerabilityReferenceUrls:
+      type: array
+      items:
+        $ref: '#/components/schemas/VulnerabilityReferenceUrl'
+      minItems: 0
+      maxItems: 100
+    Tools:
+      type: array
+      items:
+        $ref: '#/components/schemas/Tool'
+    PackageAggregation:
+      type: object
+      properties:
+        packageNames:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The names of packages to aggregate findings on.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/PackageSortBy'
+          - description: The value to sort results by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to sort results by.
+      description: The details that define an aggregation based on operating system package type.
+    Runtime:
+      type: string
+      enum:
+      - NODEJS
+      - NODEJS_12_X
+      - NODEJS_14_X
+      - NODEJS_16_X
+      - JAVA_8
+      - JAVA_8_AL2
+      - JAVA_11
+      - PYTHON_3_7
+      - PYTHON_3_8
+      - PYTHON_3_9
+      - UNSUPPORTED
+      - NODEJS_18_X
+      - GO_1_X
+      - JAVA_17
+      - PYTHON_3_10
+    NumberFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NumberFilter'
+      minItems: 1
+      maxItems: 10
+    NetworkReachabilityDetails:
+      type: object
+      required:
+      - networkPath
+      - openPortRange
+      - protocol
+      properties:
+        networkPath:
+          allOf:
+          - $ref: '#/components/schemas/NetworkPath'
+          - description: An object that contains details about a network path associated with a finding.
+        openPortRange:
+          allOf:
+          - $ref: '#/components/schemas/PortRange'
+          - description: An object that contains details about the open port range associated with a finding.
+        protocol:
+          allOf:
+          - $ref: '#/components/schemas/NetworkProtocol'
+          - description: The protocol associated with a finding.
+      description: Contains the details of a network reachability finding.
+    ArchitectureList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Architecture'
+      minItems: 1
+      maxItems: 1
+    AwsEcrContainerAggregationResponse:
+      type: object
+      required:
+      - resourceId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID of the account that owns the container.
+        architecture:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The architecture of the container.
+        imageSha:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The SHA value of the container image.
+        imageTags:
+          allOf:
+          - $ref: '#/components/schemas/StringList'
+          - description: The container image stags.
+        repository:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The container repository.
+        resourceId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The resource ID of the container.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: The number of finding by severity.
+      description: An aggregation of information about Amazon ECR containers.
+    FindingDetailsError:
+      type: object
+      required:
+      - errorCode
+      - errorMessage
+      - findingArn
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/FindingDetailsErrorCode'
+          - description: The error code.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The error message.
+        findingArn:
+          allOf:
+          - $ref: '#/components/schemas/FindingArn'
+          - description: The finding ARN that returned an error.
+      description: Details about an error encountered when trying to return vulnerability data for a finding.
+    AmiAggregation:
+      type: object
+      properties:
+        amis:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The IDs of AMIs to aggregate findings for.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/AmiSortBy'
+          - description: The value to sort results by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to sort results by.
+      description: The details that define an aggregation based on Amazon machine images (AMIs).
+    MapFilter:
+      type: object
+      required:
+      - comparison
+      - key
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/MapComparison'
+          - description: The operator to use when comparing values in the filter.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/MapKey'
+          - description: The tag key used in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MapValue'
+          - description: The tag value used in the filter.
+      description: An object that describes details of a map filter.
+    Severity:
+      type: string
+      enum:
+      - INFORMATIONAL
+      - LOW
+      - MEDIUM
+      - HIGH
+      - CRITICAL
+      - UNTRIAGED
+    Cwe:
+      type: string
+      minLength: 0
+    MapValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    ListFindingsResponse:
+      type: object
+      properties:
+        findings:
+          allOf:
+          - $ref: '#/components/schemas/FindingList'
+          - description: Contains details on the findings in your environment.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+    CisaDateAdded:
+      type: string
+      format: date-time
+    Double:
+      type: number
+      format: double
+    VpcId:
+      type: string
+      pattern: ^vpc-([a-z0-9]{8}|[a-z0-9]{17}|\*)$
+    ExecutionRoleArn:
+      type: string
+      pattern: ^arn:(aws[a-zA-Z-]*)?:iam::\d{12}:role/?[a-zA-Z_0-9+=,.@\-_/]+$
+    TitleSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    AwsEcrContainerAggregation:
+      type: object
+      properties:
+        architectures:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The architecture of the containers.
+        imageShas:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The image SHA values.
+        imageTags:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The image tags.
+        repositories:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The container repositories.
+        resourceIds:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The container resource IDs.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/AwsEcrContainerSortBy'
+          - description: The value to sort by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The sort order (ascending or descending).
+      description: An aggregation of information about Amazon ECR containers.
+    PackageAggregationResponse:
+      type: object
+      required:
+      - packageName
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account associated with the findings.
+        packageName:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The name of the operating system package.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: An object that contains the count of matched findings per severity.
+      description: A response that contains the results of a finding aggregation by image layer.
+    PortRangeFilter:
+      type: object
+      properties:
+        beginInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range begins at.
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range ends at.
+      description: An object that describes the details of a port range filter.
+    PackageFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PackageFilter'
+      minItems: 1
+      maxItems: 10
+    ImageLayerAggregationResponse:
+      type: object
+      required:
+      - accountId
+      - layerHash
+      - repository
+      - resourceId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account that owns the container image hosting the layer image.
+        layerHash:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The layer hash.
+        repository:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The repository the layer resides in.
+        resourceId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The resource ID of the container image layer.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: An object that represents the count of matched findings per severity.
+      description: A response that contains the results of a finding aggregation by image layer.
+    AmiSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+      - AFFECTED_INSTANCES
+    TitleAggregation:
+      type: object
+      properties:
+        findingType:
+          allOf:
+          - $ref: '#/components/schemas/AggregationFindingType'
+          - description: The type of finding to aggregate on.
+        resourceType:
+          allOf:
+          - $ref: '#/components/schemas/AggregationResourceType'
+          - description: The resource type to aggregate on.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/TitleSortBy'
+          - description: The value to sort results by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to sort results by.
+        titles:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The finding titles to aggregate on.
+        vulnerabilityIds:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The vulnerability IDs of the findings.
+      description: The details that define an aggregation based on finding title.
+    LambdaFunctionAggregationResponse:
+      type: object
+      required:
+      - resourceId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: 'The ID of the AWS account that owns the AWS Lambda function. '
+        functionName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The AWS Lambda function names included in the aggregation results.
+        lambdaTags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags included in the aggregation results.
+        lastModifiedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date that the AWS Lambda function included in the aggregation results was last changed.
+        resourceId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The resource IDs included in the aggregation results.
+        runtime:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The runtimes included in the aggregation results.
+        severityCounts:
+          $ref: '#/components/schemas/SeverityCounts'
+      description: A response that contains the results of an AWS Lambda function finding aggregation.
+    EvidenceSeverity:
+      type: string
+      minLength: 0
+    LambdaLayerAggregationResponse:
+      type: object
+      required:
+      - accountId
+      - functionName
+      - layerArn
+      - resourceId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The account ID of the AWS Lambda function layer.
+        functionName:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The names of the AWS Lambda functions associated with the layers.
+        layerArn:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The Amazon Resource Name (ARN) of the AWS Lambda function layer.
+        resourceId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The Resource ID of the AWS Lambda function layer.
+        severityCounts:
+          $ref: '#/components/schemas/SeverityCounts'
+      description: A response that contains the results of an AWS Lambda function layer finding aggregation.
+    InspectorScoreDetails:
+      type: object
+      properties:
+        adjustedCvss:
+          allOf:
+          - $ref: '#/components/schemas/CvssScoreDetails'
+          - description: An object that contains details about the CVSS score given to a finding.
+      description: Information about the Amazon Inspector score given to a finding.
+    RepositoryAggregationResponse:
+      type: object
+      required:
+      - repository
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account associated with the findings.
+        affectedImages:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The number of container images impacted by the findings.
+        repository:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The name of the repository associated with the findings.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: An object that represent the count of matched findings per severity.
+      description: A response that contains details on the results of a finding aggregation by repository.
+    AccountAggregationResponse:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: The number of findings by severity.
+      description: An aggregation of findings by Amazon Web Services account ID.
+    NonEmptyStringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonEmptyString'
+    AwsEcrContainerSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    Version:
+      type: string
+      pattern: ^\$LATEST|[0-9]+$
+    PackageVulnerabilityDetails:
+      type: object
+      required:
+      - source
+      - vulnerabilityId
+      properties:
+        cvss:
+          allOf:
+          - $ref: '#/components/schemas/CvssScoreList'
+          - description: An object that contains details about the CVSS score of a finding.
+        referenceUrls:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyStringList'
+          - description: One or more URLs that contain details about this vulnerability type.
+        relatedVulnerabilities:
+          allOf:
+          - $ref: '#/components/schemas/VulnerabilityIdList'
+          - description: One or more vulnerabilities related to the one identified in this finding.
+        source:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The source of the vulnerability information.
+        sourceUrl:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: A URL to the source of the vulnerability information.
+        vendorCreatedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time that this vulnerability was first added to the vendor's database.
+        vendorSeverity:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The severity the vendor has given to this vulnerability type.
+        vendorUpdatedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time the vendor last updated this vulnerability in their database.
+        vulnerabilityId:
+          allOf:
+          - $ref: '#/components/schemas/VulnerabilityId'
+          - description: The ID given to this vulnerability.
+        vulnerablePackages:
+          allOf:
+          - $ref: '#/components/schemas/VulnerablePackageList'
+          - description: The packages impacted by this vulnerability.
+      description: Information about a package vulnerability finding.
+    PackageType:
+      type: string
+      enum:
+      - IMAGE
+      - ZIP
+    CisaDateDue:
+      type: string
+      format: date-time
+    CvssScore:
+      type: object
+      required:
+      - baseScore
+      - scoringVector
+      - source
+      - version
+      properties:
+        baseScore:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The base CVSS score used for the finding.
+        scoringVector:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The vector string of the CVSS score.
+        source:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The source of the CVSS score.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The version of CVSS used for the score.
+      description: The CVSS score for a finding.
+    ThrottlingException: {}
+    Evidence:
+      type: object
+      properties:
+        evidenceDetail:
+          allOf:
+          - $ref: '#/components/schemas/EvidenceDetail'
+          - description: The evidence details.
+        evidenceRule:
+          allOf:
+          - $ref: '#/components/schemas/EvidenceRule'
+          - description: The evidence rule.
+        severity:
+          allOf:
+          - $ref: '#/components/schemas/EvidenceSeverity'
+          - description: The evidence severity.
+      description: Details of the evidence for a vulnerability identified in a finding.
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 1000000
+    DateTimeTimestamp:
+      type: string
+      format: date-time
+    AccountSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    AggregationResponseList:
+      type: array
+      items:
+        $ref: '#/components/schemas/AggregationResponse'
+    ExploitabilityDetails:
+      type: object
+      properties:
+        lastKnownExploitAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time of the last exploit associated with a finding discovered in your environment.
+      description: The details of an exploit available for a finding discovered in your environment.
+    IpV4AddressList:
+      type: array
+      items:
+        $ref: '#/components/schemas/IpV4Address'
+    CvssScoreAdjustment:
+      type: object
+      required:
+      - metric
+      - reason
+      properties:
+        metric:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The metric used to adjust the CVSS score.
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The reason the CVSS score has been adjustment.
+      description: Details on adjustments Amazon Inspector made to the CVSS score for a finding.
+    Timestamp:
+      type: string
+      format: date-time
+    Ttp:
+      type: string
+      minLength: 0
+      maxLength: 30
+    MapFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MapFilter'
+      minItems: 1
+      maxItems: 10
+    SecurityGroupId:
+      type: string
+      pattern: ^sg-([a-z0-9]{8}|[a-z0-9]{17}|\*)$
+    DetectorTagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonEmptyString'
+      minItems: 1
+      maxItems: 10
+    Ec2InstanceAggregation:
+      type: object
+      properties:
+        amis:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The AMI IDs associated with the Amazon EC2 instances to aggregate findings for.
+        instanceIds:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The Amazon EC2 instance IDs to aggregate findings for.
+        instanceTags:
+          allOf:
+          - $ref: '#/components/schemas/MapFilterList'
+          - description: The Amazon EC2 instance tags to aggregate findings for.
+        operatingSystems:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The operating system types to aggregate findings for. Valid values must be uppercase and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/Ec2InstanceSortBy'
+          - description: The value to sort results by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to sort results by.
+      description: The details that define an aggregation based on Amazon EC2 instances.
+    FindingDetailsErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - ACCESS_DENIED
+      - FINDING_DETAILS_NOT_FOUND
+      - INVALID_INPUT
+    LambdaLayerSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    ImageHash:
+      type: string
+      pattern: ^sha256:[a-z0-9]{64}$
+      minLength: 71
+      maxLength: 71
+    Finding:
+      type: object
+      required:
+      - awsAccountId
+      - description
+      - findingArn
+      - firstObservedAt
+      - lastObservedAt
+      - remediation
+      - resources
+      - severity
+      - status
+      - type
+      properties:
+        awsAccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID associated with the finding.
+        codeVulnerabilityDetails:
+          allOf:
+          - $ref: '#/components/schemas/CodeVulnerabilityDetails'
+          - description: Details about the code vulnerability identified in a Lambda function used to filter findings.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/FindingDescription'
+          - description: The description of the finding.
+        epss:
+          allOf:
+          - $ref: '#/components/schemas/EpssDetails'
+          - description: The finding's EPSS score.
+        exploitAvailable:
+          allOf:
+          - $ref: '#/components/schemas/ExploitAvailable'
+          - description: If a finding discovered in your environment has an exploit available.
+        exploitabilityDetails:
+          allOf:
+          - $ref: '#/components/schemas/ExploitabilityDetails'
+          - description: The details of an exploit available for a finding discovered in your environment.
+        findingArn:
+          allOf:
+          - $ref: '#/components/schemas/FindingArn'
+          - description: The Amazon Resource Number (ARN) of the finding.
+        firstObservedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time that the finding was first observed.
+        fixAvailable:
+          allOf:
+          - $ref: '#/components/schemas/FixAvailable'
+          - description: Details on whether a fix is available through a version update. This value can be <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code> fix means that some, but not all, of the packages identified in the finding have fixes available through updated versions.
+        inspectorScore:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The Amazon Inspector score given to the finding.
+        inspectorScoreDetails:
+          allOf:
+          - $ref: '#/components/schemas/InspectorScoreDetails'
+          - description: An object that contains details of the Amazon Inspector score.
+        lastObservedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time that the finding was last observed.
+        networkReachabilityDetails:
+          allOf:
+          - $ref: '#/components/schemas/NetworkReachabilityDetails'
+          - description: An object that contains the details of a network reachability finding.
+        packageVulnerabilityDetails:
+          allOf:
+          - $ref: '#/components/schemas/PackageVulnerabilityDetails'
+          - description: An object that contains the details of a package vulnerability finding.
+        remediation:
+          allOf:
+          - $ref: '#/components/schemas/Remediation'
+          - description: An object that contains the details about how to remediate a finding.
+        resources:
+          allOf:
+          - $ref: '#/components/schemas/ResourceList'
+          - description: Contains information on the resources involved in a finding.
+        severity:
+          allOf:
+          - $ref: '#/components/schemas/Severity'
+          - description: The severity of the finding.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/FindingStatus'
+          - description: The status of the finding.
+        title:
+          allOf:
+          - $ref: '#/components/schemas/FindingTitle'
+          - description: The title of the finding.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/FindingType'
+          - description: The type of the finding.
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time the finding was last updated at.
+      description: Details about an Amazon Inspector finding.
+    Tool:
+      type: string
+      minLength: 0
+    Ec2InstanceAggregationResponse:
+      type: object
+      required:
+      - instanceId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The Amazon Web Services account for the Amazon EC2 instance.
+        ami:
+          allOf:
+          - $ref: '#/components/schemas/AmiId'
+          - description: The Amazon Machine Image (AMI) of the Amazon EC2 instance.
+        instanceId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The Amazon EC2 instance ID.
+        instanceTags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags attached to the instance.
+        networkFindings:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The number of network findings for the Amazon EC2 instance.
+        operatingSystem:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The operating system of the Amazon EC2 instance.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: An object that contains the count of matched findings per severity.
+      description: A response that contains the results of a finding aggregation by Amazon EC2 instance.
+    EvidenceRule:
+      type: string
+      minLength: 0
+    SortOrder:
+      type: string
+      enum:
+      - ASC
+      - DESC
+    FindingList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Finding'
+      minItems: 0
+      maxItems: 25
+    ResourceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Resource'
+      minItems: 1
+      maxItems: 10
+    Recommendation:
+      type: object
+      properties:
+        Url:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The URL address to the CVE remediation recommendations.
+        text:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The recommended course of action to remediate the finding.
+      description: Details about the recommended course of action to remediate the finding.
+    CodeVulnerabilityDetails:
+      type: object
+      required:
+      - cwes
+      - detectorId
+      - detectorName
+      - filePath
+      properties:
+        cwes:
+          allOf:
+          - $ref: '#/components/schemas/CweList'
+          - description: The Common Weakness Enumeration (CWE) item associated with the detected vulnerability.
+        detectorId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The ID for the Amazon CodeGuru detector associated with the finding. For more information on detectors see <a href="https://docs.aws.amazon.com/codeguru/detector-library">Amazon CodeGuru Detector Library</a>.
+        detectorName:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The name of the detector used to identify the code vulnerability. For more information on detectors see <a href="https://docs.aws.amazon.com/codeguru/detector-library">CodeGuru Detector Library</a>.
+        detectorTags:
+          allOf:
+          - $ref: '#/components/schemas/DetectorTagList'
+          - description: 'The detector tag associated with the vulnerability. Detector tags group related vulnerabilities by common themes or tactics. For a list of available tags by programming language, see <a href="https://docs.aws.amazon.com/codeguru/detector-library/java/tags/">Java tags</a>, or <a href="https://docs.aws.amazon.com/codeguru/detector-library/python/tags/">Python tags</a>. '
+        filePath:
+          allOf:
+          - $ref: '#/components/schemas/CodeFilePath'
+          - description: Contains information on where the code vulnerability is located in your code.
+        referenceUrls:
+          allOf:
+          - $ref: '#/components/schemas/ReferenceUrls'
+          - description: A URL containing supporting documentation about the code vulnerability detected.
+        ruleId:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The identifier for a rule that was used to detect the code vulnerability.
+        sourceLambdaLayerArn:
+          allOf:
+          - $ref: '#/components/schemas/LambdaLayerArn'
+          - description: The Amazon Resource Name (ARN) of the Lambda layer that the code vulnerability was detected in.
+      description: Contains information on the code vulnerability identified in your Lambda function.
+    RepositorySortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+      - AFFECTED_IMAGES
+    PackageEpoch:
+      type: integer
+    ReferenceUrls:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonEmptyString'
+      minItems: 1
+      maxItems: 10
+    SecurityGroupIdList:
+      type: array
+      items:
+        $ref: '#/components/schemas/SecurityGroupId'
+      minItems: 0
+      maxItems: 5
+    AggregationType:
+      type: string
+      enum:
+      - FINDING_TYPE
+      - PACKAGE
+      - TITLE
+      - REPOSITORY
+      - AMI
+      - AWS_EC2_INSTANCE
+      - AWS_ECR_CONTAINER
+      - IMAGE_LAYER
+      - ACCOUNT
+      - AWS_LAMBDA_FUNCTION
+      - LAMBDA_LAYER
+    SourceLayerHash:
+      type: string
+      pattern: ^sha256:[a-z0-9]{64}$
+      minLength: 71
+      maxLength: 71
+    AggregationResourceType:
+      type: string
+      enum:
+      - AWS_EC2_INSTANCE
+      - AWS_ECR_CONTAINER_IMAGE
+      - AWS_LAMBDA_FUNCTION
+    MapKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    AmiId:
+      type: string
+      pattern: ^ami-([a-z0-9]{8}|[a-z0-9]{17}|\*)$
+    LastSeen:
+      type: string
+      format: date-time
+    StringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    Component:
+      type: string
+    EvidenceList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Evidence'
+    PackageManager:
+      type: string
+      enum:
+      - BUNDLER
+      - CARGO
+      - COMPOSER
+      - NPM
+      - NUGET
+      - PIPENV
+      - POETRY
+      - YARN
+      - GOBINARY
+      - GOMOD
+      - JAR
+      - OS
+      - PIP
+      - PYTHONPKG
+      - NODEPKG
+      - POM
+      - GEMSPEC
+    AccountAggregation:
+      type: object
+      properties:
+        findingType:
+          allOf:
+          - $ref: '#/components/schemas/AggregationFindingType'
+          - description: The type of finding.
+        resourceType:
+          allOf:
+          - $ref: '#/components/schemas/AggregationResourceType'
+          - description: The type of resource.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/AccountSortBy'
+          - description: The value to sort by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The sort order (ascending or descending).
+      description: An object that contains details about an aggregation response based on Amazon Web Services accounts.
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    ImageLayerAggregation:
+      type: object
+      properties:
+        layerHashes:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The hashes associated with the layers.
+        repositories:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The repository associated with the container image hosting the layers.
+        resourceIds:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The ID of the container image layer.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/ImageLayerSortBy'
+          - description: The value to sort results by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to sort results by.
+      description: The details that define an aggregation based on container image layers.
+    FindingTypeSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    TagMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/MapValue'
+    PackageVersion:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    AggregationResponse:
+      type: object
+      properties:
+        accountAggregation:
+          allOf:
+          - $ref: '#/components/schemas/AccountAggregationResponse'
+          - description: An object that contains details about an aggregation response based on Amazon Web Services account IDs.
+        amiAggregation:
+          allOf:
+          - $ref: '#/components/schemas/AmiAggregationResponse'
+          - description: An object that contains details about an aggregation response based on Amazon Machine Images (AMIs).
+        awsEcrContainerAggregation:
+          allOf:
+          - $ref: '#/components/schemas/AwsEcrContainerAggregationResponse'
+          - description: An object that contains details about an aggregation response based on Amazon ECR container images.
+        ec2InstanceAggregation:
+          allOf:
+          - $ref: '#/components/schemas/Ec2InstanceAggregationResponse'
+          - description: An object that contains details about an aggregation response based on Amazon EC2 instances.
+        findingTypeAggregation:
+          allOf:
+          - $ref: '#/components/schemas/FindingTypeAggregationResponse'
+          - description: An object that contains details about an aggregation response based on finding types.
+        imageLayerAggregation:
+          allOf:
+          - $ref: '#/components/schemas/ImageLayerAggregationResponse'
+          - description: An object that contains details about an aggregation response based on container image layers.
+        lambdaFunctionAggregation:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionAggregationResponse'
+          - description: An aggregation of findings by AWS Lambda function.
+        lambdaLayerAggregation:
+          allOf:
+          - $ref: '#/components/schemas/LambdaLayerAggregationResponse'
+          - description: An aggregation of findings by AWS Lambda layer.
+        packageAggregation:
+          allOf:
+          - $ref: '#/components/schemas/PackageAggregationResponse'
+          - description: An object that contains details about an aggregation response based on operating system package type.
+        repositoryAggregation:
+          allOf:
+          - $ref: '#/components/schemas/RepositoryAggregationResponse'
+          - description: An object that contains details about an aggregation response based on Amazon ECR repositories.
+        titleAggregation:
+          allOf:
+          - $ref: '#/components/schemas/TitleAggregationResponse'
+          - description: An object that contains details about an aggregation response based on finding title.
+      description: A structure that contains details about the results of an aggregation type.
+    RepositoryAggregation:
+      type: object
+      properties:
+        repositories:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The names of repositories to aggregate findings on.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/RepositorySortBy'
+          - description: The value to sort results by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to sort results by.
+      description: The details that define an aggregation based on repository.
+    EvidenceDetail:
+      type: string
+      minLength: 0
+    BatchGetFindingDetailsResponse:
+      type: object
+      properties:
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/FindingDetailsErrorList'
+          - description: Error information for findings that details could not be returned for.
+        findingDetails:
+          allOf:
+          - $ref: '#/components/schemas/FindingDetails'
+          - description: A finding's vulnerability details.
+    FindingArn:
+      type: string
+      pattern: ^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$
+      minLength: 1
+      maxLength: 100
+    StringList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonEmptyString'
+    FindingTypeAggregationResponse:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account associated with the findings.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: The value to sort results by.
+      description: A response that contains the results of a finding type aggregation.
+    DateFilter:
+      type: object
+      properties:
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the end of the time period filtered on.
+        startInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the start of the time period filtered on.
+      description: Contains details on the time range used to filter findings.
+    ExploitAvailable:
+      type: string
+      enum:
+      - 'YES'
+      - 'NO'
+    Ec2InstanceSortBy:
+      type: string
+      enum:
+      - NETWORK_FINDINGS
+      - CRITICAL
+      - HIGH
+      - ALL
+    StringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringFilter'
+      minItems: 1
+      maxItems: 10
+    FindingDetails:
+      type: array
+      items:
+        $ref: '#/components/schemas/FindingDetail'
+      minItems: 0
+    PackageArchitecture:
+      type: string
+      minLength: 1
+      maxLength: 64
+    Remediation:
+      type: object
+      properties:
+        recommendation:
+          allOf:
+          - $ref: '#/components/schemas/Recommendation'
+          - description: An object that contains information about the recommended course of action to remediate the finding.
+      description: Information on how to remediate a finding.
+    VulnerablePackageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/VulnerablePackage'
+    Integer:
+      type: integer
+    TitleAggregationResponse:
+      type: object
+      required:
+      - title
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account associated with the findings.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: An object that represent the count of matched findings per severity.
+        title:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The title that the findings were aggregated on.
+        vulnerabilityId:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The vulnerability ID of the finding.
+      description: A response that contains details on the results of a finding aggregation by title.
+    PackageRelease:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    SeverityCounts:
+      type: object
+      properties:
+        all:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The total count of findings from all severities.
+        critical:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The total count of critical severity findings.
+        high:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The total count of high severity findings.
+        medium:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The total count of medium severity findings.
+      description: An object that contains the counts of aggregated finding per severity.
+    Platform:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    PackageSortBy:
+      type: string
+      enum:
+      - CRITICAL
+      - HIGH
+      - ALL
+    RiskScore:
+      type: integer
+    CisaAction:
+      type: string
+      minLength: 0
+    InternalServerException: {}
+    AwsEcrContainerImageDetails:
+      type: object
+      required:
+      - imageHash
+      - registry
+      - repositoryName
+      properties:
+        architecture:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The architecture of the Amazon ECR container image.
+        author:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The image author of the Amazon ECR container image.
+        imageHash:
+          allOf:
+          - $ref: '#/components/schemas/ImageHash'
+          - description: The image hash of the Amazon ECR container image.
+        imageTags:
+          allOf:
+          - $ref: '#/components/schemas/ImageTagList'
+          - description: The image tags attached to the Amazon ECR container image.
+        platform:
+          allOf:
+          - $ref: '#/components/schemas/Platform'
+          - description: The platform of the Amazon ECR container image.
+        pushedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time the Amazon ECR container image was pushed.
+        registry:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The registry for the Amazon ECR container image.
+        repositoryName:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The name of the repository the Amazon ECR container image resides in.
+      description: The image details of the Amazon ECR container image.
+    VulnerablePackage:
+      type: object
+      required:
+      - name
+      - version
+      properties:
+        arch:
+          allOf:
+          - $ref: '#/components/schemas/PackageArchitecture'
+          - description: The architecture of the vulnerable package.
+        epoch:
+          allOf:
+          - $ref: '#/components/schemas/PackageEpoch'
+          - description: The epoch of the vulnerable package.
+        filePath:
+          allOf:
+          - $ref: '#/components/schemas/FilePath'
+          - description: The file path of the vulnerable package.
+        fixedInVersion:
+          allOf:
+          - $ref: '#/components/schemas/PackageVersion'
+          - description: The version of the package that contains the vulnerability fix.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/PackageName'
+          - description: The name of the vulnerable package.
+        packageManager:
+          allOf:
+          - $ref: '#/components/schemas/PackageManager'
+          - description: The package manager of the vulnerable package.
+        release:
+          allOf:
+          - $ref: '#/components/schemas/PackageRelease'
+          - description: The release of the vulnerable package.
+        remediation:
+          allOf:
+          - $ref: '#/components/schemas/VulnerablePackageRemediation'
+          - description: The code to run in your environment to update packages with a fix available.
+        sourceLambdaLayerArn:
+          allOf:
+          - $ref: '#/components/schemas/LambdaLayerArn'
+          - description: The Amazon Resource Number (ARN) of the AWS Lambda function affected by a finding.
+        sourceLayerHash:
+          allOf:
+          - $ref: '#/components/schemas/SourceLayerHash'
+          - description: The source layer hash of the vulnerable package.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/PackageVersion'
+          - description: The version of the vulnerable package.
+      description: Information on the vulnerable package identified by a finding.
+    LambdaFunctionAggregation:
+      type: object
+      properties:
+        functionNames:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The AWS Lambda function names to include in the aggregation results.
+        functionTags:
+          allOf:
+          - $ref: '#/components/schemas/MapFilterList'
+          - description: The tags to include in the aggregation results.
+        resourceIds:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The resource IDs to include in the aggregation results.
+        runtimes:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: Returns findings aggregated by AWS Lambda function runtime environments.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionSortBy'
+          - description: The finding severity to use for sorting the results.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to use for sorting the results.
+      description: The details that define a findings aggregation based on AWS Lambda functions.
+    CodeFilePath:
+      type: object
+      required:
+      - endLine
+      - fileName
+      - filePath
+      - startLine
+      properties:
+        endLine:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The line number of the last line of code that a vulnerability was found in.
+        fileName:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The name of the file the code vulnerability was found in.
+        filePath:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The file path to the code that a vulnerability was found in.
+        startLine:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The line number of the first line of code that a vulnerability was found in.
+      description: Contains information on where a code vulnerability is located in your Lambda function.
+    FilePath:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    ImageTagList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonEmptyString'
+    PackageName:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    FindingTypeAggregation:
+      type: object
+      properties:
+        findingType:
+          allOf:
+          - $ref: '#/components/schemas/AggregationFindingType'
+          - description: The finding type to aggregate.
+        resourceType:
+          allOf:
+          - $ref: '#/components/schemas/AggregationResourceType'
+          - description: The resource type to aggregate.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/FindingTypeSortBy'
+          - description: The value to sort results by.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to sort results by.
+      description: The details that define an aggregation based on finding type.
+    StringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/StringComparison'
+          - description: The operator to use when comparing values in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/StringInput'
+          - description: The value to filter on.
+      description: An object that describes the details of a string filter.
+    DateFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DateFilter'
+      minItems: 1
+      maxItems: 10
+    AmiAggregationResponse:
+      type: object
+      required:
+      - ami
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID for the AMI.
+        affectedInstances:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The IDs of Amazon EC2 instances using this AMI.
+        ami:
+          allOf:
+          - $ref: '#/components/schemas/AmiId'
+          - description: The ID of the AMI that findings were aggregated for.
+        severityCounts:
+          allOf:
+          - $ref: '#/components/schemas/SeverityCounts'
+          - description: An object that contains the count of matched findings per severity.
+      description: A response that contains the results of a finding aggregation by AMI.
+    Long:
+      type: integer
+    SortField:
+      type: string
+      enum:
+      - AWS_ACCOUNT_ID
+      - FINDING_TYPE
+      - SEVERITY
+      - FIRST_OBSERVED_AT
+      - LAST_OBSERVED_AT
+      - FINDING_STATUS
+      - RESOURCE_TYPE
+      - ECR_IMAGE_PUSHED_AT
+      - ECR_IMAGE_REPOSITORY_NAME
+      - ECR_IMAGE_REGISTRY
+      - NETWORK_PROTOCOL
+      - COMPONENT_TYPE
+      - VULNERABILITY_ID
+      - VULNERABILITY_SOURCE
+      - INSPECTOR_SCORE
+      - VENDOR_SEVERITY
+      - EPSS_SCORE
+    ComponentType:
+      type: string
+    StringComparison:
+      type: string
+      enum:
+      - EQUALS
+      - PREFIX
+      - NOT_EQUALS
+    MapComparison:
+      type: string
+      enum:
+      - EQUALS
+    PortRange:
+      type: object
+      required:
+      - begin
+      - end
+      properties:
+        begin:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The beginning port in a port range.
+        end:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The ending port in a port range.
+      description: Details about the port range associated with a finding.
+    FunctionName:
+      type: string
+      pattern: ^[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$
+    LambdaLayerAggregation:
+      type: object
+      properties:
+        functionNames:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The names of the AWS Lambda functions associated with the layers.
+        layerArns:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: 'The Amazon Resource Name (ARN) of the AWS Lambda function layer. '
+        resourceIds:
+          allOf:
+          - $ref: '#/components/schemas/StringFilterList'
+          - description: The resource IDs for the AWS Lambda function layers.
+        sortBy:
+          allOf:
+          - $ref: '#/components/schemas/LambdaLayerSortBy'
+          - description: The finding severity to use for sorting the results.
+        sortOrder:
+          allOf:
+          - $ref: '#/components/schemas/SortOrder'
+          - description: The order to use for sorting the results.
+      description: The details that define a findings aggregation based on an AWS Lambda function's layers.
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/inspector2/
+x-hasEquivalentPaths: true

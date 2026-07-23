@@ -1,0 +1,626 @@
+openapi: 3.0.0
+info:
+  version: '2020-06-08'
+  x-release: v4
+  title: Inspector2 Accountpermissions Sbomexport API
+  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: inspector2
+  x-aws-signingName: inspector2
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: https://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: http://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+- url: https://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Sbomexport
+paths:
+  /sbomexport/cancel:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CancelSbomExport
+      description: Cancels a software bill of materials (SBOM) report.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CancelSbomExportResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - reportId
+              properties:
+                reportId:
+                  description: The report ID of the SBOM export to cancel.
+                  type: string
+                  pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+      summary: Amazon Inspector Cancel Sbom Export
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Sbomexport
+  /sbomexport/create:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: CreateSbomExport
+      description: Creates a software bill of materials (SBOM) report.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateSbomExportResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - reportFormat
+              - s3Destination
+              properties:
+                reportFormat:
+                  description: The output format for the software bill of materials (SBOM) report.
+                  type: string
+                  enum:
+                  - CYCLONEDX_1_4
+                  - SPDX_2_3
+                resourceFilterCriteria:
+                  description: The resource filter criteria for a Software bill of materials (SBOM) report.
+                  type: object
+                  properties:
+                    accountId:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceStringFilterList'
+                      - description: The account IDs used as resource filter criteria.
+                    ec2InstanceTags:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceMapFilterList'
+                      - description: The EC2 instance tags used as resource filter criteria.
+                    ecrImageTags:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceStringFilterList'
+                      - description: The ECR image tags used as resource filter criteria.
+                    ecrRepositoryName:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceStringFilterList'
+                      - description: The ECR repository names used as resource filter criteria.
+                    lambdaFunctionName:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceStringFilterList'
+                      - description: The AWS Lambda function name used as resource filter criteria.
+                    lambdaFunctionTags:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceMapFilterList'
+                      - description: The AWS Lambda function tags used as resource filter criteria.
+                    resourceId:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceStringFilterList'
+                      - description: The resource IDs used as resource filter criteria.
+                    resourceType:
+                      allOf:
+                      - $ref: '#/components/schemas/ResourceStringFilterList'
+                      - description: The resource types used as resource filter criteria.
+                s3Destination:
+                  description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+                  type: object
+                  properties:
+                    bucketName:
+                      allOf:
+                      - $ref: '#/components/schemas/String'
+                      - description: The name of the Amazon S3 bucket to export findings to.
+                    keyPrefix:
+                      allOf:
+                      - $ref: '#/components/schemas/String'
+                      - description: The prefix that the findings will be written under.
+                    kmsKeyArn:
+                      allOf:
+                      - $ref: '#/components/schemas/String'
+                      - description: The ARN of the KMS key used to encrypt data when exporting findings.
+      summary: Amazon Inspector Create Sbom Export
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Sbomexport
+  /sbomexport/get:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: GetSbomExport
+      description: Gets details of a software bill of materials (SBOM) report.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetSbomExportResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - reportId
+              properties:
+                reportId:
+                  description: The report ID of the SBOM export to get details for.
+                  type: string
+                  pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+      summary: Amazon Inspector Get Sbom Export
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Sbomexport
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    CancelSbomExportResponse:
+      type: object
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The report ID of the canceled SBOM export.
+    NonEmptyString:
+      type: string
+      minLength: 1
+    ResourceMapFilter:
+      type: object
+      required:
+      - comparison
+      - key
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/ResourceMapComparison'
+          - description: The filter's comparison.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The filter's key.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The filter's value.
+      description: A resource map filter for a software bill of material report.
+    ExternalReportStatus:
+      type: string
+      enum:
+      - SUCCEEDED
+      - IN_PROGRESS
+      - CANCELLED
+      - FAILED
+    SbomReportFormat:
+      type: string
+      enum:
+      - CYCLONEDX_1_4
+      - SPDX_2_3
+    ResourceMapFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceMapFilter'
+      minItems: 1
+      maxItems: 10
+    ResourceFilterCriteria:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringFilterList'
+          - description: The account IDs used as resource filter criteria.
+        ec2InstanceTags:
+          allOf:
+          - $ref: '#/components/schemas/ResourceMapFilterList'
+          - description: The EC2 instance tags used as resource filter criteria.
+        ecrImageTags:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringFilterList'
+          - description: The ECR image tags used as resource filter criteria.
+        ecrRepositoryName:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringFilterList'
+          - description: The ECR repository names used as resource filter criteria.
+        lambdaFunctionName:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringFilterList'
+          - description: The AWS Lambda function name used as resource filter criteria.
+        lambdaFunctionTags:
+          allOf:
+          - $ref: '#/components/schemas/ResourceMapFilterList'
+          - description: The AWS Lambda function tags used as resource filter criteria.
+        resourceId:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringFilterList'
+          - description: The resource IDs used as resource filter criteria.
+        resourceType:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringFilterList'
+          - description: The resource types used as resource filter criteria.
+      description: The resource filter criteria for a Software bill of materials (SBOM) report.
+    ResourceStringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    AccessDeniedException: {}
+    ResourceStringComparison:
+      type: string
+      enum:
+      - EQUALS
+      - NOT_EQUALS
+    ReportingErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - INVALID_PERMISSIONS
+      - NO_FINDINGS_FOUND
+      - BUCKET_NOT_FOUND
+      - INCOMPATIBLE_BUCKET_REGION
+      - MALFORMED_KMS_KEY
+    ResourceStringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringComparison'
+          - description: The filter's comparison.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringInput'
+          - description: The filter's value.
+      description: A resource string filter for a software bill of materials report.
+    InternalServerException: {}
+    ReportId:
+      type: string
+      pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+    String:
+      type: string
+    CreateSbomExportResponse:
+      type: object
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The report ID for the software bill of materials (SBOM) report.
+    Destination:
+      type: object
+      required:
+      - bucketName
+      - kmsKeyArn
+      properties:
+        bucketName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Amazon S3 bucket to export findings to.
+        keyPrefix:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The prefix that the findings will be written under.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ARN of the KMS key used to encrypt data when exporting findings.
+      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+    GetSbomExportResponse:
+      type: object
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ReportingErrorCode'
+          - description: An error code.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: An error message.
+        filterCriteria:
+          allOf:
+          - $ref: '#/components/schemas/ResourceFilterCriteria'
+          - description: Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.
+        format:
+          allOf:
+          - $ref: '#/components/schemas/SbomReportFormat'
+          - description: The format of the software bill of materials (SBOM) report.
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The report ID of the software bill of materials (SBOM) report.
+        s3Destination:
+          $ref: '#/components/schemas/Destination'
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ExternalReportStatus'
+          - description: The status of the software bill of materials (SBOM) report.
+    ResourceMapComparison:
+      type: string
+      enum:
+      - EQUALS
+    ResourceStringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceStringFilter'
+      minItems: 1
+      maxItems: 10
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/inspector2/
+x-hasEquivalentPaths: true

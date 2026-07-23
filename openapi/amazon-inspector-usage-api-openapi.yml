@@ -1,0 +1,342 @@
+openapi: 3.0.0
+info:
+  version: '2020-06-08'
+  x-release: v4
+  title: Inspector2 Accountpermissions Usage API
+  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: inspector2
+  x-aws-signingName: inspector2
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: https://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: http://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+- url: https://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Usage
+paths:
+  /usage/list:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: ListUsageTotals
+      description: Lists the Amazon Inspector usage totals over the last 30 days.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListUsageTotalsResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters:
+      - name: maxResults
+        in: query
+        schema:
+          type: string
+        description: Pagination limit
+        required: false
+      - name: nextToken
+        in: query
+        schema:
+          type: string
+        description: Pagination token
+        required: false
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountIds:
+                  description: The Amazon Web Services account IDs to retrieve usage totals for.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/UsageAccountId'
+                  minItems: 1
+                  maxItems: 7000
+                maxResults:
+                  description: The maximum number of results to return in the response.
+                  type: integer
+                  minimum: 1
+                  maximum: 500
+                nextToken:
+                  description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+                  type: string
+                  minLength: 1
+      summary: Amazon Inspector List Usage Totals
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Usage
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    UsageAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+    UsageTotal:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account ID of the account that usage data was retrieved for.
+        usage:
+          allOf:
+          - $ref: '#/components/schemas/UsageList'
+          - description: An object representing the total usage for an account.
+      description: The total of usage for an account ID.
+    UsageType:
+      type: string
+      enum:
+      - EC2_INSTANCE_HOURS
+      - ECR_INITIAL_SCAN
+      - ECR_RESCAN
+      - LAMBDA_FUNCTION_HOURS
+      - LAMBDA_FUNCTION_CODE_HOURS
+    ListUsageTotalsNextToken:
+      type: string
+      minLength: 1
+    AccessDeniedException: {}
+    ListUsageTotalsResponse:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/ListUsageTotalsNextToken'
+          - description: The pagination parameter to be used on the next list operation to retrieve more items.
+        totals:
+          allOf:
+          - $ref: '#/components/schemas/UsageTotalList'
+          - description: An object with details on the total usage for the requested account.
+    Usage:
+      type: object
+      properties:
+        currency:
+          allOf:
+          - $ref: '#/components/schemas/Currency'
+          - description: The currency type used when calculating usage data.
+        estimatedMonthlyCost:
+          allOf:
+          - $ref: '#/components/schemas/MonthlyCostEstimate'
+          - description: The estimated monthly cost of Amazon Inspector.
+        total:
+          allOf:
+          - $ref: '#/components/schemas/UsageValue'
+          - description: The total of usage.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/UsageType'
+          - description: The type scan.
+      description: Contains usage information about the cost of Amazon Inspector operation.
+    InternalServerException: {}
+    MonthlyCostEstimate:
+      type: number
+      format: double
+      minimum: 0
+    Currency:
+      type: string
+      enum:
+      - USD
+    UsageValue:
+      type: number
+      format: double
+      minimum: 0
+    MeteringAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+    UsageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Usage'
+    UsageTotalList:
+      type: array
+      items:
+        $ref: '#/components/schemas/UsageTotal'
+    ThrottlingException: {}
+    ValidationException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/inspector2/
+x-hasEquivalentPaths: true

@@ -1,0 +1,390 @@
+openapi: 3.0.0
+info:
+  version: '2020-06-08'
+  x-release: v4
+  title: Inspector2 Accountpermissions Disable API
+  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: inspector2
+  x-aws-signingName: inspector2
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: https://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: http://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+- url: https://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Disable
+paths:
+  /disable:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: Disable
+      description: Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account disables the Amazon Inspector service.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DisableResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ResourceNotFoundException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResourceNotFoundException'
+        '483':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '484':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountIds:
+                  description: An array of account IDs you want to disable Amazon Inspector scans for.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/AccountId'
+                  minItems: 0
+                  maxItems: 100
+                resourceTypes:
+                  description: The resource scan types you want to disable.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/ResourceScanType'
+                  minItems: 0
+                  maxItems: 3
+      summary: Amazon Inspector Disable
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Disable
+components:
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    NonEmptyString:
+      type: string
+      minLength: 1
+    FailedAccount:
+      type: object
+      required:
+      - accountId
+      - errorCode
+      - errorMessage
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID.
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: The error code explaining why the account failed to enable Amazon Inspector.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The error message received when the account failed to enable Amazon Inspector.
+        resourceStatus:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStatus'
+          - description: An object detailing which resources Amazon Inspector is enabled to scan for the account.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector for the account.
+      description: An object with details on why an account failed to enable Amazon Inspector.
+    ResourceStatus:
+      type: object
+      required:
+      - ec2
+      - ecr
+      properties:
+        ec2:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector scanning for Amazon EC2 resources.
+        ecr:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector scanning for Amazon ECR resources.
+        lambda:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector scanning for AWS Lambda function.
+        lambdaCode:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: 'The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. '
+      description: Details the status of Amazon Inspector for each resource type Amazon Inspector scans.
+    ResourceScanType:
+      type: string
+      enum:
+      - EC2
+      - ECR
+      - LAMBDA
+      - LAMBDA_CODE
+    Account:
+      type: object
+      required:
+      - accountId
+      - resourceStatus
+      - status
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The ID of the Amazon Web Services account.
+        resourceStatus:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStatus'
+          - description: Details of the status of Amazon Inspector scans by resource type.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector for the account.
+      description: An Amazon Web Services account within your environment that Amazon Inspector has been enabled for.
+    AccessDeniedException: {}
+    InternalServerException: {}
+    FailedAccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FailedAccount'
+      minItems: 0
+      maxItems: 100
+    DisableResponse:
+      type: object
+      required:
+      - accounts
+      properties:
+        accounts:
+          allOf:
+          - $ref: '#/components/schemas/AccountList'
+          - description: Information on the accounts that have had Amazon Inspector scans successfully disabled. Details are provided for each account.
+        failedAccounts:
+          allOf:
+          - $ref: '#/components/schemas/FailedAccountList'
+          - description: Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.
+    Status:
+      type: string
+      enum:
+      - ENABLING
+      - ENABLED
+      - DISABLING
+      - DISABLED
+      - SUSPENDING
+      - SUSPENDED
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+    ErrorCode:
+      type: string
+      enum:
+      - ALREADY_ENABLED
+      - ENABLE_IN_PROGRESS
+      - DISABLE_IN_PROGRESS
+      - SUSPEND_IN_PROGRESS
+      - RESOURCE_NOT_FOUND
+      - ACCESS_DENIED
+      - INTERNAL_ERROR
+      - SSM_UNAVAILABLE
+      - SSM_THROTTLED
+      - EVENTBRIDGE_UNAVAILABLE
+      - EVENTBRIDGE_THROTTLED
+      - RESOURCE_SCAN_NOT_DISABLED
+      - DISASSOCIATE_ALL_MEMBERS
+      - ACCOUNT_IS_ISOLATED
+    AccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Account'
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/inspector2/
+x-hasEquivalentPaths: true

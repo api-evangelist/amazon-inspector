@@ -1,0 +1,418 @@
+openapi: 3.0.0
+info:
+  version: '2020-06-08'
+  x-release: v4
+  title: Inspector2 Accountpermissions Ec2deepinspectionstatus API
+  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: inspector2
+  x-aws-signingName: inspector2
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: https://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: http://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+- url: https://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Ec2deepinspectionstatus
+paths:
+  /ec2deepinspectionstatus/member/batch/get:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchGetMemberEc2DeepInspectionStatus
+      description: Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchGetMemberEc2DeepInspectionStatusResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountIds:
+                  description: The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector deep inspection activation status for. <pre><code> &lt;/p&gt; </code></pre>
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/AccountId'
+                  minItems: 0
+                  maxItems: 100
+      summary: Amazon Inspector Batch Get Member Ec2 Deep Inspection Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Ec2deepinspectionstatus
+  /ec2deepinspectionstatus/member/batch/update:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchUpdateMemberEc2DeepInspectionStatus
+      description: Activates or deactivates Amazon Inspector deep inspection for the provided member accounts in your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchUpdateMemberEc2DeepInspectionStatusResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - accountIds
+              properties:
+                accountIds:
+                  description: The unique identifiers for the Amazon Web Services accounts to change Amazon Inspector deep inspection status for.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/MemberAccountEc2DeepInspectionStatus'
+                  minItems: 0
+                  maxItems: 100
+      summary: Amazon Inspector Batch Update Member Ec2 Deep Inspection Status
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Ec2deepinspectionstatus
+components:
+  schemas:
+    BatchGetMemberEc2DeepInspectionStatusResponse:
+      type: object
+      properties:
+        accountIds:
+          allOf:
+          - $ref: '#/components/schemas/MemberAccountEc2DeepInspectionStatusStateList'
+          - description: An array of objects that provide details on the activation status of Amazon Inspector deep inspection for each of the requested accounts. <pre><code> &lt;/p&gt; </code></pre>
+        failedAccountIds:
+          allOf:
+          - $ref: '#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusStateList'
+          - description: An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why. <pre><code> &lt;/p&gt; </code></pre>
+    MemberAccountEc2DeepInspectionStatusStateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/MemberAccountEc2DeepInspectionStatusState'
+      minItems: 0
+      maxItems: 100
+    FailedMemberAccountEc2DeepInspectionStatusState:
+      type: object
+      required:
+      - accountId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The unique identifier for the Amazon Web Services account of the organization member that failed to activate Amazon Inspector deep inspection.
+        ec2ScanStatus:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of EC2 scanning in the account that failed to activate Amazon Inspector deep inspection.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The error message explaining why the account failed to activate Amazon Inspector deep inspection.
+      description: An object that contains details about a member account in your organization that failed to activate Amazon Inspector deep inspection.
+    NonEmptyString:
+      type: string
+      minLength: 1
+    Ec2DeepInspectionStatus:
+      type: string
+      enum:
+      - ACTIVATED
+      - DEACTIVATED
+      - PENDING
+      - FAILED
+    MemberAccountEc2DeepInspectionStatusState:
+      type: object
+      required:
+      - accountId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The unique identifier for the Amazon Web Services account of the organization member
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The error message explaining why the account failed to activate Amazon Inspector deep inspection.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/Ec2DeepInspectionStatus'
+          - description: The state of Amazon Inspector deep inspection in the member account.
+      description: An object that contains details about the state of Amazon Inspector deep inspection for a member account.
+    BatchUpdateMemberEc2DeepInspectionStatusResponse:
+      type: object
+      properties:
+        accountIds:
+          allOf:
+          - $ref: '#/components/schemas/MemberAccountEc2DeepInspectionStatusStateList'
+          - description: 'An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. '
+        failedAccountIds:
+          allOf:
+          - $ref: '#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusStateList'
+          - description: 'An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. '
+    FailedMemberAccountEc2DeepInspectionStatusStateList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusState'
+      minItems: 0
+      maxItems: 100
+    AccessDeniedException: {}
+    MemberAccountEc2DeepInspectionStatus:
+      type: object
+      required:
+      - accountId
+      - activateDeepInspection
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The unique identifier for the Amazon Web Services account of the organization member.
+        activateDeepInspection:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.
+      description: An object that contains details about the status of Amazon Inspector deep inspection for a member account in your organization.
+    InternalServerException: {}
+    Boolean:
+      type: boolean
+    Status:
+      type: string
+      enum:
+      - ENABLING
+      - ENABLED
+      - DISABLING
+      - DISABLED
+      - SUSPENDING
+      - SUSPENDED
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+    ThrottlingException: {}
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/inspector2/
+x-hasEquivalentPaths: true

@@ -1,0 +1,354 @@
+openapi: 3.0.0
+info:
+  version: '2020-06-08'
+  x-release: v4
+  title: Inspector2 Accountpermissions Freetrialinfo API
+  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
+  x-logo:
+    url: https://twitter.com/awscloud/profile_image?size=original
+    backgroundColor: '#FFFFFF'
+  termsOfService: https://aws.amazon.com/service-terms/
+  contact:
+    name: Mike Ralphson
+    email: mike.ralphson@gmail.com
+    url: https://github.com/mermade/aws2openapi
+    x-twitter: PermittedSoc
+  license:
+    name: Apache 2.0 License
+    url: http://www.apache.org/licenses/
+  x-providerName: amazonaws.com
+  x-serviceName: inspector2
+  x-aws-signingName: inspector2
+  x-origin:
+  - contentType: application/json
+    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
+    converter:
+      url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
+    x-apisguru-driver: external
+  x-apiClientRegistration:
+    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
+  x-apisguru-categories:
+  - cloud
+  x-preferred: true
+servers:
+- url: http://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: https://inspector2.{region}.amazonaws.com
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - us-east-1
+      - us-east-2
+      - us-west-1
+      - us-west-2
+      - us-gov-west-1
+      - us-gov-east-1
+      - ca-central-1
+      - eu-north-1
+      - eu-west-1
+      - eu-west-2
+      - eu-west-3
+      - eu-central-1
+      - eu-south-1
+      - af-south-1
+      - ap-northeast-1
+      - ap-northeast-2
+      - ap-northeast-3
+      - ap-southeast-1
+      - ap-southeast-2
+      - ap-east-1
+      - ap-south-1
+      - sa-east-1
+      - me-south-1
+      default: us-east-1
+  description: The Inspector2 multi-region endpoint
+- url: http://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+- url: https://inspector2.{region}.amazonaws.com.cn
+  variables:
+    region:
+      description: The AWS region
+      enum:
+      - cn-north-1
+      - cn-northwest-1
+      default: cn-north-1
+  description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+security:
+- hmac: []
+tags:
+- name: Freetrialinfo
+paths:
+  /freetrialinfo/batchget:
+    parameters:
+    - $ref: '#/components/parameters/X-Amz-Content-Sha256'
+    - $ref: '#/components/parameters/X-Amz-Date'
+    - $ref: '#/components/parameters/X-Amz-Algorithm'
+    - $ref: '#/components/parameters/X-Amz-Credential'
+    - $ref: '#/components/parameters/X-Amz-Security-Token'
+    - $ref: '#/components/parameters/X-Amz-Signature'
+    - $ref: '#/components/parameters/X-Amz-SignedHeaders'
+    post:
+      operationId: BatchGetFreeTrialInfo
+      description: Gets free trial status for multiple Amazon Web Services accounts.
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchGetFreeTrialInfoResponse'
+        '480':
+          description: ValidationException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ValidationException'
+        '481':
+          description: AccessDeniedException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AccessDeniedException'
+        '482':
+          description: ThrottlingException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThrottlingException'
+        '483':
+          description: InternalServerException
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InternalServerException'
+      parameters: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+              - accountIds
+              properties:
+                accountIds:
+                  description: The account IDs to get free trial status for.
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/MeteringAccountId'
+                  minItems: 1
+                  maxItems: 100
+      summary: Amazon Inspector Batch Get Free Trial Info
+      x-microcks-operation:
+        delay: 0
+        dispatcher: FALLBACK
+      tags:
+      - Freetrialinfo
+components:
+  schemas:
+    FreeTrialAccountInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FreeTrialAccountInfo'
+    BatchGetFreeTrialInfoResponse:
+      type: object
+      required:
+      - accounts
+      - failedAccounts
+      properties:
+        accounts:
+          allOf:
+          - $ref: '#/components/schemas/FreeTrialAccountInfoList'
+          - description: 'An array of objects that provide Amazon Inspector free trial details for each of the requested accounts. '
+        failedAccounts:
+          allOf:
+          - $ref: '#/components/schemas/FreeTrialInfoErrorList'
+          - description: An array of objects detailing any accounts that free trial data could not be returned for.
+    Timestamp:
+      type: string
+      format: date-time
+    FreeTrialType:
+      type: string
+      enum:
+      - EC2
+      - ECR
+      - LAMBDA
+      - LAMBDA_CODE
+    FreeTrialInfoErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FreeTrialInfoError'
+    AccessDeniedException: {}
+    FreeTrialInfoError:
+      type: object
+      required:
+      - accountId
+      - code
+      - message
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account associated with the Amazon Inspector free trial information.
+        code:
+          allOf:
+          - $ref: '#/components/schemas/FreeTrialInfoErrorCode'
+          - description: The error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The error message returned.
+      description: Information about an error received while accessing free trail data for an account.
+    FreeTrialAccountInfo:
+      type: object
+      required:
+      - accountId
+      - freeTrialInfo
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account associated with the Amazon Inspector free trial information.
+        freeTrialInfo:
+          allOf:
+          - $ref: '#/components/schemas/FreeTrialInfoList'
+          - description: Contains information about the Amazon Inspector free trial for an account.
+      description: Information about the Amazon Inspector free trial for an account.
+    FreeTrialInfoErrorCode:
+      type: string
+      enum:
+      - ACCESS_DENIED
+      - INTERNAL_ERROR
+    FreeTrialInfo:
+      type: object
+      required:
+      - end
+      - start
+      - status
+      - type
+      properties:
+        end:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time that the Amazon Inspector free trail ends for a given account.
+        start:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: The date and time that the Amazon Inspector free trail started for a given account.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/FreeTrialStatus'
+          - description: The order to sort results by.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/FreeTrialType'
+          - description: The type of scan covered by the Amazon Inspector free trail.
+      description: An object that contains information about the Amazon Inspector free trial for an account.
+    InternalServerException: {}
+    FreeTrialInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FreeTrialInfo'
+    FreeTrialStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
+    MeteringAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+    String:
+      type: string
+    ThrottlingException: {}
+    ValidationException: {}
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+  securitySchemes:
+    hmac:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: Amazon Signature authorization v4
+      x-amazon-apigateway-authtype: awsSigv4
+externalDocs:
+  description: Amazon Web Services documentation
+  url: https://docs.aws.amazon.com/inspector2/
+x-hasEquivalentPaths: true
