@@ -1,0 +1,1795 @@
+{
+  "info": {
+    "_postman_id": "4c32de88-816b-4b43-b4be-cc0874059c46",
+    "name": "Inspector2 Accountpermissions Encryptionkey API",
+    "description": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:28:32.000Z",
+    "updatedAt": "2026-07-28T10:28:33.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-4c32de88-816b-4b43-b4be-cc0874059c46"
+  },
+  "item": [
+    {
+      "name": "encryptionkey",
+      "item": [
+        {
+          "name": "get#resourceType&scanType",
+          "item": [
+            {
+              "name": "Amazon Inspector Get Encryption Key",
+              "id": "bb978d25-e3e7-4569-8d8b-67874c91836e",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/encryptionkey/get?resourceType=AWS_LAMBDA_FUNCTION&scanType=CODE#resourceType&scanType",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "encryptionkey",
+                    "get"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) The resource type the key encrypts.",
+                      "key": "resourceType",
+                      "value": "AWS_LAMBDA_FUNCTION"
+                    },
+                    {
+                      "description": "(Required) The scan type the key encrypts.",
+                      "key": "scanType",
+                      "value": "CODE"
+                    }
+                  ],
+                  "hash": "resourceType&scanType"
+                },
+                "description": "Gets an encryption key."
+              },
+              "response": [
+                {
+                  "id": "e3f4d8ad-5df8-4ad6-9a83-ec42a0ce4e1f",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/get?resourceType=AWS_LAMBDA_FUNCTION&scanType=CODE#resourceType&scanType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "get"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The resource type the key encrypts.",
+                          "key": "resourceType",
+                          "value": "AWS_LAMBDA_FUNCTION"
+                        },
+                        {
+                          "description": "(Required) The scan type the key encrypts.",
+                          "key": "scanType",
+                          "value": "CODE"
+                        }
+                      ],
+                      "hash": "resourceType&scanType"
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"kmsKeyId\": \"arn:aws:kms:1acss.rz1tt20wbogmmehcv4s03acaxjiklhwezj4ba-gu.0b717a:368303826616:key/e5302Cb4-1AC3-CEBb-F2AD-f6539Fe1e2b4\"\n}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-e3f4d8ad-5df8-4ad6-9a83-ec42a0ce4e1f"
+                },
+                {
+                  "id": "acd3a05f-432f-440a-9d28-e401285a9216",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/get?resourceType=AWS_LAMBDA_FUNCTION&scanType=CODE#resourceType&scanType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "get"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The resource type the key encrypts.",
+                          "key": "resourceType",
+                          "value": "AWS_LAMBDA_FUNCTION"
+                        },
+                        {
+                          "description": "(Required) The scan type the key encrypts.",
+                          "key": "scanType",
+                          "value": "CODE"
+                        }
+                      ],
+                      "hash": "resourceType&scanType"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-acd3a05f-432f-440a-9d28-e401285a9216"
+                },
+                {
+                  "id": "77592295-b77d-424b-85aa-e73521d25097",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/get?resourceType=AWS_LAMBDA_FUNCTION&scanType=CODE#resourceType&scanType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "get"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The resource type the key encrypts.",
+                          "key": "resourceType",
+                          "value": "AWS_LAMBDA_FUNCTION"
+                        },
+                        {
+                          "description": "(Required) The scan type the key encrypts.",
+                          "key": "scanType",
+                          "value": "CODE"
+                        }
+                      ],
+                      "hash": "resourceType&scanType"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-77592295-b77d-424b-85aa-e73521d25097"
+                },
+                {
+                  "id": "6cf19c38-0e25-4e48-b2fa-4afdca2ac1e0",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/get?resourceType=AWS_LAMBDA_FUNCTION&scanType=CODE#resourceType&scanType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "get"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The resource type the key encrypts.",
+                          "key": "resourceType",
+                          "value": "AWS_LAMBDA_FUNCTION"
+                        },
+                        {
+                          "description": "(Required) The scan type the key encrypts.",
+                          "key": "scanType",
+                          "value": "CODE"
+                        }
+                      ],
+                      "hash": "resourceType&scanType"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-6cf19c38-0e25-4e48-b2fa-4afdca2ac1e0"
+                },
+                {
+                  "id": "68e6007f-70ad-4ede-bc05-c2a11ec60b5a",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/get?resourceType=AWS_LAMBDA_FUNCTION&scanType=CODE#resourceType&scanType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "get"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The resource type the key encrypts.",
+                          "key": "resourceType",
+                          "value": "AWS_LAMBDA_FUNCTION"
+                        },
+                        {
+                          "description": "(Required) The scan type the key encrypts.",
+                          "key": "scanType",
+                          "value": "CODE"
+                        }
+                      ],
+                      "hash": "resourceType&scanType"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-68e6007f-70ad-4ede-bc05-c2a11ec60b5a"
+                },
+                {
+                  "id": "a1927ee8-7b0f-4932-a9be-6adb97beeb50",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/get?resourceType=AWS_LAMBDA_FUNCTION&scanType=CODE#resourceType&scanType",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "get"
+                      ],
+                      "query": [
+                        {
+                          "description": "(Required) The resource type the key encrypts.",
+                          "key": "resourceType",
+                          "value": "AWS_LAMBDA_FUNCTION"
+                        },
+                        {
+                          "description": "(Required) The scan type the key encrypts.",
+                          "key": "scanType",
+                          "value": "CODE"
+                        }
+                      ],
+                      "hash": "resourceType&scanType"
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-a1927ee8-7b0f-4932-a9be-6adb97beeb50"
+                }
+              ],
+              "createdAt": "2026-07-28T10:28:33.000Z",
+              "updatedAt": "2026-07-28T10:28:33.000Z",
+              "uid": "35240-bb978d25-e3e7-4569-8d8b-67874c91836e"
+            }
+          ],
+          "id": "4885cf1b-4674-4da0-b4e5-46e9c633b38b",
+          "createdAt": "2026-07-28T10:28:33.000Z",
+          "updatedAt": "2026-07-28T10:28:33.000Z",
+          "uid": "35240-4885cf1b-4674-4da0-b4e5-46e9c633b38b"
+        },
+        {
+          "name": "reset",
+          "item": [
+            {
+              "name": "Amazon Inspector Reset Encryption Key",
+              "id": "a933fe8a-2d93-4603-a2fc-43c9e81c6cf9",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n  \"scanType\": \"PACKAGE\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/encryptionkey/reset",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "encryptionkey",
+                    "reset"
+                  ]
+                },
+                "description": "Resets an encryption key. After the key is reset your resources will be encrypted by an Amazon Web Services owned key."
+              },
+              "response": [
+                {
+                  "id": "64356bb4-4db8-4ac6-b63b-fce947818921",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "reset"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-64356bb4-4db8-4ac6-b63b-fce947818921"
+                },
+                {
+                  "id": "3339c120-412e-481f-94d8-a5f5f1251120",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "reset"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-3339c120-412e-481f-94d8-a5f5f1251120"
+                },
+                {
+                  "id": "2127ffad-66f6-469c-a1e2-9df10bcfb00c",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "reset"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-2127ffad-66f6-469c-a1e2-9df10bcfb00c"
+                },
+                {
+                  "id": "6e6f3c9a-99f4-4cb4-959d-7de8fcf6ab19",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "reset"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-6e6f3c9a-99f4-4cb4-959d-7de8fcf6ab19"
+                },
+                {
+                  "id": "3dc6e629-1587-47c3-aa41-78f998ef6940",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "reset"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-3dc6e629-1587-47c3-aa41-78f998ef6940"
+                },
+                {
+                  "id": "6fc0347a-59ab-44ad-882f-3aea60f8e3b0",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/reset",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "reset"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-6fc0347a-59ab-44ad-882f-3aea60f8e3b0"
+                }
+              ],
+              "createdAt": "2026-07-28T10:28:33.000Z",
+              "updatedAt": "2026-07-28T10:28:33.000Z",
+              "uid": "35240-a933fe8a-2d93-4603-a2fc-43c9e81c6cf9"
+            }
+          ],
+          "id": "800cd68c-7dcd-41d3-b283-cecc2c6f3042",
+          "createdAt": "2026-07-28T10:28:33.000Z",
+          "updatedAt": "2026-07-28T10:28:33.000Z",
+          "uid": "35240-800cd68c-7dcd-41d3-b283-cecc2c6f3042"
+        },
+        {
+          "name": "update",
+          "item": [
+            {
+              "name": "Amazon Inspector Update Encryption Key",
+              "id": "4f4e4bb9-c849-4cf2-bc8f-8c29870ea0f2",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"kmsKeyId\": \"arn:aws:kms::762007319579:key/dC5fCC9B-cb2F-AA34-a20f-F3b7BdCFDdaC\",\n  \"resourceType\": \"AWS_EC2_INSTANCE\",\n  \"scanType\": \"PACKAGE\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/encryptionkey/update",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "encryptionkey",
+                    "update"
+                  ]
+                },
+                "description": "Updates an encryption key. A <code>ResourceNotFoundException</code> means that an AWS owned key is being used for encryption."
+              },
+              "response": [
+                {
+                  "id": "60ae9c91-3927-4b5d-80bf-7d8bc975e489",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kmsKeyId\": \"arn:aws:kms::762007319579:key/dC5fCC9B-cb2F-AA34-a20f-F3b7BdCFDdaC\",\n  \"resourceType\": \"AWS_EC2_INSTANCE\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "update"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-60ae9c91-3927-4b5d-80bf-7d8bc975e489"
+                },
+                {
+                  "id": "6e992542-cff3-4049-ae0d-2f1ea1db3b26",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kmsKeyId\": \"arn:aws:kms::762007319579:key/dC5fCC9B-cb2F-AA34-a20f-F3b7BdCFDdaC\",\n  \"resourceType\": \"AWS_EC2_INSTANCE\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "update"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-6e992542-cff3-4049-ae0d-2f1ea1db3b26"
+                },
+                {
+                  "id": "278bd92f-8365-4511-97ad-d378bfa5eb37",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kmsKeyId\": \"arn:aws:kms::762007319579:key/dC5fCC9B-cb2F-AA34-a20f-F3b7BdCFDdaC\",\n  \"resourceType\": \"AWS_EC2_INSTANCE\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "update"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-278bd92f-8365-4511-97ad-d378bfa5eb37"
+                },
+                {
+                  "id": "859d96e6-e054-4ddd-b1f4-98facee81c52",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kmsKeyId\": \"arn:aws:kms::762007319579:key/dC5fCC9B-cb2F-AA34-a20f-F3b7BdCFDdaC\",\n  \"resourceType\": \"AWS_EC2_INSTANCE\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "update"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-859d96e6-e054-4ddd-b1f4-98facee81c52"
+                },
+                {
+                  "id": "5b3ddec5-a35a-4f13-a6ef-fbecfc12d70d",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kmsKeyId\": \"arn:aws:kms::762007319579:key/dC5fCC9B-cb2F-AA34-a20f-F3b7BdCFDdaC\",\n  \"resourceType\": \"AWS_EC2_INSTANCE\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "update"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-5b3ddec5-a35a-4f13-a6ef-fbecfc12d70d"
+                },
+                {
+                  "id": "5cf983eb-08d0-4311-b9ef-c08f894eeca7",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"kmsKeyId\": \"arn:aws:kms::762007319579:key/dC5fCC9B-cb2F-AA34-a20f-F3b7BdCFDdaC\",\n  \"resourceType\": \"AWS_EC2_INSTANCE\",\n  \"scanType\": \"PACKAGE\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/encryptionkey/update",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "encryptionkey",
+                        "update"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:33.000Z",
+                  "updatedAt": "2026-07-28T10:28:33.000Z",
+                  "uid": "35240-5cf983eb-08d0-4311-b9ef-c08f894eeca7"
+                }
+              ],
+              "createdAt": "2026-07-28T10:28:33.000Z",
+              "updatedAt": "2026-07-28T10:28:33.000Z",
+              "uid": "35240-4f4e4bb9-c849-4cf2-bc8f-8c29870ea0f2"
+            }
+          ],
+          "id": "0a156bec-89b0-4fde-bb0b-570531d1d8c0",
+          "createdAt": "2026-07-28T10:28:33.000Z",
+          "updatedAt": "2026-07-28T10:28:33.000Z",
+          "uid": "35240-0a156bec-89b0-4fde-bb0b-570531d1d8c0"
+        }
+      ],
+      "id": "522ea32f-6639-4534-b7a6-cf0e5a2fbfaf",
+      "createdAt": "2026-07-28T10:28:33.000Z",
+      "updatedAt": "2026-07-28T10:28:33.000Z",
+      "uid": "35240-522ea32f-6639-4534-b7a6-cf0e5a2fbfaf"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://inspector2.{{region}}.amazonaws.com"
+    }
+  ]
+}

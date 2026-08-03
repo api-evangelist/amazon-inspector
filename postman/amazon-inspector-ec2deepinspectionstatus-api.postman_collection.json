@@ -1,0 +1,1095 @@
+{
+  "info": {
+    "_postman_id": "bff19c86-9cc9-4609-91bb-9f9c95cf4622",
+    "name": "Inspector2 Accountpermissions Ec2deepinspectionstatus API",
+    "description": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:28:15.000Z",
+    "updatedAt": "2026-07-28T10:28:15.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-bff19c86-9cc9-4609-91bb-9f9c95cf4622"
+  },
+  "item": [
+    {
+      "name": "ec2deepinspectionstatus",
+      "item": [
+        {
+          "name": "member",
+          "item": [
+            {
+              "name": "batch",
+              "item": [
+                {
+                  "name": "get",
+                  "item": [
+                    {
+                      "name": "Amazon Inspector Batch Get Member Ec2 Deep Inspection Status",
+                      "id": "2946e2f5-4836-40c8-a9e2-5f631feec7ba",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    \"940171532415\",\n    \"622649603314\",\n    \"363635965208\",\n    \"565826802735\",\n    \"301976449445\",\n    \"444541274538\",\n    \"923887477927\",\n    \"926419880812\",\n    \"956463952318\",\n    \"852566589470\",\n    \"674656596083\",\n    \"998434608206\",\n    \"556942554442\",\n    \"206113568113\",\n    \"609741968051\",\n    \"415036450232\",\n    \"469971550498\",\n    \"595382270921\",\n    \"866364311502\",\n    \"672133600854\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "ec2deepinspectionstatus",
+                            "member",
+                            "batch",
+                            "get"
+                          ]
+                        },
+                        "description": "Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API."
+                      },
+                      "response": [
+                        {
+                          "id": "f65d2b86-ee3d-43cc-810f-c571eea41f87",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    \"940171532415\",\n    \"622649603314\",\n    \"363635965208\",\n    \"565826802735\",\n    \"301976449445\",\n    \"444541274538\",\n    \"923887477927\",\n    \"926419880812\",\n    \"956463952318\",\n    \"852566589470\",\n    \"674656596083\",\n    \"998434608206\",\n    \"556942554442\",\n    \"206113568113\",\n    \"609741968051\",\n    \"415036450232\",\n    \"469971550498\",\n    \"595382270921\",\n    \"866364311502\",\n    \"672133600854\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/get",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "get"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"393421611062\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"286809526747\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"701703566906\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"252089368313\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"159466112432\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"770757930701\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"340893356345\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"195996330157\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"751868197099\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"743781104354\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"034694158294\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"932205844293\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"484524643362\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"858921837563\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"640546433911\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"532456545715\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"612651207612\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"491968662322\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"567152746006\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"680431258289\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    }\n  ],\n  \"failedAccountIds\": [\n    {\n      \"accountId\": \"917734049672\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"255608889328\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"665095277254\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"374809346306\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"118070363383\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"309595159773\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"587382198166\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"492991390614\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"809000009534\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"124109487806\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"451506851615\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"433153954665\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"874912158120\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"895484403670\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"450506089969\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"414886663097\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"602068803212\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"980547033966\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"991531031995\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"437997079831\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-f65d2b86-ee3d-43cc-810f-c571eea41f87"
+                        },
+                        {
+                          "id": "8cee80a9-754a-40bc-a511-f2503e2c8399",
+                          "name": "ValidationException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    \"940171532415\",\n    \"622649603314\",\n    \"363635965208\",\n    \"565826802735\",\n    \"301976449445\",\n    \"444541274538\",\n    \"923887477927\",\n    \"926419880812\",\n    \"956463952318\",\n    \"852566589470\",\n    \"674656596083\",\n    \"998434608206\",\n    \"556942554442\",\n    \"206113568113\",\n    \"609741968051\",\n    \"415036450232\",\n    \"469971550498\",\n    \"595382270921\",\n    \"866364311502\",\n    \"672133600854\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/get",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "get"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-8cee80a9-754a-40bc-a511-f2503e2c8399"
+                        },
+                        {
+                          "id": "30ca9172-6895-461f-bca6-5d24cfed8327",
+                          "name": "AccessDeniedException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    \"940171532415\",\n    \"622649603314\",\n    \"363635965208\",\n    \"565826802735\",\n    \"301976449445\",\n    \"444541274538\",\n    \"923887477927\",\n    \"926419880812\",\n    \"956463952318\",\n    \"852566589470\",\n    \"674656596083\",\n    \"998434608206\",\n    \"556942554442\",\n    \"206113568113\",\n    \"609741968051\",\n    \"415036450232\",\n    \"469971550498\",\n    \"595382270921\",\n    \"866364311502\",\n    \"672133600854\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/get",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "get"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-30ca9172-6895-461f-bca6-5d24cfed8327"
+                        },
+                        {
+                          "id": "313bc80e-bdd2-4eab-bb3a-1ac7c71736ba",
+                          "name": "ThrottlingException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    \"940171532415\",\n    \"622649603314\",\n    \"363635965208\",\n    \"565826802735\",\n    \"301976449445\",\n    \"444541274538\",\n    \"923887477927\",\n    \"926419880812\",\n    \"956463952318\",\n    \"852566589470\",\n    \"674656596083\",\n    \"998434608206\",\n    \"556942554442\",\n    \"206113568113\",\n    \"609741968051\",\n    \"415036450232\",\n    \"469971550498\",\n    \"595382270921\",\n    \"866364311502\",\n    \"672133600854\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/get",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "get"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-313bc80e-bdd2-4eab-bb3a-1ac7c71736ba"
+                        },
+                        {
+                          "id": "332d6e32-660c-4053-ad10-270a2980f9e2",
+                          "name": "InternalServerException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    \"940171532415\",\n    \"622649603314\",\n    \"363635965208\",\n    \"565826802735\",\n    \"301976449445\",\n    \"444541274538\",\n    \"923887477927\",\n    \"926419880812\",\n    \"956463952318\",\n    \"852566589470\",\n    \"674656596083\",\n    \"998434608206\",\n    \"556942554442\",\n    \"206113568113\",\n    \"609741968051\",\n    \"415036450232\",\n    \"469971550498\",\n    \"595382270921\",\n    \"866364311502\",\n    \"672133600854\"\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/get",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "get"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-332d6e32-660c-4053-ad10-270a2980f9e2"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:28:16.000Z",
+                      "updatedAt": "2026-07-28T10:28:16.000Z",
+                      "uid": "35240-2946e2f5-4836-40c8-a9e2-5f631feec7ba"
+                    }
+                  ],
+                  "id": "2d66055f-4630-486b-9d53-3753135aca2c",
+                  "createdAt": "2026-07-28T10:28:16.000Z",
+                  "updatedAt": "2026-07-28T10:28:16.000Z",
+                  "uid": "35240-2d66055f-4630-486b-9d53-3753135aca2c"
+                },
+                {
+                  "name": "update",
+                  "item": [
+                    {
+                      "name": "Amazon Inspector Batch Update Member Ec2 Deep Inspection Status",
+                      "id": "9205312c-f7ac-4a14-ae9c-be6d0733d7c9",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"504768477606\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"684222915561\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"661423509761\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"346406335138\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"431158829849\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"173420306924\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"121005952987\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"628790002579\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"339080399926\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"994056006449\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"026297151471\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"648833465626\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"086671923965\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"816561142463\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"594769816940\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"016153646887\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"203847415223\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"466317140035\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"406117711012\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"007629919821\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/update",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "ec2deepinspectionstatus",
+                            "member",
+                            "batch",
+                            "update"
+                          ]
+                        },
+                        "description": "Activates or deactivates Amazon Inspector deep inspection for the provided member accounts in your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API."
+                      },
+                      "response": [
+                        {
+                          "id": "bf292105-9651-4210-80a2-3daa6bf7dc44",
+                          "name": "Success",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"504768477606\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"684222915561\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"661423509761\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"346406335138\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"431158829849\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"173420306924\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"121005952987\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"628790002579\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"339080399926\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"994056006449\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"026297151471\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"648833465626\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"086671923965\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"816561142463\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"594769816940\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"016153646887\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"203847415223\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"466317140035\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"406117711012\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"007629919821\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "update"
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"305860092735\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"804645982910\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"167853506976\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"406419492442\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"499763931928\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"667693660865\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"538293792534\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"310363438368\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"104117171569\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"173772121469\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"717397069510\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"610250237037\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"961284144251\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"198802658296\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"667172409291\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"118224090383\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"541061591867\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"290376832893\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"181739081164\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"274986441969\",\n      \"errorMessage\": \"<string>\",\n      \"status\": \"FAILED\"\n    }\n  ],\n  \"failedAccountIds\": [\n    {\n      \"accountId\": \"630527743814\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"404810203395\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"119868547211\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"296133128298\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"777663710936\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"662608767887\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"783151293921\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"349722139356\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"746532991169\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"512079044424\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"753533862061\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"164318945224\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"740493744962\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"280367049475\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"712597275577\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"991737981100\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"204877258739\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"941292601850\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"444621645790\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"<string>\"\n    },\n    {\n      \"accountId\": \"276076734919\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"<string>\"\n    }\n  ]\n}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-bf292105-9651-4210-80a2-3daa6bf7dc44"
+                        },
+                        {
+                          "id": "97bdce59-b57e-49ce-93e5-9c631be86af7",
+                          "name": "ValidationException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"504768477606\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"684222915561\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"661423509761\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"346406335138\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"431158829849\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"173420306924\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"121005952987\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"628790002579\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"339080399926\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"994056006449\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"026297151471\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"648833465626\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"086671923965\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"816561142463\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"594769816940\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"016153646887\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"203847415223\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"466317140035\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"406117711012\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"007629919821\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "update"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-97bdce59-b57e-49ce-93e5-9c631be86af7"
+                        },
+                        {
+                          "id": "81ae2aae-fb0e-4547-a49c-c56fc387ec35",
+                          "name": "AccessDeniedException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"504768477606\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"684222915561\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"661423509761\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"346406335138\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"431158829849\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"173420306924\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"121005952987\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"628790002579\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"339080399926\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"994056006449\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"026297151471\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"648833465626\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"086671923965\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"816561142463\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"594769816940\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"016153646887\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"203847415223\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"466317140035\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"406117711012\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"007629919821\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "update"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-81ae2aae-fb0e-4547-a49c-c56fc387ec35"
+                        },
+                        {
+                          "id": "e8357cde-0719-4a94-859a-8b30622d5506",
+                          "name": "ThrottlingException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"504768477606\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"684222915561\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"661423509761\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"346406335138\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"431158829849\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"173420306924\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"121005952987\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"628790002579\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"339080399926\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"994056006449\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"026297151471\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"648833465626\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"086671923965\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"816561142463\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"594769816940\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"016153646887\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"203847415223\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"466317140035\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"406117711012\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"007629919821\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "update"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-e8357cde-0719-4a94-859a-8b30622d5506"
+                        },
+                        {
+                          "id": "757c10e2-4c22-441b-a9a2-5c1c40c3fd2e",
+                          "name": "InternalServerException",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "X-Amz-Content-Sha256",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Date",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Algorithm",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Credential",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Security-Token",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-Signature",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "X-Amz-SignedHeaders",
+                                "value": "<string>"
+                              },
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: apikey",
+                                "key": "Authorization",
+                                "value": "<API Key>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"504768477606\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"684222915561\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"661423509761\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"346406335138\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"431158829849\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"173420306924\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"121005952987\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"628790002579\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"339080399926\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"994056006449\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"026297151471\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"648833465626\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"086671923965\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"816561142463\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"594769816940\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"016153646887\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"203847415223\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"466317140035\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"406117711012\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"007629919821\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/ec2deepinspectionstatus/member/batch/update",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "ec2deepinspectionstatus",
+                                "member",
+                                "batch",
+                                "update"
+                              ]
+                            }
+                          },
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T10:28:16.000Z",
+                          "updatedAt": "2026-07-28T10:28:16.000Z",
+                          "uid": "35240-757c10e2-4c22-441b-a9a2-5c1c40c3fd2e"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T10:28:16.000Z",
+                      "updatedAt": "2026-07-28T10:28:16.000Z",
+                      "uid": "35240-9205312c-f7ac-4a14-ae9c-be6d0733d7c9"
+                    }
+                  ],
+                  "id": "f7a849ad-a6a2-461c-8131-bf449d5d63f2",
+                  "createdAt": "2026-07-28T10:28:16.000Z",
+                  "updatedAt": "2026-07-28T10:28:16.000Z",
+                  "uid": "35240-f7a849ad-a6a2-461c-8131-bf449d5d63f2"
+                }
+              ],
+              "id": "1733ee42-0eec-4e84-a820-c4687f056f66",
+              "createdAt": "2026-07-28T10:28:16.000Z",
+              "updatedAt": "2026-07-28T10:28:16.000Z",
+              "uid": "35240-1733ee42-0eec-4e84-a820-c4687f056f66"
+            }
+          ],
+          "id": "902b8211-25b7-42a9-8556-99e55094690c",
+          "createdAt": "2026-07-28T10:28:16.000Z",
+          "updatedAt": "2026-07-28T10:28:16.000Z",
+          "uid": "35240-902b8211-25b7-42a9-8556-99e55094690c"
+        }
+      ],
+      "id": "2a631ce9-d152-49e3-8c29-2eb403ccb7c0",
+      "createdAt": "2026-07-28T10:28:16.000Z",
+      "updatedAt": "2026-07-28T10:28:16.000Z",
+      "uid": "35240-2a631ce9-d152-49e3-8c29-2eb403ccb7c0"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://inspector2.{{region}}.amazonaws.com"
+    }
+  ]
+}

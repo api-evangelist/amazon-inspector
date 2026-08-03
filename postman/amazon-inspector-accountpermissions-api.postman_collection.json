@@ -1,0 +1,625 @@
+{
+  "info": {
+    "_postman_id": "d728faef-828a-420c-adb5-24ea8dd1c0a9",
+    "name": "Inspector2 Accountpermissions API",
+    "description": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:27:17.000Z",
+    "updatedAt": "2026-07-28T10:27:17.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-d728faef-828a-420c-adb5-24ea8dd1c0a9"
+  },
+  "item": [
+    {
+      "name": "accountpermissions",
+      "item": [
+        {
+          "name": "list",
+          "item": [
+            {
+              "name": "Amazon Inspector List Account Permissions",
+              "id": "57be4f2c-3efc-4c6b-8200-c7ce745c902b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\",\n  \"service\": \"LAMBDA\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/accountpermissions/list?maxResults=<string>&nextToken=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accountpermissions",
+                    "list"
+                  ],
+                  "query": [
+                    {
+                      "description": "Pagination limit",
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Pagination token",
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Lists the permissions an account has to configure Amazon Inspector."
+              },
+              "response": [
+                {
+                  "id": "b4619e68-8658-4aad-a913-91b054957443",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\",\n  \"service\": \"LAMBDA\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/accountpermissions/list?maxResults=<string>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accountpermissions",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "Pagination limit",
+                          "key": "maxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"permissions\": [\n    {\n      \"operation\": \"ENABLE_SCANNING\",\n      \"service\": \"LAMBDA\"\n    },\n    {\n      \"operation\": \"DISABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"ENABLE_SCANNING\",\n      \"service\": \"ECR\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"ECR\"\n    },\n    {\n      \"operation\": \"DISABLE_SCANNING\",\n      \"service\": \"ECR\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"LAMBDA\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"ECR\"\n    },\n    {\n      \"operation\": \"DISABLE_SCANNING\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"DISABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"ENABLE_SCANNING\",\n      \"service\": \"ECR\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"LAMBDA\"\n    },\n    {\n      \"operation\": \"DISABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"DISABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"ECR\"\n    },\n    {\n      \"operation\": \"ENABLE_SCANNING\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"ENABLE_REPOSITORY\",\n      \"service\": \"EC2\"\n    },\n    {\n      \"operation\": \"DISABLE_SCANNING\",\n      \"service\": \"LAMBDA\"\n    }\n  ],\n  \"nextToken\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T10:27:17.000Z",
+                  "updatedAt": "2026-07-28T10:27:17.000Z",
+                  "uid": "35240-b4619e68-8658-4aad-a913-91b054957443"
+                },
+                {
+                  "id": "096ed94c-067c-4e90-ba36-10b1d12cd08b",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\",\n  \"service\": \"LAMBDA\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/accountpermissions/list?maxResults=<string>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accountpermissions",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "Pagination limit",
+                          "key": "maxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:27:17.000Z",
+                  "updatedAt": "2026-07-28T10:27:17.000Z",
+                  "uid": "35240-096ed94c-067c-4e90-ba36-10b1d12cd08b"
+                },
+                {
+                  "id": "50ecf230-1bee-46cb-b0f0-421af0c2c70c",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\",\n  \"service\": \"LAMBDA\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/accountpermissions/list?maxResults=<string>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accountpermissions",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "Pagination limit",
+                          "key": "maxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:27:17.000Z",
+                  "updatedAt": "2026-07-28T10:27:17.000Z",
+                  "uid": "35240-50ecf230-1bee-46cb-b0f0-421af0c2c70c"
+                },
+                {
+                  "id": "3ed48525-3a32-4f41-87a8-81b31a282eaf",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\",\n  \"service\": \"LAMBDA\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/accountpermissions/list?maxResults=<string>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accountpermissions",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "Pagination limit",
+                          "key": "maxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:27:17.000Z",
+                  "updatedAt": "2026-07-28T10:27:17.000Z",
+                  "uid": "35240-3ed48525-3a32-4f41-87a8-81b31a282eaf"
+                },
+                {
+                  "id": "bcdc26fb-808d-4ee4-ba56-15c2189da74f",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\",\n  \"service\": \"LAMBDA\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/accountpermissions/list?maxResults=<string>&nextToken=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accountpermissions",
+                        "list"
+                      ],
+                      "query": [
+                        {
+                          "description": "Pagination limit",
+                          "key": "maxResults",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "Pagination token",
+                          "key": "nextToken",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:27:17.000Z",
+                  "updatedAt": "2026-07-28T10:27:17.000Z",
+                  "uid": "35240-bcdc26fb-808d-4ee4-ba56-15c2189da74f"
+                }
+              ],
+              "createdAt": "2026-07-28T10:27:17.000Z",
+              "updatedAt": "2026-07-28T10:27:17.000Z",
+              "uid": "35240-57be4f2c-3efc-4c6b-8200-c7ce745c902b"
+            }
+          ],
+          "id": "32c4e9a8-6f73-47ae-8097-0fdde5525a1e",
+          "createdAt": "2026-07-28T10:27:17.000Z",
+          "updatedAt": "2026-07-28T10:27:17.000Z",
+          "uid": "35240-32c4e9a8-6f73-47ae-8097-0fdde5525a1e"
+        }
+      ],
+      "id": "cf2ad59d-8a2f-45cd-ad20-7a19b739f378",
+      "createdAt": "2026-07-28T10:27:17.000Z",
+      "updatedAt": "2026-07-28T10:27:17.000Z",
+      "uid": "35240-cf2ad59d-8a2f-45cd-ad20-7a19b739f378"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://inspector2.{{region}}.amazonaws.com"
+    }
+  ]
+}

@@ -1,0 +1,1818 @@
+{
+  "info": {
+    "_postman_id": "1c255ce1-69e0-494d-965f-bf91bfa37e20",
+    "name": "Inspector2 Accountpermissions Reporting API",
+    "description": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:28:40.000Z",
+    "updatedAt": "2026-07-28T10:28:40.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-1c255ce1-69e0-494d-965f-bf91bfa37e20"
+  },
+  "item": [
+    {
+      "name": "reporting",
+      "item": [
+        {
+          "name": "cancel",
+          "item": [
+            {
+              "name": "Amazon Inspector Cancel Findings Report",
+              "id": "f283a2b6-277c-41ac-aee9-d52a101c97bf",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"62fd4f9f-4d89-ddec-c6bd-9682efd6ef09\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/reporting/cancel",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reporting",
+                    "cancel"
+                  ]
+                },
+                "description": "Cancels the given findings report."
+              },
+              "response": [
+                {
+                  "id": "76021905-2b44-4090-8c89-2554cdd1dffd",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportId\": \"62fd4f9f-4d89-ddec-c6bd-9682efd6ef09\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/cancel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "cancel"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"reportId\": \"514b618f-7859-bc57-22d0-6d3f03db0578\"\n}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-76021905-2b44-4090-8c89-2554cdd1dffd"
+                },
+                {
+                  "id": "d21c6cf7-b747-493d-a2fd-87caf1d18719",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportId\": \"62fd4f9f-4d89-ddec-c6bd-9682efd6ef09\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/cancel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "cancel"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-d21c6cf7-b747-493d-a2fd-87caf1d18719"
+                },
+                {
+                  "id": "e2c987e9-5795-45db-991f-1fbc0456ce27",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportId\": \"62fd4f9f-4d89-ddec-c6bd-9682efd6ef09\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/cancel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "cancel"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-e2c987e9-5795-45db-991f-1fbc0456ce27"
+                },
+                {
+                  "id": "5d924381-aa04-4610-b99b-231df13586d2",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportId\": \"62fd4f9f-4d89-ddec-c6bd-9682efd6ef09\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/cancel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "cancel"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-5d924381-aa04-4610-b99b-231df13586d2"
+                },
+                {
+                  "id": "e4ffa1fb-e87c-4a90-a8c3-51e566fe4ab4",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportId\": \"62fd4f9f-4d89-ddec-c6bd-9682efd6ef09\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/cancel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "cancel"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-e4ffa1fb-e87c-4a90-a8c3-51e566fe4ab4"
+                },
+                {
+                  "id": "2de3bf87-7726-4c3d-900b-6123464903ff",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportId\": \"62fd4f9f-4d89-ddec-c6bd-9682efd6ef09\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/cancel",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "cancel"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-2de3bf87-7726-4c3d-900b-6123464903ff"
+                }
+              ],
+              "createdAt": "2026-07-28T10:28:40.000Z",
+              "updatedAt": "2026-07-28T10:28:40.000Z",
+              "uid": "35240-f283a2b6-277c-41ac-aee9-d52a101c97bf"
+            }
+          ],
+          "id": "2481a3bf-ad49-4640-9972-f417be996f75",
+          "createdAt": "2026-07-28T10:28:40.000Z",
+          "updatedAt": "2026-07-28T10:28:40.000Z",
+          "uid": "35240-2481a3bf-ad49-4640-9972-f417be996f75"
+        },
+        {
+          "name": "create",
+          "item": [
+            {
+              "name": "Amazon Inspector Create Findings Report",
+              "id": "bd562921-2144-4c40-8888-2c1bcb21bd26",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Date",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Credential",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-Signature",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>"
+                  },
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportFormat\": \"JSON\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/reporting/create",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "reporting",
+                    "create"
+                  ]
+                },
+                "description": "Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. "
+              },
+              "response": [
+                {
+                  "id": "c85e732c-f0c5-41d6-b29f-2b3b9f014173",
+                  "name": "Success",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportFormat\": \"JSON\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "create"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"reportId\": \"fcd1f2b0-1fc0-fd9f-6219-c0c25373e097\"\n}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-c85e732c-f0c5-41d6-b29f-2b3b9f014173"
+                },
+                {
+                  "id": "f77d93b4-544f-4a5b-bef3-b4695cae71b6",
+                  "name": "ValidationException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportFormat\": \"JSON\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "create"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-f77d93b4-544f-4a5b-bef3-b4695cae71b6"
+                },
+                {
+                  "id": "7046827c-0123-4a4a-b5a4-cc4d42a26f91",
+                  "name": "AccessDeniedException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportFormat\": \"JSON\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "create"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-7046827c-0123-4a4a-b5a4-cc4d42a26f91"
+                },
+                {
+                  "id": "e3a4c204-defb-4ef4-98c2-43e67e7acf02",
+                  "name": "ResourceNotFoundException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportFormat\": \"JSON\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "create"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-e3a4c204-defb-4ef4-98c2-43e67e7acf02"
+                },
+                {
+                  "id": "16d7d388-51b8-428d-8c01-41e33922921c",
+                  "name": "ThrottlingException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportFormat\": \"JSON\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "create"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-16d7d388-51b8-428d-8c01-41e33922921c"
+                },
+                {
+                  "id": "e8b7be80-bd0f-4633-84fc-e625d8109a3f",
+                  "name": "InternalServerException",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: apikey",
+                        "key": "Authorization",
+                        "value": "<API Key>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportFormat\": \"JSON\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  }\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/create",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "create"
+                      ]
+                    }
+                  },
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-e8b7be80-bd0f-4633-84fc-e625d8109a3f"
+                }
+              ],
+              "createdAt": "2026-07-28T10:28:40.000Z",
+              "updatedAt": "2026-07-28T10:28:40.000Z",
+              "uid": "35240-bd562921-2144-4c40-8888-2c1bcb21bd26"
+            }
+          ],
+          "id": "75c2ab4a-daed-4304-830a-03e90cf73389",
+          "createdAt": "2026-07-28T10:28:40.000Z",
+          "updatedAt": "2026-07-28T10:28:40.000Z",
+          "uid": "35240-75c2ab4a-daed-4304-830a-03e90cf73389"
+        },
+        {
+          "name": "status",
+          "item": [
+            {
+              "name": "get",
+              "item": [
+                {
+                  "name": "Amazon Inspector Get Findings Report Status",
+                  "id": "f9daac66-709c-4db9-bdd9-d87424aaa678",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"reportId\": \"f40e64e4-c024-7ff7-194b-148f3a9eda56\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/reporting/status/get",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "reporting",
+                        "status",
+                        "get"
+                      ]
+                    },
+                    "description": "Gets the status of a findings report."
+                  },
+                  "response": [
+                    {
+                      "id": "602e25a7-ae0f-4f11-9634-bd7034ea16f4",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"reportId\": \"f40e64e4-c024-7ff7-194b-148f3a9eda56\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/reporting/status/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "reporting",
+                            "status",
+                            "get"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"destination\": {\n    \"bucketName\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\",\n    \"keyPrefix\": \"<string>\"\n  },\n  \"errorCode\": \"INVALID_PERMISSIONS\",\n  \"errorMessage\": \"<string>\",\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"NOT_EQUALS\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"PREFIX\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"epoch\": {\n          \"lowerInclusive\": \"<double>\",\n          \"upperInclusive\": \"<double>\"\n        },\n        \"name\": {\n          \"comparison\": \"PREFIX\",\n          \"value\": \"<string>\"\n        },\n        \"release\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": \"EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        },\n        \"version\": {\n          \"comparison\": \"NOT_EQUALS\",\n          \"value\": \"<string>\"\n        }\n      }\n    ]\n  },\n  \"reportId\": \"8b6982a6-2d21-ba55-44b2-14b5fb3e69de\",\n  \"status\": \"SUCCEEDED\"\n}",
+                      "createdAt": "2026-07-28T10:28:40.000Z",
+                      "updatedAt": "2026-07-28T10:28:40.000Z",
+                      "uid": "35240-602e25a7-ae0f-4f11-9634-bd7034ea16f4"
+                    },
+                    {
+                      "id": "5af25e70-afce-458a-9441-136ea5d979ec",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"reportId\": \"f40e64e4-c024-7ff7-194b-148f3a9eda56\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/reporting/status/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "reporting",
+                            "status",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:40.000Z",
+                      "updatedAt": "2026-07-28T10:28:40.000Z",
+                      "uid": "35240-5af25e70-afce-458a-9441-136ea5d979ec"
+                    },
+                    {
+                      "id": "35cc056f-ab04-424d-8ade-bfc87772342b",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"reportId\": \"f40e64e4-c024-7ff7-194b-148f3a9eda56\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/reporting/status/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "reporting",
+                            "status",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:40.000Z",
+                      "updatedAt": "2026-07-28T10:28:40.000Z",
+                      "uid": "35240-35cc056f-ab04-424d-8ade-bfc87772342b"
+                    },
+                    {
+                      "id": "5e9094a9-ef61-4e51-9011-995237c1ebf7",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"reportId\": \"f40e64e4-c024-7ff7-194b-148f3a9eda56\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/reporting/status/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "reporting",
+                            "status",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:40.000Z",
+                      "updatedAt": "2026-07-28T10:28:40.000Z",
+                      "uid": "35240-5e9094a9-ef61-4e51-9011-995237c1ebf7"
+                    },
+                    {
+                      "id": "2aecffb1-25a3-4494-b27c-2b63166a7b1b",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"reportId\": \"f40e64e4-c024-7ff7-194b-148f3a9eda56\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/reporting/status/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "reporting",
+                            "status",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:40.000Z",
+                      "updatedAt": "2026-07-28T10:28:40.000Z",
+                      "uid": "35240-2aecffb1-25a3-4494-b27c-2b63166a7b1b"
+                    },
+                    {
+                      "id": "ce29be51-a667-47c2-8462-37faa7fe5864",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"reportId\": \"f40e64e4-c024-7ff7-194b-148f3a9eda56\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/reporting/status/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "reporting",
+                            "status",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:40.000Z",
+                      "updatedAt": "2026-07-28T10:28:40.000Z",
+                      "uid": "35240-ce29be51-a667-47c2-8462-37faa7fe5864"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:28:40.000Z",
+                  "updatedAt": "2026-07-28T10:28:40.000Z",
+                  "uid": "35240-f9daac66-709c-4db9-bdd9-d87424aaa678"
+                }
+              ],
+              "id": "a000f3d8-073f-42cf-8774-d77e98bb10af",
+              "createdAt": "2026-07-28T10:28:40.000Z",
+              "updatedAt": "2026-07-28T10:28:40.000Z",
+              "uid": "35240-a000f3d8-073f-42cf-8774-d77e98bb10af"
+            }
+          ],
+          "id": "0639fbca-faad-4bd0-be7e-71328b585e9d",
+          "createdAt": "2026-07-28T10:28:40.000Z",
+          "updatedAt": "2026-07-28T10:28:40.000Z",
+          "uid": "35240-0639fbca-faad-4bd0-be7e-71328b585e9d"
+        }
+      ],
+      "id": "4a432cb6-fe0a-4aeb-bf2a-c75ebbc2fa66",
+      "createdAt": "2026-07-28T10:28:40.000Z",
+      "updatedAt": "2026-07-28T10:28:40.000Z",
+      "uid": "35240-4a432cb6-fe0a-4aeb-bf2a-c75ebbc2fa66"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://inspector2.{{region}}.amazonaws.com"
+    }
+  ]
+}

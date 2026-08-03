@@ -1,0 +1,652 @@
+{
+  "info": {
+    "_postman_id": "a1ac6299-2b10-4f99-b521-a7bd8c5d6c19",
+    "name": "Inspector2 Accountpermissions Status API",
+    "description": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T10:28:44.000Z",
+    "updatedAt": "2026-07-28T10:28:44.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a1ac6299-2b10-4f99-b521-a7bd8c5d6c19"
+  },
+  "item": [
+    {
+      "name": "status",
+      "item": [
+        {
+          "name": "batch",
+          "item": [
+            {
+              "name": "get",
+              "item": [
+                {
+                  "name": "Amazon Inspector Batch Get Account Status",
+                  "id": "1455b8c9-9aa9-4c31-95eb-eafb2a57ba1d",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "X-Amz-Content-Sha256",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Date",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Algorithm",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Credential",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Security-Token",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-Signature",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "X-Amz-SignedHeaders",
+                        "value": "<string>"
+                      },
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"accountIds\": [\n    \"616940483958\",\n    \"501632251146\",\n    \"238504016649\",\n    \"198577517224\",\n    \"901146034919\",\n    \"285712389297\",\n    \"013366120027\",\n    \"249609930043\",\n    \"397187675734\",\n    \"870257635989\",\n    \"341312319370\",\n    \"025925506300\",\n    \"415305491935\",\n    \"590682636777\",\n    \"499806697545\",\n    \"503023181857\",\n    \"403626915488\",\n    \"988727789010\",\n    \"196126923496\",\n    \"554505632794\"\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/status/batch/get",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "status",
+                        "batch",
+                        "get"
+                      ]
+                    },
+                    "description": "Retrieves the Amazon Inspector status of multiple Amazon Web Services accounts within your environment."
+                  },
+                  "response": [
+                    {
+                      "id": "a4d3bb6f-c792-4325-ba40-58ded8918300",
+                      "name": "Success",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    \"616940483958\",\n    \"501632251146\",\n    \"238504016649\",\n    \"198577517224\",\n    \"901146034919\",\n    \"285712389297\",\n    \"013366120027\",\n    \"249609930043\",\n    \"397187675734\",\n    \"870257635989\",\n    \"341312319370\",\n    \"025925506300\",\n    \"415305491935\",\n    \"590682636777\",\n    \"499806697545\",\n    \"503023181857\",\n    \"403626915488\",\n    \"988727789010\",\n    \"196126923496\",\n    \"554505632794\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/status/batch/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "status",
+                            "batch",
+                            "get"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"accounts\": [\n    {\n      \"accountId\": \"286813578520\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"RESOURCE_NOT_FOUND\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"EVENTBRIDGE_THROTTLED\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"ENABLED\"\n      }\n    },\n    {\n      \"accountId\": \"648888863234\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"EVENTBRIDGE_THROTTLED\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"SUSPENDING\"\n      }\n    },\n    {\n      \"accountId\": \"361848361075\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"SSM_THROTTLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"SSM_UNAVAILABLE\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"ENABLING\"\n      }\n    },\n    {\n      \"accountId\": \"795674514602\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"SSM_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"DISABLE_IN_PROGRESS\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLING\"\n      }\n    },\n    {\n      \"accountId\": \"894682277201\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"ACCESS_DENIED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"RESOURCE_NOT_FOUND\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"SSM_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"INTERNAL_ERROR\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"SUSPENDING\"\n      }\n    },\n    {\n      \"accountId\": \"663592981653\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"SSM_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"DISABLE_IN_PROGRESS\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLED\"\n      }\n    },\n    {\n      \"accountId\": \"481147205902\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"RESOURCE_NOT_FOUND\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"ACCESS_DENIED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"RESOURCE_NOT_FOUND\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"ACCESS_DENIED\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLING\"\n      }\n    },\n    {\n      \"accountId\": \"419978016098\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"DISASSOCIATE_ALL_MEMBERS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"EVENTBRIDGE_THROTTLED\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"SUSPENDING\"\n      }\n    },\n    {\n      \"accountId\": \"880905358647\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"SSM_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"ALREADY_ENABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"DISASSOCIATE_ALL_MEMBERS\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLED\"\n      }\n    },\n    {\n      \"accountId\": \"188031379713\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"INTERNAL_ERROR\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"ENABLING\"\n      }\n    },\n    {\n      \"accountId\": \"441743440383\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"SSM_THROTTLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"SSM_UNAVAILABLE\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLED\"\n      }\n    },\n    {\n      \"accountId\": \"209831226962\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"ALREADY_ENABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"EVENTBRIDGE_THROTTLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"INTERNAL_ERROR\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLING\"\n      }\n    },\n    {\n      \"accountId\": \"749993339602\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"ACCESS_DENIED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"ALREADY_ENABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"ALREADY_ENABLED\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"ENABLING\"\n      }\n    },\n    {\n      \"accountId\": \"965957100303\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"EVENTBRIDGE_THROTTLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"ACCESS_DENIED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"DISASSOCIATE_ALL_MEMBERS\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"SUSPENDING\"\n      }\n    },\n    {\n      \"accountId\": \"606399434703\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"DISASSOCIATE_ALL_MEMBERS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SSM_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"DISABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"EVENTBRIDGE_THROTTLED\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"ENABLING\"\n      }\n    },\n    {\n      \"accountId\": \"685662201399\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"DISASSOCIATE_ALL_MEMBERS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLING\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"ENABLED\"\n      }\n    },\n    {\n      \"accountId\": \"143760669381\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"RESOURCE_NOT_FOUND\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SSM_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"ENABLING\"\n      }\n    },\n    {\n      \"accountId\": \"247271103782\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"DISASSOCIATE_ALL_MEMBERS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SSM_THROTTLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDING\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"DISASSOCIATE_ALL_MEMBERS\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLING\"\n      }\n    },\n    {\n      \"accountId\": \"586612159020\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"SSM_THROTTLED\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"SSM_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"RESOURCE_NOT_FOUND\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLING\"\n      }\n    },\n    {\n      \"accountId\": \"448668796970\",\n      \"resourceState\": {\n        \"ec2\": {\n          \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLED\"\n        },\n        \"ecr\": {\n          \"errorCode\": \"RESOURCE_NOT_FOUND\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"ENABLING\"\n        },\n        \"lambda\": {\n          \"errorCode\": \"INTERNAL_ERROR\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"SUSPENDED\"\n        },\n        \"lambdaCode\": {\n          \"errorCode\": \"ENABLE_IN_PROGRESS\",\n          \"errorMessage\": \"<string>\",\n          \"status\": \"DISABLED\"\n        }\n      },\n      \"state\": {\n        \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n        \"errorMessage\": \"<string>\",\n        \"status\": \"DISABLED\"\n      }\n    }\n  ],\n  \"failedAccounts\": [\n    {\n      \"accountId\": \"373976616426\",\n      \"errorCode\": \"ALREADY_ENABLED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDING\",\n        \"ecr\": \"SUSPENDING\",\n        \"lambda\": \"SUSPENDING\",\n        \"lambdaCode\": \"ENABLED\"\n      },\n      \"status\": \"SUSPENDED\"\n    },\n    {\n      \"accountId\": \"182160479068\",\n      \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"DISABLING\",\n        \"ecr\": \"DISABLED\",\n        \"lambda\": \"ENABLING\",\n        \"lambdaCode\": \"DISABLED\"\n      },\n      \"status\": \"ENABLING\"\n    },\n    {\n      \"accountId\": \"120954379067\",\n      \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDING\",\n        \"ecr\": \"SUSPENDING\",\n        \"lambda\": \"ENABLED\",\n        \"lambdaCode\": \"SUSPENDING\"\n      },\n      \"status\": \"ENABLING\"\n    },\n    {\n      \"accountId\": \"521658183181\",\n      \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLING\",\n        \"ecr\": \"DISABLING\",\n        \"lambda\": \"SUSPENDED\",\n        \"lambdaCode\": \"DISABLED\"\n      },\n      \"status\": \"DISABLING\"\n    },\n    {\n      \"accountId\": \"148627424794\",\n      \"errorCode\": \"ACCESS_DENIED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDED\",\n        \"ecr\": \"ENABLED\",\n        \"lambda\": \"ENABLED\",\n        \"lambdaCode\": \"SUSPENDING\"\n      },\n      \"status\": \"DISABLING\"\n    },\n    {\n      \"accountId\": \"007408210682\",\n      \"errorCode\": \"EVENTBRIDGE_THROTTLED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDED\",\n        \"ecr\": \"ENABLED\",\n        \"lambda\": \"SUSPENDING\",\n        \"lambdaCode\": \"SUSPENDED\"\n      },\n      \"status\": \"ENABLING\"\n    },\n    {\n      \"accountId\": \"065680436970\",\n      \"errorCode\": \"ALREADY_ENABLED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDED\",\n        \"ecr\": \"ENABLED\",\n        \"lambda\": \"ENABLING\",\n        \"lambdaCode\": \"DISABLING\"\n      },\n      \"status\": \"SUSPENDED\"\n    },\n    {\n      \"accountId\": \"643983168477\",\n      \"errorCode\": \"ENABLE_IN_PROGRESS\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"DISABLED\",\n        \"ecr\": \"SUSPENDED\",\n        \"lambda\": \"ENABLED\",\n        \"lambdaCode\": \"DISABLED\"\n      },\n      \"status\": \"ENABLED\"\n    },\n    {\n      \"accountId\": \"346242919010\",\n      \"errorCode\": \"INTERNAL_ERROR\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLING\",\n        \"ecr\": \"SUSPENDED\",\n        \"lambda\": \"DISABLING\",\n        \"lambdaCode\": \"SUSPENDING\"\n      },\n      \"status\": \"ENABLING\"\n    },\n    {\n      \"accountId\": \"088766209804\",\n      \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLED\",\n        \"ecr\": \"ENABLING\",\n        \"lambda\": \"SUSPENDING\",\n        \"lambdaCode\": \"SUSPENDED\"\n      },\n      \"status\": \"SUSPENDING\"\n    },\n    {\n      \"accountId\": \"910821365025\",\n      \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLED\",\n        \"ecr\": \"DISABLING\",\n        \"lambda\": \"DISABLING\",\n        \"lambdaCode\": \"SUSPENDED\"\n      },\n      \"status\": \"SUSPENDED\"\n    },\n    {\n      \"accountId\": \"499004773648\",\n      \"errorCode\": \"SSM_UNAVAILABLE\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"DISABLED\",\n        \"ecr\": \"SUSPENDED\",\n        \"lambda\": \"SUSPENDING\",\n        \"lambdaCode\": \"ENABLED\"\n      },\n      \"status\": \"DISABLED\"\n    },\n    {\n      \"accountId\": \"612055015405\",\n      \"errorCode\": \"ALREADY_ENABLED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLING\",\n        \"ecr\": \"DISABLED\",\n        \"lambda\": \"DISABLING\",\n        \"lambdaCode\": \"DISABLED\"\n      },\n      \"status\": \"ENABLED\"\n    },\n    {\n      \"accountId\": \"306854625191\",\n      \"errorCode\": \"ENABLE_IN_PROGRESS\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDING\",\n        \"ecr\": \"SUSPENDING\",\n        \"lambda\": \"DISABLING\",\n        \"lambdaCode\": \"ENABLED\"\n      },\n      \"status\": \"DISABLED\"\n    },\n    {\n      \"accountId\": \"926506058250\",\n      \"errorCode\": \"RESOURCE_SCAN_NOT_DISABLED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"DISABLED\",\n        \"ecr\": \"SUSPENDING\",\n        \"lambda\": \"ENABLED\",\n        \"lambdaCode\": \"DISABLED\"\n      },\n      \"status\": \"DISABLING\"\n    },\n    {\n      \"accountId\": \"256202132535\",\n      \"errorCode\": \"EVENTBRIDGE_UNAVAILABLE\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLING\",\n        \"ecr\": \"SUSPENDED\",\n        \"lambda\": \"DISABLED\",\n        \"lambdaCode\": \"ENABLED\"\n      },\n      \"status\": \"DISABLING\"\n    },\n    {\n      \"accountId\": \"416751539990\",\n      \"errorCode\": \"ACCOUNT_IS_ISOLATED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDING\",\n        \"ecr\": \"SUSPENDED\",\n        \"lambda\": \"ENABLING\",\n        \"lambdaCode\": \"ENABLING\"\n      },\n      \"status\": \"DISABLED\"\n    },\n    {\n      \"accountId\": \"749805076427\",\n      \"errorCode\": \"RESOURCE_NOT_FOUND\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLING\",\n        \"ecr\": \"DISABLING\",\n        \"lambda\": \"DISABLED\",\n        \"lambdaCode\": \"SUSPENDING\"\n      },\n      \"status\": \"SUSPENDING\"\n    },\n    {\n      \"accountId\": \"133649761493\",\n      \"errorCode\": \"SSM_THROTTLED\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"ENABLED\",\n        \"ecr\": \"ENABLED\",\n        \"lambda\": \"SUSPENDING\",\n        \"lambdaCode\": \"ENABLING\"\n      },\n      \"status\": \"SUSPENDING\"\n    },\n    {\n      \"accountId\": \"947484635546\",\n      \"errorCode\": \"SUSPEND_IN_PROGRESS\",\n      \"errorMessage\": \"<string>\",\n      \"resourceStatus\": {\n        \"ec2\": \"SUSPENDING\",\n        \"ecr\": \"ENABLED\",\n        \"lambda\": \"SUSPENDED\",\n        \"lambdaCode\": \"SUSPENDING\"\n      },\n      \"status\": \"SUSPENDED\"\n    }\n  ]\n}",
+                      "createdAt": "2026-07-28T10:28:44.000Z",
+                      "updatedAt": "2026-07-28T10:28:44.000Z",
+                      "uid": "35240-a4d3bb6f-c792-4325-ba40-58ded8918300"
+                    },
+                    {
+                      "id": "39b15cde-4aa5-4e0d-b7cb-3aa3e0c76f8a",
+                      "name": "ValidationException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    \"616940483958\",\n    \"501632251146\",\n    \"238504016649\",\n    \"198577517224\",\n    \"901146034919\",\n    \"285712389297\",\n    \"013366120027\",\n    \"249609930043\",\n    \"397187675734\",\n    \"870257635989\",\n    \"341312319370\",\n    \"025925506300\",\n    \"415305491935\",\n    \"590682636777\",\n    \"499806697545\",\n    \"503023181857\",\n    \"403626915488\",\n    \"988727789010\",\n    \"196126923496\",\n    \"554505632794\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/status/batch/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "status",
+                            "batch",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:44.000Z",
+                      "updatedAt": "2026-07-28T10:28:44.000Z",
+                      "uid": "35240-39b15cde-4aa5-4e0d-b7cb-3aa3e0c76f8a"
+                    },
+                    {
+                      "id": "7b321ffe-9e57-469c-b195-dbfcb2327e73",
+                      "name": "AccessDeniedException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    \"616940483958\",\n    \"501632251146\",\n    \"238504016649\",\n    \"198577517224\",\n    \"901146034919\",\n    \"285712389297\",\n    \"013366120027\",\n    \"249609930043\",\n    \"397187675734\",\n    \"870257635989\",\n    \"341312319370\",\n    \"025925506300\",\n    \"415305491935\",\n    \"590682636777\",\n    \"499806697545\",\n    \"503023181857\",\n    \"403626915488\",\n    \"988727789010\",\n    \"196126923496\",\n    \"554505632794\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/status/batch/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "status",
+                            "batch",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:44.000Z",
+                      "updatedAt": "2026-07-28T10:28:44.000Z",
+                      "uid": "35240-7b321ffe-9e57-469c-b195-dbfcb2327e73"
+                    },
+                    {
+                      "id": "dcf725ee-23bc-4770-a32e-684d2bd902e8",
+                      "name": "ResourceNotFoundException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    \"616940483958\",\n    \"501632251146\",\n    \"238504016649\",\n    \"198577517224\",\n    \"901146034919\",\n    \"285712389297\",\n    \"013366120027\",\n    \"249609930043\",\n    \"397187675734\",\n    \"870257635989\",\n    \"341312319370\",\n    \"025925506300\",\n    \"415305491935\",\n    \"590682636777\",\n    \"499806697545\",\n    \"503023181857\",\n    \"403626915488\",\n    \"988727789010\",\n    \"196126923496\",\n    \"554505632794\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/status/batch/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "status",
+                            "batch",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:44.000Z",
+                      "updatedAt": "2026-07-28T10:28:44.000Z",
+                      "uid": "35240-dcf725ee-23bc-4770-a32e-684d2bd902e8"
+                    },
+                    {
+                      "id": "6450252b-f574-42dc-a0dc-e341986bb06a",
+                      "name": "ThrottlingException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    \"616940483958\",\n    \"501632251146\",\n    \"238504016649\",\n    \"198577517224\",\n    \"901146034919\",\n    \"285712389297\",\n    \"013366120027\",\n    \"249609930043\",\n    \"397187675734\",\n    \"870257635989\",\n    \"341312319370\",\n    \"025925506300\",\n    \"415305491935\",\n    \"590682636777\",\n    \"499806697545\",\n    \"503023181857\",\n    \"403626915488\",\n    \"988727789010\",\n    \"196126923496\",\n    \"554505632794\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/status/batch/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "status",
+                            "batch",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:44.000Z",
+                      "updatedAt": "2026-07-28T10:28:44.000Z",
+                      "uid": "35240-6450252b-f574-42dc-a0dc-e341986bb06a"
+                    },
+                    {
+                      "id": "e11de29e-3074-46fe-9c1a-cd59be62bad1",
+                      "name": "InternalServerException",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "X-Amz-Content-Sha256",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Date",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Algorithm",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Credential",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Security-Token",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-Signature",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "X-Amz-SignedHeaders",
+                            "value": "<string>"
+                          },
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: apikey",
+                            "key": "Authorization",
+                            "value": "<API Key>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"accountIds\": [\n    \"616940483958\",\n    \"501632251146\",\n    \"238504016649\",\n    \"198577517224\",\n    \"901146034919\",\n    \"285712389297\",\n    \"013366120027\",\n    \"249609930043\",\n    \"397187675734\",\n    \"870257635989\",\n    \"341312319370\",\n    \"025925506300\",\n    \"415305491935\",\n    \"590682636777\",\n    \"499806697545\",\n    \"503023181857\",\n    \"403626915488\",\n    \"988727789010\",\n    \"196126923496\",\n    \"554505632794\"\n  ]\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/status/batch/get",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "status",
+                            "batch",
+                            "get"
+                          ]
+                        }
+                      },
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{}",
+                      "createdAt": "2026-07-28T10:28:44.000Z",
+                      "updatedAt": "2026-07-28T10:28:44.000Z",
+                      "uid": "35240-e11de29e-3074-46fe-9c1a-cd59be62bad1"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T10:28:44.000Z",
+                  "updatedAt": "2026-07-28T10:28:44.000Z",
+                  "uid": "35240-1455b8c9-9aa9-4c31-95eb-eafb2a57ba1d"
+                }
+              ],
+              "id": "438f33e9-d0eb-43cf-b8f7-6b85e17cd1f0",
+              "createdAt": "2026-07-28T10:28:44.000Z",
+              "updatedAt": "2026-07-28T10:28:44.000Z",
+              "uid": "35240-438f33e9-d0eb-43cf-b8f7-6b85e17cd1f0"
+            }
+          ],
+          "id": "1892968f-d541-4e69-a77b-92cc3e4a7704",
+          "createdAt": "2026-07-28T10:28:44.000Z",
+          "updatedAt": "2026-07-28T10:28:44.000Z",
+          "uid": "35240-1892968f-d541-4e69-a77b-92cc3e4a7704"
+        }
+      ],
+      "id": "67bdaca8-e15a-470c-86c7-d2297617e004",
+      "createdAt": "2026-07-28T10:28:44.000Z",
+      "updatedAt": "2026-07-28T10:28:44.000Z",
+      "uid": "35240-67bdaca8-e15a-470c-86c7-d2297617e004"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "header",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "region",
+      "value": "us-east-1"
+    },
+    {
+      "key": "baseUrl",
+      "value": "http://inspector2.{{region}}.amazonaws.com"
+    }
+  ]
+}
