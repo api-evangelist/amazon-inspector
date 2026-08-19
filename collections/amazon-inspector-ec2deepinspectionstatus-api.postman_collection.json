@@ -1,0 +1,1280 @@
+{
+  "item": [
+    {
+      "id": "609e026d-d5db-4bfe-8933-01c8aca81fe2",
+      "name": "Ec2deepinspectionstatus",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "015e9992-7cac-474c-8324-86f0b4f05c4c",
+          "name": "Amazon Inspector Batch Get Member Ec2 Deep Inspection Status",
+          "request": {
+            "name": "Amazon Inspector Batch Get Member Ec2 Deep Inspection Status",
+            "description": {
+              "content": "Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ec2deepinspectionstatus",
+                "member",
+                "batch",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3720a101-6158-44eb-b38d-cc0299247bab",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"stri\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"str\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    }\n  ],\n  \"failedAccountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"stri\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"st\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b14f2c4e-ec26-48c5-9b76-a1214e895d92",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a8dcf12e-972c-45d8-b48b-3bfaeb4dbe68",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1d40e851-ba07-4fdc-adc8-92cf847589dd",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e150ebb9-7e21-43b5-9759-bc5314701d98",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "16ba5256-c25c-4ba8-b995-c26b542806a3",
+          "name": "Amazon Inspector Batch Update Member Ec2 Deep Inspection Status",
+          "request": {
+            "name": "Amazon Inspector Batch Update Member Ec2 Deep Inspection Status",
+            "description": {
+              "content": "Activates or deactivates Amazon Inspector deep inspection for the provided member accounts in your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "ec2deepinspectionstatus",
+                "member",
+                "batch",
+                "update"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c64ce81e-77a2-4a69-8abe-d0c6fcb8fe9c",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"ACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"FAILED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"PENDING\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"DEACTIVATED\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"errorMessage\": \"string\",\n      \"status\": \"ACTIVATED\"\n    }\n  ],\n  \"failedAccountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"SUSPENDING\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"DISABLED\",\n      \"errorMessage\": \"string\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"ec2ScanStatus\": \"ENABLING\",\n      \"errorMessage\": \"strin\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "42fcccdc-2477-4a4d-bef6-76ee3c08e20e",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3f5f4ff9-5868-4d26-9d30-c93940677635",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f4998b97-8710-4540-a7a3-9c38531dec2f",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4c3ba937-f958-4393-b746-fdbfddc61075",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "ec2deepinspectionstatus",
+                    "member",
+                    "batch",
+                    "update"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"accountIds\": [\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    },\n    {\n      \"accountId\": \"<string>\",\n      \"activateDeepInspection\": \"<boolean>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://inspector2.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "f6d4b22d-45ea-4615-beb8-d67ff0c4012d",
+    "name": "Inspector2 Accountpermissions Ec2deepinspectionstatus API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

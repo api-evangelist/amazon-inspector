@@ -1,0 +1,2162 @@
+{
+  "item": [
+    {
+      "id": "a2914f6e-2df0-4e5d-ad4c-6c909df484cf",
+      "name": "Reporting",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "aac9f56d-18be-45f2-88f1-4b269e54c774",
+          "name": "Amazon Inspector Cancel Findings Report",
+          "request": {
+            "name": "Amazon Inspector Cancel Findings Report",
+            "description": {
+              "content": "Cancels the given findings report.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reporting",
+                "cancel"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reportId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ced80e00-4f6f-4615-bd70-df582f310aa7",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reportId\": \"254a02a0-ba8d-1cb1-305f-8b3533d9862d\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "59cdd6a4-f9d7-4225-bd7c-3984a7413261",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "89b5a1f6-1fb7-4b35-96fe-dc8e016521a4",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ff8de34a-1240-45ae-a83a-29da81e93632",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d8d6c9e6-fd09-43c7-b2b9-cb5ec9707b23",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "62c5dda8-36cc-413f-9f65-549eb1fb2322",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "cancel"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eefef6fb-bb49-4fd3-9c41-c52332b9f8bd",
+          "name": "Amazon Inspector Create Findings Report",
+          "request": {
+            "name": "Amazon Inspector Create Findings Report",
+            "description": {
+              "content": "Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. ",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reporting",
+                "create"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reportFormat\": \"<string>\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"epoch\": {\n          \"lowerInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"upperInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"name\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"release\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"version\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ]\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ec2bd58-b9aa-4c88-93e9-c6547feec28a",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportFormat\": \"<string>\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"epoch\": {\n          \"lowerInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"upperInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"name\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"release\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"version\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"reportId\": \"0161e9b2-a997-b2b8-9033-6cf60901bad6\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db656133-b6cc-4f42-b70b-67b412511ec9",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportFormat\": \"<string>\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"epoch\": {\n          \"lowerInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"upperInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"name\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"release\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"version\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "97b62cf6-e5c4-446e-9065-505455fc0dcc",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportFormat\": \"<string>\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"epoch\": {\n          \"lowerInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"upperInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"name\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"release\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"version\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3ad570b9-f902-499f-a58b-6e12f94e6c3f",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportFormat\": \"<string>\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"epoch\": {\n          \"lowerInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"upperInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"name\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"release\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"version\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b9c4963b-ba13-4bab-b4d7-28f74705efed",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportFormat\": \"<string>\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"epoch\": {\n          \"lowerInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"upperInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"name\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"release\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"version\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "67e779d0-a6de-44db-93ac-ee3bf9f88c81",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "create"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportFormat\": \"<string>\",\n  \"s3Destination\": {\n    \"bucketName\": \"<string>\",\n    \"keyPrefix\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\"\n  },\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": \"<double>\",\n        \"upperInclusive\": \"<double>\"\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": \"<integer>\",\n        \"endInclusive\": \"<integer>\"\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"epoch\": {\n          \"lowerInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"upperInclusive\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"name\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"release\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLambdaLayerArn\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"sourceLayerHash\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        },\n        \"version\": {\n          \"comparison\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          },\n          \"value\": {\n            \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n          }\n        }\n      }\n    ]\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d976e520-6971-4a9a-a2d9-04dd835362f2",
+          "name": "Amazon Inspector Get Findings Report Status",
+          "request": {
+            "name": "Amazon Inspector Get Findings Report Status",
+            "description": {
+              "content": "Gets the status of a findings report.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "reporting",
+                "status",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"reportId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9d9181b9-391c-41ac-8f51-63d4edf7862e",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"destination\": {\n    \"bucketName\": \"<string>\",\n    \"kmsKeyArn\": \"<string>\",\n    \"keyPrefix\": \"<string>\"\n  },\n  \"errorCode\": \"BUCKET_NOT_FOUND\",\n  \"errorMessage\": \"string\",\n  \"filterCriteria\": {\n    \"awsAccountId\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"codeVulnerabilityDetectorName\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"codeVulnerabilityDetectorTags\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"codeVulnerabilityFilePath\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"componentId\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"componentType\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ec2InstanceImageId\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ec2InstanceSubnetId\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ec2InstanceVpcId\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ecrImageArchitecture\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ecrImageHash\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ecrImagePushedAt\": [\n      {\n        \"endInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ecrImageRegistry\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ecrImageRepositoryName\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"epssScore\": [\n      {\n        \"lowerInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"upperInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"exploitAvailable\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"findingArn\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"findingStatus\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"findingType\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"firstObservedAt\": [\n      {\n        \"endInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"fixAvailable\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"inspectorScore\": [\n      {\n        \"lowerInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"upperInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"lambdaFunctionExecutionRoleArn\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"lambdaFunctionLastModifiedAt\": [\n      {\n        \"endInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"lambdaFunctionLayers\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"lastObservedAt\": [\n      {\n        \"endInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"networkProtocol\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"portRange\": [\n      {\n        \"beginInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"endInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"relatedVulnerabilities\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"resourceTags\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"key\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"severity\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"title\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"updatedAt\": [\n      {\n        \"endInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"startInclusive\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"vendorSeverity\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"vulnerabilityId\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"vulnerabilitySource\": [\n      {\n        \"comparison\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"value\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ],\n    \"vulnerablePackages\": [\n      {\n        \"architecture\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"epoch\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"name\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"release\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sourceLambdaLayerArn\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"sourceLayerHash\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"version\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    ]\n  },\n  \"reportId\": \"d99e7f1a-fb0b-dc53-85dc-4cc3290cbbb9\",\n  \"status\": \"FAILED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b5ce373-edf2-4d37-aa58-7a630e965eed",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "889f535d-e8b9-4acb-a2bf-50abcd27ad19",
+              "name": "AccessDeniedException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "41743347-62e7-4db4-8a5e-9cab6e52e05c",
+              "name": "ResourceNotFoundException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "faebff80-1bee-47e6-b4aa-1611f9bb0642",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 483,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "159fa423-2527-48df-964a-8fddfa73cd0b",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "reporting",
+                    "status",
+                    "get"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"reportId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 484,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://inspector2.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "aa04cdf0-63e8-4404-a3e2-69e0c7e9cfab",
+    "name": "Inspector2 Accountpermissions Reporting API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

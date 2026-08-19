@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inspector2 Accountpermissions Scanning API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Scanning",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Enable Amazon Inspector scanning",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://inspector2.{region}.amazonaws.com/enable",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Enables Amazon Inspector scanning for one or more resource types in one or more accounts."
+        },
+        {
+          "info": {
+            "name": "Disable Amazon Inspector scanning",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "http://inspector2.{region}.amazonaws.com/disable"
+          },
+          "docs": "Disables Amazon Inspector scanning for one or more resource types in one or more accounts."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

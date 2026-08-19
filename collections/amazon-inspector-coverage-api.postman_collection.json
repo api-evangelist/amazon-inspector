@@ -1,0 +1,1137 @@
+{
+  "item": [
+    {
+      "id": "d4237498-ee56-4caa-8fb5-97e03126fbc9",
+      "name": "Coverage",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "60f2c777-d88d-4fa3-ab41-74a996775af6",
+          "name": "Amazon Inspector List Coverage",
+          "request": {
+            "name": "Amazon Inspector List Coverage",
+            "description": {
+              "content": "Lists coverage details for you environment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "coverage",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "maxResults",
+                  "value": "<string>",
+                  "description": "Pagination limit"
+                },
+                {
+                  "disabled": false,
+                  "key": "nextToken",
+                  "value": "<string>",
+                  "description": "Pagination token"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2c2c7baf-3b6d-4c02-ab43-6fd45e17ff2b",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"coveredResources\": [\n    {\n      \"accountId\": \"075050451291\",\n      \"resourceId\": \"i-z08dzd2koxddingog\",\n      \"resourceType\": \"AWS_EC2_INSTANCE\",\n      \"scanType\": \"PACKAGE\",\n      \"lastScannedAt\": \"<dateTime>\",\n      \"resourceMetadata\": {\n        \"ec2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"ecrImage\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"ecrRepository\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaFunction\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"scanStatus\": {\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"statusCode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    },\n    {\n      \"accountId\": \"964853339832\",\n      \"resourceId\": \"arn:awsMBtckpxhKx:lambda:dd-lodqjhnhqn-0:051980132797:function:7:$LATEST\",\n      \"resourceType\": \"AWS_LAMBDA_FUNCTION\",\n      \"scanType\": \"PACKAGE\",\n      \"lastScannedAt\": \"<dateTime>\",\n      \"resourceMetadata\": {\n        \"ec2\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"ecrImage\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"ecrRepository\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"lambdaFunction\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      },\n      \"scanStatus\": {\n        \"reason\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        },\n        \"statusCode\": {\n          \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n        }\n      }\n    }\n  ],\n  \"nextToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43735092-5bad-4b82-b4d7-5d1b20b0d74e",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7bf00481-4a7e-4cc3-9787-1675ea3bad23",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4af7fb55-98a3-462f-bf5a-5a64aa3f320b",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "maxResults",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"maxResults\": \"<integer>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "33b97107-01c0-4add-9f0f-cf2650dbdfd6",
+          "name": "Amazon Inspector List Coverage Statistics",
+          "request": {
+            "name": "Amazon Inspector List Coverage Statistics",
+            "description": {
+              "content": "Lists Amazon Inspector coverage statistics for your environment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "coverage",
+                "statistics",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "nextToken",
+                  "value": "<string>",
+                  "description": "Pagination token"
+                }
+              ],
+              "variable": [
+                {
+                  "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                  "type": "any",
+                  "value": "{{region}}",
+                  "key": "region"
+                }
+              ]
+            },
+            "header": [
+              {
+                "disabled": false,
+                "key": "X-Amz-Content-Sha256",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Date",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Algorithm",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Credential",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Security-Token",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-Signature",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "disabled": false,
+                "key": "X-Amz-SignedHeaders",
+                "value": "<string>",
+                "description": ""
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"groupBy\": \"<string>\",\n  \"nextToken\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a4f2d005-1f30-4270-8080-5c7ed8f68c82",
+              "name": "Success",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "statistics",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"groupBy\": \"<string>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"totalCounts\": 4069,\n  \"countsByGroup\": [\n    {\n      \"count\": 8485,\n      \"groupKey\": \"ACCOUNT_ID\"\n    }\n  ],\n  \"nextToken\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d3aac558-a907-4786-aa9a-6ace3502f488",
+              "name": "ValidationException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "statistics",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"groupBy\": \"<string>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 480,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "2702d1b2-e040-413a-893e-1b56171288ea",
+              "name": "ThrottlingException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "statistics",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"groupBy\": \"<string>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 481,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b789a4b6-11c0-4596-a514-ebb64bdc2c2d",
+              "name": "InternalServerException",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "coverage",
+                    "statistics",
+                    "list"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "nextToken",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "description": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+                      "type": "any",
+                      "value": "{{region}}",
+                      "key": "region"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Content-Sha256",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Date",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Algorithm",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Credential",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Security-Token",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-Signature",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "disabled": false,
+                    "key": "X-Amz-SignedHeaders",
+                    "value": "<string>",
+                    "description": ""
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filterCriteria\": {\n    \"accountId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ec2InstanceTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrImageTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"ecrRepositoryName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionName\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionRuntime\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lambdaFunctionTags\": [\n      {\n        \"comparison\": \"<string>\",\n        \"key\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"lastScannedAt\": [\n      {\n        \"endInclusive\": \"<dateTime>\",\n        \"startInclusive\": \"<dateTime>\"\n      }\n    ],\n    \"resourceId\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"resourceType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusCode\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanStatusReason\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ],\n    \"scanType\": [\n      {\n        \"comparison\": \"<string>\",\n        \"value\": \"<string>\"\n      }\n    ]\n  },\n  \"groupBy\": \"<string>\",\n  \"nextToken\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "code": 482,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The AWS region (This can only be one of us-east-1,us-east-2,us-west-1,us-west-2,us-gov-west-1,us-gov-east-1,ca-central-1,eu-north-1,eu-west-1,eu-west-2,eu-west-3,eu-central-1,eu-south-1,af-south-1,ap-northeast-1,ap-northeast-2,ap-northeast-3,ap-southeast-1,ap-southeast-2,ap-east-1,ap-south-1,sa-east-1,me-south-1)",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "us-east-1",
+      "key": "region"
+    },
+    {
+      "type": "string",
+      "value": "http://inspector2.{{region}}.amazonaws.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "Authorization"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "12afe4aa-8cdf-4a9d-95cc-bcd63d2a9315",
+    "name": "Inspector2 Accountpermissions Coverage API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.\n\nContact Support:\n Name: Mike Ralphson\n Email: mike.ralphson@gmail.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Inspector2 Accountpermissions Encryptionkey API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "Authorization",
+      "value": "{{Authorization}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Encryptionkey",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Amazon Inspector Get Encryption Key",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "http://inspector2.{region}.amazonaws.com/encryptionkey/get#resourceType&scanType",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "params": [
+              {
+                "name": "resourceType",
+                "value": "",
+                "type": "query",
+                "description": "The resource type the key encrypts."
+              },
+              {
+                "name": "scanType",
+                "value": "",
+                "type": "query",
+                "description": "The scan type the key encrypts."
+              }
+            ]
+          },
+          "docs": "Gets an encryption key."
+        },
+        {
+          "info": {
+            "name": "Amazon Inspector Reset Encryption Key",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://inspector2.{region}.amazonaws.com/encryptionkey/reset",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Resets an encryption key. After the key is reset your resources will be encrypted by an Amazon Web Services owned key."
+        },
+        {
+          "info": {
+            "name": "Amazon Inspector Update Encryption Key",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "http://inspector2.{region}.amazonaws.com/encryptionkey/update",
+            "headers": [
+              {
+                "name": "X-Amz-Content-Sha256",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Date",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Algorithm",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Credential",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Security-Token",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-Signature",
+                "value": ""
+              },
+              {
+                "name": "X-Amz-SignedHeaders",
+                "value": ""
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates an encryption key. A <code>ResourceNotFoundException</code> means that an AWS owned key is being used for encryption."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
