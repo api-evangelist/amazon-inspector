@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Inspector2 Accountpermissions Enable API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
@@ -199,53 +199,24 @@ paths:
       tags:
       - Enable
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    NonEmptyString:
+    ValidationException: {}
+    Status:
       type: string
-      minLength: 1
+      enum:
+      - ENABLING
+      - ENABLED
+      - DISABLING
+      - DISABLED
+      - SUSPENDING
+      - SUSPENDED
+    FailedAccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FailedAccount'
+      minItems: 0
+      maxItems: 100
+    InternalServerException: {}
     FailedAccount:
       type: object
       required:
@@ -287,6 +258,12 @@ components:
           allOf:
           - $ref: '#/components/schemas/FailedAccountList'
           - description: Information on any accounts for which Amazon Inspector scans could not be enabled. Details are provided for each account.
+    AccessDeniedException: {}
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
     ResourceStatus:
       type: object
       required:
@@ -310,6 +287,24 @@ components:
           - $ref: '#/components/schemas/Status'
           - description: 'The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. '
       description: Details the status of Amazon Inspector for each resource type Amazon Inspector scans.
+    ErrorCode:
+      type: string
+      enum:
+      - ALREADY_ENABLED
+      - ENABLE_IN_PROGRESS
+      - DISABLE_IN_PROGRESS
+      - SUSPEND_IN_PROGRESS
+      - RESOURCE_NOT_FOUND
+      - ACCESS_DENIED
+      - INTERNAL_ERROR
+      - SSM_UNAVAILABLE
+      - SSM_THROTTLED
+      - EVENTBRIDGE_UNAVAILABLE
+      - EVENTBRIDGE_THROTTLED
+      - RESOURCE_SCAN_NOT_DISABLED
+      - DISASSOCIATE_ALL_MEMBERS
+      - ACCOUNT_IS_ISOLATED
+    ThrottlingException: {}
     Account:
       type: object
       required:
@@ -330,6 +325,7 @@ components:
           - $ref: '#/components/schemas/Status'
           - description: The status of Amazon Inspector for the account.
       description: An Amazon Web Services account within your environment that Amazon Inspector has been enabled for.
+    ResourceNotFoundException: {}
     ResourceScanType:
       type: string
       enum:
@@ -337,52 +333,56 @@ components:
       - ECR
       - LAMBDA
       - LAMBDA_CODE
-    AccessDeniedException: {}
-    InternalServerException: {}
-    FailedAccountList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FailedAccount'
-      minItems: 0
-      maxItems: 100
-    Status:
+    NonEmptyString:
       type: string
-      enum:
-      - ENABLING
-      - ENABLED
-      - DISABLING
-      - DISABLED
-      - SUSPENDING
-      - SUSPENDED
-    AccountId:
-      type: string
-      pattern: ^\d{12}$
-      minLength: 12
-      maxLength: 12
-    ErrorCode:
-      type: string
-      enum:
-      - ALREADY_ENABLED
-      - ENABLE_IN_PROGRESS
-      - DISABLE_IN_PROGRESS
-      - SUSPEND_IN_PROGRESS
-      - RESOURCE_NOT_FOUND
-      - ACCESS_DENIED
-      - INTERNAL_ERROR
-      - SSM_UNAVAILABLE
-      - SSM_THROTTLED
-      - EVENTBRIDGE_UNAVAILABLE
-      - EVENTBRIDGE_THROTTLED
-      - RESOURCE_SCAN_NOT_DISABLED
-      - DISASSOCIATE_ALL_MEMBERS
-      - ACCOUNT_IS_ISOLATED
+      minLength: 1
     AccountList:
       type: array
       items:
         $ref: '#/components/schemas/Account'
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    ValidationException: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Inspector2 Accountpermissions Configuration API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
@@ -226,70 +226,15 @@ paths:
       tags:
       - Configuration
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    EcrRescanDurationStatus:
-      type: string
-      enum:
-      - SUCCESS
-      - PENDING
-      - FAILED
-    EcrConfigurationState:
-      type: object
-      properties:
-        rescanDurationState:
-          allOf:
-          - $ref: '#/components/schemas/EcrRescanDurationState'
-          - description: An object that contains details about the state of the ECR automated re-scan setting.
-      description: Details about the state of the ECR scans for your environment.
+    ValidationException: {}
     EcrRescanDuration:
       type: string
       enum:
       - LIFETIME
       - DAYS_30
       - DAYS_180
+    InternalServerException: {}
     AccessDeniedException: {}
     EcrRescanDurationState:
       type: object
@@ -307,6 +252,20 @@ components:
           - $ref: '#/components/schemas/DateTimeTimestamp'
           - description: A timestamp representing when the last time the ECR scan duration setting was changed.
       description: Details about the state of any changes to the ECR automated re-scan duration setting.
+    EcrConfigurationState:
+      type: object
+      properties:
+        rescanDurationState:
+          allOf:
+          - $ref: '#/components/schemas/EcrRescanDurationState'
+          - description: An object that contains details about the state of the ECR automated re-scan setting.
+      description: Details about the state of the ECR scans for your environment.
+    EcrRescanDurationStatus:
+      type: string
+      enum:
+      - SUCCESS
+      - PENDING
+      - FAILED
     GetConfigurationResponse:
       type: object
       properties:
@@ -314,16 +273,57 @@ components:
           allOf:
           - $ref: '#/components/schemas/EcrConfigurationState'
           - description: Specifies how the ECR automated re-scan duration is currently configured for your environment.
-    UpdateConfigurationResponse:
-      type: object
-      properties: {}
-    InternalServerException: {}
     ThrottlingException: {}
-    ResourceNotFoundException: {}
     DateTimeTimestamp:
       type: string
       format: date-time
-    ValidationException: {}
+    ResourceNotFoundException: {}
+    UpdateConfigurationResponse:
+      type: object
+      properties: {}
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

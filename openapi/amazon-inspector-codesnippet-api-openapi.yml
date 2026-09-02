@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Inspector2 Accountpermissions Codesnippet API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
@@ -182,111 +182,8 @@ paths:
       - Codesnippet
 components:
   schemas:
-    SuggestedFixDescriptionString:
-      type: string
-      minLength: 1
-      maxLength: 1000
-    NonEmptyString:
-      type: string
-      minLength: 1
-    CodeSnippetErrorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeSnippetError'
-    BatchGetCodeSnippetResponse:
-      type: object
-      properties:
-        codeSnippetResults:
-          allOf:
-          - $ref: '#/components/schemas/CodeSnippetResultList'
-          - description: The retrieved code snippets associated with the provided finding ARNs.
-        errors:
-          allOf:
-          - $ref: '#/components/schemas/CodeSnippetErrorList'
-          - description: Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.
-    FindingArn:
-      type: string
-      pattern: ^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$
-      minLength: 1
-      maxLength: 100
-    Integer:
-      type: integer
-    AccessDeniedException: {}
-    SuggestedFixCodeString:
-      type: string
-      minLength: 1
-      maxLength: 2500
-    CodeSnippetErrorCode:
-      type: string
-      enum:
-      - INTERNAL_ERROR
-      - ACCESS_DENIED
-      - CODE_SNIPPET_NOT_FOUND
-      - INVALID_INPUT
+    ValidationException: {}
     InternalServerException: {}
-    SuggestedFix:
-      type: object
-      properties:
-        code:
-          allOf:
-          - $ref: '#/components/schemas/SuggestedFixCodeString'
-          - description: The fix's code.
-        description:
-          allOf:
-          - $ref: '#/components/schemas/SuggestedFixDescriptionString'
-          - description: The fix's description.
-      description: A suggested fix for a vulnerability in your Lambda function code.
-    CodeLineList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeLine'
-      minItems: 1
-      maxItems: 20
-    CodeSnippetResultList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeSnippetResult'
-    CodeSnippetError:
-      type: object
-      required:
-      - errorCode
-      - errorMessage
-      - findingArn
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/CodeSnippetErrorCode'
-          - description: The error code for the error that prevented a code snippet from being retrieved.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: The error message received when Amazon Inspector failed to retrieve a code snippet.
-        findingArn:
-          allOf:
-          - $ref: '#/components/schemas/FindingArn'
-          - description: The ARN of the finding that a code snippet couldn't be retrieved for.
-      description: Contains information about any errors encountered while trying to retrieve a code snippet.
-    SuggestedFixes:
-      type: array
-      items:
-        $ref: '#/components/schemas/SuggestedFix'
-      minItems: 1
-      maxItems: 5
-    CodeLine:
-      type: object
-      required:
-      - content
-      - lineNumber
-      properties:
-        content:
-          allOf:
-          - $ref: '#/components/schemas/CodeLineContentString'
-          - description: The content of a line of code
-        lineNumber:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The line number that a section of code is located at.
-      description: Contains information on the lines of code associated with a code snippet.
     CodeSnippetResult:
       type: object
       properties:
@@ -311,27 +208,118 @@ components:
           - $ref: '#/components/schemas/SuggestedFixes'
           - description: Details of a suggested code fix.
       description: Contains information on a code snippet retrieved by Amazon Inspector from a code vulnerability finding.
+    CodeLineList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeLine'
+      minItems: 1
+      maxItems: 20
+    AccessDeniedException: {}
+    FindingArn:
+      type: string
+      pattern: ^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$
+      minLength: 1
+      maxLength: 100
+    CodeSnippetError:
+      type: object
+      required:
+      - errorCode
+      - errorMessage
+      - findingArn
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/CodeSnippetErrorCode'
+          - description: The error code for the error that prevented a code snippet from being retrieved.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The error message received when Amazon Inspector failed to retrieve a code snippet.
+        findingArn:
+          allOf:
+          - $ref: '#/components/schemas/FindingArn'
+          - description: The ARN of the finding that a code snippet couldn't be retrieved for.
+      description: Contains information about any errors encountered while trying to retrieve a code snippet.
+    CodeSnippetErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeSnippetError'
+    BatchGetCodeSnippetResponse:
+      type: object
+      properties:
+        codeSnippetResults:
+          allOf:
+          - $ref: '#/components/schemas/CodeSnippetResultList'
+          - description: The retrieved code snippets associated with the provided finding ARNs.
+        errors:
+          allOf:
+          - $ref: '#/components/schemas/CodeSnippetErrorList'
+          - description: Any errors Amazon Inspector encountered while trying to retrieve the requested code snippets.
+    SuggestedFixCodeString:
+      type: string
+      minLength: 1
+      maxLength: 2500
+    SuggestedFixes:
+      type: array
+      items:
+        $ref: '#/components/schemas/SuggestedFix'
+      minItems: 1
+      maxItems: 5
+    SuggestedFixDescriptionString:
+      type: string
+      minLength: 1
+      maxLength: 1000
+    CodeSnippetResultList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeSnippetResult'
+    ThrottlingException: {}
     CodeLineContentString:
       type: string
       minLength: 0
       maxLength: 240
-    ThrottlingException: {}
-    ValidationException: {}
+    SuggestedFix:
+      type: object
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/SuggestedFixCodeString'
+          - description: The fix's code.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/SuggestedFixDescriptionString'
+          - description: The fix's description.
+      description: A suggested fix for a vulnerability in your Lambda function code.
+    NonEmptyString:
+      type: string
+      minLength: 1
+    CodeLine:
+      type: object
+      required:
+      - content
+      - lineNumber
+      properties:
+        content:
+          allOf:
+          - $ref: '#/components/schemas/CodeLineContentString'
+          - description: The content of a line of code
+        lineNumber:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The line number that a section of code is located at.
+      description: Contains information on the lines of code associated with a code snippet.
+    CodeSnippetErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - ACCESS_DENIED
+      - CODE_SNIPPET_NOT_FOUND
+      - INVALID_INPUT
+    Integer:
+      type: integer
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -348,8 +336,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

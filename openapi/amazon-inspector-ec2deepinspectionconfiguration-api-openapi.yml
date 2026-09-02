@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Inspector2 Accountpermissions Ec2deepinspectionconfiguration API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
@@ -298,64 +298,14 @@ paths:
       tags:
       - Ec2deepinspectionconfiguration
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    ValidationException: {}
+    InternalServerException: {}
     Path:
       type: string
       pattern: ^(?:/(?:\.[-\w]+|[-\w]+(?:\.[-\w]+)?))+/?$
       minLength: 1
       maxLength: 512
-    PathList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Path'
-      minItems: 0
-      maxItems: 5
-    NonEmptyString:
-      type: string
-      minLength: 1
     Ec2DeepInspectionStatus:
       type: string
       enum:
@@ -363,28 +313,7 @@ components:
       - DEACTIVATED
       - PENDING
       - FAILED
-    UpdateOrgEc2DeepInspectionConfigurationResponse:
-      type: object
-      properties: {}
-    GetEc2DeepInspectionConfigurationResponse:
-      type: object
-      properties:
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.
-        orgPackagePaths:
-          allOf:
-          - $ref: '#/components/schemas/PathList'
-          - description: The Amazon Inspector deep inspection custom paths for your organization.
-        packagePaths:
-          allOf:
-          - $ref: '#/components/schemas/PathList'
-          - description: The Amazon Inspector deep inspection custom paths for your account.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/Ec2DeepInspectionStatus'
-          - description: The activation status of Amazon Inspector deep inspection in your account.
+    AccessDeniedException: {}
     UpdateEc2DeepInspectionConfigurationResponse:
       type: object
       properties:
@@ -404,11 +333,82 @@ components:
           allOf:
           - $ref: '#/components/schemas/Ec2DeepInspectionStatus'
           - description: The status of Amazon Inspector deep inspection in your account.
-    AccessDeniedException: {}
-    InternalServerException: {}
+    PathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Path'
+      minItems: 0
+      maxItems: 5
+    GetEc2DeepInspectionConfigurationResponse:
+      type: object
+      properties:
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: An error message explaining why Amazon Inspector deep inspection configurations could not be retrieved for your account.
+        orgPackagePaths:
+          allOf:
+          - $ref: '#/components/schemas/PathList'
+          - description: The Amazon Inspector deep inspection custom paths for your organization.
+        packagePaths:
+          allOf:
+          - $ref: '#/components/schemas/PathList'
+          - description: The Amazon Inspector deep inspection custom paths for your account.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/Ec2DeepInspectionStatus'
+          - description: The activation status of Amazon Inspector deep inspection in your account.
     ThrottlingException: {}
     ResourceNotFoundException: {}
-    ValidationException: {}
+    UpdateOrgEc2DeepInspectionConfigurationResponse:
+      type: object
+      properties: {}
+    NonEmptyString:
+      type: string
+      minLength: 1
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

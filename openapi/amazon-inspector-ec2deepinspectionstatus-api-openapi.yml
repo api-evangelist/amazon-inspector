@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Inspector2 Accountpermissions Ec2deepinspectionstatus API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
@@ -246,6 +246,32 @@ paths:
       - Ec2deepinspectionstatus
 components:
   schemas:
+    ValidationException: {}
+    Status:
+      type: string
+      enum:
+      - ENABLING
+      - ENABLED
+      - DISABLING
+      - DISABLED
+      - SUSPENDING
+      - SUSPENDED
+    InternalServerException: {}
+    Ec2DeepInspectionStatus:
+      type: string
+      enum:
+      - ACTIVATED
+      - DEACTIVATED
+      - PENDING
+      - FAILED
+    AccessDeniedException: {}
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+    Boolean:
+      type: boolean
     BatchGetMemberEc2DeepInspectionStatusResponse:
       type: object
       properties:
@@ -257,6 +283,33 @@ components:
           allOf:
           - $ref: '#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusStateList'
           - description: An array of objects that provide details on any accounts that failed to activate Amazon Inspector deep inspection and why. <pre><code> &lt;/p&gt; </code></pre>
+    BatchUpdateMemberEc2DeepInspectionStatusResponse:
+      type: object
+      properties:
+        accountIds:
+          allOf:
+          - $ref: '#/components/schemas/MemberAccountEc2DeepInspectionStatusStateList'
+          - description: 'An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. '
+        failedAccountIds:
+          allOf:
+          - $ref: '#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusStateList'
+          - description: 'An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. '
+    MemberAccountEc2DeepInspectionStatus:
+      type: object
+      required:
+      - accountId
+      - activateDeepInspection
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The unique identifier for the Amazon Web Services account of the organization member.
+        activateDeepInspection:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.
+      description: An object that contains details about the status of Amazon Inspector deep inspection for a member account in your organization.
+    ThrottlingException: {}
     MemberAccountEc2DeepInspectionStatusStateList:
       type: array
       items:
@@ -281,16 +334,6 @@ components:
           - $ref: '#/components/schemas/NonEmptyString'
           - description: The error message explaining why the account failed to activate Amazon Inspector deep inspection.
       description: An object that contains details about a member account in your organization that failed to activate Amazon Inspector deep inspection.
-    NonEmptyString:
-      type: string
-      minLength: 1
-    Ec2DeepInspectionStatus:
-      type: string
-      enum:
-      - ACTIVATED
-      - DEACTIVATED
-      - PENDING
-      - FAILED
     MemberAccountEc2DeepInspectionStatusState:
       type: object
       required:
@@ -309,73 +352,18 @@ components:
           - $ref: '#/components/schemas/Ec2DeepInspectionStatus'
           - description: The state of Amazon Inspector deep inspection in the member account.
       description: An object that contains details about the state of Amazon Inspector deep inspection for a member account.
-    BatchUpdateMemberEc2DeepInspectionStatusResponse:
-      type: object
-      properties:
-        accountIds:
-          allOf:
-          - $ref: '#/components/schemas/MemberAccountEc2DeepInspectionStatusStateList'
-          - description: 'An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status was successfully changed for. '
-        failedAccountIds:
-          allOf:
-          - $ref: '#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusStateList'
-          - description: 'An array of objects that provide details for each of the accounts that Amazon Inspector deep inspection status could not be successfully changed for. '
+    NonEmptyString:
+      type: string
+      minLength: 1
     FailedMemberAccountEc2DeepInspectionStatusStateList:
       type: array
       items:
         $ref: '#/components/schemas/FailedMemberAccountEc2DeepInspectionStatusState'
       minItems: 0
       maxItems: 100
-    AccessDeniedException: {}
-    MemberAccountEc2DeepInspectionStatus:
-      type: object
-      required:
-      - accountId
-      - activateDeepInspection
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The unique identifier for the Amazon Web Services account of the organization member.
-        activateDeepInspection:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code> Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.
-      description: An object that contains details about the status of Amazon Inspector deep inspection for a member account in your organization.
-    InternalServerException: {}
-    Boolean:
-      type: boolean
-    Status:
-      type: string
-      enum:
-      - ENABLING
-      - ENABLED
-      - DISABLING
-      - DISABLED
-      - SUSPENDING
-      - SUSPENDED
-    AccountId:
-      type: string
-      pattern: ^\d{12}$
-      minLength: 12
-      maxLength: 12
-    ThrottlingException: {}
-    ValidationException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -392,8 +380,20 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Date:
       name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string

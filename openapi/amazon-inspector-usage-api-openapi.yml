@@ -1,6 +1,6 @@
-openapi: 3.0.0
+openapi: 3.2.0
 info:
-  version: "1.0.0"
+  version: 1.0.0
   x-release: v4
   title: Inspector2 Accountpermissions Usage API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
@@ -200,65 +200,13 @@ paths:
       tags:
       - Usage
 components:
-  parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    UsageAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-    UsageTotal:
-      type: object
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/MeteringAccountId'
-          - description: The account ID of the account that usage data was retrieved for.
-        usage:
-          allOf:
-          - $ref: '#/components/schemas/UsageList'
-          - description: An object representing the total usage for an account.
-      description: The total of usage for an account ID.
+    ValidationException: {}
+    UsageTotalList:
+      type: array
+      items:
+        $ref: '#/components/schemas/UsageTotal'
+    InternalServerException: {}
     UsageType:
       type: string
       enum:
@@ -267,21 +215,19 @@ components:
       - ECR_RESCAN
       - LAMBDA_FUNCTION_HOURS
       - LAMBDA_FUNCTION_CODE_HOURS
-    ListUsageTotalsNextToken:
-      type: string
-      minLength: 1
+    UsageValue:
+      type: number
+      format: double
+      minimum: 0
     AccessDeniedException: {}
-    ListUsageTotalsResponse:
-      type: object
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/ListUsageTotalsNextToken'
-          - description: The pagination parameter to be used on the next list operation to retrieve more items.
-        totals:
-          allOf:
-          - $ref: '#/components/schemas/UsageTotalList'
-          - description: An object with details on the total usage for the requested account.
+    UsageList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Usage'
+    Currency:
+      type: string
+      enum:
+      - USD
     Usage:
       type: object
       properties:
@@ -302,32 +248,86 @@ components:
           - $ref: '#/components/schemas/UsageType'
           - description: The type scan.
       description: Contains usage information about the cost of Amazon Inspector operation.
-    InternalServerException: {}
-    MonthlyCostEstimate:
-      type: number
-      format: double
-      minimum: 0
-    Currency:
+    UsageTotal:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account ID of the account that usage data was retrieved for.
+        usage:
+          allOf:
+          - $ref: '#/components/schemas/UsageList'
+          - description: An object representing the total usage for an account.
+      description: The total of usage for an account ID.
+    ListUsageTotalsResponse:
+      type: object
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/ListUsageTotalsNextToken'
+          - description: The pagination parameter to be used on the next list operation to retrieve more items.
+        totals:
+          allOf:
+          - $ref: '#/components/schemas/UsageTotalList'
+          - description: An object with details on the total usage for the requested account.
+    ThrottlingException: {}
+    UsageAccountId:
       type: string
-      enum:
-      - USD
-    UsageValue:
+      pattern: '[0-9]{12}'
+    MonthlyCostEstimate:
       type: number
       format: double
       minimum: 0
     MeteringAccountId:
       type: string
       pattern: '[0-9]{12}'
-    UsageList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Usage'
-    UsageTotalList:
-      type: array
-      items:
-        $ref: '#/components/schemas/UsageTotal'
-    ThrottlingException: {}
-    ValidationException: {}
+    ListUsageTotalsNextToken:
+      type: string
+      minLength: 1
+  parameters:
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
