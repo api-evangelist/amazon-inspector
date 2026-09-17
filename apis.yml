@@ -300,25 +300,6 @@ apis:
     url: https://aws.amazon.com/inspector/pricing/
   - type: FAQ
     url: https://aws.amazon.com/inspector/faqs/
-- aid: amazon-inspector:amazon-inspector-organizationconfiguration-api
-  name: Amazon Inspector Organizationconfiguration API
-  description: >-
-    The Organizationconfiguration API from Amazon Inspector — 2 operation(s) for organizationconfiguration.
-  humanURL: https://aws.amazon.com/inspector/
-  baseURL: https://inspector2.amazonaws.com
-  tags:
-  - Organizationconfiguration
-  properties:
-  - type: OpenAPI
-    url: openapi/amazon-inspector-organizationconfiguration-api-openapi.yml
-  - type: Documentation
-    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
-  - type: GettingStarted
-    url: https://aws.amazon.com/inspector/getting-started/
-  - type: Pricing
-    url: https://aws.amazon.com/inspector/pricing/
-  - type: FAQ
-    url: https://aws.amazon.com/inspector/faqs/
 - aid: amazon-inspector:amazon-inspector-reporting-api
   name: Amazon Inspector Reporting API
   description: The Reporting API from Amazon Inspector — 3 operation(s) for reporting.
@@ -437,6 +418,25 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/amazon-inspector-vulnerabilities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-organization-configuration-api
+  name: Amazon Inspector Organization Configuration API
+  description: >-
+    The Organization Configuration API from Amazon Inspector — 2 operation(s) for organization configuration.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Organization Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-organization-configuration-api-openapi.yml
   - type: Documentation
     url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
   - type: GettingStarted
