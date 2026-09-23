@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-06-08'
   x-release: v4
-  title: Inspector2 Accountpermissions Sbomexport API
+  title: Inspector2 Sbomexport API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -378,33 +379,6 @@ paths:
       - Sbomexport
 components:
   schemas:
-    String:
-      type: string
-    ResourceMapComparison:
-      type: string
-      enum:
-      - EQUALS
-    ValidationException: {}
-    CancelSbomExportResponse:
-      type: object
-      properties:
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The report ID of the canceled SBOM export.
-    ExternalReportStatus:
-      type: string
-      enum:
-      - SUCCEEDED
-      - IN_PROGRESS
-      - CANCELLED
-      - FAILED
-    InternalServerException: {}
-    AccessDeniedException: {}
-    ResourceStringInput:
-      type: string
-      minLength: 1
-      maxLength: 1024
     GetSbomExportResponse:
       type: object
       properties:
@@ -434,17 +408,96 @@ components:
           allOf:
           - $ref: '#/components/schemas/ExternalReportStatus'
           - description: The status of the software bill of materials (SBOM) report.
+    ResourceMapFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceMapFilter'
+      minItems: 1
+      maxItems: 10
+    InternalServerException: {}
+    ExternalReportStatus:
+      type: string
+      enum:
+      - SUCCEEDED
+      - IN_PROGRESS
+      - CANCELLED
+      - FAILED
+    ValidationException: {}
+    ResourceStringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
     ResourceStringFilterList:
       type: array
       items:
         $ref: '#/components/schemas/ResourceStringFilter'
       minItems: 1
       maxItems: 10
+    String:
+      type: string
     ResourceStringComparison:
       type: string
       enum:
       - EQUALS
       - NOT_EQUALS
+    Destination:
+      type: object
+      required:
+      - bucketName
+      - kmsKeyArn
+      properties:
+        bucketName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Amazon S3 bucket to export findings to.
+        keyPrefix:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The prefix that the findings will be written under.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ARN of the KMS key used to encrypt data when exporting findings.
+      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+    ReportingErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - INVALID_PERMISSIONS
+      - NO_FINDINGS_FOUND
+      - BUCKET_NOT_FOUND
+      - INCOMPATIBLE_BUCKET_REGION
+      - MALFORMED_KMS_KEY
+    CreateSbomExportResponse:
+      type: object
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The report ID for the software bill of materials (SBOM) report.
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    ResourceStringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringComparison'
+          - description: The filter's comparison.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringInput'
+          - description: The filter's value.
+      description: A resource string filter for a software bill of materials report.
+    SbomReportFormat:
+      type: string
+      enum:
+      - CYCLONEDX_1_4
+      - SPDX_2_3
+    AccessDeniedException: {}
     ResourceMapFilter:
       type: object
       required:
@@ -464,47 +517,20 @@ components:
           - $ref: '#/components/schemas/NonEmptyString'
           - description: The filter's value.
       description: A resource map filter for a software bill of material report.
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    ResourceMapFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceMapFilter'
-      minItems: 1
-      maxItems: 10
-    CreateSbomExportResponse:
+    CancelSbomExportResponse:
       type: object
       properties:
         reportId:
           allOf:
           - $ref: '#/components/schemas/ReportId'
-          - description: The report ID for the software bill of materials (SBOM) report.
+          - description: The report ID of the canceled SBOM export.
+    ResourceMapComparison:
+      type: string
+      enum:
+      - EQUALS
     ReportId:
       type: string
       pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
-    NonEmptyString:
-      type: string
-      minLength: 1
-    SbomReportFormat:
-      type: string
-      enum:
-      - CYCLONEDX_1_4
-      - SPDX_2_3
-    ResourceStringFilter:
-      type: object
-      required:
-      - comparison
-      - value
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/ResourceStringComparison'
-          - description: The filter's comparison.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/ResourceStringInput'
-          - description: The filter's value.
-      description: A resource string filter for a software bill of materials report.
     ResourceFilterCriteria:
       type: object
       properties:
@@ -541,37 +567,12 @@ components:
           - $ref: '#/components/schemas/ResourceStringFilterList'
           - description: The resource types used as resource filter criteria.
       description: The resource filter criteria for a Software bill of materials (SBOM) report.
-    ReportingErrorCode:
+    NonEmptyString:
       type: string
-      enum:
-      - INTERNAL_ERROR
-      - INVALID_PERMISSIONS
-      - NO_FINDINGS_FOUND
-      - BUCKET_NOT_FOUND
-      - INCOMPATIBLE_BUCKET_REGION
-      - MALFORMED_KMS_KEY
-    Destination:
-      type: object
-      required:
-      - bucketName
-      - kmsKeyArn
-      properties:
-        bucketName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the Amazon S3 bucket to export findings to.
-        keyPrefix:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The prefix that the findings will be written under.
-        kmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The ARN of the KMS key used to encrypt data when exporting findings.
-      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+      minLength: 1
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -582,8 +583,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -602,12 +609,6 @@ components:
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-06-08'
   x-release: v4
-  title: Inspector2 Accountpermissions Usage API
+  title: Inspector2 Usage API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -201,53 +202,26 @@ paths:
       - Usage
 components:
   schemas:
-    ValidationException: {}
-    UsageTotalList:
-      type: array
-      items:
-        $ref: '#/components/schemas/UsageTotal'
-    InternalServerException: {}
-    UsageType:
-      type: string
-      enum:
-      - EC2_INSTANCE_HOURS
-      - ECR_INITIAL_SCAN
-      - ECR_RESCAN
-      - LAMBDA_FUNCTION_HOURS
-      - LAMBDA_FUNCTION_CODE_HOURS
-    UsageValue:
-      type: number
-      format: double
-      minimum: 0
-    AccessDeniedException: {}
     UsageList:
       type: array
       items:
         $ref: '#/components/schemas/Usage'
+    MonthlyCostEstimate:
+      type: number
+      format: double
+      minimum: 0
+    ListUsageTotalsNextToken:
+      type: string
+      minLength: 1
+    UsageAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+    InternalServerException: {}
+    ValidationException: {}
     Currency:
       type: string
       enum:
       - USD
-    Usage:
-      type: object
-      properties:
-        currency:
-          allOf:
-          - $ref: '#/components/schemas/Currency'
-          - description: The currency type used when calculating usage data.
-        estimatedMonthlyCost:
-          allOf:
-          - $ref: '#/components/schemas/MonthlyCostEstimate'
-          - description: The estimated monthly cost of Amazon Inspector.
-        total:
-          allOf:
-          - $ref: '#/components/schemas/UsageValue'
-          - description: The total of usage.
-        type:
-          allOf:
-          - $ref: '#/components/schemas/UsageType'
-          - description: The type scan.
-      description: Contains usage information about the cost of Amazon Inspector operation.
     UsageTotal:
       type: object
       properties:
@@ -272,22 +246,49 @@ components:
           - $ref: '#/components/schemas/UsageTotalList'
           - description: An object with details on the total usage for the requested account.
     ThrottlingException: {}
-    UsageAccountId:
+    UsageTotalList:
+      type: array
+      items:
+        $ref: '#/components/schemas/UsageTotal'
+    UsageType:
       type: string
-      pattern: '[0-9]{12}'
-    MonthlyCostEstimate:
-      type: number
-      format: double
-      minimum: 0
+      enum:
+      - EC2_INSTANCE_HOURS
+      - ECR_INITIAL_SCAN
+      - ECR_RESCAN
+      - LAMBDA_FUNCTION_HOURS
+      - LAMBDA_FUNCTION_CODE_HOURS
+    AccessDeniedException: {}
     MeteringAccountId:
       type: string
       pattern: '[0-9]{12}'
-    ListUsageTotalsNextToken:
-      type: string
-      minLength: 1
+    Usage:
+      type: object
+      properties:
+        currency:
+          allOf:
+          - $ref: '#/components/schemas/Currency'
+          - description: The currency type used when calculating usage data.
+        estimatedMonthlyCost:
+          allOf:
+          - $ref: '#/components/schemas/MonthlyCostEstimate'
+          - description: The estimated monthly cost of Amazon Inspector.
+        total:
+          allOf:
+          - $ref: '#/components/schemas/UsageValue'
+          - description: The total of usage.
+        type:
+          allOf:
+          - $ref: '#/components/schemas/UsageType'
+          - description: The type scan.
+      description: Contains usage information about the cost of Amazon Inspector operation.
+    UsageValue:
+      type: number
+      format: double
+      minimum: 0
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -298,8 +299,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string

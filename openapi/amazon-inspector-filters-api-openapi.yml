@@ -1,35 +1,18 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
-  x-release: v4
-  title: Inspector2 Accountpermissions Filters API
-  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
-  x-logo:
-    url: https://twitter.com/awscloud/profile_image?size=original
-    backgroundColor: '#FFFFFF'
-  termsOfService: https://aws.amazon.com/service-terms/
-  contact:
-    name: Mike Ralphson
-    email: mike.ralphson@gmail.com
-    url: https://github.com/mermade/aws2openapi
-    x-twitter: PermittedSoc
-  license:
-    name: Apache 2.0 License
-    url: http://www.apache.org/licenses/
-  x-providerName: amazonaws.com
-  x-serviceName: inspector2
-  x-aws-signingName: inspector2
-  x-origin:
-  - contentType: application/json
-    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
-    converter:
-      url: https://github.com/mermade/aws2openapi
-    x-apisguru-driver: external
-  x-apiClientRegistration:
-    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
-  x-apisguru-categories:
-  - cloud
-  x-preferred: true
+  title: Amazon Inspector Filters API
+  version: '2020-06-08'
+  x-refined-note:
+  - x-apiClientRegistration differs across the merged source definitions and was not carried
+  - x-apisguru-categories differs across the merged source definitions and was not carried
+  - x-aws-signingName differs across the merged source definitions and was not carried
+  - x-logo differs across the merged source definitions and was not carried
+  - x-origin differs across the merged source definitions and was not carried
+  - x-preferred differs across the merged source definitions and was not carried
+  - x-providerName differs across the merged source definitions and was not carried
+  - x-release differs across the merged source definitions and was not carried
+  - x-serviceName differs across the merged source definitions and was not carried
+  description: 'Operations tagged Filters across 2 of this provider''s published API definitions: amazon-inspector-openapi-original.yml, amazon-inspector-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: http://inspector2.{region}.amazonaws.com
   variables:
@@ -109,8 +92,6 @@ servers:
       - cn-northwest-1
       default: cn-north-1
   description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
-security:
-- hmac: []
 tags:
 - name: Filters
 paths:
@@ -385,6 +366,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Filters
+      security:
+      - hmac: []
+    servers:
+    - url: http://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: https://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: http://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+    - url: https://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
   /filters/delete:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -455,6 +517,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Filters
+      security:
+      - hmac: []
+    servers:
+    - url: http://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: https://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: http://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+    - url: https://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
   /filters/list:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -545,6 +688,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Filters
+      security:
+      - hmac: []
+    servers:
+    - url: http://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: https://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: http://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+    - url: https://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
   /filters/update:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -808,65 +1032,98 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Filters
+      security:
+      - hmac: []
+    servers:
+    - url: http://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: https://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: http://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+    - url: https://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
 components:
   schemas:
-    FilterDescription:
+    StringComparison:
       type: string
-      minLength: 1
-      maxLength: 512
-    ValidationException: {}
-    StringFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StringFilter'
-      minItems: 1
-      maxItems: 10
-    NumberFilter:
-      type: object
-      properties:
-        lowerInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The lowest number to be included in the filter.
-        upperInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The highest number to be included in the filter.
-      description: An object that describes the details of a number filter.
-    DateFilter:
-      type: object
-      properties:
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the end of the time period filtered on.
-        startInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the start of the time period filtered on.
-      description: Contains details on the time range used to filter findings.
-    ListFiltersResponse:
-      type: object
-      required:
-      - filters
-      properties:
-        filters:
-          allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: Contains details on the filters associated with your account.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+      enum:
+      - EQUALS
+      - PREFIX
+      - NOT_EQUALS
+    BadRequestException: {}
     ServiceQuotaExceededException: {}
-    InternalServerException: {}
-    NumberFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NumberFilter'
-      minItems: 1
-      maxItems: 10
-    MapKey:
+    FilterArn:
       type: string
       minLength: 1
       maxLength: 128
@@ -879,67 +1136,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/FilterArn'
           - description: The Amazon Resource Number (ARN) of the filter that has been deleted.
-    PortRangeFilter:
-      type: object
-      properties:
-        beginInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range begins at.
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range ends at.
-      description: An object that describes the details of a port range filter.
-    AccessDeniedException: {}
-    BadRequestException: {}
-    OwnerId:
-      type: string
-      pattern: (^\d{12}$)|(^o-[a-z0-9]{10,32}$)
-      minLength: 12
-      maxLength: 34
-    Timestamp:
-      type: string
-      format: date-time
-    PackageFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PackageFilter'
-      minItems: 1
-      maxItems: 10
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 1000000
-    FilterReason:
-      type: string
-      minLength: 1
-      maxLength: 512
-    Port:
-      type: integer
-      minimum: 0
-      maximum: 65535
-    UpdateFilterResponse:
-      type: object
-      required:
-      - arn
-      properties:
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/FilterArn'
-          - description: The Amazon Resource Number (ARN) of the successfully updated filter.
-    StringComparison:
-      type: string
-      enum:
-      - EQUALS
-      - PREFIX
-      - NOT_EQUALS
-    PortRangeFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PortRangeFilter'
-      minItems: 1
-      maxItems: 10
     PackageFilter:
       type: object
       properties:
@@ -970,25 +1166,84 @@ components:
           - $ref: '#/components/schemas/StringFilter'
           - description: The package version to filter on.
       description: Contains information on the details of a package filter.
-    StringInput:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
+    InternalServerException: {}
+    NumberFilter:
+      type: object
+      properties:
+        lowerInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The lowest number to be included in the filter.
+        upperInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The highest number to be included in the filter.
+      description: An object that describes the details of a number filter.
+    ValidationException: {}
     MapFilterList:
       type: array
       items:
         $ref: '#/components/schemas/MapFilter'
       minItems: 1
       maxItems: 10
-    FilterArn:
+    FilterAction:
+      type: string
+      enum:
+      - NONE
+      - SUPPRESS
+    PackageFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PackageFilter'
+      minItems: 1
+      maxItems: 10
+    MapFilter:
+      type: object
+      required:
+      - comparison
+      - key
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/MapComparison'
+          - description: The operator to use when comparing values in the filter.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/MapKey'
+          - description: The tag key used in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MapValue'
+          - description: The tag value used in the filter.
+      description: An object that describes details of a map filter.
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    StringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    FilterName:
       type: string
       minLength: 1
       maxLength: 128
-    ThrottlingException: {}
+    NumberFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NumberFilter'
+      minItems: 1
+      maxItems: 10
+    DateTimeTimestamp:
+      type: string
+      format: date-time
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    Timestamp:
+      type: string
+      format: date-time
     CreateFilterResponse:
       type: object
       required:
@@ -998,9 +1253,72 @@ components:
           allOf:
           - $ref: '#/components/schemas/FilterArn'
           - description: The Amazon Resource Number (ARN) of the successfully created filter.
+    StringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringFilter'
+      minItems: 1
+      maxItems: 10
+    OwnerId:
+      type: string
+      pattern: (^\d{12}$)|(^o-[a-z0-9]{10,32}$)
+      minLength: 12
+      maxLength: 34
+    PortRangeFilter:
+      type: object
+      properties:
+        beginInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range begins at.
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range ends at.
+      description: An object that describes the details of a port range filter.
+    FilterDescription:
+      type: string
+      minLength: 1
+      maxLength: 512
     Double:
       type: number
       format: double
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    StringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/StringComparison'
+          - description: The operator to use when comparing values in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/StringInput'
+          - description: The value to filter on.
+      description: An object that describes the details of a string filter.
+    DateFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DateFilter'
+      minItems: 1
+      maxItems: 10
+    ListFiltersResponse:
+      type: object
+      required:
+      - filters
+      properties:
+        filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: Contains details on the filters associated with your account.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
     Filter:
       type: object
       required:
@@ -1053,48 +1371,58 @@ components:
           - $ref: '#/components/schemas/DateTimeTimestamp'
           - description: The date and time the filter was last updated at.
       description: Details about a filter.
+    MapValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     MapComparison:
       type: string
       enum:
       - EQUALS
-    StringFilter:
+    AccessDeniedException: {}
+    PortRangeFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PortRangeFilter'
+      minItems: 1
+      maxItems: 10
+    FilterReason:
+      type: string
+      minLength: 1
+      maxLength: 512
+    DateFilter:
+      type: object
+      properties:
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the end of the time period filtered on.
+        startInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the start of the time period filtered on.
+      description: Contains details on the time range used to filter findings.
+    UpdateFilterResponse:
       type: object
       required:
-      - comparison
-      - value
+      - arn
       properties:
-        comparison:
+        arn:
           allOf:
-          - $ref: '#/components/schemas/StringComparison'
-          - description: The operator to use when comparing values in the filter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/StringInput'
-          - description: The value to filter on.
-      description: An object that describes the details of a string filter.
-    DateTimeTimestamp:
-      type: string
-      format: date-time
+          - $ref: '#/components/schemas/FilterArn'
+          - description: The Amazon Resource Number (ARN) of the successfully updated filter.
     TagMap:
       type: object
       additionalProperties:
         $ref: '#/components/schemas/MapValue'
-    ResourceNotFoundException: {}
-    DateFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DateFilter'
-      minItems: 1
-      maxItems: 10
-    FilterAction:
-      type: string
-      enum:
-      - NONE
-      - SUPPRESS
-    FilterName:
+    MapKey:
       type: string
       minLength: 1
       maxLength: 128
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 1000000
     FilterCriteria:
       type: object
       properties:
@@ -1267,44 +1595,27 @@ components:
           - $ref: '#/components/schemas/PackageFilterList'
           - description: Details on the vulnerable packages used to filter findings.
       description: Details on the criteria used to define the filter.
-    MapValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    MapFilter:
-      type: object
-      required:
-      - comparison
-      - key
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/MapComparison'
-          - description: The operator to use when comparing values in the filter.
-        key:
-          allOf:
-          - $ref: '#/components/schemas/MapKey'
-          - description: The tag key used in the filter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/MapValue'
-          - description: The tag value used in the filter.
-      description: An object that describes details of a map filter.
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -1327,12 +1638,6 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
@@ -1340,7 +1645,15 @@ components:
       in: header
       description: Amazon Signature authorization v4
       x-amazon-apigateway-authtype: awsSigv4
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
 externalDocs:
   description: Amazon Web Services documentation
   url: https://docs.aws.amazon.com/inspector2/
+x-refined-from:
+- amazon-inspector-openapi-original.yml
+- amazon-inspector-openapi.yml
 x-hasEquivalentPaths: true

@@ -1,35 +1,18 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
-  x-release: v4
-  title: Inspector2 Accountpermissions Coverage API
-  description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
-  x-logo:
-    url: https://twitter.com/awscloud/profile_image?size=original
-    backgroundColor: '#FFFFFF'
-  termsOfService: https://aws.amazon.com/service-terms/
-  contact:
-    name: Mike Ralphson
-    email: mike.ralphson@gmail.com
-    url: https://github.com/mermade/aws2openapi
-    x-twitter: PermittedSoc
-  license:
-    name: Apache 2.0 License
-    url: http://www.apache.org/licenses/
-  x-providerName: amazonaws.com
-  x-serviceName: inspector2
-  x-aws-signingName: inspector2
-  x-origin:
-  - contentType: application/json
-    url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
-    converter:
-      url: https://github.com/mermade/aws2openapi
-    x-apisguru-driver: external
-  x-apiClientRegistration:
-    url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
-  x-apisguru-categories:
-  - cloud
-  x-preferred: true
+  title: Amazon Inspector Coverage API
+  version: '2020-06-08'
+  x-refined-note:
+  - x-apiClientRegistration differs across the merged source definitions and was not carried
+  - x-apisguru-categories differs across the merged source definitions and was not carried
+  - x-aws-signingName differs across the merged source definitions and was not carried
+  - x-logo differs across the merged source definitions and was not carried
+  - x-origin differs across the merged source definitions and was not carried
+  - x-preferred differs across the merged source definitions and was not carried
+  - x-providerName differs across the merged source definitions and was not carried
+  - x-release differs across the merged source definitions and was not carried
+  - x-serviceName differs across the merged source definitions and was not carried
+  description: 'Operations tagged Coverage across 2 of this provider''s published API definitions: amazon-inspector-openapi-original.yml, amazon-inspector-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: http://inspector2.{region}.amazonaws.com
   variables:
@@ -109,8 +92,6 @@ servers:
       - cn-northwest-1
       default: cn-north-1
   description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
-security:
-- hmac: []
 tags:
 - name: Coverage
 paths:
@@ -243,6 +224,87 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Coverage
+      security:
+      - hmac: []
+    servers:
+    - url: http://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: https://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: http://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+    - url: https://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
   /coverage/statistics/list:
     parameters:
     - $ref: '#/components/parameters/X-Amz-Content-Sha256'
@@ -370,12 +432,111 @@ paths:
         dispatcher: FALLBACK
       tags:
       - Coverage
+      security:
+      - hmac: []
+    servers:
+    - url: http://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: https://inspector2.{region}.amazonaws.com
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - us-east-1
+          - us-east-2
+          - us-west-1
+          - us-west-2
+          - us-gov-west-1
+          - us-gov-east-1
+          - ca-central-1
+          - eu-north-1
+          - eu-west-1
+          - eu-west-2
+          - eu-west-3
+          - eu-central-1
+          - eu-south-1
+          - af-south-1
+          - ap-northeast-1
+          - ap-northeast-2
+          - ap-northeast-3
+          - ap-southeast-1
+          - ap-southeast-2
+          - ap-east-1
+          - ap-south-1
+          - sa-east-1
+          - me-south-1
+          default: us-east-1
+      description: The Inspector2 multi-region endpoint
+    - url: http://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
+    - url: https://inspector2.{region}.amazonaws.com.cn
+      variables:
+        region:
+          description: The AWS region
+          enum:
+          - cn-north-1
+          - cn-northwest-1
+          default: cn-north-1
+      description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
 components:
   schemas:
-    String:
+    Ec2Platform:
       type: string
-    ValidationException: {}
-    InternalServerException: {}
+      enum:
+      - WINDOWS
+      - LINUX
+      - UNKNOWN
+    CoverageStringComparison:
+      type: string
+      enum:
+      - EQUALS
+      - NOT_EQUALS
+    ScanStatusCode:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
+    CoverageDateFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CoverageDateFilter'
+      minItems: 1
+      maxItems: 10
     ListCoverageResponse:
       type: object
       properties:
@@ -387,182 +548,78 @@ components:
           allOf:
           - $ref: '#/components/schemas/NextToken'
           - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-    EcrRepositoryMetadata:
+    ResourceId:
+      type: string
+      pattern: (^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))
+      minLength: 10
+      maxLength: 341
+    InternalServerException: {}
+    EcrContainerImageMetadata:
       type: object
       properties:
-        name:
+        tags:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the Amazon ECR repository.
-        scanFrequency:
+          - $ref: '#/components/schemas/TagList'
+          - description: Tags associated with the Amazon ECR image metadata.
+      description: Information on the Amazon ECR image metadata associated with a finding.
+    ScanStatusReason:
+      type: string
+      enum:
+      - PENDING_INITIAL_SCAN
+      - ACCESS_DENIED
+      - INTERNAL_ERROR
+      - UNMANAGED_EC2_INSTANCE
+      - UNSUPPORTED_OS
+      - SCAN_ELIGIBILITY_EXPIRED
+      - RESOURCE_TERMINATED
+      - SUCCESSFUL
+      - NO_RESOURCES_FOUND
+      - IMAGE_SIZE_EXCEEDED
+      - SCAN_FREQUENCY_MANUAL
+      - SCAN_FREQUENCY_SCAN_ON_PUSH
+      - EC2_INSTANCE_STOPPED
+      - PENDING_DISABLE
+      - NO_INVENTORY
+      - STALE_INVENTORY
+      - EXCLUDED_BY_TAG
+      - UNSUPPORTED_RUNTIME
+      - UNSUPPORTED_MEDIA_TYPE
+      - UNSUPPORTED_CONFIG_FILE
+      - DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED
+      - DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED
+      - DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED
+      - DEEP_INSPECTION_NO_INVENTORY
+    ResourceScanMetadata:
+      type: object
+      properties:
+        ec2:
           allOf:
-          - $ref: '#/components/schemas/EcrScanFrequency'
-          - description: The frequency of scans.
-      description: Information on the Amazon ECR repository metadata associated with a finding.
+          - $ref: '#/components/schemas/Ec2Metadata'
+          - description: An object that contains metadata details for an Amazon EC2 instance.
+        ecrImage:
+          allOf:
+          - $ref: '#/components/schemas/EcrContainerImageMetadata'
+          - description: An object that contains details about the container metadata for an Amazon ECR image.
+        ecrRepository:
+          allOf:
+          - $ref: '#/components/schemas/EcrRepositoryMetadata'
+          - description: An object that contains details about the repository an Amazon ECR image resides in.
+        lambdaFunction:
+          allOf:
+          - $ref: '#/components/schemas/LambdaFunctionMetadata'
+          - description: An object that contains metadata details for an AWS Lambda function.
+      description: An object that contains details about the metadata for an Amazon ECR resource.
     LambdaLayerList:
       type: array
       items:
         $ref: '#/components/schemas/String'
       minItems: 0
       maxItems: 5
-    CoveredResources:
+    TagList:
       type: array
       items:
-        $ref: '#/components/schemas/CoveredResource'
-    ScanStatus:
-      type: object
-      required:
-      - reason
-      - statusCode
-      properties:
-        reason:
-          allOf:
-          - $ref: '#/components/schemas/ScanStatusReason'
-          - description: The reason for the scan.
-        statusCode:
-          allOf:
-          - $ref: '#/components/schemas/ScanStatusCode'
-          - description: The status code of the scan.
-      description: The status of the scan.
-    Counts:
-      type: object
-      properties:
-        count:
-          allOf:
-          - $ref: '#/components/schemas/AggCounts'
-          - description: The number of resources.
-        groupKey:
-          allOf:
-          - $ref: '#/components/schemas/GroupKey'
-          - description: The key associated with this group
-      description: a structure that contains information on the count of resources within a group.
-    CoverageStringFilter:
-      type: object
-      required:
-      - comparison
-      - value
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/CoverageStringComparison'
-          - description: The operator to compare strings on.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/CoverageStringInput'
-          - description: The value to compare strings on.
-      description: Contains details of a coverage string filter.
-    CoverageMapFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CoverageMapFilter'
-      minItems: 1
-      maxItems: 10
-    CoverageResourceType:
-      type: string
-      enum:
-      - AWS_EC2_INSTANCE
-      - AWS_ECR_CONTAINER_IMAGE
-      - AWS_ECR_REPOSITORY
-      - AWS_LAMBDA_FUNCTION
-    AccountId:
-      type: string
-      pattern: ^\d{12}$
-      minLength: 12
-      maxLength: 12
-    ScanStatusCode:
-      type: string
-      enum:
-      - ACTIVE
-      - INACTIVE
-    CoverageMapFilter:
-      type: object
-      required:
-      - comparison
-      - key
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/CoverageMapComparison'
-          - description: The operator to compare coverage on.
-        key:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: The tag key associated with the coverage map filter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: The tag value associated with the coverage map filter.
-      description: Contains details of a coverage map filter.
-    GroupKey:
-      type: string
-      enum:
-      - SCAN_STATUS_CODE
-      - SCAN_STATUS_REASON
-      - ACCOUNT_ID
-      - RESOURCE_TYPE
-      - ECR_REPOSITORY_NAME
-    Runtime:
-      type: string
-      enum:
-      - NODEJS
-      - NODEJS_12_X
-      - NODEJS_14_X
-      - NODEJS_16_X
-      - JAVA_8
-      - JAVA_8_AL2
-      - JAVA_11
-      - PYTHON_3_7
-      - PYTHON_3_8
-      - PYTHON_3_9
-      - UNSUPPORTED
-      - NODEJS_18_X
-      - GO_1_X
-      - JAVA_17
-      - PYTHON_3_10
-    Ec2Platform:
-      type: string
-      enum:
-      - WINDOWS
-      - LINUX
-      - UNKNOWN
-    Long:
-      type: integer
-    CoverageStringComparison:
-      type: string
-      enum:
-      - EQUALS
-      - NOT_EQUALS
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 1000000
-    CoverageStringInput:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    ListCoverageStatisticsResponse:
-      type: object
-      required:
-      - totalCounts
-      properties:
-        countsByGroup:
-          allOf:
-          - $ref: '#/components/schemas/CountsList'
-          - description: An array with the number for each group.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-        totalCounts:
-          allOf:
-          - $ref: '#/components/schemas/Long'
-          - description: The total number for all groups.
-    ScanType:
-      type: string
-      enum:
-      - NETWORK
-      - PACKAGE
-      - CODE
+        $ref: '#/components/schemas/String'
+    ValidationException: {}
     CoverageDateFilter:
       type: object
       properties:
@@ -575,6 +632,49 @@ components:
           - $ref: '#/components/schemas/DateTimeTimestamp'
           - description: A timestamp representing the start of the time period to filter results by.
       description: Contains details of a coverage date filter.
+    CoverageMapComparison:
+      type: string
+      enum:
+      - EQUALS
+    CoverageStringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    Ec2Metadata:
+      type: object
+      properties:
+        amiId:
+          allOf:
+          - $ref: '#/components/schemas/AmiId'
+          - description: The ID of the Amazon Machine Image (AMI) used to launch the instance.
+        platform:
+          allOf:
+          - $ref: '#/components/schemas/Ec2Platform'
+          - description: The platform of the instance.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags attached to the instance.
+      description: Meta data details of an Amazon EC2 instance.
+    Long:
+      type: integer
+    GroupKey:
+      type: string
+      enum:
+      - SCAN_STATUS_CODE
+      - SCAN_STATUS_REASON
+      - ACCOUNT_ID
+      - RESOURCE_TYPE
+      - ECR_REPOSITORY_NAME
+    CoverageResourceType:
+      type: string
+      enum:
+      - AWS_EC2_INSTANCE
+      - AWS_ECR_CONTAINER_IMAGE
+      - AWS_ECR_REPOSITORY
+      - AWS_LAMBDA_FUNCTION
+    String:
+      type: string
     CoveredResource:
       type: object
       required:
@@ -612,19 +712,119 @@ components:
           - $ref: '#/components/schemas/ScanType'
           - description: The Amazon Inspector scan type covering the resource.
       description: An object that contains details about a resource covered by Amazon Inspector.
-    EcrContainerImageMetadata:
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+    DateTimeTimestamp:
+      type: string
+      format: date-time
+    Runtime:
+      type: string
+      enum:
+      - NODEJS
+      - NODEJS_12_X
+      - NODEJS_14_X
+      - NODEJS_16_X
+      - JAVA_8
+      - JAVA_8_AL2
+      - JAVA_11
+      - PYTHON_3_7
+      - PYTHON_3_8
+      - PYTHON_3_9
+      - UNSUPPORTED
+      - NODEJS_18_X
+      - GO_1_X
+      - JAVA_17
+      - PYTHON_3_10
+    AggCounts:
+      type: integer
+    Counts:
       type: object
       properties:
-        tags:
+        count:
           allOf:
-          - $ref: '#/components/schemas/TagList'
-          - description: Tags associated with the Amazon ECR image metadata.
-      description: Information on the Amazon ECR image metadata associated with a finding.
-    ResourceId:
+          - $ref: '#/components/schemas/AggCounts'
+          - description: The number of resources.
+        groupKey:
+          allOf:
+          - $ref: '#/components/schemas/GroupKey'
+          - description: The key associated with this group
+      description: a structure that contains information on the count of resources within a group.
+    ListCoverageStatisticsResponse:
+      type: object
+      required:
+      - totalCounts
+      properties:
+        countsByGroup:
+          allOf:
+          - $ref: '#/components/schemas/CountsList'
+          - description: An array with the number for each group.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+        totalCounts:
+          allOf:
+          - $ref: '#/components/schemas/Long'
+          - description: The total number for all groups.
+    CoverageMapFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CoverageMapFilter'
+      minItems: 1
+      maxItems: 10
+    ThrottlingException: {}
+    ScanType:
       type: string
-      pattern: (^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))
-      minLength: 10
-      maxLength: 341
+      enum:
+      - NETWORK
+      - PACKAGE
+      - CODE
+    CoverageStringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CoverageStringFilter'
+      minItems: 1
+      maxItems: 10
+    CoverageStringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/CoverageStringComparison'
+          - description: The operator to compare strings on.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/CoverageStringInput'
+          - description: The value to compare strings on.
+      description: Contains details of a coverage string filter.
+    AmiId:
+      type: string
+      pattern: ^ami-([a-z0-9]{8}|[a-z0-9]{17}|\*)$
+    ScanStatus:
+      type: object
+      required:
+      - reason
+      - statusCode
+      properties:
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/ScanStatusReason'
+          - description: The reason for the scan.
+        statusCode:
+          allOf:
+          - $ref: '#/components/schemas/ScanStatusCode'
+          - description: The status code of the scan.
+      description: The status of the scan.
+    MapValue:
+      type: string
+      minLength: 0
+      maxLength: 256
     LambdaFunctionMetadata:
       type: object
       properties:
@@ -645,136 +845,85 @@ components:
           - $ref: '#/components/schemas/Runtime'
           - description: An AWS Lambda function's runtime.
       description: The AWS Lambda function metadata.
-    CoverageMapComparison:
-      type: string
-      enum:
-      - EQUALS
-    ResourceScanMetadata:
+    CoverageMapFilter:
+      type: object
+      required:
+      - comparison
+      - key
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/CoverageMapComparison'
+          - description: The operator to compare coverage on.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The tag key associated with the coverage map filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The tag value associated with the coverage map filter.
+      description: Contains details of a coverage map filter.
+    EcrRepositoryMetadata:
       type: object
       properties:
-        ec2:
+        name:
           allOf:
-          - $ref: '#/components/schemas/Ec2Metadata'
-          - description: An object that contains metadata details for an Amazon EC2 instance.
-        ecrImage:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Amazon ECR repository.
+        scanFrequency:
           allOf:
-          - $ref: '#/components/schemas/EcrContainerImageMetadata'
-          - description: An object that contains details about the container metadata for an Amazon ECR image.
-        ecrRepository:
-          allOf:
-          - $ref: '#/components/schemas/EcrRepositoryMetadata'
-          - description: An object that contains details about the repository an Amazon ECR image resides in.
-        lambdaFunction:
-          allOf:
-          - $ref: '#/components/schemas/LambdaFunctionMetadata'
-          - description: An object that contains metadata details for an AWS Lambda function.
-      description: An object that contains details about the metadata for an Amazon ECR resource.
-    ThrottlingException: {}
-    CoverageStringFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CoverageStringFilter'
-      minItems: 1
-      maxItems: 10
+          - $ref: '#/components/schemas/EcrScanFrequency'
+          - description: The frequency of scans.
+      description: Information on the Amazon ECR repository metadata associated with a finding.
     CountsList:
       type: array
       items:
         $ref: '#/components/schemas/Counts'
       minItems: 1
       maxItems: 5
-    TagMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/MapValue'
-    DateTimeTimestamp:
-      type: string
-      format: date-time
+    CoveredResources:
+      type: array
+      items:
+        $ref: '#/components/schemas/CoveredResource'
     EcrScanFrequency:
       type: string
       enum:
       - MANUAL
       - SCAN_ON_PUSH
       - CONTINUOUS_SCAN
-    AggCounts:
-      type: integer
-    TagList:
-      type: array
-      items:
-        $ref: '#/components/schemas/String'
-    ScanStatusReason:
+    NextToken:
       type: string
-      enum:
-      - PENDING_INITIAL_SCAN
-      - ACCESS_DENIED
-      - INTERNAL_ERROR
-      - UNMANAGED_EC2_INSTANCE
-      - UNSUPPORTED_OS
-      - SCAN_ELIGIBILITY_EXPIRED
-      - RESOURCE_TERMINATED
-      - SUCCESSFUL
-      - NO_RESOURCES_FOUND
-      - IMAGE_SIZE_EXCEEDED
-      - SCAN_FREQUENCY_MANUAL
-      - SCAN_FREQUENCY_SCAN_ON_PUSH
-      - EC2_INSTANCE_STOPPED
-      - PENDING_DISABLE
-      - NO_INVENTORY
-      - STALE_INVENTORY
-      - EXCLUDED_BY_TAG
-      - UNSUPPORTED_RUNTIME
-      - UNSUPPORTED_MEDIA_TYPE
-      - UNSUPPORTED_CONFIG_FILE
-      - DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED
-      - DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED
-      - DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED
-      - DEEP_INSPECTION_NO_INVENTORY
-    AmiId:
-      type: string
-      pattern: ^ami-([a-z0-9]{8}|[a-z0-9]{17}|\*)$
+      minLength: 0
+      maxLength: 1000000
+    TagMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/MapValue'
     NonEmptyString:
       type: string
       minLength: 1
-    CoverageDateFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CoverageDateFilter'
-      minItems: 1
-      maxItems: 10
-    Ec2Metadata:
-      type: object
-      properties:
-        amiId:
-          allOf:
-          - $ref: '#/components/schemas/AmiId'
-          - description: The ID of the Amazon Machine Image (AMI) used to launch the instance.
-        platform:
-          allOf:
-          - $ref: '#/components/schemas/Ec2Platform'
-          - description: The platform of the instance.
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: The tags attached to the instance.
-      description: Meta data details of an Amazon EC2 instance.
-    MapValue:
-      type: string
-      minLength: 0
-      maxLength: 256
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Security-Token:
       name: X-Amz-Security-Token
       in: header
       schema:
         type: string
       required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -797,12 +946,6 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey
@@ -810,7 +953,15 @@ components:
       in: header
       description: Amazon Signature authorization v4
       x-amazon-apigateway-authtype: awsSigv4
+    sigv4:
+      type: apiKey
+      name: Authorization
+      in: header
+      description: AWS Signature Version 4 authentication
 externalDocs:
   description: Amazon Web Services documentation
   url: https://docs.aws.amazon.com/inspector2/
+x-refined-from:
+- amazon-inspector-openapi-original.yml
+- amazon-inspector-openapi.yml
 x-hasEquivalentPaths: true

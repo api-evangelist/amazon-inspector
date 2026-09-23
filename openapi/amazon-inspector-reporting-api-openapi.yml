@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-06-08'
   x-release: v4
-  title: Inspector2 Accountpermissions Reporting API
+  title: Inspector2 Reporting API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -194,7 +195,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: CreateFindingsReport
-      description: 'Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. '
+      description: Creates a finding report. By default only ACTIVE findings are returned in the report. To see SUPRESSED or CLOSED findings you must specify a value for the findingStatus filter criteria.
       responses:
         '200':
           description: Success
@@ -512,140 +513,12 @@ paths:
       - Reporting
 components:
   schemas:
-    String:
-      type: string
-    ValidationException: {}
-    StringFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StringFilter'
-      minItems: 1
-      maxItems: 10
-    NumberFilter:
-      type: object
-      properties:
-        lowerInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The lowest number to be included in the filter.
-        upperInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The highest number to be included in the filter.
-      description: An object that describes the details of a number filter.
-    DateFilter:
-      type: object
-      properties:
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the end of the time period filtered on.
-        startInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the start of the time period filtered on.
-      description: Contains details on the time range used to filter findings.
-    NumberFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/NumberFilter'
-      minItems: 1
-      maxItems: 10
-    ExternalReportStatus:
-      type: string
-      enum:
-      - SUCCEEDED
-      - IN_PROGRESS
-      - CANCELLED
-      - FAILED
-    InternalServerException: {}
-    MapKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    PortRangeFilter:
-      type: object
-      properties:
-        beginInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range begins at.
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range ends at.
-      description: An object that describes the details of a port range filter.
-    CancelFindingsReportResponse:
-      type: object
-      required:
-      - reportId
-      properties:
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The ID of the canceled report.
-    AccessDeniedException: {}
-    CreateFindingsReportResponse:
-      type: object
-      properties:
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The ID of the report.
-    Timestamp:
-      type: string
-      format: date-time
-    PackageFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PackageFilter'
-      minItems: 1
-      maxItems: 10
-    ErrorMessage:
-      type: string
-    GetFindingsReportStatusResponse:
-      type: object
-      properties:
-        destination:
-          allOf:
-          - $ref: '#/components/schemas/Destination'
-          - description: The destination of the report.
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/ReportingErrorCode'
-          - description: The error code of the report.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: The error message of the report.
-        filterCriteria:
-          allOf:
-          - $ref: '#/components/schemas/FilterCriteria'
-          - description: The filter criteria associated with the report.
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The ID of the report.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/ExternalReportStatus'
-          - description: The status of the report.
-    Port:
-      type: integer
-      minimum: 0
-      maximum: 65535
     StringComparison:
       type: string
       enum:
       - EQUALS
       - PREFIX
       - NOT_EQUALS
-    PortRangeFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PortRangeFilter'
-      minItems: 1
-      maxItems: 10
     PackageFilter:
       type: object
       properties:
@@ -676,24 +549,173 @@ components:
           - $ref: '#/components/schemas/StringFilter'
           - description: The package version to filter on.
       description: Contains information on the details of a package filter.
-    StringInput:
+    InternalServerException: {}
+    NumberFilter:
+      type: object
+      properties:
+        lowerInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The lowest number to be included in the filter.
+        upperInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The highest number to be included in the filter.
+      description: An object that describes the details of a number filter.
+    ExternalReportStatus:
       type: string
-      minLength: 1
-      maxLength: 1024
+      enum:
+      - SUCCEEDED
+      - IN_PROGRESS
+      - CANCELLED
+      - FAILED
+    ValidationException: {}
     MapFilterList:
       type: array
       items:
         $ref: '#/components/schemas/MapFilter'
       minItems: 1
       maxItems: 10
+    PackageFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PackageFilter'
+      minItems: 1
+      maxItems: 10
+    MapFilter:
+      type: object
+      required:
+      - comparison
+      - key
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/MapComparison'
+          - description: The operator to use when comparing values in the filter.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/MapKey'
+          - description: The tag key used in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MapValue'
+          - description: The tag value used in the filter.
+      description: An object that describes details of a map filter.
+    CancelFindingsReportResponse:
+      type: object
+      required:
+      - reportId
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the canceled report.
+    StringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    String:
+      type: string
+    ErrorMessage:
+      type: string
+    Destination:
+      type: object
+      required:
+      - bucketName
+      - kmsKeyArn
+      properties:
+        bucketName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Amazon S3 bucket to export findings to.
+        keyPrefix:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The prefix that the findings will be written under.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ARN of the KMS key used to encrypt data when exporting findings.
+      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+    NumberFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/NumberFilter'
+      minItems: 1
+      maxItems: 10
+    ReportingErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - INVALID_PERMISSIONS
+      - NO_FINDINGS_FOUND
+      - BUCKET_NOT_FOUND
+      - INCOMPATIBLE_BUCKET_REGION
+      - MALFORMED_KMS_KEY
+    CreateFindingsReportResponse:
+      type: object
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the report.
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    Timestamp:
+      type: string
+      format: date-time
+    GetFindingsReportStatusResponse:
+      type: object
+      properties:
+        destination:
+          allOf:
+          - $ref: '#/components/schemas/Destination'
+          - description: The destination of the report.
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ReportingErrorCode'
+          - description: The error code of the report.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The error message of the report.
+        filterCriteria:
+          allOf:
+          - $ref: '#/components/schemas/FilterCriteria'
+          - description: The filter criteria associated with the report.
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the report.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ExternalReportStatus'
+          - description: The status of the report.
+    StringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringFilter'
+      minItems: 1
+      maxItems: 10
+    PortRangeFilter:
+      type: object
+      properties:
+        beginInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range begins at.
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range ends at.
+      description: An object that describes the details of a port range filter.
     ThrottlingException: {}
     Double:
       type: number
       format: double
-    MapComparison:
-      type: string
-      enum:
-      - EQUALS
+    ResourceNotFoundException: {}
     StringFilter:
       type: object
       required:
@@ -709,13 +731,43 @@ components:
           - $ref: '#/components/schemas/StringInput'
           - description: The value to filter on.
       description: An object that describes the details of a string filter.
-    ResourceNotFoundException: {}
     DateFilterList:
       type: array
       items:
         $ref: '#/components/schemas/DateFilter'
       minItems: 1
       maxItems: 10
+    MapValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    MapComparison:
+      type: string
+      enum:
+      - EQUALS
+    AccessDeniedException: {}
+    PortRangeFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PortRangeFilter'
+      minItems: 1
+      maxItems: 10
+    DateFilter:
+      type: object
+      properties:
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the end of the time period filtered on.
+        startInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the start of the time period filtered on.
+      description: Contains details on the time range used to filter findings.
+    MapKey:
+      type: string
+      minLength: 1
+      maxLength: 128
     ReportId:
       type: string
       pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
@@ -891,60 +943,9 @@ components:
           - $ref: '#/components/schemas/PackageFilterList'
           - description: Details on the vulnerable packages used to filter findings.
       description: Details on the criteria used to define the filter.
-    MapFilter:
-      type: object
-      required:
-      - comparison
-      - key
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/MapComparison'
-          - description: The operator to use when comparing values in the filter.
-        key:
-          allOf:
-          - $ref: '#/components/schemas/MapKey'
-          - description: The tag key used in the filter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/MapValue'
-          - description: The tag value used in the filter.
-      description: An object that describes details of a map filter.
-    MapValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    ReportingErrorCode:
-      type: string
-      enum:
-      - INTERNAL_ERROR
-      - INVALID_PERMISSIONS
-      - NO_FINDINGS_FOUND
-      - BUCKET_NOT_FOUND
-      - INCOMPATIBLE_BUCKET_REGION
-      - MALFORMED_KMS_KEY
-    Destination:
-      type: object
-      required:
-      - bucketName
-      - kmsKeyArn
-      properties:
-        bucketName:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the Amazon S3 bucket to export findings to.
-        keyPrefix:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The prefix that the findings will be written under.
-        kmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The ARN of the KMS key used to encrypt data when exporting findings.
-      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -955,8 +956,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -975,12 +982,6 @@ components:
       required: false
     X-Amz-Credential:
       name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

@@ -1,8 +1,8 @@
 openapi: 3.2.0
 info:
-  version: 1.0.0
+  version: '2020-06-08'
   x-release: v4
-  title: Inspector2 Accountpermissions Members API
+  title: Inspector2 Members API
   description: Amazon Inspector is a vulnerability discovery service that automates continuous scanning for security vulnerabilities within your Amazon EC2 and Amazon ECR environments.
   x-logo:
     url: https://twitter.com/awscloud/profile_image?size=original
@@ -24,6 +24,7 @@ info:
     url: https://raw.githubusercontent.com/aws/aws-sdk-js/master/apis/inspector2-2020-06-08.normal.json
     converter:
       url: https://github.com/mermade/aws2openapi
+      version: 1.0.0
     x-apisguru-driver: external
   x-apiClientRegistration:
     url: https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct
@@ -125,7 +126,7 @@ paths:
     - $ref: '#/components/parameters/X-Amz-SignedHeaders'
     post:
       operationId: AssociateMember
-      description: Associates an Amazon Web Services account with an Amazon Inspector delegated administrator. An HTTP 200 response indicates the association was successfully started, but doesn’t indicate whether it was completed. You can check if the association completed by using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a> for multiple accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a> for a single account.
+      description: Associates an Amazon Web Services account with an Amazon Inspector delegated administrator. An HTTP 200 response indicates the association was successfully started, but doesn’t indicate whether it was completed. You can check if the association completed by using ListMembers for multiple accounts or GetMembers for a single account.
       responses:
         '200':
           description: Success
@@ -398,104 +399,9 @@ paths:
       tags:
       - Members
 components:
-  schemas:
-    RelationshipStatus:
-      type: string
-      enum:
-      - CREATED
-      - INVITED
-      - DISABLED
-      - ENABLED
-      - REMOVED
-      - RESIGNED
-      - DELETED
-      - EMAIL_VERIFICATION_IN_PROGRESS
-      - EMAIL_VERIFICATION_FAILED
-      - REGION_DISABLED
-      - ACCOUNT_SUSPENDED
-      - CANNOT_CREATE_DETECTOR_IN_ORG_MASTER
-    ValidationException: {}
-    InternalServerException: {}
-    AccessDeniedException: {}
-    DisassociateMemberResponse:
-      type: object
-      required:
-      - accountId
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The Amazon Web Services account ID of the successfully disassociated member.
-    AccountId:
-      type: string
-      pattern: ^\d{12}$
-      minLength: 12
-      maxLength: 12
-    AssociateMemberResponse:
-      type: object
-      required:
-      - accountId
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The Amazon Web Services account ID of the successfully associated member account.
-    MemberList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Member'
-      minItems: 0
-      maxItems: 50
-    GetMemberResponse:
-      type: object
-      properties:
-        member:
-          allOf:
-          - $ref: '#/components/schemas/Member'
-          - description: Details of the retrieved member account.
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 1000000
-    ThrottlingException: {}
-    ListMembersResponse:
-      type: object
-      properties:
-        members:
-          allOf:
-          - $ref: '#/components/schemas/MemberList'
-          - description: An object that contains details for each member account.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: The pagination parameter to be used on the next list operation to retrieve more items.
-    DateTimeTimestamp:
-      type: string
-      format: date-time
-    ResourceNotFoundException: {}
-    Member:
-      type: object
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The Amazon Web Services account ID of the member account.
-        delegatedAdminAccountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.
-        relationshipStatus:
-          allOf:
-          - $ref: '#/components/schemas/RelationshipStatus'
-          - description: The status of the member account.
-        updatedAt:
-          allOf:
-          - $ref: '#/components/schemas/DateTimeTimestamp'
-          - description: A timestamp showing when the status of this member was last updated.
-      description: Details on a member account in your organization.
   parameters:
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -506,8 +412,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -530,12 +442,101 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
+  schemas:
+    Member:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID of the member account.
+        delegatedAdminAccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID of the Amazon Inspector delegated administrator for this member account.
+        relationshipStatus:
+          allOf:
+          - $ref: '#/components/schemas/RelationshipStatus'
+          - description: The status of the member account.
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: A timestamp showing when the status of this member was last updated.
+      description: Details on a member account in your organization.
+    InternalServerException: {}
+    AssociateMemberResponse:
+      type: object
+      required:
+      - accountId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID of the successfully associated member account.
+    ValidationException: {}
+    GetMemberResponse:
+      type: object
+      properties:
+        member:
+          allOf:
+          - $ref: '#/components/schemas/Member'
+          - description: Details of the retrieved member account.
+    RelationshipStatus:
+      type: string
+      enum:
+      - CREATED
+      - INVITED
+      - DISABLED
+      - ENABLED
+      - REMOVED
+      - RESIGNED
+      - DELETED
+      - EMAIL_VERIFICATION_IN_PROGRESS
+      - EMAIL_VERIFICATION_FAILED
+      - REGION_DISABLED
+      - ACCOUNT_SUSPENDED
+      - CANNOT_CREATE_DETECTOR_IN_ORG_MASTER
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+    DateTimeTimestamp:
+      type: string
+      format: date-time
+    ListMembersResponse:
+      type: object
+      properties:
+        members:
+          allOf:
+          - $ref: '#/components/schemas/MemberList'
+          - description: An object that contains details for each member account.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: The pagination parameter to be used on the next list operation to retrieve more items.
+    MemberList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Member'
+      minItems: 0
+      maxItems: 50
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    AccessDeniedException: {}
+    DisassociateMemberResponse:
+      type: object
+      required:
+      - accountId
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID of the successfully disassociated member.
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 1000000
   securitySchemes:
     hmac:
       type: apiKey
