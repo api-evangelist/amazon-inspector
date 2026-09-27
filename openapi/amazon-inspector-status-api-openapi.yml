@@ -186,49 +186,6 @@ paths:
       tags:
       - Status
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
     AccountStateList:
       type: array
@@ -236,8 +193,109 @@ components:
         $ref: '#/components/schemas/AccountState'
       minItems: 0
       maxItems: 100
-    InternalServerException: {}
-    ValidationException: {}
+    ResourceStatus:
+      type: object
+      required:
+      - ec2
+      - ecr
+      properties:
+        ec2:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector scanning for Amazon EC2 resources.
+        ecr:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector scanning for Amazon ECR resources.
+        lambda:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector scanning for AWS Lambda function.
+        lambdaCode:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: 'The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. '
+      description: Details the status of Amazon Inspector for each resource type Amazon Inspector scans.
+    BatchGetAccountStatusResponse:
+      type: object
+      required:
+      - accounts
+      properties:
+        accounts:
+          allOf:
+          - $ref: '#/components/schemas/AccountStateList'
+          - description: An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.
+        failedAccounts:
+          allOf:
+          - $ref: '#/components/schemas/FailedAccountList'
+          - description: An array of objects detailing any accounts that failed to enable Amazon Inspector and why.
+    FailedAccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FailedAccount'
+      minItems: 0
+      maxItems: 100
+    ErrorCode:
+      type: string
+      enum:
+      - ALREADY_ENABLED
+      - ENABLE_IN_PROGRESS
+      - DISABLE_IN_PROGRESS
+      - SUSPEND_IN_PROGRESS
+      - RESOURCE_NOT_FOUND
+      - ACCESS_DENIED
+      - INTERNAL_ERROR
+      - SSM_UNAVAILABLE
+      - SSM_THROTTLED
+      - EVENTBRIDGE_UNAVAILABLE
+      - EVENTBRIDGE_THROTTLED
+      - RESOURCE_SCAN_NOT_DISABLED
+      - DISASSOCIATE_ALL_MEMBERS
+      - ACCOUNT_IS_ISOLATED
+    NonEmptyString:
+      type: string
+      minLength: 1
+    State:
+      type: object
+      required:
+      - errorCode
+      - errorMessage
+      - status
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ErrorCode'
+          - description: The error code explaining why the account failed to enable Amazon Inspector.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The error message received when the account failed to enable Amazon Inspector.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/Status'
+          - description: The status of Amazon Inspector for the account.
+      description: An object that described the state of Amazon Inspector scans for an account.
+    ResourceState:
+      type: object
+      required:
+      - ec2
+      - ecr
+      properties:
+        ec2:
+          allOf:
+          - $ref: '#/components/schemas/State'
+          - description: An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.
+        ecr:
+          allOf:
+          - $ref: '#/components/schemas/State'
+          - description: An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.
+        lambda:
+          $ref: '#/components/schemas/State'
+        lambdaCode:
+          $ref: '#/components/schemas/State'
+      description: Details the state of Amazon Inspector for each resource type Amazon Inspector scans.
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
     AccountState:
       type: object
       required:
@@ -258,28 +316,15 @@ components:
           - $ref: '#/components/schemas/State'
           - description: An object detailing the status of Amazon Inspector for the account.
       description: An object with details the status of an Amazon Web Services account within your Amazon Inspector environment.
-    AccountId:
-      type: string
-      pattern: ^\d{12}$
-      minLength: 12
-      maxLength: 12
-    ErrorCode:
+    Status:
       type: string
       enum:
-      - ALREADY_ENABLED
-      - ENABLE_IN_PROGRESS
-      - DISABLE_IN_PROGRESS
-      - SUSPEND_IN_PROGRESS
-      - RESOURCE_NOT_FOUND
-      - ACCESS_DENIED
-      - INTERNAL_ERROR
-      - SSM_UNAVAILABLE
-      - SSM_THROTTLED
-      - EVENTBRIDGE_UNAVAILABLE
-      - EVENTBRIDGE_THROTTLED
-      - RESOURCE_SCAN_NOT_DISABLED
-      - DISASSOCIATE_ALL_MEMBERS
-      - ACCOUNT_IS_ISOLATED
+      - ENABLING
+      - ENABLED
+      - DISABLING
+      - DISABLED
+      - SUSPENDING
+      - SUSPENDED
     FailedAccount:
       type: object
       required:
@@ -308,102 +353,57 @@ components:
           - $ref: '#/components/schemas/Status'
           - description: The status of Amazon Inspector for the account.
       description: An object with details on why an account failed to enable Amazon Inspector.
-    ResourceStatus:
-      type: object
-      required:
-      - ec2
-      - ecr
-      properties:
-        ec2:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - description: The status of Amazon Inspector scanning for Amazon EC2 resources.
-        ecr:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - description: The status of Amazon Inspector scanning for Amazon ECR resources.
-        lambda:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - description: The status of Amazon Inspector scanning for AWS Lambda function.
-        lambdaCode:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - description: 'The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. '
-      description: Details the status of Amazon Inspector for each resource type Amazon Inspector scans.
-    ResourceState:
-      type: object
-      required:
-      - ec2
-      - ecr
-      properties:
-        ec2:
-          allOf:
-          - $ref: '#/components/schemas/State'
-          - description: An object detailing the state of Amazon Inspector scanning for Amazon EC2 resources.
-        ecr:
-          allOf:
-          - $ref: '#/components/schemas/State'
-          - description: An object detailing the state of Amazon Inspector scanning for Amazon ECR resources.
-        lambda:
-          $ref: '#/components/schemas/State'
-        lambdaCode:
-          $ref: '#/components/schemas/State'
-      description: Details the state of Amazon Inspector for each resource type Amazon Inspector scans.
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
+    ValidationException: {}
     AccessDeniedException: {}
-    Status:
+    InternalServerException: {}
+    AccountId:
       type: string
-      enum:
-      - ENABLING
-      - ENABLED
-      - DISABLING
-      - DISABLED
-      - SUSPENDING
-      - SUSPENDED
-    BatchGetAccountStatusResponse:
-      type: object
-      required:
-      - accounts
-      properties:
-        accounts:
-          allOf:
-          - $ref: '#/components/schemas/AccountStateList'
-          - description: An array of objects that provide details on the status of Amazon Inspector for each of the requested accounts.
-        failedAccounts:
-          allOf:
-          - $ref: '#/components/schemas/FailedAccountList'
-          - description: An array of objects detailing any accounts that failed to enable Amazon Inspector and why.
-    FailedAccountList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FailedAccount'
-      minItems: 0
-      maxItems: 100
-    State:
-      type: object
-      required:
-      - errorCode
-      - errorMessage
-      - status
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/ErrorCode'
-          - description: The error code explaining why the account failed to enable Amazon Inspector.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: The error message received when the account failed to enable Amazon Inspector.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/Status'
-          - description: The status of Amazon Inspector for the account.
-      description: An object that described the state of Amazon Inspector scans for an account.
-    NonEmptyString:
-      type: string
-      minLength: 1
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+  parameters:
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

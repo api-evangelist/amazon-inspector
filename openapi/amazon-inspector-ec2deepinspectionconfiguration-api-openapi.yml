@@ -300,12 +300,6 @@ paths:
       - Ec2deepinspectionconfiguration
 components:
   schemas:
-    PathList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Path'
-      minItems: 0
-      maxItems: 5
     GetEc2DeepInspectionConfigurationResponse:
       type: object
       properties:
@@ -325,18 +319,11 @@ components:
           allOf:
           - $ref: '#/components/schemas/Ec2DeepInspectionStatus'
           - description: The activation status of Amazon Inspector deep inspection in your account.
-    InternalServerException: {}
-    ValidationException: {}
-    UpdateOrgEc2DeepInspectionConfigurationResponse:
-      type: object
-      properties: {}
     Path:
       type: string
       pattern: ^(?:/(?:\.[-\w]+|[-\w]+(?:\.[-\w]+)?))+/?$
       minLength: 1
       maxLength: 512
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
     Ec2DeepInspectionStatus:
       type: string
       enum:
@@ -344,6 +331,12 @@ components:
       - DEACTIVATED
       - PENDING
       - FAILED
+    PathList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Path'
+      minItems: 0
+      maxItems: 5
     UpdateEc2DeepInspectionConfigurationResponse:
       type: object
       properties:
@@ -363,13 +356,26 @@ components:
           allOf:
           - $ref: '#/components/schemas/Ec2DeepInspectionStatus'
           - description: The status of Amazon Inspector deep inspection in your account.
-    AccessDeniedException: {}
     NonEmptyString:
       type: string
       minLength: 1
+    ThrottlingException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
+    AccessDeniedException: {}
+    InternalServerException: {}
+    UpdateOrgEc2DeepInspectionConfigurationResponse:
+      type: object
+      properties: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -386,6 +392,12 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -394,18 +406,6 @@ components:
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

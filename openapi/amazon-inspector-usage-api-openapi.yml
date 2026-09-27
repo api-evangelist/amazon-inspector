@@ -202,38 +202,26 @@ paths:
       - Usage
 components:
   schemas:
+    UsageValue:
+      type: number
+      format: double
+      minimum: 0
     UsageList:
       type: array
       items:
         $ref: '#/components/schemas/Usage'
-    MonthlyCostEstimate:
-      type: number
-      format: double
-      minimum: 0
-    ListUsageTotalsNextToken:
-      type: string
-      minLength: 1
-    UsageAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-    InternalServerException: {}
-    ValidationException: {}
     Currency:
       type: string
       enum:
       - USD
-    UsageTotal:
-      type: object
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/MeteringAccountId'
-          - description: The account ID of the account that usage data was retrieved for.
-        usage:
-          allOf:
-          - $ref: '#/components/schemas/UsageList'
-          - description: An object representing the total usage for an account.
-      description: The total of usage for an account ID.
+    UsageType:
+      type: string
+      enum:
+      - EC2_INSTANCE_HOURS
+      - ECR_INITIAL_SCAN
+      - ECR_RESCAN
+      - LAMBDA_FUNCTION_HOURS
+      - LAMBDA_FUNCTION_CODE_HOURS
     ListUsageTotalsResponse:
       type: object
       properties:
@@ -246,19 +234,18 @@ components:
           - $ref: '#/components/schemas/UsageTotalList'
           - description: An object with details on the total usage for the requested account.
     ThrottlingException: {}
-    UsageTotalList:
-      type: array
-      items:
-        $ref: '#/components/schemas/UsageTotal'
-    UsageType:
-      type: string
-      enum:
-      - EC2_INSTANCE_HOURS
-      - ECR_INITIAL_SCAN
-      - ECR_RESCAN
-      - LAMBDA_FUNCTION_HOURS
-      - LAMBDA_FUNCTION_CODE_HOURS
-    AccessDeniedException: {}
+    UsageTotal:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account ID of the account that usage data was retrieved for.
+        usage:
+          allOf:
+          - $ref: '#/components/schemas/UsageList'
+          - description: An object representing the total usage for an account.
+      description: The total of usage for an account ID.
     MeteringAccountId:
       type: string
       pattern: '[0-9]{12}'
@@ -282,13 +269,32 @@ components:
           - $ref: '#/components/schemas/UsageType'
           - description: The type scan.
       description: Contains usage information about the cost of Amazon Inspector operation.
-    UsageValue:
+    ListUsageTotalsNextToken:
+      type: string
+      minLength: 1
+    UsageAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+    MonthlyCostEstimate:
       type: number
       format: double
       minimum: 0
+    UsageTotalList:
+      type: array
+      items:
+        $ref: '#/components/schemas/UsageTotal'
+    ValidationException: {}
+    AccessDeniedException: {}
+    InternalServerException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -305,6 +311,12 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -313,18 +325,6 @@ components:
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

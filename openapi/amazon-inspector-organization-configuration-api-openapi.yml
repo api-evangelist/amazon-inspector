@@ -246,9 +246,20 @@ paths:
       - Organization Configuration
 components:
   schemas:
-    AccessDeniedException: {}
+    InternalServerException: {}
+    UpdateOrganizationConfigurationResponse:
+      type: object
+      required:
+      - autoEnable
+      properties:
+        autoEnable:
+          allOf:
+          - $ref: '#/components/schemas/AutoEnable'
+          - description: The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.
     Boolean:
       type: boolean
+    ValidationException: {}
+    AccessDeniedException: {}
     AutoEnable:
       type: object
       required:
@@ -272,7 +283,6 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. <pre><code> &lt;/p&gt; </code></pre>
       description: Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.
-    InternalServerException: {}
     DescribeOrganizationConfigurationResponse:
       type: object
       properties:
@@ -285,19 +295,9 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.
     ThrottlingException: {}
-    UpdateOrganizationConfigurationResponse:
-      type: object
-      required:
-      - autoEnable
-      properties:
-        autoEnable:
-          allOf:
-          - $ref: '#/components/schemas/AutoEnable'
-          - description: The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.
-    ValidationException: {}
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -308,14 +308,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -326,14 +326,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

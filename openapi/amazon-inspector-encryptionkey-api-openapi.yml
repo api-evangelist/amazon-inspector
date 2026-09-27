@@ -361,12 +361,12 @@ paths:
       - Encryptionkey
 components:
   schemas:
-    UpdateEncryptionKeyResponse:
-      type: object
-      properties: {}
-    ResetEncryptionKeyResponse:
-      type: object
-      properties: {}
+    KmsKeyArn:
+      type: string
+      pattern: ^arn:aws(-(us-gov|cn))?:kms:([a-z0-9][-.a-z0-9]{0,62})?:[0-9]{12}?:key/(([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(mrk-[0-9a-zA-Z]{32}))$
+    InternalServerException: {}
+    ResourceNotFoundException: {}
+    ValidationException: {}
     AccessDeniedException: {}
     GetEncryptionKeyResponse:
       type: object
@@ -377,22 +377,22 @@ components:
           allOf:
           - $ref: '#/components/schemas/KmsKeyArn'
           - description: A kms key ID.
-    KmsKeyArn:
-      type: string
-      pattern: ^arn:aws(-(us-gov|cn))?:kms:([a-z0-9][-.a-z0-9]{0,62})?:[0-9]{12}?:key/(([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(mrk-[0-9a-zA-Z]{32}))$
+    ResetEncryptionKeyResponse:
+      type: object
+      properties: {}
     ThrottlingException: {}
-    InternalServerException: {}
-    ResourceNotFoundException: {}
-    ValidationException: {}
+    UpdateEncryptionKeyResponse:
+      type: object
+      properties: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -415,14 +415,14 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

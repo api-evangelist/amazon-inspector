@@ -195,26 +195,51 @@ paths:
       - Vulnerabilities
 components:
   schemas:
-    EpssScore:
-      type: number
-      format: double
-    Targets:
+    VulnIdList:
       type: array
       items:
-        $ref: '#/components/schemas/Target'
+        $ref: '#/components/schemas/VulnId'
+      minItems: 1
+      maxItems: 1
+    VendorCreatedAt:
+      type: string
+      format: date-time
+    Ttps:
+      type: array
+      items:
+        $ref: '#/components/schemas/Ttp'
       minItems: 0
+    VendorUpdatedAt:
+      type: string
+      format: date-time
+    Ttp:
+      type: string
+      minLength: 0
+      maxLength: 30
+    Cvss2BaseScore:
+      type: number
+      format: double
+    VendorSeverity:
+      type: string
+      minLength: 1
+      maxLength: 64
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 1000000
+    Target:
+      type: string
+      minLength: 0
+      maxLength: 50
     VulnerabilityReferenceUrl:
       type: string
       minLength: 0
-    Cvss2ScoringVector:
+    LastSeen:
       type: string
-      minLength: 0
-    Vulnerabilities:
-      type: array
-      items:
-        $ref: '#/components/schemas/Vulnerability'
-      minItems: 0
-      maxItems: 1
+      format: date-time
+    Cvss3BaseScore:
+      type: number
+      format: double
     Vulnerability:
       type: object
       required:
@@ -289,96 +314,6 @@ components:
           - $ref: '#/components/schemas/VendorUpdatedAt'
           - description: The date and time when the vendor last updated this vulnerability.
       description: Contains details about a specific vulnerability Amazon Inspector can detect.
-    Cwe:
-      type: string
-      minLength: 0
-    InternalServerException: {}
-    Cvss3:
-      type: object
-      properties:
-        baseScore:
-          allOf:
-          - $ref: '#/components/schemas/Cvss3BaseScore'
-          - description: The CVSS v3 base score for the vulnerability.
-        scoringVector:
-          allOf:
-          - $ref: '#/components/schemas/Cvss3ScoringVector'
-          - description: The scoring vector associated with the CVSS v3 score.
-      description: The Common Vulnerability Scoring System (CVSS) version 3 details for the vulnerability.
-    ValidationException: {}
-    Target:
-      type: string
-      minLength: 0
-      maxLength: 50
-    VendorCreatedAt:
-      type: string
-      format: date-time
-    VendorUpdatedAt:
-      type: string
-      format: date-time
-    Cvss2:
-      type: object
-      properties:
-        baseScore:
-          allOf:
-          - $ref: '#/components/schemas/Cvss2BaseScore'
-          - description: The CVSS v2 base score for the vulnerability.
-        scoringVector:
-          allOf:
-          - $ref: '#/components/schemas/Cvss2ScoringVector'
-          - description: The scoring vector associated with the CVSS v2 score.
-      description: The Common Vulnerability Scoring System (CVSS) version 2 details for the vulnerability.
-    CisaDateDue:
-      type: string
-      format: date-time
-    FirstSeen:
-      type: string
-      format: date-time
-    Ttps:
-      type: array
-      items:
-        $ref: '#/components/schemas/Ttp'
-      minItems: 0
-    CisaData:
-      type: object
-      properties:
-        action:
-          allOf:
-          - $ref: '#/components/schemas/CisaAction'
-          - description: The remediation action recommended by CISA for this vulnerability.
-        dateAdded:
-          allOf:
-          - $ref: '#/components/schemas/CisaDateAdded'
-          - description: The date and time CISA added this vulnerability to their catalogue.
-        dateDue:
-          allOf:
-          - $ref: '#/components/schemas/CisaDateDue'
-          - description: The date and time CISA expects a fix to have been provided vulnerability.
-      description: The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.
-    RelatedVulnerabilities:
-      type: array
-      items:
-        $ref: '#/components/schemas/RelatedVulnerability'
-      minItems: 0
-      maxItems: 100
-    LastSeen:
-      type: string
-      format: date-time
-    DetectionPlatforms:
-      type: array
-      items:
-        $ref: '#/components/schemas/NonEmptyString'
-      minItems: 0
-      maxItems: 100
-    RelatedVulnerability:
-      type: string
-      minLength: 0
-    VulnIdList:
-      type: array
-      items:
-        $ref: '#/components/schemas/VulnId'
-      minItems: 1
-      maxItems: 1
     VulnerabilitySource:
       type: string
       enum:
@@ -396,6 +331,38 @@ components:
           allOf:
           - $ref: '#/components/schemas/Vulnerabilities'
           - description: Details about the listed vulnerability.
+    NonEmptyString:
+      type: string
+      minLength: 1
+    Epss:
+      type: object
+      properties:
+        score:
+          allOf:
+          - $ref: '#/components/schemas/EpssScore'
+          - description: The Exploit Prediction Scoring System (EPSS) score.
+      description: Details about the Exploit Prediction Scoring System (EPSS) score.
+    Cvss2ScoringVector:
+      type: string
+      minLength: 0
+    Cvss2:
+      type: object
+      properties:
+        baseScore:
+          allOf:
+          - $ref: '#/components/schemas/Cvss2BaseScore'
+          - description: The CVSS v2 base score for the vulnerability.
+        scoringVector:
+          allOf:
+          - $ref: '#/components/schemas/Cvss2ScoringVector'
+          - description: The scoring vector associated with the CVSS v2 score.
+      description: The Common Vulnerability Scoring System (CVSS) version 2 details for the vulnerability.
+    ThrottlingException: {}
+    Targets:
+      type: array
+      items:
+        $ref: '#/components/schemas/Target'
+      minItems: 0
     ExploitObserved:
       type: object
       properties:
@@ -408,55 +375,80 @@ components:
           - $ref: '#/components/schemas/LastSeen'
           - description: The date an time when the exploit was last seen.
       description: Contains information on when this exploit was observed.
-    VulnId:
+    VulnerabilityDescription:
       type: string
-      pattern: ^CVE-[12][0-9]{3}-[0-9]{1,10}$
-    VendorSeverity:
-      type: string
-      minLength: 1
-      maxLength: 64
-    VulnerabilitySourceUrl:
-      type: string
-      minLength: 0
-    ThrottlingException: {}
-    VulnerabilityReferenceUrls:
-      type: array
-      items:
-        $ref: '#/components/schemas/VulnerabilityReferenceUrl'
-      minItems: 0
-      maxItems: 100
-    CisaAction:
-      type: string
-      minLength: 0
-    CisaDateAdded:
-      type: string
-      format: date-time
-    AccessDeniedException: {}
-    Cvss3BaseScore:
-      type: number
-      format: double
-    Epss:
-      type: object
-      properties:
-        score:
-          allOf:
-          - $ref: '#/components/schemas/EpssScore'
-          - description: The Exploit Prediction Scoring System (EPSS) score.
-      description: Details about the Exploit Prediction Scoring System (EPSS) score.
     Cwes:
       type: array
       items:
         $ref: '#/components/schemas/Cwe'
       minItems: 0
-    Cvss2BaseScore:
+    EpssScore:
       type: number
       format: double
-    VulnerabilityDescription:
-      type: string
-    NextToken:
+    Cvss3:
+      type: object
+      properties:
+        baseScore:
+          allOf:
+          - $ref: '#/components/schemas/Cvss3BaseScore'
+          - description: The CVSS v3 base score for the vulnerability.
+        scoringVector:
+          allOf:
+          - $ref: '#/components/schemas/Cvss3ScoringVector'
+          - description: The scoring vector associated with the CVSS v3 score.
+      description: The Common Vulnerability Scoring System (CVSS) version 3 details for the vulnerability.
+    VulnerabilitySourceUrl:
       type: string
       minLength: 0
-      maxLength: 1000000
+    CisaData:
+      type: object
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/CisaAction'
+          - description: The remediation action recommended by CISA for this vulnerability.
+        dateAdded:
+          allOf:
+          - $ref: '#/components/schemas/CisaDateAdded'
+          - description: The date and time CISA added this vulnerability to their catalogue.
+        dateDue:
+          allOf:
+          - $ref: '#/components/schemas/CisaDateDue'
+          - description: The date and time CISA expects a fix to have been provided vulnerability.
+      description: The Cybersecurity and Infrastructure Security Agency (CISA) details for a specific vulnerability.
+    Cvss3ScoringVector:
+      type: string
+      minLength: 0
+    CisaDateDue:
+      type: string
+      format: date-time
+    FirstSeen:
+      type: string
+      format: date-time
+    RelatedVulnerabilities:
+      type: array
+      items:
+        $ref: '#/components/schemas/RelatedVulnerability'
+      minItems: 0
+      maxItems: 100
+    Vulnerabilities:
+      type: array
+      items:
+        $ref: '#/components/schemas/Vulnerability'
+      minItems: 0
+      maxItems: 1
+    DetectionPlatforms:
+      type: array
+      items:
+        $ref: '#/components/schemas/NonEmptyString'
+      minItems: 0
+      maxItems: 100
+    VulnId:
+      type: string
+      pattern: ^CVE-[12][0-9]{3}-[0-9]{1,10}$
+    RelatedVulnerability:
+      type: string
+      minLength: 0
     AtigData:
       type: object
       properties:
@@ -477,19 +469,33 @@ components:
           - $ref: '#/components/schemas/Ttps'
           - description: The <a href="https://attack.mitre.org/">MITRE ATT&amp;CK</a> tactics, techniques, and procedures (TTPs) associated with vulnerability.
       description: The Amazon Web Services Threat Intel Group (ATIG) details for a specific vulnerability.
-    Cvss3ScoringVector:
+    Cwe:
       type: string
       minLength: 0
-    NonEmptyString:
+    VulnerabilityReferenceUrls:
+      type: array
+      items:
+        $ref: '#/components/schemas/VulnerabilityReferenceUrl'
+      minItems: 0
+      maxItems: 100
+    CisaDateAdded:
       type: string
-      minLength: 1
-    Ttp:
+      format: date-time
+    ValidationException: {}
+    AccessDeniedException: {}
+    InternalServerException: {}
+    CisaAction:
       type: string
       minLength: 0
-      maxLength: 30
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -506,6 +512,12 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-SignedHeaders:
       name: X-Amz-SignedHeaders
       in: header
@@ -514,18 +526,6 @@ components:
       required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
       in: header
       schema:
         type: string

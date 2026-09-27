@@ -39,6 +39,7 @@ tags:
   - Lambda
   - Security
   - Vulnerability Scanning
+  - Vulnerability Management
 url: https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/apis.yml
 created: '2026-03-16'
 modified: '2026-05-19'
@@ -433,8 +434,6 @@ apis:
   humanURL: https://aws.amazon.com/inspector/
   baseURL: https://inspector2.amazonaws.com
   tags:
-  - Organizationconfiguration
-  tags_raw:
   - Organization Configuration
   properties:
   - type: OpenAPI
@@ -532,5 +531,5 @@ integrations:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
-x-parent: aws
+x-parent: amazon-web-services
 x-relationship: product
