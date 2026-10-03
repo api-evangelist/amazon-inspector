@@ -202,89 +202,15 @@ paths:
       tags:
       - Accountpermissions
 components:
-  schemas:
-    InternalServerException: {}
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 1000000
-    ListAccountPermissionsResponse:
-      type: object
-      required:
-      - permissions
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-        permissions:
-          allOf:
-          - $ref: '#/components/schemas/Permissions'
-          - description: Contains details on the permissions an account has to configure Amazon Inspector.
-    Service:
-      type: string
-      enum:
-      - EC2
-      - ECR
-      - LAMBDA
-    Operation:
-      type: string
-      enum:
-      - ENABLE_SCANNING
-      - DISABLE_SCANNING
-      - ENABLE_REPOSITORY
-      - DISABLE_REPOSITORY
-    Permission:
-      type: object
-      required:
-      - operation
-      - service
-      properties:
-        operation:
-          allOf:
-          - $ref: '#/components/schemas/Operation'
-          - description: The operations that can be performed with the given permissions.
-        service:
-          allOf:
-          - $ref: '#/components/schemas/Service'
-          - description: The services that the permissions allow an account to perform the given operations for.
-      description: Contains information on the permissions an account has within Amazon Inspector.
-    Permissions:
-      type: array
-      items:
-        $ref: '#/components/schemas/Permission'
-      minItems: 0
-      maxItems: 1024
-    ValidationException: {}
-    AccessDeniedException: {}
-    ThrottlingException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
       required: false
     X-Amz-Signature:
       name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string
@@ -301,6 +227,80 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+  schemas:
+    Permissions:
+      type: array
+      items:
+        $ref: '#/components/schemas/Permission'
+      minItems: 0
+      maxItems: 1024
+    InternalServerException: {}
+    Permission:
+      type: object
+      required:
+      - operation
+      - service
+      properties:
+        operation:
+          allOf:
+          - $ref: '#/components/schemas/Operation'
+          - description: The operations that can be performed with the given permissions.
+        service:
+          allOf:
+          - $ref: '#/components/schemas/Service'
+          - description: The services that the permissions allow an account to perform the given operations for.
+      description: Contains information on the permissions an account has within Amazon Inspector.
+    ListAccountPermissionsResponse:
+      type: object
+      required:
+      - permissions
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+        permissions:
+          allOf:
+          - $ref: '#/components/schemas/Permissions'
+          - description: Contains details on the permissions an account has to configure Amazon Inspector.
+    ValidationException: {}
+    ThrottlingException: {}
+    AccessDeniedException: {}
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 1000000
+    Operation:
+      type: string
+      enum:
+      - ENABLE_SCANNING
+      - DISABLE_SCANNING
+      - ENABLE_REPOSITORY
+      - DISABLE_REPOSITORY
+    Service:
+      type: string
+      enum:
+      - EC2
+      - ECR
+      - LAMBDA
   securitySchemes:
     hmac:
       type: apiKey

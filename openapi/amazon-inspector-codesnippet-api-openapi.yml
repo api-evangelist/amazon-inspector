@@ -182,7 +182,150 @@ paths:
       tags:
       - Codesnippet
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
+    CodeSnippetErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - ACCESS_DENIED
+      - CODE_SNIPPET_NOT_FOUND
+      - INVALID_INPUT
+    SuggestedFixCodeString:
+      type: string
+      minLength: 1
+      maxLength: 2500
+    CodeLineList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeLine'
+      minItems: 1
+      maxItems: 20
+    NonEmptyString:
+      type: string
+      minLength: 1
+    ThrottlingException: {}
+    CodeSnippetError:
+      type: object
+      required:
+      - errorCode
+      - errorMessage
+      - findingArn
+      properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/CodeSnippetErrorCode'
+          - description: The error code for the error that prevented a code snippet from being retrieved.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: The error message received when Amazon Inspector failed to retrieve a code snippet.
+        findingArn:
+          allOf:
+          - $ref: '#/components/schemas/FindingArn'
+          - description: The ARN of the finding that a code snippet couldn't be retrieved for.
+      description: Contains information about any errors encountered while trying to retrieve a code snippet.
+    FindingArn:
+      type: string
+      pattern: ^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$
+      minLength: 1
+      maxLength: 100
+    InternalServerException: {}
+    Integer:
+      type: integer
+    SuggestedFixDescriptionString:
+      type: string
+      minLength: 1
+      maxLength: 1000
+    SuggestedFixes:
+      type: array
+      items:
+        $ref: '#/components/schemas/SuggestedFix'
+      minItems: 1
+      maxItems: 5
+    SuggestedFix:
+      type: object
+      properties:
+        code:
+          allOf:
+          - $ref: '#/components/schemas/SuggestedFixCodeString'
+          - description: The fix's code.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/SuggestedFixDescriptionString'
+          - description: The fix's description.
+      description: A suggested fix for a vulnerability in your Lambda function code.
+    CodeSnippetResultList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeSnippetResult'
+    ValidationException: {}
+    CodeSnippetErrorList:
+      type: array
+      items:
+        $ref: '#/components/schemas/CodeSnippetError'
+    AccessDeniedException: {}
+    CodeLineContentString:
+      type: string
+      minLength: 0
+      maxLength: 240
+    CodeLine:
+      type: object
+      required:
+      - content
+      - lineNumber
+      properties:
+        content:
+          allOf:
+          - $ref: '#/components/schemas/CodeLineContentString'
+          - description: The content of a line of code
+        lineNumber:
+          allOf:
+          - $ref: '#/components/schemas/Integer'
+          - description: The line number that a section of code is located at.
+      description: Contains information on the lines of code associated with a code snippet.
     BatchGetCodeSnippetResponse:
       type: object
       properties:
@@ -218,149 +361,6 @@ components:
           - $ref: '#/components/schemas/SuggestedFixes'
           - description: Details of a suggested code fix.
       description: Contains information on a code snippet retrieved by Amazon Inspector from a code vulnerability finding.
-    FindingArn:
-      type: string
-      pattern: ^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$
-      minLength: 1
-      maxLength: 100
-    Integer:
-      type: integer
-    SuggestedFixDescriptionString:
-      type: string
-      minLength: 1
-      maxLength: 1000
-    SuggestedFixCodeString:
-      type: string
-      minLength: 1
-      maxLength: 2500
-    CodeLineList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeLine'
-      minItems: 1
-      maxItems: 20
-    NonEmptyString:
-      type: string
-      minLength: 1
-    ThrottlingException: {}
-    SuggestedFix:
-      type: object
-      properties:
-        code:
-          allOf:
-          - $ref: '#/components/schemas/SuggestedFixCodeString'
-          - description: The fix's code.
-        description:
-          allOf:
-          - $ref: '#/components/schemas/SuggestedFixDescriptionString'
-          - description: The fix's description.
-      description: A suggested fix for a vulnerability in your Lambda function code.
-    CodeLine:
-      type: object
-      required:
-      - content
-      - lineNumber
-      properties:
-        content:
-          allOf:
-          - $ref: '#/components/schemas/CodeLineContentString'
-          - description: The content of a line of code
-        lineNumber:
-          allOf:
-          - $ref: '#/components/schemas/Integer'
-          - description: The line number that a section of code is located at.
-      description: Contains information on the lines of code associated with a code snippet.
-    CodeSnippetErrorList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeSnippetError'
-    CodeSnippetResultList:
-      type: array
-      items:
-        $ref: '#/components/schemas/CodeSnippetResult'
-    CodeSnippetError:
-      type: object
-      required:
-      - errorCode
-      - errorMessage
-      - findingArn
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/CodeSnippetErrorCode'
-          - description: The error code for the error that prevented a code snippet from being retrieved.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: The error message received when Amazon Inspector failed to retrieve a code snippet.
-        findingArn:
-          allOf:
-          - $ref: '#/components/schemas/FindingArn'
-          - description: The ARN of the finding that a code snippet couldn't be retrieved for.
-      description: Contains information about any errors encountered while trying to retrieve a code snippet.
-    CodeSnippetErrorCode:
-      type: string
-      enum:
-      - INTERNAL_ERROR
-      - ACCESS_DENIED
-      - CODE_SNIPPET_NOT_FOUND
-      - INVALID_INPUT
-    SuggestedFixes:
-      type: array
-      items:
-        $ref: '#/components/schemas/SuggestedFix'
-      minItems: 1
-      maxItems: 5
-    ValidationException: {}
-    AccessDeniedException: {}
-    CodeLineContentString:
-      type: string
-      minLength: 0
-      maxLength: 240
-    InternalServerException: {}
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -312,18 +312,7 @@ paths:
       - Tags
 components:
   schemas:
-    TagKey:
-      type: string
-      pattern: ^(?!aws:)[a-zA-Z+-=._:/]+$
-      minLength: 1
-      maxLength: 128
-    InternalServerException: {}
     ResourceNotFoundException: {}
-    BadRequestException: {}
-    TagMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/MapValue'
     ListTagsForResourceResponse:
       type: object
       properties:
@@ -331,21 +320,50 @@ components:
           allOf:
           - $ref: '#/components/schemas/TagMap'
           - description: The tags associated with the resource.
-    ValidationException: {}
     TagResourceResponse:
       type: object
       properties: {}
-    UntagResourceResponse:
-      type: object
-      properties: {}
+    InternalServerException: {}
     MapValue:
       type: string
       minLength: 0
       maxLength: 256
+    ValidationException: {}
+    TagMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/MapValue'
+    TagKey:
+      type: string
+      pattern: ^(?!aws:)[a-zA-Z+-=._:/]+$
+      minLength: 1
+      maxLength: 128
     ThrottlingException: {}
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    BadRequestException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -362,26 +380,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string

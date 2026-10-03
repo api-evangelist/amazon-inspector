@@ -194,6 +194,11 @@ paths:
       - Disable
 components:
   schemas:
+    ResourceNotFoundException: {}
+    NonEmptyString:
+      type: string
+      minLength: 1
+    ThrottlingException: {}
     ResourceStatus:
       type: object
       required:
@@ -217,6 +222,52 @@ components:
           - $ref: '#/components/schemas/Status'
           - description: 'The status of Amazon Inspector scanning for custom application code for Amazon Web Services Lambda functions. '
       description: Details the status of Amazon Inspector for each resource type Amazon Inspector scans.
+    Status:
+      type: string
+      enum:
+      - ENABLING
+      - ENABLED
+      - DISABLING
+      - DISABLED
+      - SUSPENDING
+      - SUSPENDED
+    AccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Account'
+    InternalServerException: {}
+    ResourceScanType:
+      type: string
+      enum:
+      - EC2
+      - ECR
+      - LAMBDA
+      - LAMBDA_CODE
+    ErrorCode:
+      type: string
+      enum:
+      - ALREADY_ENABLED
+      - ENABLE_IN_PROGRESS
+      - DISABLE_IN_PROGRESS
+      - SUSPEND_IN_PROGRESS
+      - RESOURCE_NOT_FOUND
+      - ACCESS_DENIED
+      - INTERNAL_ERROR
+      - SSM_UNAVAILABLE
+      - SSM_THROTTLED
+      - EVENTBRIDGE_UNAVAILABLE
+      - EVENTBRIDGE_THROTTLED
+      - RESOURCE_SCAN_NOT_DISABLED
+      - DISASSOCIATE_ALL_MEMBERS
+      - ACCOUNT_IS_ISOLATED
+    FailedAccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FailedAccount'
+      minItems: 0
+      maxItems: 100
+    ValidationException: {}
+    AccessDeniedException: {}
     Account:
       type: object
       required:
@@ -237,12 +288,11 @@ components:
           - $ref: '#/components/schemas/Status'
           - description: The status of Amazon Inspector for the account.
       description: An Amazon Web Services account within your environment that Amazon Inspector has been enabled for.
-    FailedAccountList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FailedAccount'
-      minItems: 0
-      maxItems: 100
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
     DisableResponse:
       type: object
       required:
@@ -256,48 +306,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/FailedAccountList'
           - description: Information on any accounts for which Amazon Inspector scans could not be disabled. Details are provided for each account.
-    ErrorCode:
-      type: string
-      enum:
-      - ALREADY_ENABLED
-      - ENABLE_IN_PROGRESS
-      - DISABLE_IN_PROGRESS
-      - SUSPEND_IN_PROGRESS
-      - RESOURCE_NOT_FOUND
-      - ACCESS_DENIED
-      - INTERNAL_ERROR
-      - SSM_UNAVAILABLE
-      - SSM_THROTTLED
-      - EVENTBRIDGE_UNAVAILABLE
-      - EVENTBRIDGE_THROTTLED
-      - RESOURCE_SCAN_NOT_DISABLED
-      - DISASSOCIATE_ALL_MEMBERS
-      - ACCOUNT_IS_ISOLATED
-    NonEmptyString:
-      type: string
-      minLength: 1
-    AccountList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Account'
-    ThrottlingException: {}
-    ResourceScanType:
-      type: string
-      enum:
-      - EC2
-      - ECR
-      - LAMBDA
-      - LAMBDA_CODE
-    ResourceNotFoundException: {}
-    Status:
-      type: string
-      enum:
-      - ENABLING
-      - ENABLED
-      - DISABLING
-      - DISABLED
-      - SUSPENDING
-      - SUSPENDED
     FailedAccount:
       type: object
       required:
@@ -326,39 +334,7 @@ components:
           - $ref: '#/components/schemas/Status'
           - description: The status of Amazon Inspector for the account.
       description: An object with details on why an account failed to enable Amazon Inspector.
-    ValidationException: {}
-    AccessDeniedException: {}
-    InternalServerException: {}
-    AccountId:
-      type: string
-      pattern: ^\d{12}$
-      minLength: 12
-      maxLength: 12
   parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Signature:
       name: X-Amz-Signature
       in: header
@@ -371,8 +347,32 @@ components:
       schema:
         type: string
       required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string

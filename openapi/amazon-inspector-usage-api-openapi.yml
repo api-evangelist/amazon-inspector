@@ -201,19 +201,58 @@ paths:
       tags:
       - Usage
 components:
+  parameters:
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   schemas:
-    UsageValue:
-      type: number
-      format: double
-      minimum: 0
     UsageList:
       type: array
       items:
         $ref: '#/components/schemas/Usage'
-    Currency:
+    MeteringAccountId:
       type: string
-      enum:
-      - USD
+      pattern: '[0-9]{12}'
+    ThrottlingException: {}
     UsageType:
       type: string
       enum:
@@ -222,6 +261,11 @@ components:
       - ECR_RESCAN
       - LAMBDA_FUNCTION_HOURS
       - LAMBDA_FUNCTION_CODE_HOURS
+    InternalServerException: {}
+    UsageValue:
+      type: number
+      format: double
+      minimum: 0
     ListUsageTotalsResponse:
       type: object
       properties:
@@ -233,22 +277,9 @@ components:
           allOf:
           - $ref: '#/components/schemas/UsageTotalList'
           - description: An object with details on the total usage for the requested account.
-    ThrottlingException: {}
-    UsageTotal:
-      type: object
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/MeteringAccountId'
-          - description: The account ID of the account that usage data was retrieved for.
-        usage:
-          allOf:
-          - $ref: '#/components/schemas/UsageList'
-          - description: An object representing the total usage for an account.
-      description: The total of usage for an account ID.
-    MeteringAccountId:
+    ListUsageTotalsNextToken:
       type: string
-      pattern: '[0-9]{12}'
+      minLength: 1
     Usage:
       type: object
       properties:
@@ -269,66 +300,35 @@ components:
           - $ref: '#/components/schemas/UsageType'
           - description: The type scan.
       description: Contains usage information about the cost of Amazon Inspector operation.
-    ListUsageTotalsNextToken:
-      type: string
-      minLength: 1
-    UsageAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-    MonthlyCostEstimate:
-      type: number
-      format: double
-      minimum: 0
+    ValidationException: {}
     UsageTotalList:
       type: array
       items:
         $ref: '#/components/schemas/UsageTotal'
-    ValidationException: {}
     AccessDeniedException: {}
-    InternalServerException: {}
-  parameters:
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
+    UsageTotal:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account ID of the account that usage data was retrieved for.
+        usage:
+          allOf:
+          - $ref: '#/components/schemas/UsageList'
+          - description: An object representing the total usage for an account.
+      description: The total of usage for an account ID.
+    MonthlyCostEstimate:
+      type: number
+      format: double
+      minimum: 0
+    Currency:
+      type: string
+      enum:
+      - USD
+    UsageAccountId:
+      type: string
+      pattern: '[0-9]{12}'
   securitySchemes:
     hmac:
       type: apiKey
