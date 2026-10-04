@@ -202,56 +202,39 @@ paths:
       tags:
       - Accountpermissions
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
+    AccessDeniedException: {}
+    ListAccountPermissionsResponse:
+      type: object
+      required:
+      - permissions
+      properties:
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+        permissions:
+          allOf:
+          - $ref: '#/components/schemas/Permissions'
+          - description: Contains details on the permissions an account has to configure Amazon Inspector.
+    ValidationException: {}
+    Service:
+      type: string
+      enum:
+      - EC2
+      - ECR
+      - LAMBDA
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 1000000
     Permissions:
       type: array
       items:
         $ref: '#/components/schemas/Permission'
       minItems: 0
       maxItems: 1024
+    ThrottlingException: {}
     InternalServerException: {}
     Permission:
       type: object
@@ -268,26 +251,6 @@ components:
           - $ref: '#/components/schemas/Service'
           - description: The services that the permissions allow an account to perform the given operations for.
       description: Contains information on the permissions an account has within Amazon Inspector.
-    ListAccountPermissionsResponse:
-      type: object
-      required:
-      - permissions
-      properties:
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
-        permissions:
-          allOf:
-          - $ref: '#/components/schemas/Permissions'
-          - description: Contains details on the permissions an account has to configure Amazon Inspector.
-    ValidationException: {}
-    ThrottlingException: {}
-    AccessDeniedException: {}
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 1000000
     Operation:
       type: string
       enum:
@@ -295,12 +258,49 @@ components:
       - DISABLE_SCANNING
       - ENABLE_REPOSITORY
       - DISABLE_REPOSITORY
-    Service:
-      type: string
-      enum:
-      - EC2
-      - ECR
-      - LAMBDA
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

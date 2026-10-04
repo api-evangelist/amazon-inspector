@@ -411,6 +411,44 @@ paths:
       - Delegatedadminaccounts
 components:
   schemas:
+    GetDelegatedAdminAccountResponse:
+      type: object
+      properties:
+        delegatedAdmin:
+          allOf:
+          - $ref: '#/components/schemas/DelegatedAdmin'
+          - description: The Amazon Web Services account ID of the Amazon Inspector delegated administrator.
+    EnableDelegatedAdminAccountResponse:
+      type: object
+      required:
+      - delegatedAdminAccountId
+      properties:
+        delegatedAdminAccountId:
+          allOf:
+          - $ref: '#/components/schemas/AccountId'
+          - description: The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.
+    AccountId:
+      type: string
+      pattern: ^\d{12}$
+      minLength: 12
+      maxLength: 12
+    DelegatedAdminStatus:
+      type: string
+      enum:
+      - ENABLED
+      - DISABLE_IN_PROGRESS
+    ListDelegatedAdminAccountsResponse:
+      type: object
+      properties:
+        delegatedAdminAccounts:
+          allOf:
+          - $ref: '#/components/schemas/DelegatedAdminAccountList'
+          - description: Details of the Amazon Inspector delegated administrator of your organization.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+    InternalServerException: {}
     ResourceNotFoundException: {}
     DisableDelegatedAdminAccountResponse:
       type: object
@@ -421,20 +459,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/AccountId'
           - description: The Amazon Web Services account ID of the successfully disabled delegated administrator.
-    ThrottlingException: {}
-    InternalServerException: {}
-    GetDelegatedAdminAccountResponse:
-      type: object
-      properties:
-        delegatedAdmin:
-          allOf:
-          - $ref: '#/components/schemas/DelegatedAdmin'
-          - description: The Amazon Web Services account ID of the Amazon Inspector delegated administrator.
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 1000000
-    ValidationException: {}
     DelegatedAdmin:
       type: object
       properties:
@@ -447,12 +471,7 @@ components:
           - $ref: '#/components/schemas/RelationshipStatus'
           - description: The status of the Amazon Inspector delegated administrator.
       description: Details of the Amazon Inspector delegated administrator for your organization.
-    DelegatedAdminStatus:
-      type: string
-      enum:
-      - ENABLED
-      - DISABLE_IN_PROGRESS
-    AccessDeniedException: {}
+    ValidationException: {}
     DelegatedAdminAccount:
       type: object
       properties:
@@ -465,37 +484,12 @@ components:
           - $ref: '#/components/schemas/DelegatedAdminStatus'
           - description: The status of the Amazon Inspector delegated administrator.
       description: Details of the Amazon Inspector delegated administrator for your organization.
-    AccountId:
+    ThrottlingException: {}
+    AccessDeniedException: {}
+    NextToken:
       type: string
-      pattern: ^\d{12}$
-      minLength: 12
-      maxLength: 12
-    DelegatedAdminAccountList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DelegatedAdminAccount'
-      minItems: 0
-      maxItems: 5
-    EnableDelegatedAdminAccountResponse:
-      type: object
-      required:
-      - delegatedAdminAccountId
-      properties:
-        delegatedAdminAccountId:
-          allOf:
-          - $ref: '#/components/schemas/AccountId'
-          - description: The Amazon Web Services account ID of the successfully Amazon Inspector delegated administrator.
-    ListDelegatedAdminAccountsResponse:
-      type: object
-      properties:
-        delegatedAdminAccounts:
-          allOf:
-          - $ref: '#/components/schemas/DelegatedAdminAccountList'
-          - description: Details of the Amazon Inspector delegated administrator of your organization.
-        nextToken:
-          allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+      minLength: 0
+      maxLength: 1000000
     RelationshipStatus:
       type: string
       enum:
@@ -512,25 +506,13 @@ components:
       - ACCOUNT_SUSPENDED
       - CANNOT_CREATE_DETECTOR_IN_ORG_MASTER
     ConflictException: {}
+    DelegatedAdminAccountList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DelegatedAdminAccount'
+      minItems: 0
+      maxItems: 5
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
@@ -545,6 +527,24 @@ components:
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

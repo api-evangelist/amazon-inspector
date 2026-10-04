@@ -434,8 +434,6 @@ apis:
   humanURL: https://aws.amazon.com/inspector/
   baseURL: https://inspector2.amazonaws.com
   tags:
-  - Organizationconfiguration
-  tags_raw:
   - Organization Configuration
   properties:
   - type: OpenAPI

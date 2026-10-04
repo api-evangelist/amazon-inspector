@@ -379,20 +379,51 @@ paths:
       - Sbomexport
 components:
   schemas:
+    ReportId:
+      type: string
+      pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+    SbomReportFormat:
+      type: string
+      enum:
+      - CYCLONEDX_1_4
+      - SPDX_2_3
+    InternalServerException: {}
+    ResourceStringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/ResourceStringFilter'
+      minItems: 1
+      maxItems: 10
     ResourceNotFoundException: {}
-    NonEmptyString:
-      type: string
-      minLength: 1
-    ThrottlingException: {}
-    String:
-      type: string
-    CancelSbomExportResponse:
+    GetSbomExportResponse:
       type: object
       properties:
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ReportingErrorCode'
+          - description: An error code.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/NonEmptyString'
+          - description: An error message.
+        filterCriteria:
+          allOf:
+          - $ref: '#/components/schemas/ResourceFilterCriteria'
+          - description: Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.
+        format:
+          allOf:
+          - $ref: '#/components/schemas/SbomReportFormat'
+          - description: The format of the software bill of materials (SBOM) report.
         reportId:
           allOf:
           - $ref: '#/components/schemas/ReportId'
-          - description: The report ID of the canceled SBOM export.
+          - description: The report ID of the software bill of materials (SBOM) report.
+        s3Destination:
+          $ref: '#/components/schemas/Destination'
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ExternalReportStatus'
+          - description: The status of the software bill of materials (SBOM) report.
     ExternalReportStatus:
       type: string
       enum:
@@ -400,11 +431,13 @@ components:
       - IN_PROGRESS
       - CANCELLED
       - FAILED
-    InternalServerException: {}
-    ResourceMapComparison:
-      type: string
-      enum:
-      - EQUALS
+    CreateSbomExportResponse:
+      type: object
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The report ID for the software bill of materials (SBOM) report.
     ResourceMapFilter:
       type: object
       required:
@@ -424,40 +457,27 @@ components:
           - $ref: '#/components/schemas/NonEmptyString'
           - description: The filter's value.
       description: A resource map filter for a software bill of material report.
-    Destination:
+    NonEmptyString:
+      type: string
+      minLength: 1
+    ReportingErrorCode:
+      type: string
+      enum:
+      - INTERNAL_ERROR
+      - INVALID_PERMISSIONS
+      - NO_FINDINGS_FOUND
+      - BUCKET_NOT_FOUND
+      - INCOMPATIBLE_BUCKET_REGION
+      - MALFORMED_KMS_KEY
+    ValidationException: {}
+    CancelSbomExportResponse:
       type: object
-      required:
-      - bucketName
-      - kmsKeyArn
       properties:
-        bucketName:
+        reportId:
           allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The name of the Amazon S3 bucket to export findings to.
-        keyPrefix:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The prefix that the findings will be written under.
-        kmsKeyArn:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The ARN of the KMS key used to encrypt data when exporting findings.
-      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
-    ResourceStringFilter:
-      type: object
-      required:
-      - comparison
-      - value
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/ResourceStringComparison'
-          - description: The filter's comparison.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/ResourceStringInput'
-          - description: The filter's value.
-      description: A resource string filter for a software bill of materials report.
+          - $ref: '#/components/schemas/ReportId'
+          - description: The report ID of the canceled SBOM export.
+    ThrottlingException: {}
     ResourceFilterCriteria:
       type: object
       properties:
@@ -494,7 +514,48 @@ components:
           - $ref: '#/components/schemas/ResourceStringFilterList'
           - description: The resource types used as resource filter criteria.
       description: The resource filter criteria for a Software bill of materials (SBOM) report.
-    ValidationException: {}
+    ResourceStringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringComparison'
+          - description: The filter's comparison.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/ResourceStringInput'
+          - description: The filter's value.
+      description: A resource string filter for a software bill of materials report.
+    Destination:
+      type: object
+      required:
+      - bucketName
+      - kmsKeyArn
+      properties:
+        bucketName:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The name of the Amazon S3 bucket to export findings to.
+        keyPrefix:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The prefix that the findings will be written under.
+        kmsKeyArn:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The ARN of the KMS key used to encrypt data when exporting findings.
+      description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
+    ResourceStringComparison:
+      type: string
+      enum:
+      - EQUALS
+      - NOT_EQUALS
+    String:
+      type: string
+    AccessDeniedException: {}
     ResourceMapFilterList:
       type: array
       items:
@@ -505,90 +566,11 @@ components:
       type: string
       minLength: 1
       maxLength: 1024
-    AccessDeniedException: {}
-    ReportId:
-      type: string
-      pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
-    SbomReportFormat:
-      type: string
-      enum:
-      - CYCLONEDX_1_4
-      - SPDX_2_3
-    ResourceStringComparison:
+    ResourceMapComparison:
       type: string
       enum:
       - EQUALS
-      - NOT_EQUALS
-    ReportingErrorCode:
-      type: string
-      enum:
-      - INTERNAL_ERROR
-      - INVALID_PERMISSIONS
-      - NO_FINDINGS_FOUND
-      - BUCKET_NOT_FOUND
-      - INCOMPATIBLE_BUCKET_REGION
-      - MALFORMED_KMS_KEY
-    CreateSbomExportResponse:
-      type: object
-      properties:
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The report ID for the software bill of materials (SBOM) report.
-    GetSbomExportResponse:
-      type: object
-      properties:
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/ReportingErrorCode'
-          - description: An error code.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/NonEmptyString'
-          - description: An error message.
-        filterCriteria:
-          allOf:
-          - $ref: '#/components/schemas/ResourceFilterCriteria'
-          - description: Contains details about the resource filter criteria used for the software bill of materials (SBOM) report.
-        format:
-          allOf:
-          - $ref: '#/components/schemas/SbomReportFormat'
-          - description: The format of the software bill of materials (SBOM) report.
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The report ID of the software bill of materials (SBOM) report.
-        s3Destination:
-          $ref: '#/components/schemas/Destination'
-        status:
-          allOf:
-          - $ref: '#/components/schemas/ExternalReportStatus'
-          - description: The status of the software bill of materials (SBOM) report.
-    ResourceStringFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/ResourceStringFilter'
-      minItems: 1
-      maxItems: 10
   parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Content-Sha256:
       name: X-Amz-Content-Sha256
       in: header
@@ -603,6 +585,24 @@ components:
       required: false
     X-Amz-Algorithm:
       name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
       in: header
       schema:
         type: string

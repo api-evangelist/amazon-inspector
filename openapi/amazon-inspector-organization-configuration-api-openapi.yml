@@ -245,62 +245,20 @@ paths:
       tags:
       - Organization Configuration
 components:
-  parameters:
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
-    UpdateOrganizationConfigurationResponse:
+    AccessDeniedException: {}
+    DescribeOrganizationConfigurationResponse:
       type: object
-      required:
-      - autoEnable
       properties:
         autoEnable:
           allOf:
           - $ref: '#/components/schemas/AutoEnable'
-          - description: The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.
-    Boolean:
-      type: boolean
-    InternalServerException: {}
+          - description: The scan types are automatically enabled for new members of your organization.
+        maxAccountLimitReached:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.
+    ValidationException: {}
     AutoEnable:
       type: object
       required:
@@ -324,20 +282,62 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. <pre><code> &lt;/p&gt; </code></pre>
       description: Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.
-    ValidationException: {}
-    DescribeOrganizationConfigurationResponse:
+    UpdateOrganizationConfigurationResponse:
       type: object
+      required:
+      - autoEnable
       properties:
         autoEnable:
           allOf:
           - $ref: '#/components/schemas/AutoEnable'
-          - description: The scan types are automatically enabled for new members of your organization.
-        maxAccountLimitReached:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.
+          - description: The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.
     ThrottlingException: {}
-    AccessDeniedException: {}
+    InternalServerException: {}
+    Boolean:
+      type: boolean
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey

@@ -201,71 +201,11 @@ paths:
       tags:
       - Usage
 components:
-  parameters:
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Algorithm:
-      name: X-Amz-Algorithm
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
   schemas:
     UsageList:
       type: array
       items:
         $ref: '#/components/schemas/Usage'
-    MeteringAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-    ThrottlingException: {}
-    UsageType:
-      type: string
-      enum:
-      - EC2_INSTANCE_HOURS
-      - ECR_INITIAL_SCAN
-      - ECR_RESCAN
-      - LAMBDA_FUNCTION_HOURS
-      - LAMBDA_FUNCTION_CODE_HOURS
-    InternalServerException: {}
-    UsageValue:
-      type: number
-      format: double
-      minimum: 0
     ListUsageTotalsResponse:
       type: object
       properties:
@@ -277,9 +217,33 @@ components:
           allOf:
           - $ref: '#/components/schemas/UsageTotalList'
           - description: An object with details on the total usage for the requested account.
-    ListUsageTotalsNextToken:
+    UsageTotalList:
+      type: array
+      items:
+        $ref: '#/components/schemas/UsageTotal'
+    InternalServerException: {}
+    MeteringAccountId:
       type: string
-      minLength: 1
+      pattern: '[0-9]{12}'
+    Currency:
+      type: string
+      enum:
+      - USD
+    UsageValue:
+      type: number
+      format: double
+      minimum: 0
+    UsageType:
+      type: string
+      enum:
+      - EC2_INSTANCE_HOURS
+      - ECR_INITIAL_SCAN
+      - ECR_RESCAN
+      - LAMBDA_FUNCTION_HOURS
+      - LAMBDA_FUNCTION_CODE_HOURS
+    UsageAccountId:
+      type: string
+      pattern: '[0-9]{12}'
     Usage:
       type: object
       properties:
@@ -301,10 +265,7 @@ components:
           - description: The type scan.
       description: Contains usage information about the cost of Amazon Inspector operation.
     ValidationException: {}
-    UsageTotalList:
-      type: array
-      items:
-        $ref: '#/components/schemas/UsageTotal'
+    ThrottlingException: {}
     AccessDeniedException: {}
     UsageTotal:
       type: object
@@ -322,13 +283,52 @@ components:
       type: number
       format: double
       minimum: 0
-    Currency:
+    ListUsageTotalsNextToken:
       type: string
-      enum:
-      - USD
-    UsageAccountId:
-      type: string
-      pattern: '[0-9]{12}'
+      minLength: 1
+  parameters:
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Credential:
+      name: X-Amz-Credential
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Algorithm:
+      name: X-Amz-Algorithm
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
+      in: header
+      schema:
+        type: string
+      required: false
   securitySchemes:
     hmac:
       type: apiKey
