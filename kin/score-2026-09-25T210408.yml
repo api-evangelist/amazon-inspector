@@ -1,22 +1,20 @@
-# Kin Score artifact — amazon-inspector — 2026-08-25T154045
+# Kin Score artifact — amazon-inspector — 2026-09-25T210408
 # The API Evangelist rating (https://github.com/api-evangelist/kin-score). Generated; do not edit.
 ---
 kin_score:
   slug: amazon-inspector
-  schema_version: 0.14.0
-  scored_at: '2026-08-25'
-  run_ts: 2026-08-25T154045
-  composite: 51.7
-  band: developing
+  schema_version: 0.23.0
+  scored_at: '2026-09-25'
+  run_ts: 2026-09-25T210408
+  composite: 55.1
+  band: strong
   facets:
-    discoverability: 74.1
-    contract_quality: 68.6
-    governance: 28.8
+    discoverability: 66.1
+    contract_quality: 62.2
+    contract_governance: 27.3
     operational_transparency: 26.3
-    developer_ergonomics: 50.0
-    commercial_clarity: 51.3
-    contract_governance: 28.8
-    access_clarity: 51.3
+    developer_ergonomics: 58.3
+    access_clarity: 61.8
   agent_readiness:
     score: 33.7
     band: agent-ready
@@ -40,6 +38,12 @@ kin_score:
       protected_resource_metadata: false
       dynamic_client_registration: false
       agentic_commerce: false
+  regulatory:
+    applies: true
+    regime: Horizontal (data, software, accessibility, platform)
+    regime_id: horizontal
+    score: 35.3
+    matched_via: fallback
   provenance:
     agentic_access: derived
     contracts:

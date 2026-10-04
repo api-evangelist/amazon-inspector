@@ -434,6 +434,8 @@ apis:
   humanURL: https://aws.amazon.com/inspector/
   baseURL: https://inspector2.amazonaws.com
   tags:
+  - Organizationconfiguration
+  tags_raw:
   - Organization Configuration
   properties:
   - type: OpenAPI
@@ -447,6 +449,9 @@ apis:
   - type: FAQ
     url: https://aws.amazon.com/inspector/faqs/
 common:
+  - type: CapabilityMap
+    url: capabilities/amazon-inspector-capability-edges.yml
+    name: Amazon Inspector Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/amazon-inspector/overview
   - type: AgenticAccess
