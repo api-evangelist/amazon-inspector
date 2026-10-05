@@ -1,0 +1,101 @@
+slug: amazon-inspector
+provider: Amazon Inspector
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 9
+edges:
+- tag: Vulnerabilities
+  spec_file: amazon-inspector-vulnerabilities-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.93
+  evidence: POST /vulnerabilities/search SearchVulnerabilities — schemas "Cvss3BaseScore", "Cwes", "VendorSeverity",
+    "VulnerabilityDescription"
+  reason: Searching vulnerability records with CVSS scores, CWEs and vendor severity is unambiguously
+    vulnerability management; no other reading fits.
+- tag: Findings
+  spec_file: amazon-inspector-findings-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.9
+  evidence: ListFindings, BatchGetFindingDetails; schemas "FindingTitle", "VulnerabilityIdList", "FindingTypeAggregation"
+  reason: Listing and aggregating vulnerability findings produced by the scanner is the core of vulnerability
+    management; note these are security findings, not audit or financial-crime alerts.
+- tag: Scanning
+  spec_file: amazon-inspector-scanning-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.85
+  evidence: '"Enable Amazon Inspector scanning" / "Disable Amazon Inspector scanning" — "enable and disable
+    scanning, list and describe findings"'
+  reason: Directly controls vulnerability scanning of EC2 instances, container images and Lambda functions,
+    which is vulnerability management.
+- tag: Ec2deepinspectionconfiguration
+  spec_file: amazon-inspector-ec2deepinspectionconfiguration-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.78
+  evidence: UpdateEc2DeepInspectionConfiguration — "automates continuous scanning for security vulnerabilities
+    within your Amazon EC2 and Amazon ECR environments"
+  reason: Operations configure the depth of Inspector's vulnerability scanning on EC2 workloads, which
+    is vulnerability scanning configuration within Cybersecurity Management.
+- tag: Reporting
+  spec_file: amazon-inspector-reporting-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.78
+  evidence: CreateFindingsReport / GetFindingsReportStatus with "FilterCriteria", "ExternalReportStatus"
+  reason: Generates and tracks reports of vulnerability findings — reporting output of the vulnerability
+    management process, not enterprise financial or management reporting.
+- tag: Codesnippet
+  spec_file: amazon-inspector-codesnippet-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.75
+  evidence: BatchGetCodeSnippet; schemas SuggestedFix, SuggestedFixCodeString, FindingArn, CodeLine
+  reason: Retrieving the vulnerable code lines and suggested fixes for a finding is remediation guidance
+    within vulnerability scanning, consistent with the vendor's "automated vulnerability management service".
+- tag: Coverage
+  spec_file: amazon-inspector-coverage-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.72
+  evidence: POST /coverage/list  ListCoverage and /coverage/statistics/list  ListCoverageStatistics; schemas
+    ScanType, ScanStatusReason, EcrRepositoryMetadata
+  reason: Coverage here reports which resources are under vulnerability scanning and scan status — scan
+    estate visibility within vulnerability management, not an insurance or commercial notion of coverage.
+- tag: Ec2deepinspectionstatus
+  spec_file: amazon-inspector-ec2deepinspectionstatus-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.72
+  evidence: BatchGetMemberEc2DeepInspectionStatus / schema "MemberAccountEc2DeepInspectionStatus"
+  reason: Reads and sets the deep vulnerability-scanning status for member accounts of the vulnerability
+    discovery service; squarely vulnerability scanning administration rather than any business-domain
+    capability.
+- tag: Enable
+  spec_file: amazon-inspector-enable-api-openapi.yml
+  capability_id: BC-620.40
+  capability_id_l1: BC-620
+  capability_name: Vulnerability Management
+  confidence: 0.7
+  evidence: POST /enable Enable — schemas "ResourceScanType", "AccountList"
+  reason: Single operation turns on Inspector vulnerability scanning for a set of accounts and scan types;
+    this is enablement of vulnerability scanning coverage.
