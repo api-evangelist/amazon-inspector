@@ -1,52 +1,40 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/amazon-inspector-openapi-original.yml, openapi/amazon-inspector-openapi.yml
+source: openapi/amazon-inspector-accountpermissions-api-openapi.yml, openapi/amazon-inspector-codesnippet-api-openapi.yml,
+  openapi/amazon-inspector-configuration-api-openapi.yml, openapi/amazon-inspector-coverage-api-openapi.yml,
+  openapi/amazon-inspector-delegatedadminaccounts-api-openapi.yml, openapi/amazon-inspector-disable-api-openapi.yml,
+  openapi/amazon-inspector-ec2deepinspectionconfiguration-api-openapi.yml, openapi/amazon-inspector-ec2deepinspectionstatus-api-openapi.yml,
+  openapi/amazon-inspector-enable-api-openapi.yml, openapi/amazon-inspector-encryptionkey-api-openapi.yml,
+  openapi/amazon-inspector-filters-api-openapi.yml, openapi/amazon-inspector-findings-api-openapi.yml,
+  openapi/amazon-inspector-freetrialinfo-api-openapi.yml, openapi/amazon-inspector-members-api-openapi.yml,
+  openapi/amazon-inspector-organization-configuration-api-openapi.yml, openapi/amazon-inspector-reporting-api-openapi.yml,
+  openapi/amazon-inspector-sbomexport-api-openapi.yml, openapi/amazon-inspector-scanning-api-openapi.yml,
+  openapi/amazon-inspector-status-api-openapi.yml, openapi/amazon-inspector-tags-api-openapi.yml,
+  openapi/amazon-inspector-usage-api-openapi.yml, openapi/amazon-inspector-vulnerabilities-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
-  operations: 53
+  operations: 49
   by_action_class:
-    acting: 51
-    connected: 2
+    connected: 19
+    acting: 30
   by_consequence:
-    write: 47
+    read: 19
+    write: 26
     safety-critical: 4
-    read: 2
   human_in_the_loop_required: 4
 operations:
-- path: /members/associate
+- path: /accountpermissions/list
   method: post
-  operationId: AssociateMember
+  operationId: ListAccountPermissions
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /status/batch/get
-  method: post
-  operationId: BatchGetAccountStatus
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /codesnippet/batchget
   method: post
   operationId: BatchGetCodeSnippet
@@ -63,9 +51,19 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /findings/details/batch/get
+- path: /configuration/get
   method: post
-  operationId: BatchGetFindingDetails
+  operationId: GetConfiguration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /configuration/update
+  method: post
+  operationId: UpdateConfiguration
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -79,9 +77,123 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /freetrialinfo/batchget
+- path: /coverage/list
   method: post
-  operationId: BatchGetFreeTrialInfo
+  operationId: ListCoverage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /coverage/statistics/list
+  method: post
+  operationId: ListCoverageStatistics
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /delegatedadminaccounts/disable
+  method: post
+  operationId: DisableDelegatedAdminAccount
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /delegatedadminaccounts/enable
+  method: post
+  operationId: EnableDelegatedAdminAccount
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /delegatedadminaccounts/get
+  method: post
+  operationId: GetDelegatedAdminAccount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /delegatedadminaccounts/list
+  method: post
+  operationId: ListDelegatedAdminAccounts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /disable
+  method: post
+  operationId: Disable
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /ec2deepinspectionconfiguration/get
+  method: post
+  operationId: GetEc2DeepInspectionConfiguration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /ec2deepinspectionconfiguration/update
+  method: post
+  operationId: UpdateEc2DeepInspectionConfiguration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /ec2deepinspectionconfiguration/org/update
+  method: post
+  operationId: UpdateOrgEc2DeepInspectionConfiguration
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -127,9 +239,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /reporting/cancel
+- path: /enable
   method: post
-  operationId: CancelFindingsReport
+  operationId: Enable
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -143,9 +255,35 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /sbomexport/cancel
-  method: post
-  operationId: CancelSbomExport
+- path: /encryptionkey/get#resourceType&scanType
+  method: get
+  operationId: GetEncryptionKey
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /encryptionkey/reset
+  method: put
+  operationId: ResetEncryptionKey
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /encryptionkey/update
+  method: put
+  operationId: UpdateEncryptionKey
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -175,9 +313,239 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /filters/delete
+  method: post
+  operationId: DeleteFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /filters/list
+  method: post
+  operationId: ListFilters
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /filters/update
+  method: post
+  operationId: UpdateFilter
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /findings/details/batch/get
+  method: post
+  operationId: BatchGetFindingDetails
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /findings/aggregation/list
+  method: post
+  operationId: ListFindingAggregations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /findings/list
+  method: post
+  operationId: ListFindings
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /findings/get
+  method: post
+  operationId: GetFindingsReportStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /freetrialinfo/batchget
+  method: post
+  operationId: BatchGetFreeTrialInfo
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /members/associate
+  method: post
+  operationId: AssociateMember
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /members/disassociate
+  method: post
+  operationId: DisassociateMember
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /members/get
+  method: post
+  operationId: GetMember
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /members/list
+  method: post
+  operationId: ListMembers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /organizationconfiguration/describe
+  method: post
+  operationId: DescribeOrganizationConfiguration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /organizationconfiguration/update
+  method: post
+  operationId: UpdateOrganizationConfiguration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reporting/cancel
+  method: post
+  operationId: CancelFindingsReport
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /reporting/create
   method: post
   operationId: CreateFindingsReport
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /reporting/status/get
+  method: post
+  operationId: GetFindingsReportStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /sbomexport/cancel
+  method: post
+  operationId: CancelSbomExport
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -207,25 +575,19 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /filters/delete
+- path: /sbomexport/get
   method: post
-  operationId: DeleteFilter
+  operationId: GetSbomExport
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /organizationconfiguration/describe
+      max-ttl: 3600
+    audit: none
+- path: /enable
   method: post
-  operationId: DescribeOrganizationConfiguration
+  operationId: Enable
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -255,291 +617,9 @@ operations:
     escalation:
       human-in-the-loop: required
     audit: required
-- path: /delegatedadminaccounts/disable
+- path: /status/batch/get
   method: post
-  operationId: DisableDelegatedAdminAccount
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /members/disassociate
-  method: post
-  operationId: DisassociateMember
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /enable
-  method: post
-  operationId: Enable
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /delegatedadminaccounts/enable
-  method: post
-  operationId: EnableDelegatedAdminAccount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /configuration/get
-  method: post
-  operationId: GetConfiguration
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /delegatedadminaccounts/get
-  method: post
-  operationId: GetDelegatedAdminAccount
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /ec2deepinspectionconfiguration/get
-  method: post
-  operationId: GetEc2DeepInspectionConfiguration
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /encryptionkey/get#resourceType&scanType
-  method: get
-  operationId: GetEncryptionKey
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /reporting/status/get
-  method: post
-  operationId: GetFindingsReportStatus
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /members/get
-  method: post
-  operationId: GetMember
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /sbomexport/get
-  method: post
-  operationId: GetSbomExport
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /accountpermissions/list
-  method: post
-  operationId: ListAccountPermissions
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /coverage/list
-  method: post
-  operationId: ListCoverage
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /coverage/statistics/list
-  method: post
-  operationId: ListCoverageStatistics
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /delegatedadminaccounts/list
-  method: post
-  operationId: ListDelegatedAdminAccounts
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /filters/list
-  method: post
-  operationId: ListFilters
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /findings/aggregation/list
-  method: post
-  operationId: ListFindingAggregations
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /findings/list
-  method: post
-  operationId: ListFindings
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /members/list
-  method: post
-  operationId: ListMembers
+  operationId: BatchGetAccountStatus
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -579,54 +659,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /usage/list
-  method: post
-  operationId: ListUsageTotals
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /encryptionkey/reset
-  method: put
-  operationId: ResetEncryptionKey
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /vulnerabilities/search
-  method: post
-  operationId: SearchVulnerabilities
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /tags/{resourceArn}#tagKeys
   method: delete
   operationId: UntagResource
@@ -643,211 +675,23 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /configuration/update
+- path: /usage/list
   method: post
-  operationId: UpdateConfiguration
+  operationId: ListUsageTotals
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /ec2deepinspectionconfiguration/update
+      max-ttl: 3600
+    audit: none
+- path: /vulnerabilities/search
   method: post
-  operationId: UpdateEc2DeepInspectionConfiguration
+  operationId: SearchVulnerabilities
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /encryptionkey/update
-  method: put
-  operationId: UpdateEncryptionKey
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /filters/update
-  method: post
-  operationId: UpdateFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /ec2deepinspectionconfiguration/org/update
-  method: post
-  operationId: UpdateOrgEc2DeepInspectionConfiguration
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /organizationconfiguration/update
-  method: post
-  operationId: UpdateOrganizationConfiguration
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /enable
-  method: post
-  operationId: Enable
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /disable
-  method: post
-  operationId: Disable
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /findings/list
-  method: post
-  operationId: ListFindings
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /findings/get
-  method: post
-  operationId: GetFindingsReportStatus
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /coverage/list
-  method: post
-  operationId: ListCoverage
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /filters/create
-  method: post
-  operationId: CreateFilter
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /filters/list
-  method: post
-  operationId: ListFilters
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
