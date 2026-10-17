@@ -183,41 +183,7 @@ paths:
       - Freetrialinfo
 components:
   schemas:
-    InternalServerException: {}
-    MeteringAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-    FreeTrialInfoErrorCode:
-      type: string
-      enum:
-      - ACCESS_DENIED
-      - INTERNAL_ERROR
-    FreeTrialAccountInfo:
-      type: object
-      required:
-      - accountId
-      - freeTrialInfo
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/MeteringAccountId'
-          - description: The account associated with the Amazon Inspector free trial information.
-        freeTrialInfo:
-          allOf:
-          - $ref: '#/components/schemas/FreeTrialInfoList'
-          - description: Contains information about the Amazon Inspector free trial for an account.
-      description: Information about the Amazon Inspector free trial for an account.
-    FreeTrialType:
-      type: string
-      enum:
-      - EC2
-      - ECR
-      - LAMBDA
-      - LAMBDA_CODE
-    FreeTrialInfoList:
-      type: array
-      items:
-        $ref: '#/components/schemas/FreeTrialInfo'
+    ThrottlingException: {}
     BatchGetFreeTrialInfoResponse:
       type: object
       required:
@@ -232,19 +198,38 @@ components:
           allOf:
           - $ref: '#/components/schemas/FreeTrialInfoErrorList'
           - description: An array of objects detailing any accounts that free trial data could not be returned for.
-    ValidationException: {}
-    FreeTrialStatus:
+    FreeTrialInfoError:
+      type: object
+      required:
+      - accountId
+      - code
+      - message
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account associated with the Amazon Inspector free trial information.
+        code:
+          allOf:
+          - $ref: '#/components/schemas/FreeTrialInfoErrorCode'
+          - description: The error code.
+        message:
+          allOf:
+          - $ref: '#/components/schemas/String'
+          - description: The error message returned.
+      description: Information about an error received while accessing free trail data for an account.
+    FreeTrialType:
       type: string
       enum:
-      - ACTIVE
-      - INACTIVE
-    ThrottlingException: {}
+      - EC2
+      - ECR
+      - LAMBDA
+      - LAMBDA_CODE
+    ValidationException: {}
     Timestamp:
       type: string
       format: date-time
-    String:
-      type: string
-    AccessDeniedException: {}
+    InternalServerException: {}
     FreeTrialInfo:
       type: object
       required:
@@ -270,43 +255,52 @@ components:
           - $ref: '#/components/schemas/FreeTrialType'
           - description: The type of scan covered by the Amazon Inspector free trail.
       description: An object that contains information about the Amazon Inspector free trial for an account.
-    FreeTrialAccountInfoList:
+    String:
+      type: string
+    FreeTrialInfoErrorList:
       type: array
       items:
-        $ref: '#/components/schemas/FreeTrialAccountInfo'
-    FreeTrialInfoError:
+        $ref: '#/components/schemas/FreeTrialInfoError'
+    FreeTrialInfoErrorCode:
+      type: string
+      enum:
+      - ACCESS_DENIED
+      - INTERNAL_ERROR
+    FreeTrialAccountInfo:
       type: object
       required:
       - accountId
-      - code
-      - message
+      - freeTrialInfo
       properties:
         accountId:
           allOf:
           - $ref: '#/components/schemas/MeteringAccountId'
           - description: The account associated with the Amazon Inspector free trial information.
-        code:
+        freeTrialInfo:
           allOf:
-          - $ref: '#/components/schemas/FreeTrialInfoErrorCode'
-          - description: The error code.
-        message:
-          allOf:
-          - $ref: '#/components/schemas/String'
-          - description: The error message returned.
-      description: Information about an error received while accessing free trail data for an account.
-    FreeTrialInfoErrorList:
+          - $ref: '#/components/schemas/FreeTrialInfoList'
+          - description: Contains information about the Amazon Inspector free trial for an account.
+      description: Information about the Amazon Inspector free trial for an account.
+    FreeTrialStatus:
+      type: string
+      enum:
+      - ACTIVE
+      - INACTIVE
+    FreeTrialAccountInfoList:
       type: array
       items:
-        $ref: '#/components/schemas/FreeTrialInfoError'
+        $ref: '#/components/schemas/FreeTrialAccountInfo'
+    FreeTrialInfoList:
+      type: array
+      items:
+        $ref: '#/components/schemas/FreeTrialInfo'
+    MeteringAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+    AccessDeniedException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -317,14 +311,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -335,8 +323,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

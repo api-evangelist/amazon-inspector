@@ -1115,23 +1115,213 @@ paths:
       description: The Inspector2 endpoint for China (Beijing) and China (Ningxia)
 components:
   schemas:
+    DateTimeTimestamp:
+      type: string
+      format: date-time
+    ThrottlingException: {}
+    TagMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/MapValue'
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    FilterName:
+      type: string
+      minLength: 1
+      maxLength: 128
+    ListFiltersResponse:
+      type: object
+      required:
+      - filters
+      properties:
+        filters:
+          allOf:
+          - $ref: '#/components/schemas/FilterList'
+          - description: Contains details on the filters associated with your account.
+        nextToken:
+          allOf:
+          - $ref: '#/components/schemas/NextToken'
+          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+    NumberFilter:
+      type: object
+      properties:
+        lowerInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The lowest number to be included in the filter.
+        upperInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The highest number to be included in the filter.
+      description: An object that describes the details of a number filter.
+    UpdateFilterResponse:
+      type: object
+      required:
+      - arn
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/FilterArn'
+          - description: The Amazon Resource Number (ARN) of the successfully updated filter.
+    PackageFilter:
+      type: object
+      properties:
+        architecture:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package architecture type to filter on.
+        epoch:
+          allOf:
+          - $ref: '#/components/schemas/NumberFilter'
+          - description: An object that contains details on the package epoch to filter on.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the name of the package to filter on.
+        release:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package release to filter on.
+        sourceLambdaLayerArn:
+          $ref: '#/components/schemas/StringFilter'
+        sourceLayerHash:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the source layer hash to filter on.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: The package version to filter on.
+      description: Contains information on the details of a package filter.
     MapFilterList:
       type: array
       items:
         $ref: '#/components/schemas/MapFilter'
       minItems: 1
       maxItems: 10
+    StringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    ValidationException: {}
+    NextToken:
+      type: string
+      minLength: 0
+      maxLength: 1000000
+    PortRangeFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PortRangeFilter'
+      minItems: 1
+      maxItems: 10
+    FilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/Filter'
+    FilterReason:
+      type: string
+      minLength: 1
+      maxLength: 512
+    Timestamp:
+      type: string
+      format: date-time
+    ResourceNotFoundException: {}
+    Filter:
+      type: object
+      required:
+      - action
+      - arn
+      - createdAt
+      - criteria
+      - name
+      - ownerId
+      - updatedAt
+      properties:
+        action:
+          allOf:
+          - $ref: '#/components/schemas/FilterAction'
+          - description: The action that is to be applied to the findings that match the filter.
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/FilterArn'
+          - description: The Amazon Resource Number (ARN) associated with this filter.
+        createdAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time this filter was created at.
+        criteria:
+          allOf:
+          - $ref: '#/components/schemas/FilterCriteria'
+          - description: Details on the filter criteria associated with this filter.
+        description:
+          allOf:
+          - $ref: '#/components/schemas/FilterDescription'
+          - description: A description of the filter.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/FilterName'
+          - description: The name of the filter.
+        ownerId:
+          allOf:
+          - $ref: '#/components/schemas/OwnerId'
+          - description: The Amazon Web Services account ID of the account that created the filter.
+        reason:
+          allOf:
+          - $ref: '#/components/schemas/FilterReason'
+          - description: The reason for the filter.
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags attached to the filter.
+        updatedAt:
+          allOf:
+          - $ref: '#/components/schemas/DateTimeTimestamp'
+          - description: The date and time the filter was last updated at.
+      description: Details about a filter.
+    Double:
+      type: number
+      format: double
+    MapKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    MapComparison:
+      type: string
+      enum:
+      - EQUALS
+    StringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/StringComparison'
+          - description: The operator to use when comparing values in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/StringInput'
+          - description: The value to filter on.
+      description: An object that describes the details of a string filter.
+    InternalServerException: {}
+    CreateFilterResponse:
+      type: object
+      required:
+      - arn
+      properties:
+        arn:
+          allOf:
+          - $ref: '#/components/schemas/FilterArn'
+          - description: The Amazon Resource Number (ARN) of the successfully created filter.
     NumberFilterList:
       type: array
       items:
         $ref: '#/components/schemas/NumberFilter'
       minItems: 1
       maxItems: 10
-    TagMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/MapValue'
-    InternalServerException: {}
     FilterCriteria:
       type: object
       properties:
@@ -1304,175 +1494,15 @@ components:
           - $ref: '#/components/schemas/PackageFilterList'
           - description: Details on the vulnerable packages used to filter findings.
       description: Details on the criteria used to define the filter.
-    ResourceNotFoundException: {}
-    FilterAction:
+    OwnerId:
       type: string
-      enum:
-      - NONE
-      - SUPPRESS
-    FilterName:
+      pattern: (^\d{12}$)|(^o-[a-z0-9]{10,32}$)
+      minLength: 12
+      maxLength: 34
+    MapValue:
       type: string
-      minLength: 1
-      maxLength: 128
-    PortRangeFilter:
-      type: object
-      properties:
-        beginInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range begins at.
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range ends at.
-      description: An object that describes the details of a port range filter.
-    BadRequestException: {}
-    StringFilter:
-      type: object
-      required:
-      - comparison
-      - value
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/StringComparison'
-          - description: The operator to use when comparing values in the filter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/StringInput'
-          - description: The value to filter on.
-      description: An object that describes the details of a string filter.
-    DateFilter:
-      type: object
-      properties:
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the end of the time period filtered on.
-        startInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the start of the time period filtered on.
-      description: Contains details on the time range used to filter findings.
-    FilterArn:
-      type: string
-      minLength: 1
-      maxLength: 128
-    PackageFilter:
-      type: object
-      properties:
-        architecture:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the package architecture type to filter on.
-        epoch:
-          allOf:
-          - $ref: '#/components/schemas/NumberFilter'
-          - description: An object that contains details on the package epoch to filter on.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the name of the package to filter on.
-        release:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the package release to filter on.
-        sourceLambdaLayerArn:
-          $ref: '#/components/schemas/StringFilter'
-        sourceLayerHash:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the source layer hash to filter on.
-        version:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: The package version to filter on.
-      description: Contains information on the details of a package filter.
-    NumberFilter:
-      type: object
-      properties:
-        lowerInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The lowest number to be included in the filter.
-        upperInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The highest number to be included in the filter.
-      description: An object that describes the details of a number filter.
-    FilterDescription:
-      type: string
-      minLength: 1
-      maxLength: 512
-    PortRangeFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PortRangeFilter'
-      minItems: 1
-      maxItems: 10
-    StringFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StringFilter'
-      minItems: 1
-      maxItems: 10
-    FilterReason:
-      type: string
-      minLength: 1
-      maxLength: 512
-    Filter:
-      type: object
-      required:
-      - action
-      - arn
-      - createdAt
-      - criteria
-      - name
-      - ownerId
-      - updatedAt
-      properties:
-        action:
-          allOf:
-          - $ref: '#/components/schemas/FilterAction'
-          - description: The action that is to be applied to the findings that match the filter.
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/FilterArn'
-          - description: The Amazon Resource Number (ARN) associated with this filter.
-        createdAt:
-          allOf:
-          - $ref: '#/components/schemas/DateTimeTimestamp'
-          - description: The date and time this filter was created at.
-        criteria:
-          allOf:
-          - $ref: '#/components/schemas/FilterCriteria'
-          - description: Details on the filter criteria associated with this filter.
-        description:
-          allOf:
-          - $ref: '#/components/schemas/FilterDescription'
-          - description: A description of the filter.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/FilterName'
-          - description: The name of the filter.
-        ownerId:
-          allOf:
-          - $ref: '#/components/schemas/OwnerId'
-          - description: The Amazon Web Services account ID of the account that created the filter.
-        reason:
-          allOf:
-          - $ref: '#/components/schemas/FilterReason'
-          - description: The reason for the filter.
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: The tags attached to the filter.
-        updatedAt:
-          allOf:
-          - $ref: '#/components/schemas/DateTimeTimestamp'
-          - description: The date and time the filter was last updated at.
-      description: Details about a filter.
-    ValidationException: {}
+      minLength: 0
+      maxLength: 256
     MapFilter:
       type: object
       required:
@@ -1492,94 +1522,50 @@ components:
           - $ref: '#/components/schemas/MapValue'
           - description: The tag value used in the filter.
       description: An object that describes details of a map filter.
-    MapValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    StringInput:
+    ServiceQuotaExceededException: {}
+    FilterArn:
       type: string
       minLength: 1
-      maxLength: 1024
-    ThrottlingException: {}
-    FilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/Filter'
-    Timestamp:
-      type: string
-      format: date-time
-    ListFiltersResponse:
+      maxLength: 128
+    PortRangeFilter:
       type: object
-      required:
-      - filters
       properties:
-        filters:
+        beginInclusive:
           allOf:
-          - $ref: '#/components/schemas/FilterList'
-          - description: Contains details on the filters associated with your account.
-        nextToken:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range begins at.
+        endInclusive:
           allOf:
-          - $ref: '#/components/schemas/NextToken'
-          - description: A token to use for paginating results that are returned in the response. Set the value of this parameter to null for the first request to a list action. For subsequent calls, use the <code>NextToken</code> value returned from the previous request to continue listing results after the first page.
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range ends at.
+      description: An object that describes the details of a port range filter.
+    FilterDescription:
+      type: string
+      minLength: 1
+      maxLength: 512
     StringComparison:
       type: string
       enum:
       - EQUALS
       - PREFIX
       - NOT_EQUALS
-    AccessDeniedException: {}
-    DateFilterList:
+    PackageFilterList:
       type: array
       items:
-        $ref: '#/components/schemas/DateFilter'
+        $ref: '#/components/schemas/PackageFilter'
       minItems: 1
       maxItems: 10
-    OwnerId:
-      type: string
-      pattern: (^\d{12}$)|(^o-[a-z0-9]{10,32}$)
-      minLength: 12
-      maxLength: 34
-    CreateFilterResponse:
-      type: object
-      required:
-      - arn
-      properties:
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/FilterArn'
-          - description: The Amazon Resource Number (ARN) of the successfully created filter.
-    MapKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    NextToken:
-      type: string
-      minLength: 0
-      maxLength: 1000000
-    Double:
-      type: number
-      format: double
-    UpdateFilterResponse:
-      type: object
-      required:
-      - arn
-      properties:
-        arn:
-          allOf:
-          - $ref: '#/components/schemas/FilterArn'
-          - description: The Amazon Resource Number (ARN) of the successfully updated filter.
-    Port:
-      type: integer
-      minimum: 0
-      maximum: 65535
-    ServiceQuotaExceededException: {}
-    DateTimeTimestamp:
-      type: string
-      format: date-time
-    MapComparison:
+    FilterAction:
       type: string
       enum:
-      - EQUALS
+      - NONE
+      - SUPPRESS
+    StringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringFilter'
+      minItems: 1
+      maxItems: 10
     DeleteFilterResponse:
       type: object
       required:
@@ -1589,21 +1575,29 @@ components:
           allOf:
           - $ref: '#/components/schemas/FilterArn'
           - description: The Amazon Resource Number (ARN) of the filter that has been deleted.
-    PackageFilterList:
+    DateFilter:
+      type: object
+      properties:
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the end of the time period filtered on.
+        startInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the start of the time period filtered on.
+      description: Contains details on the time range used to filter findings.
+    DateFilterList:
       type: array
       items:
-        $ref: '#/components/schemas/PackageFilter'
+        $ref: '#/components/schemas/DateFilter'
       minItems: 1
       maxItems: 10
+    AccessDeniedException: {}
+    BadRequestException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -1614,14 +1608,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -1632,8 +1620,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

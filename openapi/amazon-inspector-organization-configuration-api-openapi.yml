@@ -246,19 +246,6 @@ paths:
       - Organization Configuration
 components:
   schemas:
-    AccessDeniedException: {}
-    DescribeOrganizationConfigurationResponse:
-      type: object
-      properties:
-        autoEnable:
-          allOf:
-          - $ref: '#/components/schemas/AutoEnable'
-          - description: The scan types are automatically enabled for new members of your organization.
-        maxAccountLimitReached:
-          allOf:
-          - $ref: '#/components/schemas/Boolean'
-          - description: Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.
-    ValidationException: {}
     AutoEnable:
       type: object
       required:
@@ -282,6 +269,20 @@ components:
           - $ref: '#/components/schemas/Boolean'
           - description: Represents whether AWS Lambda code scans are automatically enabled for new members of your Amazon Inspector organization. <pre><code> &lt;/p&gt; </code></pre>
       description: Represents which scan types are automatically enabled for new members of your Amazon Inspector organization.
+    ThrottlingException: {}
+    ValidationException: {}
+    InternalServerException: {}
+    DescribeOrganizationConfigurationResponse:
+      type: object
+      properties:
+        autoEnable:
+          allOf:
+          - $ref: '#/components/schemas/AutoEnable'
+          - description: The scan types are automatically enabled for new members of your organization.
+        maxAccountLimitReached:
+          allOf:
+          - $ref: '#/components/schemas/Boolean'
+          - description: Represents whether your organization has reached the maximum Amazon Web Services account limit for Amazon Inspector.
     UpdateOrganizationConfigurationResponse:
       type: object
       required:
@@ -291,13 +292,18 @@ components:
           allOf:
           - $ref: '#/components/schemas/AutoEnable'
           - description: The updated status of scan types automatically enabled for new members of your Amazon Inspector organization.
-    ThrottlingException: {}
-    InternalServerException: {}
     Boolean:
       type: boolean
+    AccessDeniedException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -308,14 +314,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
       in: header
       schema:
         type: string
@@ -326,8 +326,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

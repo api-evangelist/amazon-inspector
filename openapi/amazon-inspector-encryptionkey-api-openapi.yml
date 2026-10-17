@@ -361,19 +361,8 @@ paths:
       - Encryptionkey
 components:
   schemas:
-    AccessDeniedException: {}
-    ResetEncryptionKeyResponse:
-      type: object
-      properties: {}
-    ValidationException: {}
-    KmsKeyArn:
-      type: string
-      pattern: ^arn:aws(-(us-gov|cn))?:kms:([a-z0-9][-.a-z0-9]{0,62})?:[0-9]{12}?:key/(([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(mrk-[0-9a-zA-Z]{32}))$
-    UpdateEncryptionKeyResponse:
-      type: object
-      properties: {}
     ThrottlingException: {}
-    InternalServerException: {}
+    ValidationException: {}
     GetEncryptionKeyResponse:
       type: object
       required:
@@ -383,10 +372,27 @@ components:
           allOf:
           - $ref: '#/components/schemas/KmsKeyArn'
           - description: A kms key ID.
+    InternalServerException: {}
+    ResetEncryptionKeyResponse:
+      type: object
+      properties: {}
+    KmsKeyArn:
+      type: string
+      pattern: ^arn:aws(-(us-gov|cn))?:kms:([a-z0-9][-.a-z0-9]{0,62})?:[0-9]{12}?:key/(([0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})|(mrk-[0-9a-zA-Z]{32}))$
     ResourceNotFoundException: {}
+    UpdateEncryptionKeyResponse:
+      type: object
+      properties: {}
+    AccessDeniedException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
       in: header
       schema:
         type: string
@@ -397,26 +403,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
     X-Amz-Date:
       name: X-Amz-Date
       in: header
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

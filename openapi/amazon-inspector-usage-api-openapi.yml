@@ -202,6 +202,39 @@ paths:
       - Usage
 components:
   schemas:
+    ThrottlingException: {}
+    ListUsageTotalsNextToken:
+      type: string
+      minLength: 1
+    MonthlyCostEstimate:
+      type: number
+      format: double
+      minimum: 0
+    UsageValue:
+      type: number
+      format: double
+      minimum: 0
+    ValidationException: {}
+    UsageTotal:
+      type: object
+      properties:
+        accountId:
+          allOf:
+          - $ref: '#/components/schemas/MeteringAccountId'
+          - description: The account ID of the account that usage data was retrieved for.
+        usage:
+          allOf:
+          - $ref: '#/components/schemas/UsageList'
+          - description: An object representing the total usage for an account.
+      description: The total of usage for an account ID.
+    UsageAccountId:
+      type: string
+      pattern: '[0-9]{12}'
+    InternalServerException: {}
+    Currency:
+      type: string
+      enum:
+      - USD
     UsageList:
       type: array
       items:
@@ -217,22 +250,6 @@ components:
           allOf:
           - $ref: '#/components/schemas/UsageTotalList'
           - description: An object with details on the total usage for the requested account.
-    UsageTotalList:
-      type: array
-      items:
-        $ref: '#/components/schemas/UsageTotal'
-    InternalServerException: {}
-    MeteringAccountId:
-      type: string
-      pattern: '[0-9]{12}'
-    Currency:
-      type: string
-      enum:
-      - USD
-    UsageValue:
-      type: number
-      format: double
-      minimum: 0
     UsageType:
       type: string
       enum:
@@ -241,9 +258,6 @@ components:
       - ECR_RESCAN
       - LAMBDA_FUNCTION_HOURS
       - LAMBDA_FUNCTION_CODE_HOURS
-    UsageAccountId:
-      type: string
-      pattern: '[0-9]{12}'
     Usage:
       type: object
       properties:
@@ -264,37 +278,17 @@ components:
           - $ref: '#/components/schemas/UsageType'
           - description: The type scan.
       description: Contains usage information about the cost of Amazon Inspector operation.
-    ValidationException: {}
-    ThrottlingException: {}
-    AccessDeniedException: {}
-    UsageTotal:
-      type: object
-      properties:
-        accountId:
-          allOf:
-          - $ref: '#/components/schemas/MeteringAccountId'
-          - description: The account ID of the account that usage data was retrieved for.
-        usage:
-          allOf:
-          - $ref: '#/components/schemas/UsageList'
-          - description: An object representing the total usage for an account.
-      description: The total of usage for an account ID.
-    MonthlyCostEstimate:
-      type: number
-      format: double
-      minimum: 0
-    ListUsageTotalsNextToken:
+    UsageTotalList:
+      type: array
+      items:
+        $ref: '#/components/schemas/UsageTotal'
+    MeteringAccountId:
       type: string
-      minLength: 1
+      pattern: '[0-9]{12}'
+    AccessDeniedException: {}
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -305,14 +299,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -323,8 +311,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string

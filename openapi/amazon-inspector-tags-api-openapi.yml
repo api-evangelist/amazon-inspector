@@ -311,9 +311,53 @@ paths:
       tags:
       - Tags
 components:
+  schemas:
+    UntagResourceResponse:
+      type: object
+      properties: {}
+    ThrottlingException: {}
+    ValidationException: {}
+    ListTagsForResourceResponse:
+      type: object
+      properties:
+        tags:
+          allOf:
+          - $ref: '#/components/schemas/TagMap'
+          - description: The tags associated with the resource.
+    InternalServerException: {}
+    TagMap:
+      type: object
+      additionalProperties:
+        $ref: '#/components/schemas/MapValue'
+    TagKey:
+      type: string
+      pattern: ^(?!aws:)[a-zA-Z+-=._:/]+$
+      minLength: 1
+      maxLength: 128
+    ResourceNotFoundException: {}
+    MapValue:
+      type: string
+      minLength: 0
+      maxLength: 256
+    TagResourceResponse:
+      type: object
+      properties: {}
+    BadRequestException: {}
   parameters:
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-SignedHeaders:
+      name: X-Amz-SignedHeaders
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -330,20 +374,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-SignedHeaders:
-      name: X-Amz-SignedHeaders
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Date:
-      name: X-Amz-Date
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
@@ -354,38 +386,6 @@ components:
       schema:
         type: string
       required: false
-  schemas:
-    TagKey:
-      type: string
-      pattern: ^(?!aws:)[a-zA-Z+-=._:/]+$
-      minLength: 1
-      maxLength: 128
-    ValidationException: {}
-    BadRequestException: {}
-    MapValue:
-      type: string
-      minLength: 0
-      maxLength: 256
-    TagResourceResponse:
-      type: object
-      properties: {}
-    InternalServerException: {}
-    ListTagsForResourceResponse:
-      type: object
-      properties:
-        tags:
-          allOf:
-          - $ref: '#/components/schemas/TagMap'
-          - description: The tags associated with the resource.
-    ThrottlingException: {}
-    ResourceNotFoundException: {}
-    TagMap:
-      type: object
-      additionalProperties:
-        $ref: '#/components/schemas/MapValue'
-    UntagResourceResponse:
-      type: object
-      properties: {}
   securitySchemes:
     hmac:
       type: apiKey

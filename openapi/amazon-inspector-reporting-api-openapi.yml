@@ -513,22 +513,155 @@ paths:
       - Reporting
 components:
   schemas:
+    ThrottlingException: {}
+    Port:
+      type: integer
+      minimum: 0
+      maximum: 65535
+    NumberFilter:
+      type: object
+      properties:
+        lowerInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The lowest number to be included in the filter.
+        upperInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Double'
+          - description: The highest number to be included in the filter.
+      description: An object that describes the details of a number filter.
     MapFilterList:
       type: array
       items:
         $ref: '#/components/schemas/MapFilter'
       minItems: 1
       maxItems: 10
+    PackageFilter:
+      type: object
+      properties:
+        architecture:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package architecture type to filter on.
+        epoch:
+          allOf:
+          - $ref: '#/components/schemas/NumberFilter'
+          - description: An object that contains details on the package epoch to filter on.
+        name:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the name of the package to filter on.
+        release:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the package release to filter on.
+        sourceLambdaLayerArn:
+          $ref: '#/components/schemas/StringFilter'
+        sourceLayerHash:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: An object that contains details on the source layer hash to filter on.
+        version:
+          allOf:
+          - $ref: '#/components/schemas/StringFilter'
+          - description: The package version to filter on.
+      description: Contains information on the details of a package filter.
+    StringInput:
+      type: string
+      minLength: 1
+      maxLength: 1024
+    ExternalReportStatus:
+      type: string
+      enum:
+      - SUCCEEDED
+      - IN_PROGRESS
+      - CANCELLED
+      - FAILED
+    GetFindingsReportStatusResponse:
+      type: object
+      properties:
+        destination:
+          allOf:
+          - $ref: '#/components/schemas/Destination'
+          - description: The destination of the report.
+        errorCode:
+          allOf:
+          - $ref: '#/components/schemas/ReportingErrorCode'
+          - description: The error code of the report.
+        errorMessage:
+          allOf:
+          - $ref: '#/components/schemas/ErrorMessage'
+          - description: The error message of the report.
+        filterCriteria:
+          allOf:
+          - $ref: '#/components/schemas/FilterCriteria'
+          - description: The filter criteria associated with the report.
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the report.
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ExternalReportStatus'
+          - description: The status of the report.
+    ValidationException: {}
     ReportId:
       type: string
       pattern: \b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b
+    PortRangeFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/PortRangeFilter'
+      minItems: 1
+      maxItems: 10
+    Timestamp:
+      type: string
+      format: date-time
+    ResourceNotFoundException: {}
+    Double:
+      type: number
+      format: double
+    CancelFindingsReportResponse:
+      type: object
+      required:
+      - reportId
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the canceled report.
+    MapComparison:
+      type: string
+      enum:
+      - EQUALS
+    MapKey:
+      type: string
+      minLength: 1
+      maxLength: 128
+    StringFilter:
+      type: object
+      required:
+      - comparison
+      - value
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/StringComparison'
+          - description: The operator to use when comparing values in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/StringInput'
+          - description: The value to filter on.
+      description: An object that describes the details of a string filter.
+    InternalServerException: {}
     NumberFilterList:
       type: array
       items:
         $ref: '#/components/schemas/NumberFilter'
       minItems: 1
       maxItems: 10
-    InternalServerException: {}
+    String:
+      type: string
     FilterCriteria:
       type: object
       properties:
@@ -701,102 +834,6 @@ components:
           - $ref: '#/components/schemas/PackageFilterList'
           - description: Details on the vulnerable packages used to filter findings.
       description: Details on the criteria used to define the filter.
-    ResourceNotFoundException: {}
-    CreateFindingsReportResponse:
-      type: object
-      properties:
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The ID of the report.
-    PortRangeFilter:
-      type: object
-      properties:
-        beginInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range begins at.
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Port'
-          - description: The port number the port range ends at.
-      description: An object that describes the details of a port range filter.
-    StringFilter:
-      type: object
-      required:
-      - comparison
-      - value
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/StringComparison'
-          - description: The operator to use when comparing values in the filter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/StringInput'
-          - description: The value to filter on.
-      description: An object that describes the details of a string filter.
-    ExternalReportStatus:
-      type: string
-      enum:
-      - SUCCEEDED
-      - IN_PROGRESS
-      - CANCELLED
-      - FAILED
-    DateFilter:
-      type: object
-      properties:
-        endInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the end of the time period filtered on.
-        startInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Timestamp'
-          - description: A timestamp representing the start of the time period filtered on.
-      description: Contains details on the time range used to filter findings.
-    PackageFilter:
-      type: object
-      properties:
-        architecture:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the package architecture type to filter on.
-        epoch:
-          allOf:
-          - $ref: '#/components/schemas/NumberFilter'
-          - description: An object that contains details on the package epoch to filter on.
-        name:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the name of the package to filter on.
-        release:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the package release to filter on.
-        sourceLambdaLayerArn:
-          $ref: '#/components/schemas/StringFilter'
-        sourceLayerHash:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: An object that contains details on the source layer hash to filter on.
-        version:
-          allOf:
-          - $ref: '#/components/schemas/StringFilter'
-          - description: The package version to filter on.
-      description: Contains information on the details of a package filter.
-    NumberFilter:
-      type: object
-      properties:
-        lowerInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The lowest number to be included in the filter.
-        upperInclusive:
-          allOf:
-          - $ref: '#/components/schemas/Double'
-          - description: The highest number to be included in the filter.
-      description: An object that describes the details of a number filter.
     ReportingErrorCode:
       type: string
       enum:
@@ -806,103 +843,10 @@ components:
       - BUCKET_NOT_FOUND
       - INCOMPATIBLE_BUCKET_REGION
       - MALFORMED_KMS_KEY
-    PortRangeFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/PortRangeFilter'
-      minItems: 1
-      maxItems: 10
-    StringFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/StringFilter'
-      minItems: 1
-      maxItems: 10
-    CancelFindingsReportResponse:
-      type: object
-      required:
-      - reportId
-      properties:
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The ID of the canceled report.
-    ValidationException: {}
-    MapFilter:
-      type: object
-      required:
-      - comparison
-      - key
-      properties:
-        comparison:
-          allOf:
-          - $ref: '#/components/schemas/MapComparison'
-          - description: The operator to use when comparing values in the filter.
-        key:
-          allOf:
-          - $ref: '#/components/schemas/MapKey'
-          - description: The tag key used in the filter.
-        value:
-          allOf:
-          - $ref: '#/components/schemas/MapValue'
-          - description: The tag value used in the filter.
-      description: An object that describes details of a map filter.
     MapValue:
       type: string
       minLength: 0
       maxLength: 256
-    StringInput:
-      type: string
-      minLength: 1
-      maxLength: 1024
-    ThrottlingException: {}
-    GetFindingsReportStatusResponse:
-      type: object
-      properties:
-        destination:
-          allOf:
-          - $ref: '#/components/schemas/Destination'
-          - description: The destination of the report.
-        errorCode:
-          allOf:
-          - $ref: '#/components/schemas/ReportingErrorCode'
-          - description: The error code of the report.
-        errorMessage:
-          allOf:
-          - $ref: '#/components/schemas/ErrorMessage'
-          - description: The error message of the report.
-        filterCriteria:
-          allOf:
-          - $ref: '#/components/schemas/FilterCriteria'
-          - description: The filter criteria associated with the report.
-        reportId:
-          allOf:
-          - $ref: '#/components/schemas/ReportId'
-          - description: The ID of the report.
-        status:
-          allOf:
-          - $ref: '#/components/schemas/ExternalReportStatus'
-          - description: The status of the report.
-    ErrorMessage:
-      type: string
-    Timestamp:
-      type: string
-      format: date-time
-    StringComparison:
-      type: string
-      enum:
-      - EQUALS
-      - PREFIX
-      - NOT_EQUALS
-    String:
-      type: string
-    AccessDeniedException: {}
-    DateFilterList:
-      type: array
-      items:
-        $ref: '#/components/schemas/DateFilter'
-      minItems: 1
-      maxItems: 10
     Destination:
       type: object
       required:
@@ -922,36 +866,86 @@ components:
           - $ref: '#/components/schemas/String'
           - description: The ARN of the KMS key used to encrypt data when exporting findings.
       description: Contains details of the Amazon S3 bucket and KMS key used to export findings.
-    MapKey:
-      type: string
-      minLength: 1
-      maxLength: 128
-    Double:
-      type: number
-      format: double
-    Port:
-      type: integer
-      minimum: 0
-      maximum: 65535
-    MapComparison:
+    PortRangeFilter:
+      type: object
+      properties:
+        beginInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range begins at.
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Port'
+          - description: The port number the port range ends at.
+      description: An object that describes the details of a port range filter.
+    StringComparison:
       type: string
       enum:
       - EQUALS
+      - PREFIX
+      - NOT_EQUALS
     PackageFilterList:
       type: array
       items:
         $ref: '#/components/schemas/PackageFilter'
       minItems: 1
       maxItems: 10
+    StringFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/StringFilter'
+      minItems: 1
+      maxItems: 10
+    CreateFindingsReportResponse:
+      type: object
+      properties:
+        reportId:
+          allOf:
+          - $ref: '#/components/schemas/ReportId'
+          - description: The ID of the report.
+    DateFilter:
+      type: object
+      properties:
+        endInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the end of the time period filtered on.
+        startInclusive:
+          allOf:
+          - $ref: '#/components/schemas/Timestamp'
+          - description: A timestamp representing the start of the time period filtered on.
+      description: Contains details on the time range used to filter findings.
+    DateFilterList:
+      type: array
+      items:
+        $ref: '#/components/schemas/DateFilter'
+      minItems: 1
+      maxItems: 10
+    ErrorMessage:
+      type: string
+    AccessDeniedException: {}
+    MapFilter:
+      type: object
+      required:
+      - comparison
+      - key
+      properties:
+        comparison:
+          allOf:
+          - $ref: '#/components/schemas/MapComparison'
+          - description: The operator to use when comparing values in the filter.
+        key:
+          allOf:
+          - $ref: '#/components/schemas/MapKey'
+          - description: The tag key used in the filter.
+        value:
+          allOf:
+          - $ref: '#/components/schemas/MapValue'
+          - description: The tag value used in the filter.
+      description: An object that describes details of a map filter.
   parameters:
-    X-Amz-Content-Sha256:
-      name: X-Amz-Content-Sha256
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Credential:
-      name: X-Amz-Credential
+    X-Amz-Date:
+      name: X-Amz-Date
       in: header
       schema:
         type: string
@@ -962,14 +956,8 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Signature:
-      name: X-Amz-Signature
-      in: header
-      schema:
-        type: string
-      required: false
-    X-Amz-Security-Token:
-      name: X-Amz-Security-Token
+    X-Amz-Credential:
+      name: X-Amz-Credential
       in: header
       schema:
         type: string
@@ -980,8 +968,20 @@ components:
       schema:
         type: string
       required: false
-    X-Amz-Date:
-      name: X-Amz-Date
+    X-Amz-Signature:
+      name: X-Amz-Signature
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Content-Sha256:
+      name: X-Amz-Content-Sha256
+      in: header
+      schema:
+        type: string
+      required: false
+    X-Amz-Security-Token:
+      name: X-Amz-Security-Token
       in: header
       schema:
         type: string
