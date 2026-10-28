@@ -1,4 +1,4 @@
-# Amazon Inspector (amazon-inspector)
+# Amazon Inspector
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,74 +66,281 @@
 
 Amazon Inspector is an automated vulnerability management service that continually scans AWS workloads for software vulnerabilities and unintended network exposure, providing detailed findings and prioritized remediation guidance.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/apis.yml)
+**Areas:** AWS · Compliance · Container Security · EC2 · Lambda · Security · Vulnerability Scanning · Vulnerability Management
 
-## Scope
+## Amazon Inspector on APIs.io
 
-- **Type:** Index
+Everything profiled for Amazon Inspector is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/amazon-inspector/](https://apis.io/providers/amazon-inspector/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (22)
 
-- AWS
-- Compliance
-- Container Security
-- EC2
-- Lambda
-- Security
-- Vulnerability Scanning
+- [Amazon Inspector Accountpermissions API](https://apis.io/apis/amazon-inspector/amazon-inspector-accountpermissions-api/) — The Accountpermissions API from Amazon Inspector — 1 operation(s) for accountpermissions.
+- [Amazon Inspector Codesnippet API](https://apis.io/apis/amazon-inspector/amazon-inspector-codesnippet-api/) — The Codesnippet API from Amazon Inspector — 1 operation(s) for codesnippet.
+- [Amazon Inspector Configuration API](https://apis.io/apis/amazon-inspector/amazon-inspector-configuration-api/) — The Configuration API from Amazon Inspector — 2 operation(s) for configuration.
+- [Amazon Inspector Coverage API](https://apis.io/apis/amazon-inspector/amazon-inspector-coverage-api/) — The Coverage API from Amazon Inspector — 2 operation(s) for coverage.
+- [Amazon Inspector Delegatedadminaccounts API](https://apis.io/apis/amazon-inspector/amazon-inspector-delegatedadminaccounts-api/) — The Delegatedadminaccounts API from Amazon Inspector — 4 operation(s) for delegatedadminaccounts.
+- [Amazon Inspector Disable API](https://apis.io/apis/amazon-inspector/amazon-inspector-disable-api/) — The Disable API from Amazon Inspector — 1 operation(s) for disable.
+- [Amazon Inspector Ec2deepinspectionconfiguration API](https://apis.io/apis/amazon-inspector/amazon-inspector-ec2deepinspectionconfiguration-api/) — The Ec2deepinspectionconfiguration API from Amazon Inspector — 3 operation(s) for ec2deepinspectionconfiguration.
+- [Amazon Inspector Ec2deepinspectionstatus API](https://apis.io/apis/amazon-inspector/amazon-inspector-ec2deepinspectionstatus-api/) — The Ec2deepinspectionstatus API from Amazon Inspector — 2 operation(s) for ec2deepinspectionstatus.
+- [Amazon Inspector Enable API](https://apis.io/apis/amazon-inspector/amazon-inspector-enable-api/) — The Enable API from Amazon Inspector — 1 operation(s) for enable.
+- [Amazon Inspector Encryptionkey API](https://apis.io/apis/amazon-inspector/amazon-inspector-encryptionkey-api/) — The Encryptionkey API from Amazon Inspector — 3 operation(s) for encryptionkey.
+- [Amazon Inspector Filters API](https://apis.io/apis/amazon-inspector/amazon-inspector-filters-api/) — The Filters API from Amazon Inspector — 4 operation(s) for filters.
+- [Amazon Inspector Findings API](https://apis.io/apis/amazon-inspector/amazon-inspector-findings-api/) — The Findings API from Amazon Inspector — 4 operation(s) for findings.
+- [Amazon Inspector Freetrialinfo API](https://apis.io/apis/amazon-inspector/amazon-inspector-freetrialinfo-api/) — The Freetrialinfo API from Amazon Inspector — 1 operation(s) for freetrialinfo.
+- [Amazon Inspector Members API](https://apis.io/apis/amazon-inspector/amazon-inspector-members-api/) — The Members API from Amazon Inspector — 4 operation(s) for members.
+- [Amazon Inspector Reporting API](https://apis.io/apis/amazon-inspector/amazon-inspector-reporting-api/) — The Reporting API from Amazon Inspector — 3 operation(s) for reporting.
+- [Amazon Inspector Sbomexport API](https://apis.io/apis/amazon-inspector/amazon-inspector-sbomexport-api/) — The Sbomexport API from Amazon Inspector — 3 operation(s) for sbomexport.
+- [Amazon Inspector Scanning API](https://apis.io/apis/amazon-inspector/amazon-inspector-scanning-api/) — Operations for enabling and managing vulnerability scanning
+- [Amazon Inspector Status API](https://apis.io/apis/amazon-inspector/amazon-inspector-status-api/) — The Status API from Amazon Inspector — 1 operation(s) for status.
+- [Amazon Inspector Tags API](https://apis.io/apis/amazon-inspector/amazon-inspector-tags-api/) — The Tags API from Amazon Inspector — 2 operation(s) for tags.
+- [Amazon Inspector Usage API](https://apis.io/apis/amazon-inspector/amazon-inspector-usage-api/) — The Usage API from Amazon Inspector — 1 operation(s) for usage.
+- [Amazon Inspector Vulnerabilities API](https://apis.io/apis/amazon-inspector/amazon-inspector-vulnerabilities-api/) — The Vulnerabilities API from Amazon Inspector — 1 operation(s) for vulnerabilities.
+- [Amazon Inspector Organization Configuration API](https://apis.io/apis/amazon-inspector/amazon-inspector-organization-configuration-api/) — The Organization Configuration API from Amazon Inspector — 2 operation(s) for organization configuration.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-16
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### AWS Amazon Inspector API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Amazon Inspector API provides programmatic access to vulnerability management for scanning EC2 instances, container images, and Lambda functions for software vulnerabilities and network exposure.
+- [Amazon Inspector Agentic Access](https://apis.io/agentic-access/amazon-inspector/amazon-inspector-agentic-access/)
 
-- **Human URL:** [https://aws.amazon.com/inspector/](https://aws.amazon.com/inspector/)
-- **Base URL:** `https://inspector2.amazonaws.com`
+#### JSON Schema (201)
 
-#### Tags
+The data models the API reads and writes.
 
-- Compliance
-- Security
-- Vulnerability Scanning
+- [Amazon Inspector Finding Definition](https://apis.io/schemas/amazon-inspector/amazon-inspector/)
+- [Account](https://apis.io/schemas/amazon-inspector/inspector-account/)
+- [AccountAggregation](https://apis.io/schemas/amazon-inspector/inspector-account-aggregation/)
+- [AccountAggregationResponse](https://apis.io/schemas/amazon-inspector/inspector-account-aggregation-response/)
+- [AccountIdSet](https://apis.io/schemas/amazon-inspector/inspector-account-id-set/)
+- [AccountList](https://apis.io/schemas/amazon-inspector/inspector-account-list/)
+- [AccountSortBy](https://apis.io/schemas/amazon-inspector/inspector-account-sort-by/)
+- [AccountState](https://apis.io/schemas/amazon-inspector/inspector-account-state/)
+- [AccountStateList](https://apis.io/schemas/amazon-inspector/inspector-account-state-list/)
+- [AggregationFindingType](https://apis.io/schemas/amazon-inspector/inspector-aggregation-finding-type/)
+- [AggregationRequest](https://apis.io/schemas/amazon-inspector/inspector-aggregation-request/)
+- [AggregationResourceType](https://apis.io/schemas/amazon-inspector/inspector-aggregation-resource-type/)
+- [AggregationResponse](https://apis.io/schemas/amazon-inspector/inspector-aggregation-response/)
+- [AggregationResponseList](https://apis.io/schemas/amazon-inspector/inspector-aggregation-response-list/)
+- [AggregationType](https://apis.io/schemas/amazon-inspector/inspector-aggregation-type/)
+- [AmiAggregation](https://apis.io/schemas/amazon-inspector/inspector-ami-aggregation/)
+- [AmiAggregationResponse](https://apis.io/schemas/amazon-inspector/inspector-ami-aggregation-response/)
+- [AmiSortBy](https://apis.io/schemas/amazon-inspector/inspector-ami-sort-by/)
+- [Architecture](https://apis.io/schemas/amazon-inspector/inspector-architecture/)
+- [ArchitectureList](https://apis.io/schemas/amazon-inspector/inspector-architecture-list/)
+- [AssociateMemberRequest](https://apis.io/schemas/amazon-inspector/inspector-associate-member-request/)
+- [AssociateMemberResponse](https://apis.io/schemas/amazon-inspector/inspector-associate-member-response/)
+- [AtigData](https://apis.io/schemas/amazon-inspector/inspector-atig-data/)
+- [AutoEnable](https://apis.io/schemas/amazon-inspector/inspector-auto-enable/)
+- [AwsEc2InstanceDetails](https://apis.io/schemas/amazon-inspector/inspector-aws-ec2-instance-details/)
+- …and 176 more published on APIs.io
 
-#### Properties
+#### JSON Structure (201)
 
-- [Documentation](https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html)
-- [OpenAPI](openapi/amazon-inspector-openapi-original.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Getting Started](https://aws.amazon.com/inspector/getting-started/)
-- [Pricing](https://aws.amazon.com/inspector/pricing/)
-- [F A Q](https://aws.amazon.com/inspector/faqs/)
+Data models expressed in JSON Structure.
 
-## Common Properties
+- [Amazon Inspector Structure](https://apis.io/json-structure/amazon-inspector/amazon-inspector-structure/)
+- [Inspector Account Aggregation Response Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-aggregation-response-structure/)
+- [Inspector Account Aggregation Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-aggregation-structure/)
+- [Inspector Account Id Set Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-id-set-structure/)
+- [Inspector Account List Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-list-structure/)
+- [Inspector Account Sort By Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-sort-by-structure/)
+- [Inspector Account State List Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-state-list-structure/)
+- [Inspector Account State Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-state-structure/)
+- [Inspector Account Structure](https://apis.io/json-structure/amazon-inspector/inspector-account-structure/)
+- [Inspector Aggregation Finding Type Structure](https://apis.io/json-structure/amazon-inspector/inspector-aggregation-finding-type-structure/)
+- [Inspector Aggregation Request Structure](https://apis.io/json-structure/amazon-inspector/inspector-aggregation-request-structure/)
+- [Inspector Aggregation Resource Type Structure](https://apis.io/json-structure/amazon-inspector/inspector-aggregation-resource-type-structure/)
+- [Inspector Aggregation Response List Structure](https://apis.io/json-structure/amazon-inspector/inspector-aggregation-response-list-structure/)
+- [Inspector Aggregation Response Structure](https://apis.io/json-structure/amazon-inspector/inspector-aggregation-response-structure/)
+- [Inspector Aggregation Type Structure](https://apis.io/json-structure/amazon-inspector/inspector-aggregation-type-structure/)
+- [Inspector Ami Aggregation Response Structure](https://apis.io/json-structure/amazon-inspector/inspector-ami-aggregation-response-structure/)
+- [Inspector Ami Aggregation Structure](https://apis.io/json-structure/amazon-inspector/inspector-ami-aggregation-structure/)
+- [Inspector Ami Sort By Structure](https://apis.io/json-structure/amazon-inspector/inspector-ami-sort-by-structure/)
+- [Inspector Architecture List Structure](https://apis.io/json-structure/amazon-inspector/inspector-architecture-list-structure/)
+- [Inspector Architecture Structure](https://apis.io/json-structure/amazon-inspector/inspector-architecture-structure/)
+- [Inspector Associate Member Request Structure](https://apis.io/json-structure/amazon-inspector/inspector-associate-member-request-structure/)
+- [Inspector Associate Member Response Structure](https://apis.io/json-structure/amazon-inspector/inspector-associate-member-response-structure/)
+- [Inspector Atig Data Structure](https://apis.io/json-structure/amazon-inspector/inspector-atig-data-structure/)
+- [Inspector Auto Enable Structure](https://apis.io/json-structure/amazon-inspector/inspector-auto-enable-structure/)
+- [Inspector Aws Ec2 Instance Details Structure](https://apis.io/json-structure/amazon-inspector/inspector-aws-ec2-instance-details-structure/)
+- …and 176 more published on APIs.io
 
-- [Portal](https://aws.amazon.com/inspector/)
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Amazon Inspector Context](https://apis.io/jsonld/amazon-inspector/amazon-inspector-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Amazon Inspector Vocabulary](https://apis.io/vocabularies/amazon-inspector/amazon-inspector-vocabulary/)
+
+#### Examples (175)
+
+Example requests and responses.
+
+- [Amazon Inspector Example](https://apis.io/examples/amazon-inspector/amazon-inspector-example/)
+- [Inspector Account Aggregation Example](https://apis.io/examples/amazon-inspector/inspector-account-aggregation-example/)
+- [Inspector Account Aggregation Response Example](https://apis.io/examples/amazon-inspector/inspector-account-aggregation-response-example/)
+- [Inspector Account Example](https://apis.io/examples/amazon-inspector/inspector-account-example/)
+- [Inspector Account Id Set Example](https://apis.io/examples/amazon-inspector/inspector-account-id-set-example/)
+- [Inspector Account List Example](https://apis.io/examples/amazon-inspector/inspector-account-list-example/)
+- [Inspector Account State Example](https://apis.io/examples/amazon-inspector/inspector-account-state-example/)
+- [Inspector Account State List Example](https://apis.io/examples/amazon-inspector/inspector-account-state-list-example/)
+- [Inspector Aggregation Request Example](https://apis.io/examples/amazon-inspector/inspector-aggregation-request-example/)
+- [Inspector Aggregation Response Example](https://apis.io/examples/amazon-inspector/inspector-aggregation-response-example/)
+- [Inspector Aggregation Response List Example](https://apis.io/examples/amazon-inspector/inspector-aggregation-response-list-example/)
+- [Inspector Ami Aggregation Example](https://apis.io/examples/amazon-inspector/inspector-ami-aggregation-example/)
+- [Inspector Ami Aggregation Response Example](https://apis.io/examples/amazon-inspector/inspector-ami-aggregation-response-example/)
+- [Inspector Architecture List Example](https://apis.io/examples/amazon-inspector/inspector-architecture-list-example/)
+- [Inspector Associate Member Request Example](https://apis.io/examples/amazon-inspector/inspector-associate-member-request-example/)
+- [Inspector Associate Member Response Example](https://apis.io/examples/amazon-inspector/inspector-associate-member-response-example/)
+- [Inspector Atig Data Example](https://apis.io/examples/amazon-inspector/inspector-atig-data-example/)
+- [Inspector Auto Enable Example](https://apis.io/examples/amazon-inspector/inspector-auto-enable-example/)
+- [Inspector Aws Ec2 Instance Details Example](https://apis.io/examples/amazon-inspector/inspector-aws-ec2-instance-details-example/)
+- [Inspector Aws Ecr Container Aggregation Example](https://apis.io/examples/amazon-inspector/inspector-aws-ecr-container-aggregation-example/)
+- [Inspector Aws Ecr Container Aggregation Response Example](https://apis.io/examples/amazon-inspector/inspector-aws-ecr-container-aggregation-response-example/)
+- [Inspector Aws Ecr Container Image Details Example](https://apis.io/examples/amazon-inspector/inspector-aws-ecr-container-image-details-example/)
+- [Inspector Aws Lambda Function Details Example](https://apis.io/examples/amazon-inspector/inspector-aws-lambda-function-details-example/)
+- [Inspector Batch Get Account Status Request Example](https://apis.io/examples/amazon-inspector/inspector-batch-get-account-status-request-example/)
+- [Inspector Batch Get Account Status Response Example](https://apis.io/examples/amazon-inspector/inspector-batch-get-account-status-response-example/)
+- …and 150 more published on APIs.io
+
+#### Collections (45)
+
+Postman and Open Collection request collections.
+
+- [Amazon Inspector API](https://apis.io/collections/amazon-inspector/open-amazon-inspector/)
+- [Inspector2 Accountpermissions API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-accountpermissions-api/)
+- [Inspector2 Accountpermissions Codesnippet API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-codesnippet-api/)
+- [Inspector2 Accountpermissions Configuration API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-configuration-api/)
+- [Inspector2 Accountpermissions Coverage API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-coverage-api/)
+- [Inspector2 Accountpermissions Delegatedadminaccounts API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-delegatedadminaccounts-api/)
+- [Inspector2 Accountpermissions Disable API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-disable-api/)
+- [Inspector2 Accountpermissions Ec2deepinspectionconfiguration API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-ec2deepinspectionconfiguration-api/)
+- [Inspector2 Accountpermissions Ec2deepinspectionstatus API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-ec2deepinspectionstatus-api/)
+- [Inspector2 Accountpermissions Enable API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-enable-api/)
+- [Inspector2 Accountpermissions Encryptionkey API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-encryptionkey-api/)
+- [Inspector2 Accountpermissions Filters API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-filters-api/)
+- [Inspector2 Accountpermissions Findings API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-findings-api/)
+- [Inspector2 Accountpermissions Freetrialinfo API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-freetrialinfo-api/)
+- [Inspector2 Accountpermissions Members API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-members-api/)
+- [Inspector2 Accountpermissions Organizationconfiguration API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-organizationconfiguration-api/)
+- [Inspector2 Accountpermissions Reporting API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-reporting-api/)
+- [Inspector2 Accountpermissions Sbomexport API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-sbomexport-api/)
+- [Inspector2 Accountpermissions Scanning API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-scanning-api/)
+- [Inspector2 Accountpermissions Status API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-status-api/)
+- [Inspector2 Accountpermissions Tags API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-tags-api/)
+- [Inspector2 Accountpermissions Usage API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-usage-api/)
+- [Inspector2 Accountpermissions Vulnerabilities API](https://apis.io/collections/amazon-inspector/open-amazon-inspector-vulnerabilities-api/)
+- [Inspector2 Accountpermissions API](https://apis.io/collections/amazon-inspector/postman-amazon-inspector-accountpermissions-api/)
+- [Inspector2 Accountpermissions Codesnippet API](https://apis.io/collections/amazon-inspector/postman-amazon-inspector-codesnippet-api/)
+- …and 20 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Amazon Inspector — jsonschema rules](https://apis.io/rules/amazon-inspector/amazon-inspector-jsonschema-spectral-rules/)
+- [Amazon Inspector API Rules](https://apis.io/rules/amazon-inspector/amazon-inspector-spectral-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Amazon Inspector Authentication](https://apis.io/security/amazon-inspector/amazon-inspector-authentication/)
+- [Amazon Inspector Domain Security](https://apis.io/security/amazon-inspector/amazon-inspector-domain-security/)
+- [Amazon Inspector Trust Center](https://apis.io/security/amazon-inspector/amazon-inspector-trust-center/)
+- [Amazon Inspector Vulnerability Disclosure](https://apis.io/security/amazon-inspector/amazon-inspector-vulnerability-disclosure/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Amazon Inspector Plans Pricing](https://apis.io/plans/amazon-inspector/amazon-inspector-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Amazon Inspector Rate Limits](https://apis.io/rate-limits/amazon-inspector/amazon-inspector-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Amazon Inspector Finops](https://apis.io/finops/amazon-inspector/amazon-inspector-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://aws.amazon.com/inspector/)
 - [Documentation](https://docs.aws.amazon.com/inspector/)
-- [Terms of Service](https://aws.amazon.com/service-terms/)
-- [Privacy Policy](https://aws.amazon.com/privacy/)
 - [Support](https://aws.amazon.com/premiumsupport/)
 - [Blog](https://aws.amazon.com/blogs/security/category/security-identity-compliance/amazon-inspector/)
-- [GitHub Organization](https://github.com/aws)
-- [Console](https://console.aws.amazon.com/inspector/v2/home)
-- [Sign Up](https://portal.aws.amazon.com/billing/signup)
-- [Login](https://signin.aws.amazon.com/)
-- [Status Page](https://health.aws.amazon.com/health/status)
-- [Contact](https://aws.amazon.com/contact-us/)
-- [Spectral Rules](rules/amazon-inspector-spectral-rules.yml)
-- [Vocabulary](vocabulary/amazon-inspector-vocabulary.yaml)
-- [JSON-LD](json-ld/amazon-inspector-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Integrations](https://aws.amazon.com/marketplace)
+- [Terms of service](https://aws.amazon.com/service-terms/)
+- [Privacy policy](https://aws.amazon.com/privacy/)
+- [GitHub](https://github.com/aws)
+- [Status](https://health.aws.amazon.com/health/status)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 55.0** — strong · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 62.2 |
+| Contract governance | 27.3 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 53.9 |
+
+**Agent readiness 33.3** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | verified |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 35.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/amazon-inspector/](https://apis.io/providers/amazon-inspector/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Amazon Inspector: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/amazon-inspector/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
