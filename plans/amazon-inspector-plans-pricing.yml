@@ -1,0 +1,187 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-28'
+method: searched
+source: https://aws.amazon.com/inspector/pricing/
+sources:
+- https://aws.amazon.com/inspector/pricing/
+provenance:
+  tool: engine/economics/harvest_pricing.py
+  run: 20261028T161713
+  grounding: every price_text was found verbatim in the fetched page text
+audience: developer-api
+pricing_basis: usage-other
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-28'
+published: true
+note: Pricing table uses unrendered region-based price tokens; numeric values captured are from the AMI
+  table and the worked pricing examples (US East N. Virginia). 15-day free trial; 25 free CI/CD image
+  assessments; separate 30-day Azure trial.
+plan_count: 11
+currency: USD
+plans:
+- name: AMI continuous evaluation (pro-rated hourly)
+  price_text: $1.258
+  price: 1.258
+  currency: USD
+  period: month
+  unit: per AMI
+- name: AMI one-time scan
+  price_text: $0.42
+  price: 0.42
+  currency: USD
+  period: per-use
+  unit: per AMI scan
+- name: EC2 instance scanning (SSM agent-based, example)
+  price_text: $1.258
+  price: 1.258
+  currency: USD
+  period: month
+  unit: per instance
+- name: EC2 agentless scanning (example)
+  price_text: $1.75
+  price: 1.75
+  currency: USD
+  period: month
+  unit: per instance
+- name: ECR initial on-push image scan (example)
+  price_text: $0.09
+  price: 0.09
+  currency: USD
+  period: per-use
+  unit: per image
+- name: ECR automated rescan (example)
+  price_text: $0.01
+  price: 0.01
+  currency: USD
+  period: per-use
+  unit: per rescan
+- name: On-demand/CI-CD container image scan
+  price_text: $0.03
+  price: 0.03
+  currency: USD
+  period: per-use
+  unit: per image
+- name: Lambda standard scanning (example)
+  price_text: $0.30
+  price: 0.3
+  currency: USD
+  period: month
+  unit: per Lambda function
+- name: Lambda standard + code scanning (example)
+  price_text: $0.90
+  price: 0.9
+  currency: USD
+  period: month
+  unit: per Lambda function
+- name: Code security repository scan (example)
+  price_text: $0.15
+  price: 0.15
+  currency: USD
+  period: per-use
+  unit: per scan
+- name: CIS Benchmark assessment (example)
+  price_text: $0.03
+  price: 0.03
+  currency: USD
+  period: per-use
+  unit: per assessment per instance
+rate_limit_statements:
+- There is a 10MB size limit per repository for scanning. Repositories larger than 10MB are billed as
+  multiple repositories.
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: AMI continuous evaluation (pro-rated hourly)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: AMI one-time scan
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: EC2 instance scanning (SSM agent-based, example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: EC2 agentless scanning (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: ECR initial on-push image scan (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: ECR automated rescan (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: On-demand/CI-CD container image scan
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: Lambda standard scanning (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Lambda standard + code scanning (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - month
+  - name: Code security repository scan (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other
+  - name: CIS Benchmark assessment (example)
+    access: other
+    model: subscription
+    model_how: derived
+    units:
+    - other
+    periods:
+    - other

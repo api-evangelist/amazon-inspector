@@ -1,0 +1,555 @@
+aid: amazon-inspector
+name: Amazon Inspector
+description: >-
+  Amazon Inspector is an automated vulnerability management service that continually scans AWS workloads for software
+  vulnerabilities and unintended network exposure, providing detailed findings and prioritized remediation guidance.
+type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: medium
+  source:
+  - plans
+  - authentication
+  - security
+  generated: '2026-09-03'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/amazon-inspector.png
+tags:
+  - Amazon Web Services
+  - Compliance
+  - Container Security
+  - EC2
+  - Lambda
+  - Security
+  - Vulnerability Scanning
+  - Vulnerability Management
+tags_raw:
+  - AWS
+  - Compliance
+  - Container Security
+  - EC2
+  - Lambda
+  - Security
+  - Vulnerability Scanning
+  - Vulnerability Management
+url: https://raw.githubusercontent.com/api-evangelist/amazon-inspector/refs/heads/main/apis.yml
+created: '2026-03-16'
+modified: '2026-05-19'
+specificationVersion: '0.23'
+apis:
+- aid: amazon-inspector:amazon-inspector-accountpermissions-api
+  name: Amazon Inspector Accountpermissions API
+  description: >-
+    The Accountpermissions API from Amazon Inspector — 1 operation(s) for accountpermissions.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Accountpermissions
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-accountpermissions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-codesnippet-api
+  name: Amazon Inspector Codesnippet API
+  description: The Codesnippet API from Amazon Inspector — 1 operation(s) for codesnippet.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Codesnippet
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-codesnippet-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-configuration-api
+  name: Amazon Inspector Configuration API
+  description: The Configuration API from Amazon Inspector — 2 operation(s) for configuration.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-coverage-api
+  name: Amazon Inspector Coverage API
+  description: The Coverage API from Amazon Inspector — 2 operation(s) for coverage.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Coverage
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-coverage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-delegatedadminaccounts-api
+  name: Amazon Inspector Delegatedadminaccounts API
+  description: >-
+    The Delegatedadminaccounts API from Amazon Inspector — 4 operation(s) for delegatedadminaccounts.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Delegatedadminaccounts
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-delegatedadminaccounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-disable-api
+  name: Amazon Inspector Disable API
+  description: The Disable API from Amazon Inspector — 1 operation(s) for disable.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Disable
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-disable-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-ec2deepinspectionconfiguration-api
+  name: Amazon Inspector Ec2deepinspectionconfiguration API
+  description: >-
+    The Ec2deepinspectionconfiguration API from Amazon Inspector — 3 operation(s) for ec2deepinspectionconfiguration.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Ec2deepinspectionconfiguration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-ec2deepinspectionconfiguration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-ec2deepinspectionstatus-api
+  name: Amazon Inspector Ec2deepinspectionstatus API
+  description: >-
+    The Ec2deepinspectionstatus API from Amazon Inspector — 2 operation(s) for ec2deepinspectionstatus.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Ec2deepinspectionstatus
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-ec2deepinspectionstatus-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-enable-api
+  name: Amazon Inspector Enable API
+  description: The Enable API from Amazon Inspector — 1 operation(s) for enable.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Enable
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-enable-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-encryptionkey-api
+  name: Amazon Inspector Encryptionkey API
+  description: The Encryptionkey API from Amazon Inspector — 3 operation(s) for encryptionkey.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Encryptionkey
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-encryptionkey-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-filters-api
+  name: Amazon Inspector Filters API
+  description: The Filters API from Amazon Inspector — 4 operation(s) for filters.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Filters
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-filters-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-findings-api
+  name: Amazon Inspector Findings API
+  description: The Findings API from Amazon Inspector — 4 operation(s) for findings.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Findings
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-findings-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-freetrialinfo-api
+  name: Amazon Inspector Freetrialinfo API
+  description: The Freetrialinfo API from Amazon Inspector — 1 operation(s) for freetrialinfo.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Freetrialinfo
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-freetrialinfo-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-members-api
+  name: Amazon Inspector Members API
+  description: The Members API from Amazon Inspector — 4 operation(s) for members.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Members
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-members-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-reporting-api
+  name: Amazon Inspector Reporting API
+  description: The Reporting API from Amazon Inspector — 3 operation(s) for reporting.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Reporting
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-reporting-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-sbomexport-api
+  name: Amazon Inspector Sbomexport API
+  description: The Sbomexport API from Amazon Inspector — 3 operation(s) for sbomexport.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Sbomexport
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-sbomexport-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-scanning-api
+  name: Amazon Inspector Scanning API
+  description: Operations for enabling and managing vulnerability scanning
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Scanning
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-scanning-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-status-api
+  name: Amazon Inspector Status API
+  description: The Status API from Amazon Inspector — 1 operation(s) for status.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-status-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-tags-api
+  name: Amazon Inspector Tags API
+  description: The Tags API from Amazon Inspector — 2 operation(s) for tags.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-tags-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-usage-api
+  name: Amazon Inspector Usage API
+  description: The Usage API from Amazon Inspector — 1 operation(s) for usage.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Usage
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-usage-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-vulnerabilities-api
+  name: Amazon Inspector Vulnerabilities API
+  description: The Vulnerabilities API from Amazon Inspector — 1 operation(s) for vulnerabilities.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Vulnerabilities
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-vulnerabilities-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+- aid: amazon-inspector:amazon-inspector-organization-configuration-api
+  name: Amazon Inspector Organization Configuration API
+  description: >-
+    The Organization Configuration API from Amazon Inspector — 2 operation(s) for organization configuration.
+  humanURL: https://aws.amazon.com/inspector/
+  baseURL: https://inspector2.amazonaws.com
+  tags:
+  - Organizationconfiguration
+  tags_raw:
+  - Organization Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/amazon-inspector-organization-configuration-api-openapi.yml
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html
+  - type: GettingStarted
+    url: https://aws.amazon.com/inspector/getting-started/
+  - type: Pricing
+    url: https://aws.amazon.com/inspector/pricing/
+  - type: FAQ
+    url: https://aws.amazon.com/inspector/faqs/
+common:
+  - type: Plans
+    url: plans/amazon-inspector-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/amazon-inspector-rate-limits.yml
+  - type: FinOps
+    url: finops/amazon-inspector-finops.yml
+  - type: CapabilityMap
+    url: capabilities/amazon-inspector-capability-edges.yml
+    name: Amazon Inspector Business Capability Map
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/amazon-inspector/overview
+  - type: AgenticAccess
+    url: agentic-access/amazon-inspector-agentic-access.yml
+  - type: TrustCenter
+    url: security/amazon-inspector-trust-center.yml
+  - type: VulnerabilityDisclosure
+    url: security/amazon-inspector-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/amazon-inspector-domain-security.yml
+  - type: Authentication
+    url: authentication/amazon-inspector-authentication.yml
+  - type: Portal
+    url: https://aws.amazon.com/inspector/
+  - type: Website
+    url: https://aws.amazon.com/inspector/
+  - type: Documentation
+    url: https://docs.aws.amazon.com/inspector/
+  - type: TermsOfService
+    url: https://aws.amazon.com/service-terms/
+  - type: PrivacyPolicy
+    url: https://aws.amazon.com/privacy/
+  - type: Support
+    url: https://aws.amazon.com/premiumsupport/
+  - type: Blog
+    url: https://aws.amazon.com/blogs/security/category/security-identity-compliance/amazon-inspector/
+  - type: GitHubOrganization
+    url: https://github.com/aws
+  - type: Console
+    url: https://console.aws.amazon.com/inspector/v2/home
+  - type: Signup
+    url: https://portal.aws.amazon.com/billing/signup
+  - type: Login
+    url: https://signin.aws.amazon.com/
+  - type: StatusPage
+    url: https://health.aws.amazon.com/health/status
+  - type: Contact
+    url: https://aws.amazon.com/contact-us/
+  - type: SpectralRules
+    url: rules/amazon-inspector-spectral-rules.yml
+  - type: Vocabulary
+    url: vocabulary/amazon-inspector-vocabulary.yaml
+  - type: JSONLD
+    url: json-ld/amazon-inspector-context.jsonld
+  - type: Features
+    data:
+      - name: Automated Vulnerability Scanning
+        description: Continuously scans EC2, container images, and Lambda functions for software vulnerabilities.
+      - name: Risk Scoring
+        description: Ranks vulnerabilities by exploitability and impact to prioritize remediation.
+      - name: SBOM Export
+        description: Generates software bill of materials for scanned workloads.
+      - name: Multi-Account Support
+        description: Manages vulnerability scanning across all accounts in an AWS Organization.
+  - type: UseCases
+    data:
+      - name: CI/CD Security Scanning
+        description: Automatically scan container images in ECR during build pipelines.
+      - name: Compliance Reporting
+        description: Generate vulnerability reports for SOC 2, PCI DSS compliance.
+      - name: Patch Prioritization
+        description: Prioritize OS patches based on exploitability scores.
+  - type: Integrations
+    data:
+      - name: Amazon ECR
+        description: Automatically scans container images stored in Elastic Container Registry.
+      - name: AWS Security Hub
+        description: Sends all findings to Security Hub for centralized visibility.
+      - name: AWS Organizations
+        description: Manages Inspector across all organizational accounts.
+  - type: Integrations
+    url: https://aws.amazon.com/marketplace
+integrations:
+  - name: Agent Mode
+  - name: Sign in
+  - name: Become a Channel Partner
+  - name: Resources
+  - name: Sell in AWS Marketplace
+  - name: Why AWS Marketplace?
+  - name: Get started in AWS Marketplace
+  - name: Manage Your Account
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-parent: amazon-web-services
+x-relationship: product
