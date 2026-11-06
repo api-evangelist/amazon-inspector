@@ -91,7 +91,7 @@ rate_limit_statements:
 - There is a 10MB size limit per repository for scanning. Repositories larger than 10MB are billed as
   multiple repositories.
 x-canonical:
-  generated: '2026-11-02'
+  generated: '2026-11-06'
   vocabulary: engine/economics/plans-canonical.yml
   models:
   - subscription
